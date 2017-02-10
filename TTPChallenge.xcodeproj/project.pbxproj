@@ -12,8 +12,27 @@
 		1751ABA51E4D33AB00E2AE75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1751ABA31E4D33AB00E2AE75 /* Main.storyboard */; };
 		1751ABA71E4D33AB00E2AE75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1751ABA61E4D33AB00E2AE75 /* Assets.xcassets */; };
 		1751ABAA1E4D33AB00E2AE75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1751ABA81E4D33AB00E2AE75 /* LaunchScreen.storyboard */; };
+		1751ABB81E4D3D9F00E2AE75 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751ABB71E4D3D9F00E2AE75 /* UnitTests.swift */; };
+		1751ABC61E4D3E4B00E2AE75 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751ABC51E4D3E4B00E2AE75 /* UITests.swift */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1751ABBA1E4D3D9F00E2AE75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1751AB941E4D33AB00E2AE75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1751AB9B1E4D33AB00E2AE75;
+			remoteInfo = TTPChallenge;
+		};
+		1751ABC81E4D3E4B00E2AE75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1751AB941E4D33AB00E2AE75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1751AB9B1E4D33AB00E2AE75;
+			remoteInfo = TTPChallenge;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1751AB9C1E4D33AB00E2AE75 /* TTPChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTPChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +42,12 @@
 		1751ABA61E4D33AB00E2AE75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1751ABA91E4D33AB00E2AE75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1751ABAB1E4D33AB00E2AE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1751ABB51E4D3D9F00E2AE75 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1751ABB71E4D3D9F00E2AE75 /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
+		1751ABB91E4D3D9F00E2AE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1751ABC31E4D3E4B00E2AE75 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1751ABC51E4D3E4B00E2AE75 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
+		1751ABC71E4D3E4B00E2AE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTPChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE3DA305B2BD4B2954AA8B8 /* Pods-TTPChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -37,6 +62,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1751ABB21E4D3D9F00E2AE75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1751ABC01E4D3E4B00E2AE75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -44,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				1751AB9E1E4D33AB00E2AE75 /* TTPChallenge */,
+				1751ABB61E4D3D9F00E2AE75 /* UnitTests */,
+				1751ABC41E4D3E4B00E2AE75 /* UITests */,
 				1751AB9D1E4D33AB00E2AE75 /* Products */,
 				E0BF1E4FFE6665193D9F5528 /* Pods */,
 				35DA16894A511A83DAFAB07E /* Frameworks */,
@@ -54,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				1751AB9C1E4D33AB00E2AE75 /* TTPChallenge.app */,
+				1751ABB51E4D3D9F00E2AE75 /* UnitTests.xctest */,
+				1751ABC31E4D3E4B00E2AE75 /* UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +112,24 @@
 				1751ABAB1E4D33AB00E2AE75 /* Info.plist */,
 			);
 			path = TTPChallenge;
+			sourceTree = "<group>";
+		};
+		1751ABB61E4D3D9F00E2AE75 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				1751ABB71E4D3D9F00E2AE75 /* UnitTests.swift */,
+				1751ABB91E4D3D9F00E2AE75 /* Info.plist */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		1751ABC41E4D3E4B00E2AE75 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				1751ABC51E4D3E4B00E2AE75 /* UITests.swift */,
+				1751ABC71E4D3E4B00E2AE75 /* Info.plist */,
+			);
+			path = UITests;
 			sourceTree = "<group>";
 		};
 		35DA16894A511A83DAFAB07E /* Frameworks */ = {
@@ -111,6 +172,42 @@
 			productReference = 1751AB9C1E4D33AB00E2AE75 /* TTPChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1751ABB41E4D3D9F00E2AE75 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1751ABBE1E4D3D9F00E2AE75 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				1751ABB11E4D3D9F00E2AE75 /* Sources */,
+				1751ABB21E4D3D9F00E2AE75 /* Frameworks */,
+				1751ABB31E4D3D9F00E2AE75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1751ABBB1E4D3D9F00E2AE75 /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = 1751ABB51E4D3D9F00E2AE75 /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1751ABC21E4D3E4B00E2AE75 /* UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1751ABCA1E4D3E4B00E2AE75 /* Build configuration list for PBXNativeTarget "UITests" */;
+			buildPhases = (
+				1751ABBF1E4D3E4B00E2AE75 /* Sources */,
+				1751ABC01E4D3E4B00E2AE75 /* Frameworks */,
+				1751ABC11E4D3E4B00E2AE75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1751ABC91E4D3E4B00E2AE75 /* PBXTargetDependency */,
+			);
+			name = UITests;
+			productName = UITests;
+			productReference = 1751ABC31E4D3E4B00E2AE75 /* UITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -124,6 +221,15 @@
 					1751AB9B1E4D33AB00E2AE75 = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
+					};
+					1751ABB41E4D3D9F00E2AE75 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					1751ABC21E4D3E4B00E2AE75 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1751AB9B1E4D33AB00E2AE75;
 					};
 				};
 			};
@@ -141,6 +247,8 @@
 			projectRoot = "";
 			targets = (
 				1751AB9B1E4D33AB00E2AE75 /* TTPChallenge */,
+				1751ABB41E4D3D9F00E2AE75 /* UnitTests */,
+				1751ABC21E4D3E4B00E2AE75 /* UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -153,6 +261,20 @@
 				1751ABAA1E4D33AB00E2AE75 /* LaunchScreen.storyboard in Resources */,
 				1751ABA71E4D33AB00E2AE75 /* Assets.xcassets in Resources */,
 				1751ABA51E4D33AB00E2AE75 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1751ABB31E4D3D9F00E2AE75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1751ABC11E4D3E4B00E2AE75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +338,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1751ABB11E4D3D9F00E2AE75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1751ABB81E4D3D9F00E2AE75 /* UnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1751ABBF1E4D3E4B00E2AE75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1751ABC61E4D3E4B00E2AE75 /* UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1751ABBB1E4D3D9F00E2AE75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1751AB9B1E4D33AB00E2AE75 /* TTPChallenge */;
+			targetProxy = 1751ABBA1E4D3D9F00E2AE75 /* PBXContainerItemProxy */;
+		};
+		1751ABC91E4D3E4B00E2AE75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1751AB9B1E4D33AB00E2AE75 /* TTPChallenge */;
+			targetProxy = 1751ABC81E4D3E4B00E2AE75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1751ABA31E4D33AB00E2AE75 /* Main.storyboard */ = {
@@ -357,6 +508,54 @@
 			};
 			name = Release;
 		};
+		1751ABBC1E4D3D9F00E2AE75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = comTeamMDC.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1751ABBD1E4D3D9F00E2AE75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = comTeamMDC.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1751ABCB1E4D3E4B00E2AE75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = comTeamMDC.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TTPChallenge.app/TTPChallenge";
+			};
+			name = Debug;
+		};
+		1751ABCC1E4D3E4B00E2AE75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = comTeamMDC.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TTPChallenge.app/TTPChallenge";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -374,6 +573,23 @@
 			buildConfigurations = (
 				1751ABAF1E4D33AB00E2AE75 /* Debug */,
 				1751ABB01E4D33AB00E2AE75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1751ABBE1E4D3D9F00E2AE75 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1751ABBC1E4D3D9F00E2AE75 /* Debug */,
+				1751ABBD1E4D3D9F00E2AE75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1751ABCA1E4D3E4B00E2AE75 /* Build configuration list for PBXNativeTarget "UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1751ABCB1E4D3E4B00E2AE75 /* Debug */,
+				1751ABCC1E4D3E4B00E2AE75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
