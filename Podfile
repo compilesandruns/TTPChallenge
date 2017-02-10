@@ -2,8 +2,20 @@
 platform :ios, '9.0'
 use_frameworks!
 
+def shared_testing_pods 
+  pod 'Nimble'
+end
+
 target 'TTPChallenge' do
   pod 'PromiseKit'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+end
+
+target 'UnitTests' do
+  shared_testing_pods
+end
+
+target 'UITests' do
+  shared_testing_pods
 end
