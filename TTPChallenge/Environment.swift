@@ -8,4 +8,8 @@
 
 struct Environment {
     
+    struct Firebase {
+        static let loginToList = "LoginToList"
+    }
+    
 }

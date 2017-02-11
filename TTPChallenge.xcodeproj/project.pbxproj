@@ -57,6 +57,7 @@
 		1751ABCD1E4D469D00E2AE75 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		1751ABCF1E4D512200E2AE75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17CFD0401E4F5EB40007ADEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		17CFD0481E4F69FF0007ADEC /* TTPChallenge-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTPChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTPChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D809B8C9CFEADB0D6C0EC8 /* Pods-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		1751AB931E4D33AB00E2AE75 = {
 			isa = PBXGroup;
 			children = (
+				17CFD0481E4F69FF0007ADEC /* TTPChallenge-Bridging-Header.h */,
 				1751AB9E1E4D33AB00E2AE75 /* TTPChallenge */,
 				1751ABB61E4D3D9F00E2AE75 /* UnitTests */,
 				1751ABC41E4D3E4B00E2AE75 /* UITests */,
@@ -639,6 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeamMDC.TTPChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TTPChallenge-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -652,6 +655,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeamMDC.TTPChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TTPChallenge-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
