@@ -73,14 +73,14 @@ extension SignInValidationInteractor: SignInValidationInteracting {
             errorMessage.append("email address")
         }
         if !isValidPassword(password: password) {
-            errorMessage.append("password")
+            errorMessage.append("password with a minimum of 8 characters at least 1 letter and 1 number")
         }
         
         if errorMessage.count > 1 {
             errorMessage[errorMessage.count - 1] = String(format: "and \(errorMessage.last!)")
         }
         if (errorMessage.count == 2) {
-            return String(format: "Please supply a valid \(errorMessage.joined(separator: " "))")
+            return String(format: "Please supply a valid \(errorMessage.joined(separator: " "))\nIf you do not have an account, please create one!")
         }
         if errorMessage.count > 0 {
             return "Please supply a valid \(errorMessage.joined(separator: ", "))"
