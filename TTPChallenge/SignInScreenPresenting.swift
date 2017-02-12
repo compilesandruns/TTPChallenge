@@ -9,10 +9,5 @@
 protocol SignInScreenPresenting: class {
     func didTapLogin()
     func didTapSignUp()
-    
-    func didBeginEditingEmail()
-    func didFinishEditingEmail()
-    func didBeginEditingPassword()
-    func didFinishEditingPassword()
 
 }

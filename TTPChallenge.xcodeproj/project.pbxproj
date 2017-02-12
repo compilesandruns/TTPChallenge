@@ -24,6 +24,7 @@
 		1751ABC61E4D3E4B00E2AE75 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751ABC51E4D3E4B00E2AE75 /* UITests.swift */; };
 		1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751ABCD1E4D469D00E2AE75 /* Environment.swift */; };
 		1751ABD01E4D512200E2AE75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1751ABCF1E4D512200E2AE75 /* GoogleService-Info.plist */; };
+		17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB263E1E5128740005D787 /* FirstResponderView.swift */; };
 		17CFD0411E4F5EB40007ADEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD0401E4F5EB40007ADEC /* Images.xcassets */; };
 		17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0491E4F6F900007ADEC /* SignInScreenPresenter.swift */; };
 		17CFD04C1E4F6F990007ADEC /* SignInScreenPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD04B1E4F6F990007ADEC /* SignInScreenPresenting.swift */; };
@@ -88,6 +89,7 @@
 		1751ABC71E4D3E4B00E2AE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1751ABCD1E4D469D00E2AE75 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		1751ABCF1E4D512200E2AE75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		17BB263E1E5128740005D787 /* FirstResponderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstResponderView.swift; sourceTree = "<group>"; };
 		17CFD0401E4F5EB40007ADEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		17CFD0481E4F69FF0007ADEC /* TTPChallenge-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTPChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		17CFD0491E4F6F900007ADEC /* SignInScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenPresenter.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */,
 				1749799F1E50E69B00B901DC /* BaseTableViewController.swift */,
 				174979A11E50ED1D00B901DC /* BaseNavigationController.swift */,
+				17BB263E1E5128740005D787 /* FirstResponderView.swift */,
 			);
 			name = "UI Helpers";
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				17CFD04E1E4F6FA10007ADEC /* SignInScreenViewable.swift in Sources */,
 				1749799E1E50DD2800B901DC /* CreateUserScreenViewable.swift in Sources */,
 				17CFD05B1E4F7B9F0007ADEC /* FirebaseInteracting.swift in Sources */,
+				17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */,
 				17CFD0661E5015ED0007ADEC /* CridentialsValidationInteracting.swift in Sources */,
 				174979A21E50ED1D00B901DC /* BaseNavigationController.swift in Sources */,
 				17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */,

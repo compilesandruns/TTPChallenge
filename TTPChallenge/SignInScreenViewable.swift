@@ -10,8 +10,6 @@ protocol SignInScreenViewable: class, AlertViewable {
     var email: String { set get }
     var password: String { set get }
     
-    func tintEmailFieldRed()
-    func tintEmailFieldDefault()
-    func tintPasswordFieldRed()
-    func tintPasswordFieldDefault()
+    func openSignUpScreen()
+
 }

@@ -57,7 +57,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signupTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aau-NC-aLu"/>
-                                    <segue destination="KgF-7a-EpM" kind="presentation" id="cAu-gy-qCB"/>
+                                    <segue destination="KgF-7a-EpM" kind="presentation" identifier="SignUpSegue" id="cAu-gy-qCB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuW-Nt-4LR">
@@ -174,6 +174,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48B-vU-SLs">
                                 <rect key="frame" x="40" y="232" width="240" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

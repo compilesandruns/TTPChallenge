@@ -41,18 +41,6 @@ class SignInScreenPresenter: SignInScreenPresenting {
     }
     
     func didTapSignUp() {
-    }
-    
-    func didBeginEditingEmail() {
-        
-    }
-    func didFinishEditingEmail() {
-        
-    }
-    func didBeginEditingPassword() {
-        
-    }
-    func didFinishEditingPassword() {
-        
+        view.openSignUpScreen()
     }
 }
