@@ -6,7 +6,7 @@
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
-protocol SignInScreenViewable: class {
+protocol SignInScreenViewable: class, AlertViewable {
     var email: String { set get }
     var password: String { set get }
     

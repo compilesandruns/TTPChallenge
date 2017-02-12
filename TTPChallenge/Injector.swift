@@ -6,24 +6,21 @@
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
-class Injector {
+class Injector: BaseInjector {
     private static var injector: Injector!
-
-    var firebaseInteractor: FirebaseInteracting!
-    var signInInteractor: SignInInteracting!
-    var signInValidationInteractor: SignInValidationInteracting!
     
-    static var currentInjector: Injector {
+    static var currentInjector: BaseInjector {
         return injector
     }
-
-    init() {
-        firebaseInteractor = FirebaseInteractor()
-        signInInteractor = SignInInteractor(firebaseInteractor:firebaseInteractor, signInValidationInteractor: signInValidationInteractor)
-        signInValidationInteractor = SignInValidationInteractor()
-    }
     
-    func signInScreenPresenter(view: SignInScreenViewable) -> SignInScreenPresenter {
-        return signInScreenPresenter(view: view)
+    static func setInjector(injector: Injector) {
+        self.injector = injector
+    }
+
+    override init() {
+        super.init()
+        firebaseInteractor = FirebaseInteractor()
+        signInValidationInteractor = SignInValidationInteractor()
+        signInInteractor = SignInInteractor(firebaseInteractor:firebaseInteractor, signInValidationInteractor: signInValidationInteractor)
     }
 }

@@ -6,6 +6,9 @@
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
+import PromiseKit
+import FirebaseAuth
+
 class SignInScreenPresenter: SignInScreenPresenting {
     unowned let view: SignInScreenViewable
     
@@ -16,12 +19,13 @@ class SignInScreenPresenter: SignInScreenPresenting {
         self.signInInteractor = signInInteractor
     }
     
+    //TODO: add error handling
     func didTapLogin() {
-        let errorMessage = signInInteractor.signIn(email: view.email, password: view.password)
-        if !errorMessage.isEmpty {
-            
+        signInInteractor.signIn(email: view.email, password: view.password).then{ errorMessage -> Void in
+            if !errorMessage.isEmpty {
+                self.view.showAlert(message: errorMessage, title: "Whoops!")
+            }
         }
-        
     }
     
     func didTapSignUp() {

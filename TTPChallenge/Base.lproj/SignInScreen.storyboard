@@ -13,7 +13,7 @@
         <!--Sign In Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInScreenViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInScreenViewController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -176,14 +176,6 @@
             </objects>
             <point key="canvasLocation" x="2844" y="-94"/>
         </scene>
-        <!--SignInScreen-->
-        <scene sceneID="Syv-HS-ZOG">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SignInScreen" id="toM-Ar-fQc" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9o1-df-EGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2844" y="552"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="uhb-ae-dUM">
             <objects>
@@ -193,9 +185,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="toM-Ar-fQc" kind="show" id="n12-tq-rm4"/>
-                    </connections>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="1948" y="552"/>

@@ -8,9 +8,11 @@
 
 import UIKit
 
-class SignInScreenViewController: UIViewController {
+class SignInScreenViewController: BaseViewController {
     
     var presenter: SignInScreenPresenting!
+    
+    var signInInteractor: SignInInteracting!
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -19,6 +21,7 @@ class SignInScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter = Injector.currentInjector.signInScreenPresenter(view: self)
     }
 
