@@ -12,4 +12,10 @@ struct Environment {
         static let loginToList = "LoginToList"
     }
     
+    struct SignInValidation {
+        static let namePattern = "^[\\w][\\w\\s.-]*$"
+        static let emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]+$"
+        static let passwordPattern = "^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z[0-9]]{8,}$"
+    }
+    
 }
