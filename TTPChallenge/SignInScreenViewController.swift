@@ -11,9 +11,7 @@ import UIKit
 class SignInScreenViewController: BaseViewController {
     
     var presenter: SignInScreenPresenting!
-    
-    var signInInteractor: SignInInteracting!
-    
+        
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
 

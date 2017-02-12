@@ -20,7 +20,8 @@ class Injector: BaseInjector {
     override init() {
         super.init()
         firebaseInteractor = FirebaseInteractor()
-        signInValidationInteractor = SignInValidationInteractor()
-        signInInteractor = SignInInteractor(firebaseInteractor:firebaseInteractor, signInValidationInteractor: signInValidationInteractor)
+        cridentialsValidationInteractor = CridentialsValidationInteractor()
+        createUserInteractor = CreateUserInteractor(firebaseInteractor:firebaseInteractor, cridentialsValidationInteractor: cridentialsValidationInteractor)
+        signInInteractor = SignInInteractor(firebaseInteractor:firebaseInteractor, cridentialsValidationInteractor: cridentialsValidationInteractor)
     }
 }

@@ -39,7 +39,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="d83-sy-CzG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,6 +57,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signupTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aau-NC-aLu"/>
+                                    <segue destination="KgF-7a-EpM" kind="presentation" id="cAu-gy-qCB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuW-Nt-4LR">
@@ -65,7 +66,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="DWE-iB-jej"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,7 +134,6 @@
                     <connections>
                         <outlet property="emailField" destination="XSe-I4-hTf" id="x2C-EU-9bo"/>
                         <outlet property="passwordField" destination="Lq0-7N-Y3l" id="qP4-JG-zvu"/>
-                        <segue destination="KgF-7a-EpM" kind="presentation" id="3EZ-XF-oat"/>
                         <segue destination="DCj-Oq-0IT" kind="show" id="GD6-Kp-tcn"/>
                     </connections>
                 </viewController>
@@ -141,51 +141,123 @@
             </objects>
             <point key="canvasLocation" x="1029.375" y="111.97183098591549"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="raP-jy-uLn">
             <objects>
-                <navigationController id="KgF-7a-EpM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WAM-fe-1Qm">
+                <navigationController id="KgF-7a-EpM" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="WAM-fe-1Qm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="UPB-jZ-I3c" kind="relationship" relationship="rootViewController" id="OPc-ov-xoK"/>
+                        <segue destination="SEU-wi-XGz" kind="relationship" relationship="rootViewController" id="PeR-7c-npV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDS-do-mjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1967" y="-94"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="y2i-G0-YUU">
+        <!--Create An Account-->
+        <scene sceneID="Inv-CQ-P8l">
             <objects>
-                <viewController id="UPB-jZ-I3c" sceneMemberID="viewController">
+                <viewController id="SEU-wi-XGz" customClass="CreateUserScreenViewController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ivX-be-2ND"/>
-                        <viewControllerLayoutGuide type="bottom" id="M0r-fC-vUn"/>
+                        <viewControllerLayoutGuide type="top" id="kWe-nL-34R"/>
+                        <viewControllerLayoutGuide type="bottom" id="b5e-56-qSb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eco-h4-CzW">
+                    <view key="view" contentMode="scaleToFill" id="cQd-1A-Nos">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48B-vU-SLs">
+                                <rect key="frame" x="40" y="232" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlM-LH-32Z">
+                                <rect key="frame" x="40" y="352" width="240" height="38"/>
+                                <color key="backgroundColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="7fH-Ft-zWw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getStartedButtonTapped:" destination="SEU-wi-XGz" eventType="touchUpInside" id="i9h-gj-vRX"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sse-0F-Mul">
+                                <rect key="frame" x="40" y="282" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttpLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KIQ-kw-uQf">
+                                <rect key="frame" x="88" y="84" width="144" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KIQ-kw-uQf" secondAttribute="height" multiplier="175:97" id="MWr-9d-GLb"/>
+                                    <constraint firstAttribute="height" constant="80" id="c2i-vb-bmm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please create an account to access Tech Talent Pipeline resources." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBv-pb-bpY">
+                                <rect key="frame" x="40" y="179" width="240" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.59607843140000005" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WlM-LH-32Z" firstAttribute="top" secondItem="sse-0F-Mul" secondAttribute="bottom" constant="40" id="41B-Fh-G6V"/>
+                            <constraint firstItem="sse-0F-Mul" firstAttribute="leading" secondItem="48B-vU-SLs" secondAttribute="leading" id="4BD-56-PSO"/>
+                            <constraint firstItem="48B-vU-SLs" firstAttribute="leading" secondItem="cQd-1A-Nos" secondAttribute="leading" constant="40" id="7KD-EQ-dSa"/>
+                            <constraint firstItem="sse-0F-Mul" firstAttribute="top" secondItem="48B-vU-SLs" secondAttribute="bottom" constant="20" id="Bv7-ai-LAs"/>
+                            <constraint firstItem="sse-0F-Mul" firstAttribute="trailing" secondItem="48B-vU-SLs" secondAttribute="trailing" id="IMr-zI-qK9"/>
+                            <constraint firstAttribute="trailing" secondItem="XBv-pb-bpY" secondAttribute="trailing" constant="40" id="O1c-rj-9IB"/>
+                            <constraint firstAttribute="trailing" secondItem="48B-vU-SLs" secondAttribute="trailing" constant="40" id="VvK-rB-b0H"/>
+                            <constraint firstItem="XBv-pb-bpY" firstAttribute="leading" secondItem="cQd-1A-Nos" secondAttribute="leading" constant="40" id="Wzo-UI-VUV"/>
+                            <constraint firstItem="KIQ-kw-uQf" firstAttribute="width" secondItem="KIQ-kw-uQf" secondAttribute="height" multiplier="175:97" id="YIW-Vo-cAy"/>
+                            <constraint firstItem="KIQ-kw-uQf" firstAttribute="top" secondItem="kWe-nL-34R" secondAttribute="bottom" constant="20" id="bhg-Al-Cst"/>
+                            <constraint firstItem="KIQ-kw-uQf" firstAttribute="centerX" secondItem="cQd-1A-Nos" secondAttribute="centerX" id="brY-z9-WdJ"/>
+                            <constraint firstAttribute="trailing" secondItem="WlM-LH-32Z" secondAttribute="trailing" constant="40" id="cab-oS-eMt"/>
+                            <constraint firstItem="WlM-LH-32Z" firstAttribute="leading" secondItem="cQd-1A-Nos" secondAttribute="leading" constant="40" id="mbY-q5-HnW"/>
+                            <constraint firstItem="48B-vU-SLs" firstAttribute="top" secondItem="XBv-pb-bpY" secondAttribute="bottom" constant="20" id="v3e-w5-6un"/>
+                            <constraint firstItem="XBv-pb-bpY" firstAttribute="top" secondItem="KIQ-kw-uQf" secondAttribute="bottom" constant="15" id="zC6-Kp-Xuk"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qYr-lk-ZUI"/>
+                    <navigationItem key="navigationItem" title="Create An Account" id="nvC-Mr-aAY">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="BJn-lI-Q3D">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="SEU-wi-XGz" id="evE-RT-amf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailField" destination="48B-vU-SLs" id="90U-eV-gth"/>
+                        <outlet property="passwordField" destination="sse-0F-Mul" id="qOD-DY-mEY"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YRT-mZ-kqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dAK-Vq-Emj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2844" y="-94"/>
+            <point key="canvasLocation" x="2718.75" y="-94.014084507042256"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="uhb-ae-dUM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T9s-S6-BIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="DCj-Oq-0IT" sceneMemberID="viewController">
+                <navigationController id="DCj-Oq-0IT" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FXT-4t-unx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T9s-S6-BIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1948" y="552"/>
         </scene>
@@ -199,6 +271,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ttpLogo" width="441" height="236"/>
+        <image name="close" width="13" height="13"/>
+        <image name="ttpLogo" width="220" height="118"/>
     </resources>
 </document>

@@ -14,9 +14,14 @@ class BaseInjector {
     //Interactors
     var firebaseInteractor: FirebaseInteracting! = nil
     var signInInteractor: SignInInteracting! = nil
-    var signInValidationInteractor: SignInValidationInteracting! = nil
+    var cridentialsValidationInteractor: CridentialsValidationInteracting! = nil
+    var createUserInteractor: CreateUserInteracting! = nil
     
     func signInScreenPresenter(view: SignInScreenViewable) -> SignInScreenPresenter {
         return SignInScreenPresenter(view: view, signInInteractor: signInInteractor)
+    }
+    
+    func createUserScreenPresenter(view: CreateUserScreenViewable) -> CreateUserScreenPresenter {
+        return CreateUserScreenPresenter(view: view, createUserInteractor: createUserInteractor )
     }
 }
