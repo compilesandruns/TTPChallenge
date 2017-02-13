@@ -15,8 +15,13 @@ class SignInScreenViewController: BaseViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,9 +97,7 @@ extension SignInScreenViewController {
             return
         }
         
-        guard let keyboardHeigh = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.height else {
-            return
-        }
+        let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.height
         
         let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0.25
         let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
@@ -105,7 +108,7 @@ extension SignInScreenViewController {
             return
         }
         
-        let firstResponderOrigin = contentView.convertPoint(focusView.bounds.origin, fromView: focusView)
+        let firstResponderOrigin = contentView.convert(focusView.bounds.origin, from: focusView)
         let firstResponderBottom = firstResponderOrigin.y + focusView.frame.height
         
         var finalViewHeight = scrollView.frame.height
@@ -122,9 +125,9 @@ extension SignInScreenViewController {
         
         scrollViewBottomConstraint.constant = -(keyboardHeight ?? 0)
         
-        UIView.animateWithDuration(animationDuration, delay: 0, options: animationCurve, animations: {
+        UIView.animate(withDuration: animationDuration, delay: 0, options: animationCurve, animations: {
             self.view.layoutIfNeeded()
-            self.scrollView.setContentOffset(CGPointMake(0, offset), animated: false)
+            self.scrollView.setContentOffset(CGPoint(x: 0, y: offset), animated: false)
         }, completion: nil)
     }
     
@@ -132,14 +135,14 @@ extension SignInScreenViewController {
         guard let userInfo = notification.userInfo else {
             return
         }
-        let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSTimeInterval ?? 0.25
+        let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0.25
         let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-        let animationCurveRaw = animationCurveRawNSN?.unsignedIntegerValue ?? UIViewAnimationOptions.CurveEaseOut.rawValue
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseOut.rawValue
         let animationCurve = UIViewAnimationOptions(rawValue: animationCurveRaw)
         
         scrollViewBottomConstraint.constant = 0
         
-        UIView.animateWithDuration(animationDuration, delay: 0, options: animationCurve, animations: {
+        UIView.animate(withDuration: animationDuration, delay: 0, options: animationCurve, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }

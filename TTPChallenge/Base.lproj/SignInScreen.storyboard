@@ -51,10 +51,6 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                                <connections>
-                                                    <action selector="emailEditingBegun:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="HXs-FN-Q2V"/>
-                                                    <action selector="emailEditingEnded:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Ghd-ym-M8E"/>
-                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lq0-7N-Y3l">
                                                 <rect key="frame" x="40" y="250" width="240" height="30"/>
@@ -63,10 +59,6 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                <connections>
-                                                    <action selector="passwordEditingBegun:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="gse-aC-cd5"/>
-                                                    <action selector="passwordEditingEnded:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ZiY-0I-dKc"/>
-                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuW-Nt-4LR">
                                                 <rect key="frame" x="30" y="320" width="260" height="38"/>
@@ -152,13 +144,16 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uqT-6X-CFV" secondAttribute="bottom" id="L1z-ld-f0G"/>
                             <constraint firstItem="uqT-6X-CFV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PMB-R7-pwJ"/>
                             <constraint firstItem="uqT-6X-CFV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mJ0-Za-lCX"/>
-                            <constraint firstAttribute="trailing" secondItem="uqT-6X-CFV" secondAttribute="trailing" id="peD-rb-KH8"/>
+                            <constraint firstItem="uqT-6X-CFV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="peD-rb-KH8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zHU-Cw-1Ib"/>
                     <connections>
+                        <outlet property="contentView" destination="qA3-en-BhY" id="6BS-Ju-GLp"/>
                         <outlet property="emailField" destination="XSe-I4-hTf" id="x2C-EU-9bo"/>
                         <outlet property="passwordField" destination="Lq0-7N-Y3l" id="qP4-JG-zvu"/>
+                        <outlet property="scrollView" destination="uqT-6X-CFV" id="NAY-XB-b9D"/>
+                        <outlet property="scrollViewBottomConstraint" destination="L1z-ld-f0G" id="6dR-Yg-Fgx"/>
                         <segue destination="DCj-Oq-0IT" kind="show" id="GD6-Kp-tcn"/>
                     </connections>
                 </viewController>
@@ -290,8 +285,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contentView" destination="02o-RK-DTV" id="ToX-Hd-hTJ"/>
                         <outlet property="emailField" destination="48B-vU-SLs" id="90U-eV-gth"/>
                         <outlet property="passwordField" destination="sse-0F-Mul" id="qOD-DY-mEY"/>
+                        <outlet property="scrollView" destination="uo1-Fa-sD1" id="elF-Wa-GiH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAK-Vq-Emj" userLabel="First Responder" sceneMemberID="firstResponder"/>
