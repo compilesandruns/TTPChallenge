@@ -21,6 +21,11 @@ class CreateUserScreenPresenter: CreateUserScreenPresenting {
         view.dismissView()
     }
     
+    func didTapBackground() {
+        view.dismissKeyboard()
+    }
+    
+    
     func didTapGetStartedButton() {
         createUserInteractor.createUser(email: view.email, password: view.password).then{ errorMessage -> Void in
             if !errorMessage.isEmpty {

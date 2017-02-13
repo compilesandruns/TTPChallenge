@@ -11,4 +11,5 @@ protocol CreateUserScreenViewable: class, AlertViewable {
     var password: String { set get }
     
     func dismissView()
+    func dismissKeyboard()
 }

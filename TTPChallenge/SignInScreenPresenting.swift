@@ -9,5 +9,5 @@
 protocol SignInScreenPresenting: class {
     func didTapLogin()
     func didTapSignUp()
-
+    func didTapBackground()
 }

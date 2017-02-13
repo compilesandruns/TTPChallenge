@@ -17,6 +17,7 @@ class SignInScreenViewController: BaseViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
+
     
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
 
@@ -50,6 +51,11 @@ class SignInScreenViewController: BaseViewController {
     @IBAction func signupTapped(_ sender: Any) {
         presenter.didTapSignUp()
     }
+    
+    @IBAction func bacgroundTapGestureRecognizer(_ sender: Any) {
+        presenter.didTapBackground()
+    }
+    
 
 }
 extension SignInScreenViewController : SignInScreenViewable {
@@ -75,7 +81,9 @@ extension SignInScreenViewController : SignInScreenViewable {
     func openSignUpScreen() {
         performSegue(withIdentifier: "SignUpSegue", sender: nil)
     }
-    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 //MARK NotificationCenter

@@ -35,7 +35,7 @@
                                                     <constraint firstAttribute="width" secondItem="dBL-Ad-qOL" secondAttribute="height" multiplier="175:97" id="xmk-ve-l1w"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-gX-f3S">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-gX-f3S">
                                                 <rect key="frame" x="30" y="100" width="260" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="DUb-ih-hIG"/>
@@ -140,12 +140,16 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.59607843137254901" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uqT-6X-CFV" secondAttribute="bottom" id="L1z-ld-f0G"/>
                             <constraint firstItem="uqT-6X-CFV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PMB-R7-pwJ"/>
                             <constraint firstItem="uqT-6X-CFV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mJ0-Za-lCX"/>
                             <constraint firstItem="uqT-6X-CFV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="peD-rb-KH8"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="N5G-kW-Kz3" appends="YES" id="6yf-fq-beN"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="zHU-Cw-1Ib"/>
                     <connections>
@@ -158,6 +162,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="N5G-kW-Kz3">
+                    <connections>
+                        <action selector="bacgroundTapGestureRecognizer:" destination="BYZ-38-t0r" id="3rb-g5-6GT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1029.375" y="111.97183098591549"/>
         </scene>
@@ -271,7 +280,7 @@
                         <color key="backgroundColor" red="0.0" green="0.59607843140000005" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uo1-Fa-sD1" firstAttribute="top" secondItem="kWe-nL-34R" secondAttribute="bottom" id="CCO-zD-4DJ"/>
-                            <constraint firstItem="b5e-56-qSb" firstAttribute="top" secondItem="uo1-Fa-sD1" secondAttribute="bottom" id="Ksa-bw-mJZ"/>
+                            <constraint firstItem="uo1-Fa-sD1" firstAttribute="bottom" secondItem="b5e-56-qSb" secondAttribute="top" id="Ksa-bw-mJZ"/>
                             <constraint firstItem="uo1-Fa-sD1" firstAttribute="trailing" secondItem="cQd-1A-Nos" secondAttribute="trailing" id="kqJ-DU-UVv"/>
                             <constraint firstItem="uo1-Fa-sD1" firstAttribute="leading" secondItem="cQd-1A-Nos" secondAttribute="leading" id="xGA-Nc-bjN"/>
                         </constraints>
@@ -289,6 +298,7 @@
                         <outlet property="emailField" destination="48B-vU-SLs" id="90U-eV-gth"/>
                         <outlet property="passwordField" destination="sse-0F-Mul" id="qOD-DY-mEY"/>
                         <outlet property="scrollView" destination="uo1-Fa-sD1" id="elF-Wa-GiH"/>
+                        <outlet property="scrollViewBottomConstraint" destination="Ksa-bw-mJZ" id="c0M-JW-zA3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAK-Vq-Emj" userLabel="First Responder" sceneMemberID="firstResponder"/>

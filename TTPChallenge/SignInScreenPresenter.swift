@@ -40,6 +40,10 @@ class SignInScreenPresenter: SignInScreenPresenting {
 
     }
     
+    func didTapBackground() {
+        view.dismissKeyboard()
+    }
+    
     func didTapSignUp() {
         view.openSignUpScreen()
     }
