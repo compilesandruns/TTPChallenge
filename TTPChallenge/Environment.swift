@@ -8,6 +8,15 @@
 
 struct Environment {
     
+    struct Colors {
+        //In order from lightest to darkest
+        static let primaryBlue = UIColor(red: 0/255, green: 152/255, blue: 238/255, alpha: 1)
+        static let secondaryBlue = UIColor(red: 0/255, green: 105/255, blue: 167/255, alpha: 1)
+        static let tertiaryBlue = UIColor(red: 0/255, green: 82/255, blue: 130/255, alpha: 1)
+        static let primaryBlack = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        
+    }
+    
     struct Firebase {
         static let loginToList = "LoginToList"
     }

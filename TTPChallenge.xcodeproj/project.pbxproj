@@ -40,6 +40,8 @@
 		17BB265A1E5175FE0005D787 /* MoreInformationButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB26591E5175FE0005D787 /* MoreInformationButtonType.swift */; };
 		17BB265C1E51769A0005D787 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB265B1E51769A0005D787 /* AuthInteractor.swift */; };
 		17BB265E1E5176A30005D787 /* AuthInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB265D1E5176A30005D787 /* AuthInteracting.swift */; };
+		17BB26601E51795A0005D787 /* MenuViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB265F1E51795A0005D787 /* MenuViewable.swift */; };
+		17BB26621E517A5F0005D787 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BB26611E517A5F0005D787 /* MenuViewController.storyboard */; };
 		17CFD0411E4F5EB40007ADEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD0401E4F5EB40007ADEC /* Images.xcassets */; };
 		17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0491E4F6F900007ADEC /* SignInScreenPresenter.swift */; };
 		17CFD04C1E4F6F990007ADEC /* SignInScreenPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD04B1E4F6F990007ADEC /* SignInScreenPresenting.swift */; };
@@ -120,6 +122,8 @@
 		17BB26591E5175FE0005D787 /* MoreInformationButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInformationButtonType.swift; sourceTree = "<group>"; };
 		17BB265B1E51769A0005D787 /* AuthInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		17BB265D1E5176A30005D787 /* AuthInteracting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthInteracting.swift; sourceTree = "<group>"; };
+		17BB265F1E51795A0005D787 /* MenuViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewable.swift; sourceTree = "<group>"; };
+		17BB26611E517A5F0005D787 /* MenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		17CFD0401E4F5EB40007ADEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		17CFD0481E4F69FF0007ADEC /* TTPChallenge-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTPChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		17CFD0491E4F6F900007ADEC /* SignInScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenPresenter.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				1751ABD11E4D513600E2AE75 /* Screens */,
 				1751ABD21E4D514500E2AE75 /* Environment */,
 				1751ABA31E4D33AB00E2AE75 /* SignInScreen.storyboard */,
+				17BB26611E517A5F0005D787 /* MenuViewController.storyboard */,
 				17CFD04F1E4F73110007ADEC /* HomeScreen.storyboard */,
 				1751ABA81E4D33AB00E2AE75 /* LaunchScreen.storyboard */,
 				1751ABAB1E4D33AB00E2AE75 /* Info.plist */,
@@ -264,6 +269,7 @@
 				17BB264D1E516EA20005D787 /* MenuPresenter.swift */,
 				17BB264F1E516EAD0005D787 /* MenuPresenting.swift */,
 				17BB26531E5171BD0005D787 /* MenuViewController.swift */,
+				17BB265F1E51795A0005D787 /* MenuViewable.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17CFD0411E4F5EB40007ADEC /* Images.xcassets in Resources */,
+				17BB26621E517A5F0005D787 /* MenuViewController.storyboard in Resources */,
 				1751ABAA1E4D33AB00E2AE75 /* LaunchScreen.storyboard in Resources */,
 				1751ABD01E4D512200E2AE75 /* GoogleService-Info.plist in Resources */,
 				17CFD0501E4F73110007ADEC /* HomeScreen.storyboard in Resources */,
@@ -672,6 +679,7 @@
 				174979AA1E5102E700B901DC /* CreateUserInteracting.swift in Sources */,
 				17CFD0681E5015F90007ADEC /* CridentialsValidationInteractor.swift in Sources */,
 				1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */,
+				17BB26601E51795A0005D787 /* MenuViewable.swift in Sources */,
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
 				17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */,
 				17BB265E1E5176A30005D787 /* AuthInteracting.swift in Sources */,

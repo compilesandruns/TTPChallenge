@@ -23,7 +23,6 @@ class MenuViewController: BaseViewController {
     @IBOutlet weak var logoutLabel: UILabel!
     
     var sectionNames = [String]()
-    var menuViewMemberships = [String : [MenuViewMembership]]()
     var moreInformationButtons = [MoreInformationButton]()
     
     override func viewDidLoad() {
@@ -37,25 +36,25 @@ class MenuViewController: BaseViewController {
         self.tableView.dataSource = self
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         presenter.viewWillAppear()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         presenter.viewDidAppear()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         presenter.viewWillDisappear()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         presenter.viewDidDisappear()
@@ -225,14 +224,13 @@ extension MenuViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let menuCell = tableView.dequeueReusableCellWithIdentifier("MenuCell") as? MenuTableViewCell else {
+        guard let menuCell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as? MenuTableViewCell else {
             return UITableViewCell()
         }
         
         guard indexPath.section < sectionNames.count - 1 else {
             
             menuCell.buttonLabel.text = moreInformationButtons[indexPath.row].name
-            menuCell.alertIcon.hidden = true
             
             return menuCell
         }
