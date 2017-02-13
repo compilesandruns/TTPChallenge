@@ -12,6 +12,6 @@ protocol MenuPresenting {
     func viewWillDisappear()
     func viewDidDisappear()
     
-    
-    func logoutButtonTapped()
+    func didTapMoreInformationButton(button: MoreInformationButton)
+    func didTapLogoutButton()
 }

@@ -58,7 +58,7 @@ class MenuViewController: BaseViewController {
     }
     
     @IBAction func didTapLogoutButton(sender: AnyObject?) {
-        presenter.logoutButtonTapped()
+        presenter.didTapLogoutButton()
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)?) {
@@ -137,23 +137,14 @@ extension MenuViewController {
 
 //MARK: Table View
 extension MenuViewController: UITableViewDelegate {
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let sectionCell = tableView.dequeueReusableCellWithIdentifier("MenuSectionHeader") as? MenuSectionHeaderViewCell else {
-            return UIView()
-        }
-        sectionCell.sectionLabel.text = sectionNames[section]
-        
-        return sectionCell.contentView
-    }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    private func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 57
     }
     
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         guard indexPath.section < sectionNames.count - 1 else {
-            presenter.didTapMoreInformationButton(moreInformationButtons[indexPath.row])
+            presenter.didTapMoreInformationButton(button: moreInformationButtons[indexPath.row])
             
             return
         }
