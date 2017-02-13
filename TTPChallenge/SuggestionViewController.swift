@@ -17,6 +17,11 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         suggestionTableView.delegate = self
         suggestionTableView.dataSource = self
+        
+        MeetUpAPIClient.getMeetupSuggestions(query: "tech") {
+            //nothing yet
+            
+        }
 
     }
 
@@ -40,7 +45,6 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return ""
     }
-   
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
