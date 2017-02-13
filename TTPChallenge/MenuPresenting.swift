@@ -12,4 +12,6 @@ protocol MenuPresenting {
     func viewWillDisappear()
     func viewDidDisappear()
     
+    
+    func logoutButtonTapped()
 }

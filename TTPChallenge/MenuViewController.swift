@@ -15,12 +15,7 @@ class MenuViewController: BaseViewController {
     weak var menuDelegate: MenuDelegate?
     var interactiveTransition: SlideMenuInteractiveTransition? = nil
     
-    @IBOutlet var headerView: UIView!
-    @IBOutlet var footerView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var headerName: UILabel!
-    @IBOutlet weak var headerUsername: UILabel!
-    @IBOutlet weak var logoutLabel: UILabel!
     
     var sectionNames = [String]()
     var moreInformationButtons = [MoreInformationButton]()
@@ -30,8 +25,6 @@ class MenuViewController: BaseViewController {
         
         presenter = Injector.currentInjector.menuPresenter(view: self, menuDelegate: menuDelegate!)
         
-        self.tableView.tableHeaderView = headerView
-        self.tableView.tableFooterView = footerView
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
@@ -68,21 +61,21 @@ class MenuViewController: BaseViewController {
         presenter.logoutButtonTapped()
     }
     
-    override func dismissViewControllerAnimated(flag: Bool, completion: (() -> Void)?) {
+    override func dismiss(animated flag: Bool, completion: (() -> Void)?) {
         guard !flag else {
-            super.dismissViewControllerAnimated(flag, completion: completion)
+            super.dismiss(animated: flag, completion: completion)
             return
         }
         
         let presentingController = self.presentingViewController!
         
-        super.dismissViewControllerAnimated(flag, completion: nil)
+        super.dismiss(animated: flag, completion: nil)
         
-        presentingController.view.frame = CGRect(origin: CGPoint.zero, size: UIScreen.mainScreen().bounds.size)
-        presentingController.view.userInteractionEnabled = true
+        presentingController.view.frame = CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size)
+        presentingController.view.isUserInteractionEnabled = true
         presentingController.view.layer.shadowOpacity = 0.0
         
-        if let window = UIApplication.sharedApplication().keyWindow {
+        if let window = UIApplication.shared.keyWindow {
             if let vc = window.rootViewController {
                 window.addSubview(vc.view)
             }
@@ -94,17 +87,6 @@ class MenuViewController: BaseViewController {
 
 extension MenuViewController: MenuViewable {
     
-    func setName(name: String) {
-        headerName.text = name
-    }
-    
-    func setMemberships(orderedKeys: [String], menuViewMemberships: [String : [MenuViewMembership]]) {
-        sectionNames = orderedKeys
-        self.menuViewMemberships = menuViewMemberships
-        
-        tableView.reloadData()
-    }
-    
     func setMoreInformationButtons(buttons: [MoreInformationButton]) {
         sectionNames.append("More Information")
         moreInformationButtons = buttons
@@ -113,9 +95,9 @@ extension MenuViewController: MenuViewable {
     }
     
     func closeMenuForModal() -> Promise<Void> {
-        let (promise, fulfill, _) = Promise<Void>.pendingPromise()
+        let (promise, fulfill, _) = Promise<Void>.pending()
         
-        dismissViewControllerAnimated(false) {
+        dismiss(animated: false) {
             fulfill()
         }
         
@@ -123,55 +105,29 @@ extension MenuViewController: MenuViewable {
     }
     
     func closeMenu() -> Promise<Void> {
-        let (promise, fulfill, _) = Promise<Void>.pendingPromise()
+        let (promise, fulfill, _) = Promise<Void>.pending()
         
-        dismissViewControllerAnimated(true) {
+        dismiss(animated: true) {
             fulfill()
         }
         
         return promise
     }
     
-    func setLogoutButtonTitle(title: String) {
-        logoutLabel.text = title
-    }
-    
     func showLoginFlow() {
-        self.performSegueWithIdentifier("showLoginFlow", sender: self)
-    }
-    
-    func setSelectedMembershipNumber(mNumber: UInt64) {
-        var foundIndexPath: NSIndexPath?
-        
-        outerLoop: for (sectionIndex, sectionName) in sectionNames.enumerate() {
-            for (rowIndex, membership) in menuViewMemberships[sectionName]!.enumerate() {
-                if mNumber == membership.membershipNumber {
-                    foundIndexPath = NSIndexPath(forRow: rowIndex, inSection: sectionIndex)
-                    break outerLoop
-                }
-            }
-        }
-        
-        guard let indexPath = foundIndexPath else {
-            if let selectedPath = tableView.indexPathForSelectedRow {
-                self.tableView.deselectRowAtIndexPath(selectedPath, animated: true)
-            }
-            return
-        }
-        
-        self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.None)
+        self.performSegue(withIdentifier: "showLoginFlow", sender: self)
     }
 }
 
 //MARK: - Slide Menu
 extension MenuViewController {
     @IBAction func panGesture(sender: UIPanGestureRecognizer) {
-        let translation = sender.translationInView(view)
+        let translation = sender.translation(in: view)
         
-        let progress = MenuHelper.calculateProgress(translation, viewBounds: view.bounds, direction: .Left)
+        let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Left)
         
         MenuHelper.mapGestureStateToInteractor(
-            sender.state,
+            gestureState: sender.state,
             progress: progress,
             interactiveTransition: interactiveTransition) {
                 self.closeMenu()
@@ -202,7 +158,7 @@ extension MenuViewController: UITableViewDelegate {
             return
         }
         
-        guard let memberships = menuViewMemberships[sectionNames[indexPath.section]] where memberships.count > indexPath.row else {
+        guard let memberships = menuViewMemberships[sectionNames[indexPath.section]], memberships.count > indexPath.row else {
             return
         }
         
@@ -235,7 +191,7 @@ extension MenuViewController: UITableViewDataSource {
             return menuCell
         }
         
-        guard let memberships = menuViewMemberships[sectionNames[indexPath.section]] where memberships.count > indexPath.row else {
+        guard let memberships = menuViewMemberships[sectionNames[indexPath.section]], memberships.count > indexPath.row else {
             
             return UITableViewCell()
         }
