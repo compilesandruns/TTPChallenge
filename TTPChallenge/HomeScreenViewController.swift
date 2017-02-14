@@ -39,7 +39,7 @@ extension HomeScreenViewController {
 }
 
 
-extension PlanScreenViewController {
+extension HomeScreenViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destinationViewController = segue.destinationViewController as? MenuViewController {
             destinationViewController.transitioningDelegate = self
@@ -61,7 +61,7 @@ extension PlanScreenViewController {
 }
 
 //MARK: Slide Transitions
-extension PlanScreenViewController: UIViewControllerTransitioningDelegate {
+extension HomeScreenViewController: UIViewControllerTransitioningDelegate {
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PresentMenuAnimator()
     }
