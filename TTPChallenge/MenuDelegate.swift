@@ -11,5 +11,6 @@ protocol MenuDelegate: class {
     func menuDidAppear()
     func menuWillDisappear()
     func menuDidDisappear()
-    
+ 
+    func showWebView(url: String)
 }

@@ -9,32 +9,16 @@
 import Foundation
 
 class MenuPresenter {
-    unowned let view: MenuViewable
-    
+    unowned let view: MenuViewable    
     var delegate: MenuDelegate?
-    let authInteractor: AuthInteracting
-    let demoModeInteractor: DemoModeInteracting
-    let localKeyValueDataStore: JSONKeyValueDataStoring
     
-    init(view: MenuViewable, delegate: MenuDelegate?, membershipInteractor: MembershipInteracting, authInteractor: AuthInteracting, memoryCacheDataStore: MemoryCacheDataStoring, demoModeInteractor: DemoModeInteracting, localKeyValueDataStore: JSONKeyValueDataStoring) {
+    init(view: MenuViewable, delegate: MenuDelegate?) {
         self.view = view
         self.delegate = delegate
-        self.membershipInteractor = membershipInteractor
-        self.authInteractor = authInteractor
-        self.memoryCacheDataStore = memoryCacheDataStore
-        self.demoModeInteractor = demoModeInteractor
-        self.localKeyValueDataStore = localKeyValueDataStore
     }
     
     func setupMoreInformationButtons() {
         var buttons = [MoreInformationButton]()
-        
-        if demoModeInteractor.isDemoMode && FeatureFlags.hasJoinOurCommunityButton {
-            var button = MoreInformationButton()
-            button.type = .JoinOurCommunity
-            button.name = "Join Our Community"
-            buttons.append(button)
-        }
         
         var aboutPhoneButton = MoreInformationButton()
         aboutPhoneButton.type = .AboutMyPhone
@@ -56,7 +40,7 @@ class MenuPresenter {
         aboutLSButton.name = "About LegalShield"
         buttons.append(aboutLSButton)
         
-        view.setMoreInformationButtons(buttons)
+        view.setMoreInformationButtons(buttons: buttons)
     }
 }
 
@@ -83,26 +67,22 @@ extension MenuPresenter: MenuPresenting {
         view.closeMenuForModal().then { _ -> Void in
             switch button.type! {
             case .JoinOurCommunity:
-                var purchasePath = Environment.App.purchasePathLink
-                if let associateNumber = self.localKeyValueDataStore.get(Environment.Branch.associateNumberKey) {
-                    purchasePath += "&\(Environment.Branch.associateNumberParamKey)=\(associateNumber)"
-                }
-                self.delegate?.showWebView(purchasePath)
+                self.delegate?.showWebView(url: "www.google.com")
             case .AboutMyPhone:
-                self.delegate?.showAboutMyPhoneScreen()
+                self.delegate?.showWebView(url: "www.google.com")
             case .TermsOfService:
-                self.delegate?.showWebView(Environment.Web.termsOfServiceLink)
+                self.delegate?.showWebView(url: "www.google.com")
             case .PrivacyPolicy:
-                self.delegate?.showWebView(Environment.Web.privacyPolicyLink)
+                self.delegate?.showWebView(url: "www.google.com")
             case .AboutLegalShield:
-                self.delegate?.showWebView(Environment.Web.aboutLegalShieldLink)
+                self.delegate?.showWebView(url: "www.google.com")
             }
         }
     }
     
     func logoutButtonTapped() {
-        authInteractor.logout().always {
-            view.showLoginFlow()
-        }
+        //TODO: Firebase Interactor logout
+        view.showLoginFlow()
+        
     }
 }

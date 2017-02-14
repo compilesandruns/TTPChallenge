@@ -21,7 +21,6 @@ class AuthInteractor: AuthInteracting {
     }
     
     func logout() -> Promise<Void> {
-        
-        return Promise()
+        return Promise(value:())
     }
 }

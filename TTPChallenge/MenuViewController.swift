@@ -58,7 +58,7 @@ class MenuViewController: BaseViewController {
     }
     
     @IBAction func didTapLogoutButton(sender: AnyObject?) {
-        presenter.didTapLogoutButton()
+        presenter.logoutButtonTapped()
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)?) {
@@ -148,29 +148,23 @@ extension MenuViewController: UITableViewDelegate {
             
             return
         }
-        
-        guard let memberships = menuViewMemberships[sectionNames[indexPath.section]], memberships.count > indexPath.row else {
-            return
-        }
-        
-        presenter.didSelectMembership(memberships[indexPath.row])
     }
 }
 
 extension MenuViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard section < sectionNames.count - 1 && menuViewMemberships.count > 0 else {
-            return moreInformationButtons.count
-        }
-        
-        return menuViewMemberships[sectionNames[section]]?.count ?? 1
-    }
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return sectionNames.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard section < sectionNames.count - 1 else {
+            return moreInformationButtons.count
+        }
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let menuCell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as? MenuTableViewCell else {
             return UITableViewCell()
         }
@@ -181,15 +175,15 @@ extension MenuViewController: UITableViewDataSource {
             
             return menuCell
         }
-        
-        guard let memberships = menuViewMemberships[sectionNames[indexPath.section]], memberships.count > indexPath.row else {
             
-            return UITableViewCell()
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard indexPath.section < sectionNames.count - 1 else {
+            presenter.didTapMoreInformationButton(button: moreInformationButtons[indexPath.row])
+            
+            return
         }
-        
-        menuCell.buttonLabel.text = memberships[indexPath.row].planTitle
-        menuCell.alertIcon.hidden = memberships[indexPath.row].isAlertIconHidden
-        menuCell.accessibilityLabel = "\(sectionNames[indexPath.section]) - \(memberships[indexPath.row].planTitle)"
-        return menuCell
     }
 }

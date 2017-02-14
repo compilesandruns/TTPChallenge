@@ -6,4 +6,6 @@
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
-import Foundation
+protocol HomeScreenPresenting {
+    
+}
