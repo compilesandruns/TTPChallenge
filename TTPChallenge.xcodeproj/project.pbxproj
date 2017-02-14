@@ -46,6 +46,7 @@
 		ADC314E2882B7CC9D3DCE577 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
 		DD0BDEF11E52C0E3006F550F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DD0BDEF01E52C0E3006F550F /* Fonts */; };
+		DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */; };
 		DDDF2E221E5264FC00EAD0ED /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		BBE3DA305B2BD4B2954AA8B8 /* Pods-TTPChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		DD0BDEF01E52C0E3006F550F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizMainVC.swift; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizScreen.storyboard; sourceTree = "<group>"; };
 		DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */,
+				DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */,
 			);
 			name = "Quizz Sreen";
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				1751ABA21E4D33AB00E2AE75 /* SignInScreenViewController.swift in Sources */,
 				17CFD05E1E4F7C630007ADEC /* AlertViewable.swift in Sources */,
 				1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */,
+				DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */,
 				174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */,
 				17CFD0531E4F76D40007ADEC /* Injector.swift in Sources */,
 				1751ABA01E4D33AB00E2AE75 /* AppDelegate.swift in Sources */,
