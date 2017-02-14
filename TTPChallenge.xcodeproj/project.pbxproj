@@ -48,6 +48,7 @@
 		DD0BDEF11E52C0E3006F550F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DD0BDEF01E52C0E3006F550F /* Fonts */; };
 		DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */; };
 		DD0BDEF51E52D233006F550F /* QuizPartOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF41E52D233006F550F /* QuizPartOneVC.swift */; };
+		DD0BDEF71E52F023006F550F /* QuizResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF61E52F023006F550F /* QuizResultsVC.swift */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */; };
 		DDDF2E221E5264FC00EAD0ED /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
@@ -123,6 +124,7 @@
 		DD0BDEF01E52C0E3006F550F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizMainVC.swift; sourceTree = "<group>"; };
 		DD0BDEF41E52D233006F550F /* QuizPartOneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPartOneVC.swift; sourceTree = "<group>"; };
+		DD0BDEF61E52F023006F550F /* QuizResultsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultsVC.swift; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizScreen.storyboard; sourceTree = "<group>"; };
 		DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,6 +347,7 @@
 				DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */,
 				DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */,
 				DD0BDEF41E52D233006F550F /* QuizPartOneVC.swift */,
+				DD0BDEF61E52F023006F550F /* QuizResultsVC.swift */,
 			);
 			name = "Quiz Sreen";
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
 				17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */,
 				17CFD04E1E4F6FA10007ADEC /* SignInScreenViewable.swift in Sources */,
+				DD0BDEF71E52F023006F550F /* QuizResultsVC.swift in Sources */,
 				1749799E1E50DD2800B901DC /* CreateUserScreenViewable.swift in Sources */,
 				17CFD05B1E4F7B9F0007ADEC /* FirebaseInteracting.swift in Sources */,
 				17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */,

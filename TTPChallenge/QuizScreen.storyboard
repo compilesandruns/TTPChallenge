@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnJ-dr-fFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4543" y="719"/>
+            <point key="canvasLocation" x="1894" y="201"/>
         </scene>
         <!--Quiz MainVC-->
         <scene sceneID="MhP-yi-elE">
@@ -469,6 +469,30 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLD-Ux-nHV">
                                 <rect key="frame" x="0.0" y="110" width="375" height="557"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="xoa-1i-rgh" userLabel="footerView">
+                                    <rect key="frame" x="0.0" y="168" width="375" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4X-CS-QeT">
+                                            <rect key="frame" x="117" y="1.5" width="140" height="45"/>
+                                            <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="Kyq-qA-Z9x"/>
+                                                <constraint firstAttribute="width" constant="140" id="ss0-aa-BQg"/>
+                                            </constraints>
+                                            <state key="normal" title="Next &gt;">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="10b-Ed-vng" kind="show" id="oad-Zb-ml0"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="c4X-CS-QeT" firstAttribute="centerX" secondItem="xoa-1i-rgh" secondAttribute="centerX" id="Cfi-dE-QwB"/>
+                                        <constraint firstItem="c4X-CS-QeT" firstAttribute="centerY" secondItem="xoa-1i-rgh" secondAttribute="centerY" multiplier="0.95" id="HCa-RD-4zH"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personalityCell" rowHeight="140" id="33h-Hf-fQQ" customClass="PersonalityTestCell" customModule="TTPChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
@@ -609,6 +633,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="c4X-CS-QeT" id="kKg-Lf-jVS"/>
                         <outlet property="progressBar" destination="YGQ-zX-lB0" id="X7W-FN-YFk"/>
                         <outlet property="tableView" destination="eLD-Ux-nHV" id="hY8-1L-lGj"/>
                     </connections>
@@ -616,6 +641,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQc-wQ-dAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5424.8000000000002" y="-27.436281859070466"/>
+        </scene>
+        <!--Quiz ResultsVC-->
+        <scene sceneID="OC0-gx-5x4">
+            <objects>
+                <viewController id="GD6-Ze-Ls3" customClass="QuizResultsVC" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D1z-pu-XO9"/>
+                        <viewControllerLayoutGuide type="bottom" id="dOL-Q9-y6F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GbL-l8-MaY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUU-SO-dsV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.96686241610000001" green="0.83529411760000005" blue="0.85900796980000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SUU-SO-dsV" secondAttribute="trailing" id="Vbc-ZH-u9n"/>
+                            <constraint firstItem="SUU-SO-dsV" firstAttribute="bottom" secondItem="dOL-Q9-y6F" secondAttribute="top" id="dp0-Yv-EeQ"/>
+                            <constraint firstItem="SUU-SO-dsV" firstAttribute="leading" secondItem="GbL-l8-MaY" secondAttribute="leading" id="fde-bh-iUb"/>
+                            <constraint firstItem="SUU-SO-dsV" firstAttribute="top" secondItem="D1z-pu-XO9" secondAttribute="bottom" id="zsR-gt-URN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gjA-L9-iBB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jgE-LG-E3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7256.8000000000002" y="-3.1484257871064472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yVX-cS-MlJ">
@@ -633,7 +689,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqt-PN-oxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917.60000000000002" y="-27.436281859070466"/>
+            <point key="canvasLocation" x="1023" y="200"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iGc-J7-c8A">
@@ -652,6 +708,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HS-Wv-YLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3604" y="-27.436281859070466"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nd5-k3-IJi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="10b-Ed-vng" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2ER-eS-TST">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GD6-Ze-Ls3" kind="relationship" relationship="rootViewController" id="KBa-Jz-xWV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gwn-rZ-Q18" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6317.6000000000004" y="-3.1484257871064472"/>
         </scene>
     </scenes>
     <resources>

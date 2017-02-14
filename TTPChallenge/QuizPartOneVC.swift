@@ -24,16 +24,15 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         "Love simplifying complex ideas"
     ]
     
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
     @IBOutlet weak var tableView: UITableView!
-    let customView = UIView(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 42))
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
-        addButtonToFooter()
-        tableView.tableFooterView = customView
+        nextButton.layer.cornerRadius = 20
      
     }
     
@@ -59,23 +58,6 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
-    
-    func addButtonToFooter(){
-        // Next button
-        customView.backgroundColor = .clear
-        let button = UIButton(frame: CGRect(x: customView.center.x, y: 0, width: 135, height: 40))
-        button.backgroundColor = UIColor(red: 46/255.0, green: 49/255.0, blue: 146/255.0, alpha: 1)
-
-        button.layer.cornerRadius = 20
-        button.setTitle("Next  >", for: .normal)
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        customView.addSubview(button)
-    }
-    
-    func buttonAction(sender: UIButton){
-        print("next button tapped")
-    }
-    
 
 }
 
