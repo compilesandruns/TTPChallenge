@@ -19,13 +19,15 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var resultButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    @IBOutlet weak var progressBar: UIProgressView!
     
     var yesCounter = 0
     var noCounter = 0
     var isYes = false
     
-    let dummyData = [
+    let personalityData = [
         
         "Enjoy trying out new products", "Stay up to date on the latest and greatest in tech and devices","Want to get involved in tech, but not sure where to start", "Enjoy puzzles and challenges", "Enjoy tinkering with computers and devices","Are curious about how tech products work", "Enjoy fast-paced work", "Enjoy solving problems", "Have a creative spirit",
         "Love following the latest web trends & technologies",
@@ -42,35 +44,41 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
-        resultButton.layer.cornerRadius = 20
+        nextButton.layer.cornerRadius = 20
+        progressBar.layer.cornerRadius = 10
+        progressBar.layer.masksToBounds = true
     }
     
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        print("Next!")
+        
+    }
     // Tableview Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyData.count
+        return personalityData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "quizzCell", for: indexPath) as! QuizzCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath) as! QuizCell
         
-        cell.quizLabel.text = dummyData[indexPath.row]
+        cell.quizLabel.text = personalityData[indexPath.row]
         cell.selectionStyle = .none
         cell.buttonView.layer.cornerRadius = 10
-        
+        cell.progressLabel.text = " \(indexPath.row + 1)/20"
        
         return cell
     }
     
 }
 
-class QuizzCell: UITableViewCell {
+class QuizCell: UITableViewCell {
     
     @IBOutlet weak var quizLabel: UILabel!
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var progressLabel: UILabel!
-    @IBOutlet weak var progressView: UIView!
+   
     
     
 }
