@@ -47,6 +47,7 @@
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
 		DD0BDEF11E52C0E3006F550F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DD0BDEF01E52C0E3006F550F /* Fonts */; };
 		DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */; };
+		DD0BDEF51E52D233006F550F /* QuizPartOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF41E52D233006F550F /* QuizPartOneVC.swift */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */; };
 		DDDF2E221E5264FC00EAD0ED /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 		D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		DD0BDEF01E52C0E3006F550F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizMainVC.swift; sourceTree = "<group>"; };
+		DD0BDEF41E52D233006F550F /* QuizPartOneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPartOneVC.swift; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizScreen.storyboard; sourceTree = "<group>"; };
 		DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,7 +221,7 @@
 		1751ABD11E4D513600E2AE75 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DDDF2E201E52334D00EAD0ED /* Quizz Sreen */,
+				DDDF2E201E52334D00EAD0ED /* Quiz Sreen */,
 				17CFD0511E4F73C80007ADEC /* Home Screen */,
 				17CFD06E1E502C570007ADEC /* Create User Screen */,
 				17CFD03D1E4F58040007ADEC /* SignIn Screen */,
@@ -337,13 +339,14 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		DDDF2E201E52334D00EAD0ED /* Quizz Sreen */ = {
+		DDDF2E201E52334D00EAD0ED /* Quiz Sreen */ = {
 			isa = PBXGroup;
 			children = (
 				DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */,
 				DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */,
+				DD0BDEF41E52D233006F550F /* QuizPartOneVC.swift */,
 			);
-			name = "Quizz Sreen";
+			name = "Quiz Sreen";
 			sourceTree = "<group>";
 		};
 		E0BF1E4FFE6665193D9F5528 /* Pods */ = {
@@ -656,6 +659,7 @@
 				17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */,
 				17CFD0661E5015ED0007ADEC /* CridentialsValidationInteracting.swift in Sources */,
 				174979A21E50ED1D00B901DC /* BaseNavigationController.swift in Sources */,
+				DD0BDEF51E52D233006F550F /* QuizPartOneVC.swift in Sources */,
 				17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */,
 				17CFD04C1E4F6F990007ADEC /* SignInScreenPresenting.swift in Sources */,
 				1749799C1E50DD1300B901DC /* CreateUserScreenPresenting.swift in Sources */,
