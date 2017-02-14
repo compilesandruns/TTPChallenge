@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct Quiz {
-    
-    var question: String
-    var isYes : Bool = false
-    
-}
-
 class QuizViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
