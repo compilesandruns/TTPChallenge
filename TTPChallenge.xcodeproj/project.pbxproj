@@ -46,6 +46,7 @@
 		ADC314E2882B7CC9D3DCE577 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizzScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizzScreen.storyboard */; };
+		DDDF2E221E5264FC00EAD0ED /* QuizzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF2E211E5264FC00EAD0ED /* QuizzViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		BBE3DA305B2BD4B2954AA8B8 /* Pods-TTPChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizzScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizzScreen.storyboard; sourceTree = "<group>"; };
+		DDDF2E211E5264FC00EAD0ED /* QuizzViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizzViewController.swift; sourceTree = "<group>"; };
 		E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -325,6 +327,7 @@
 		DDDF2E201E52334D00EAD0ED /* Quizz Sreen */ = {
 			isa = PBXGroup;
 			children = (
+				DDDF2E211E5264FC00EAD0ED /* QuizzViewController.swift */,
 			);
 			name = "Quizz Sreen";
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				174979A01E50E69B00B901DC /* BaseTableViewController.swift in Sources */,
 				17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */,
 				17CFD0601E4F7CE40007ADEC /* AlertView.swift in Sources */,
+				DDDF2E221E5264FC00EAD0ED /* QuizzViewController.swift in Sources */,
 				17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */,
 				17CFD06A1E50215C0007ADEC /* SignInInteractor.swift in Sources */,
 				1751ABA21E4D33AB00E2AE75 /* SignInScreenViewController.swift in Sources */,
