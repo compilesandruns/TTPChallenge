@@ -6,8 +6,6 @@
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
-import Foundation
-
 class MenuPresenter {
     unowned let view: MenuViewable    
     var delegate: MenuDelegate?

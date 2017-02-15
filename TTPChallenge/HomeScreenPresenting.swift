@@ -7,5 +7,5 @@
 //
 
 protocol HomeScreenPresenting {
-    
+    func viewDidLoad()
 }

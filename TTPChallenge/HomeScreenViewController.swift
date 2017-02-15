@@ -7,30 +7,50 @@
 //
 
 class HomeScreenViewController: BaseViewController {
+    var presenter: HomeScreenPresenting!
     
+    let interactiveTransition = SlideMenuInteractiveTransition()
+    var webScreenOptions: (url: String, showControls: Bool, title: String)!
+
+    @IBOutlet weak var menuButtonItem: UIBarButtonItem!
     
+    @IBOutlet var navBarEdgePanGestureRecognizer: UIScreenEdgePanGestureRecognizer!
+
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter = Injector.currentInjector.homeScreenPresenter(view: self)
+        navigationController?.navigationBar.addGestureRecognizer(navBarEdgePanGestureRecognizer)
+        
+        presenter.viewDidLoad()
+    }
 }
 
 extension HomeScreenViewController: HomeScreenViewable {
     func openMenu() {
-        performSegueWithIdentifier("openMenu", sender: nil)
+        performSegue(withIdentifier: "openMenu", sender: nil)
     }
     
     func closeMenu() {
-        self.presentedViewController?.dismissViewControllerAnimated(true, completion: nil)
+        self.presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func showWebView(url: String) {
+        webScreenOptions = (url, false, "")
+        self.performSegue(withIdentifier: "showWebView", sender: self)
     }
 }
 
 //MARK: - Slide Menu
 extension HomeScreenViewController {
     @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
-        let translation = sender.translationInView(view)
+        let translation = sender.translation(in: view)
         
-        let progress = MenuHelper.calculateProgress(translation, viewBounds: view.bounds, direction: .Right)
+        let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Right)
         
         MenuHelper.mapGestureStateToInteractor(
-            sender.state,
+            gestureState: sender.state,
             progress: progress,
             interactiveTransition: interactiveTransition) {
                 self.openMenu()
@@ -40,8 +60,8 @@ extension HomeScreenViewController {
 
 
 extension HomeScreenViewController {
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destinationViewController = segue.destinationViewController as? MenuViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? MenuViewController {
             destinationViewController.transitioningDelegate = self
             destinationViewController.interactiveTransition = interactiveTransition
             
@@ -50,13 +70,13 @@ extension HomeScreenViewController {
             }
         }
         
-        if let navController = segue.destinationViewController as? UINavigationController {
-            if let destinationViewController = navController.viewControllers.first as? WebScreenViewController {
-                destinationViewController.intendedUrl = webScreenOptions.url
-                destinationViewController.showControls = webScreenOptions.showControls
-                destinationViewController.title = webScreenOptions.title
-            }
-        }
+//        if let navController = segue.destination as? UINavigationController {
+//            if let destinationViewController = navController.viewControllers.first as? WebScreenViewController {
+//                destinationViewController.intendedUrl = webScreenOptions.url
+//                destinationViewController.showControls = webScreenOptions.showControls
+//                destinationViewController.title = webScreenOptions.title
+//            }
+//        }
     }
 }
 

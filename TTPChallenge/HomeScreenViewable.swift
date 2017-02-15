@@ -8,5 +8,6 @@
 
 protocol HomeScreenViewable: class {
     
+    func showWebView(url: String)
 }
 
