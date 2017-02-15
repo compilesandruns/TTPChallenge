@@ -2,7 +2,7 @@
 //  QuizQuestions.swift
 //  TTPChallenge
 //
-//  Created by Mirim An on 2/14/17.
+//  Created by Luna An on 2/14/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
@@ -21,9 +21,32 @@ class QuizQuestions: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @IBOutlet weak var tableView: UITableView!
     
-    let techJobs = [
-        "Quality Assurance Analyst","IT Engineer","Web Developer","Mobile Developer","Data Analyst"
+    /*
+    let techType = ["Quality Assurance Analyst", "IT Engineer", "Web Developer", "Mobile Developer",  "Data Analyst"]
+    
+    let techTypeAndQualities = [
+        "Quality Assurance Analyst" : ["Enjoy trying out new products",
+        "Stay up to date on the latest and greatest in tech and devices",
+        "Want to get involved in tech, but not sure where to start",
+        "Enjoy puzzles and challenges"],
+        "IT Engineer" : ["Enjoy trying out new products",
+            "Stay up to date on the latest and greatest in tech and devices",
+            "Want to get involved in tech, but not sure where to start",
+            "Enjoy puzzles and challenges"],
+        "Web Developer": ["Have a creative spirit",
+            "Love following the latest web trends & technologies",
+            "Think logically and critically",
+            "Have tried or are interested in learning how to code"],
+        "Mobile Developer" : ["Are iPhone or Android obsessed",
+            "Are Always on the hunt for the latest cool app",
+            "Enjoy learning about new technology",
+            "Have strong preferences for specific technology or apps"],
+        "Data Analyst" : ["Able to work across teams and with a variety of stakeholders",
+            "Communicate effectively and build strong relationships with team members",
+            "Have a knack for math, facts and figures",
+            "Love simplifying complex ideas"]
     ]
+ */
     
     let personalityData = [
         
