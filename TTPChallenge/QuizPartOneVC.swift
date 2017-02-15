@@ -11,7 +11,7 @@ import UIKit
 struct QuizGroup {
     
     var sectionName : String
-    var questions : [String]
+    var questions : [Question]
     var isYes = false
     
 }
@@ -49,17 +49,37 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         "Love simplifying complex ideas"]
     ]
     
+    var allQuestions: [[Question]] = []
+    
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var tableView: UITableView!
    
     override func viewDidLoad() {
         
+        
+        for data in personalityData {
+            
+            var newQuestions: [Question] = []
+            
+            for string in data {
+                
+                newQuestions.append(Question(string: string))
+                
+            }
+            
+            allQuestions.append(newQuestions)
+            
+            
+        }
+        
         super.viewDidLoad()
         tableView.separatorStyle = .none
         nextButton.layer.cornerRadius = 20
         for i in 0..<5 {
-            let quizObject = QuizGroup(sectionName: techJobs[i], questions: personalityData[i], isYes: false)
+            
+            let quizObject = QuizGroup(sectionName: techJobs[i], questions: allQuestions[i], isYes: false)
+            
             objectsArray.append(quizObject)
         }
      
@@ -80,44 +100,21 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "personalityCell", for: indexPath) as! PersonalityTestCell
-        
-        cell.questionLabel.text = objectsArray[indexPath.section].questions[indexPath.row]
         cell.selectionStyle = .none
-        
-        // personalityView styling
         cell.personalityView.layer.cornerRadius = 4
         cell.personalityView.layer.masksToBounds = true
-       
-        // Button tag
-        
-        for (index, button) in cell.buttons.enumerated() {
-            
-            if index == button.tag && index == 0 {
-                cell.tapActionForYes = { (cell) in
-                    self.yesButtonTapped(cell: cell as! PersonalityTestCell, section: indexPath.section, indexPath.row)
-                }} else {
-                cell.tapActionForNo = { (cell) in
-                    self.noButtonTapped(cell: cell as! PersonalityTestCell, section: indexPath.section, indexPath.row)
-                }
-
-            }
-            
-        }
         return cell
     }
     
-    
-    func yesButtonTapped(cell: PersonalityTestCell, section: Int, _ row: Int) {
-        
-        print("YES")
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let personalityCell = cell as! PersonalityTestCell
+        let question = objectsArray[indexPath.section].questions[indexPath.row]
+        personalityCell.question = question
     }
     
-    func noButtonTapped(cell: PersonalityTestCell, section: Int, _ row: Int) {
-        
-        print("NO!")
-    }
+    
+
     
     
     
@@ -134,25 +131,71 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 }
 
 class PersonalityTestCell: UITableViewCell {
-    
-    var tapActionForYes: ((UITableViewCell) -> Void)?
-    var tapActionForNo: ((UITableViewCell) -> Void)?
-    
+
+    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var personalityView: UIView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var yesLabel: UILabel!
-    @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var noLabel: UILabel!
     
+    var tapActionForYes: ((UITableViewCell) -> Void)?
+    var tapActionForNo: ((UITableViewCell) -> Void)?
+    var yesSelected: Bool = false
+    var noSelected: Bool = false
+    
+    weak var question: Question! {
+        didSet {
+            questionLabel.text = question.string
+            
+            if question.selectedYes {
+                yesButton.isSelected = true
+            }
+            
+            if question.selectedNo {
+                noButton.isSelected = true
+            }
+        }
+    }
+    
+    func reset() {
+        yesButton.isSelected = false
+        noButton.isSelected = false
+    }
+
     @IBAction func yesTapped(_ sender: UIButton) {
-        tapActionForYes?(self)
-        buttons[0].isSelected = true
-        buttons[1].isSelected = false
+        question.changeToYes()
+        yesButton.isSelected = true
     }
     @IBAction func noTapped(_ sender: Any) {
-        tapActionForNo?(self)
-        buttons[0].isSelected = false
-        buttons[1].isSelected = true
+        question.changeToNo()
+        noButton.isSelected = true
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reset()
+    }
+    
+}
+
+final class Question {
+    
+    let string: String
+    var selectedYes: Bool = false
+    var selectedNo: Bool = false
+    
+    init(string: String) {
+        self.string = string
+    }
+    
+    func changeToYes() {
+        selectedNo = false
+        selectedYes = true
+    }
+    
+    func changeToNo() {
+        selectedNo = true
+        selectedYes = false
     }
     
 }
