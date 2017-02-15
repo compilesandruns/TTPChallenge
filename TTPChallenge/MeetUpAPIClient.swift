@@ -10,22 +10,24 @@ import Foundation
 
 class MeetUpAPIClient {
     
-    
-    class func getMeetupSuggestions(query: String, with completion: @escaping () -> ()) {
+    class func getMeetupSuggestions(query: String, with completion: @escaping ([[String : Any]]) -> ()) {
+
+        let urlString = "https://api.meetup.com/find/groups?&sign=true&photo-host=public&upcoming_events=true&fallback_suggestions=true&text=\(query)&category=34&order=most_active&page=5&key=\(Secrets.key)"
         
-        let urlString = "https://api.meetup.com/2/events?key=\(Secrets.key)&group_urlname=ny-tech&sign=true"
         let url = URL(string: urlString)
         let session = URLSession.shared
         
         let task = session.dataTask(with: url!) { (data, response, error) in
             
-            guard let unwrappedData = data else{completion(); return}
-            
             do{
-                let results = try JSONSerialization.jsonObject(with: unwrappedData, options: [])
+                guard let unwrappedata = data else{print("i have no data") ;return}
                 
-                print(results)
+                let results = try JSONSerialization.jsonObject(with: unwrappedata, options: []) as? [[String : Any]]
                 
+                if let results = results {
+                    
+                    completion(results)
+                }
             } catch {
                 
                 print(error)
@@ -33,30 +35,4 @@ class MeetUpAPIClient {
         }
         task.resume()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

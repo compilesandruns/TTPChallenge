@@ -46,6 +46,7 @@
 		3D36EB351E52580F00CB1432 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */; };
 		3D36EB371E52601000CB1432 /* MeetUpAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */; };
 		3D36EB391E5260E800CB1432 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB381E5260E800CB1432 /* Secrets.swift */; };
+		3D36EB3B1E53E09A00CB1432 /* MeetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */; };
 		4422B78241332CF59F02F260 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */; };
 		ADC314E2882B7CC9D3DCE577 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
@@ -120,6 +121,7 @@
 		3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetUpAPIClient.swift; sourceTree = "<group>"; };
 		3D36EB381E5260E800CB1432 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetUp.swift; sourceTree = "<group>"; };
 		AACF7CC6C0A12E53D1CD653B /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBE3DA305B2BD4B2954AA8B8 /* Pods-TTPChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */,
 				3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */,
 				3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */,
+				3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */,
 				3D36EB381E5260E800CB1432 /* Secrets.swift */,
 				1751ABAB1E4D33AB00E2AE75 /* Info.plist */,
 				1751ABA61E4D33AB00E2AE75 /* Assets.xcassets */,
@@ -634,6 +637,7 @@
 				17CFD0681E5015F90007ADEC /* CridentialsValidationInteractor.swift in Sources */,
 				1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */,
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
+				3D36EB3B1E53E09A00CB1432 /* MeetUp.swift in Sources */,
 				3D36EB371E52601000CB1432 /* MeetUpAPIClient.swift in Sources */,
 				17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */,
 				17CFD04E1E4F6FA10007ADEC /* SignInScreenViewable.swift in Sources */,

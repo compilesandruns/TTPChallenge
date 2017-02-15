@@ -11,6 +11,5 @@ import Foundation
 class Secrets {
     
     static let key = "262b4952116634534e566d4228311856"
-    static let token = ""
     
 }
