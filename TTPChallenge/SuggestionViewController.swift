@@ -9,7 +9,7 @@
 import UIKit
 
 class SuggestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var suggestionTableView: UITableView!
     var meetups = [MeetUp]()
     
@@ -24,7 +24,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
             for each in meetupResults{
                 
                 let name = each["name"] as? String
-                let count = each ["members"] as? Double
+                let count = each ["members"] as? Int
                 let summary = each["description"] as? String
                 
                 if let name = name,
@@ -40,18 +40,20 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
         
         if indexPath.section == 0{
-            cell.textLabel?.text = meetups[indexPath.row].name
+            cell.title.text = meetups[indexPath.row].name
+            cell.summary.text = meetups[indexPath.row].summary
+            cell.memberCount.text = String(meetups[indexPath.row].memberCount)
         } else {
             
-            cell.textLabel?.text = "not a meetup"
+            cell.title.text = "not a meetup"
         }
-       
+        
         return cell
     }
     
@@ -59,9 +61,9 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if section == 0{
             return meetups.count
-
+            
         }
-            return 3
+        return 3
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
@@ -79,4 +81,27 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return 2
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! ExpandingMeetUpCell
+        
+//        if cell.isExpanded{
+//            
+//            
+//            
+//        } else {
+//            
+//
+//        }
+    }
 }
+
+
+
+
+
+
+
+
+

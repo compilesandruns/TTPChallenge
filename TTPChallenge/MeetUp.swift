@@ -11,10 +11,10 @@ import Foundation
 class MeetUp {
     
     let name: String
-    let memberCount: Double
+    let memberCount: Int
     let summary: String
     
-    init(name: String, memberCount: Double, summary: String) {
+    init(name: String, memberCount: Int, summary: String) {
         
         self.name = name
         self.memberCount = memberCount
