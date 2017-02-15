@@ -44,10 +44,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATO-hS-m9n">
-                                <rect key="frame" x="16" y="221" width="343" height="288"/>
+                                <rect key="frame" x="16" y="206" width="343" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">There are hundreds of different technical roles, from data analysts who use technology to help businesses make decisions, to web developers who build apps and websites that customers use. These high-paying entry-level roles can lead to fulfilling careers in tech. </string>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
+                                <string key="text">There are hundreds of different technical roles, from data analysts who use technology to help businesses make decisions, to web developers who build apps and websites that customers use. </string>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                <color key="textColor" red="0.12549019607843137" green="0.10588235294117647" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaM-4g-jbg">
+                                <rect key="frame" x="16" y="415" width="343" height="210"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">From finance to healthcare to media and entertainment, the industries that power New York City run on tech talent. Companies of all sizes, missions, and fields are looking for candidates who are eager to solve problems with technology.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -58,6 +66,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSN-kb-2Yh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1477.5999999999999" y="187.55622188905548"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gYf-yr-ZKp">
+            <objects>
+                <viewController id="jV2-tw-zvJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Od-Yk-W54"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bhx-j8-net"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ry-Ig-asc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TTP is your bridge to a high-paying entry level tech role." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="bOP-c3-Hgf">
+                                <rect key="frame" x="25" y="28" width="324" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="70"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZN-3F-rrg">
+                                <rect key="frame" x="87" y="588" width="201" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="29"/>
+                                <state key="normal" title="Find Your Type">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="limpwithphone" translatesAutoresizingMaskIntoConstraints="NO" id="il7-4d-c4A">
+                                <rect key="frame" x="52" y="282" width="270" height="286"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87450980392156863" green="0.17254901960784313" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42A-tQ-QvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2109.5999999999999" y="189.3553223388306"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mzd-uN-CG0">
@@ -103,6 +150,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="limpwithphone" width="500" height="552"/>
         <image name="ttpLogo" width="220" height="118"/>
         <image name="ttptechimg" width="1000" height="562"/>
     </resources>
