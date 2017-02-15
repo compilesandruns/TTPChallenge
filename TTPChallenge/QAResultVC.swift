@@ -2,7 +2,7 @@
 //  QAResultVC.swift
 //  TTPChallenge
 //
-//  Created by Mirim An on 2/14/17.
+//  Created by Luna An on 2/14/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
@@ -11,21 +11,26 @@ import UIKit
 class QAResultVC: UIViewController {
     
     @IBOutlet var programInfoButtons:[UIButton]!
-
+    @IBOutlet weak var retakeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // button styling
+        for button in programInfoButtons {
+            button.layer.cornerRadius = 12
+        }
+        retakeButton.layer.cornerRadius = 20
 
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
         print("sharebuttontapped")
         // implement activity view controller
-        // share via social networks
+        // share via social networks?
     }
     
     @IBAction func homeButtonTapped(_ sender: Any) {
-        // go back to quiz main vc
-        print("go back to main vc")
+        performSegue(withIdentifier: "backToQuizMain", sender: self)
     }
     
     @IBAction func programInfoButtonTapped(_ sender: UIButton) {

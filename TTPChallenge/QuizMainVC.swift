@@ -24,11 +24,11 @@ class QuizMainVC: UIViewController {
         partTwoCircle.layer.cornerRadius = partTwoCircle.frame.width/2
         partTwoCircle.layer.masksToBounds = true
         
+        
         // Trasnparent navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-
     }
 
 }
