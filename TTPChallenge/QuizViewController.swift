@@ -16,8 +16,6 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var progressBar: UIProgressView!
     
-    var yesCounter = 0
-    var noCounter = 0
     var isYes = false
     
     let personalityData = [

@@ -2,7 +2,7 @@
 //  QuizPartOneVC.swift
 //  TTPChallenge
 //
-//  Created by Mirim An on 2/14/17.
+//  Created by Luna An on 2/14/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
@@ -26,13 +26,24 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     let personalityData = [
         
-        ["Enjoy trying out new products", "Stay up to date on the latest and greatest in tech and devices","Want to get involved in tech, but not sure where to start", "Enjoy puzzles and challenges"], ["Enjoy tinkering with computers and devices","Are curious about how tech products work", "Enjoy fast-paced work", "Enjoy solving problems"],["Have a creative spirit",
+        ["Enjoy trying out new products",
+         "Stay up to date on the latest and greatest in tech and devices",
+         "Want to get involved in tech, but not sure where to start",
+         "Enjoy puzzles and challenges"],
+        ["Enjoy tinkering with computers and devices",
+         "Are curious about how tech products work",
+         "Enjoy fast-paced work",
+         "Enjoy solving problems"],
+        ["Have a creative spirit",
         "Love following the latest web trends & technologies",
         "Think logically and critically",
-        "Have tried or are interested in learning how to code"], ["Are iPhone or Android obsessed", "Are Always on the hunt for the latest cool app",
+        "Have tried or are interested in learning how to code"],
+        ["Are iPhone or Android obsessed",
+         "Are Always on the hunt for the latest cool app",
         "Enjoy learning about new technology",
         "Have strong preferences for specific technology or apps",
-        "Have tried or areinterested in learning how to code"], ["Able to work across teams and with a variety of stakeholders",
+        "Have tried or areinterested in learning how to code"],
+        ["Able to work across teams and with a variety of stakeholders",
         "Communicate effectively and build strong relationships with team members",
         "Have a knack for math, facts and figures",
         "Love simplifying complex ideas"]
@@ -69,7 +80,9 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "personalityCell", for: indexPath) as! PersonalityTestCell
+        
         cell.questionLabel.text = objectsArray[indexPath.section].questions[indexPath.row]
         cell.selectionStyle = .none
         
@@ -78,14 +91,15 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         cell.personalityView.layer.masksToBounds = true
        
         // Button tag
+        
         for (index, button) in cell.buttons.enumerated() {
-            // index 0, 1
-            if index == 0 && button.tag == 0 {
+            
+            if index == button.tag && index == 0 {
                 cell.tapActionForYes = { (cell) in
-                    self.yesButtonTapped(section: indexPath.section, indexPath.row)
+                    self.yesButtonTapped(cell: cell as! PersonalityTestCell, section: indexPath.section, indexPath.row)
                 }} else {
                 cell.tapActionForNo = { (cell) in
-                    self.noButtonTapped(section: indexPath.section, indexPath.row)
+                    self.noButtonTapped(cell: cell as! PersonalityTestCell, section: indexPath.section, indexPath.row)
                 }
 
             }
@@ -95,15 +109,14 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
-    func yesButtonTapped(section: Int, _ row: Int) {
-        print("YES \(section),\(row)")
-     
+    func yesButtonTapped(cell: PersonalityTestCell, section: Int, _ row: Int) {
         
+        print("YES")
     }
     
-    func noButtonTapped(section: Int, _ row: Int) {
-        print("NO \(section),\(row)")
+    func noButtonTapped(cell: PersonalityTestCell, section: Int, _ row: Int) {
         
+        print("NO!")
     }
     
     
@@ -131,11 +144,15 @@ class PersonalityTestCell: UITableViewCell {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var noLabel: UILabel!
     
-    @IBAction func yesTapped(_ sender: Any) {
+    @IBAction func yesTapped(_ sender: UIButton) {
         tapActionForYes?(self)
+        buttons[0].isSelected = true
+        buttons[1].isSelected = false
     }
     @IBAction func noTapped(_ sender: Any) {
         tapActionForNo?(self)
+        buttons[0].isSelected = false
+        buttons[1].isSelected = true
     }
     
 }

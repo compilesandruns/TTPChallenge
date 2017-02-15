@@ -49,6 +49,8 @@
 		DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */; };
 		DD0BDEF51E52D233006F550F /* QuizPartOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF41E52D233006F550F /* QuizPartOneVC.swift */; };
 		DD0BDEF71E52F023006F550F /* QuizResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF61E52F023006F550F /* QuizResultsVC.swift */; };
+		DD0BDF1D1E53C9AB006F550F /* QAType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF1C1E53C9AA006F550F /* QAType.swift */; };
+		DD0BDF1F1E53CF08006F550F /* QuizQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF1E1E53CF08006F550F /* QuizQuestions.swift */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */; };
 		DDDF2E221E5264FC00EAD0ED /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
@@ -125,6 +127,8 @@
 		DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizMainVC.swift; sourceTree = "<group>"; };
 		DD0BDEF41E52D233006F550F /* QuizPartOneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPartOneVC.swift; sourceTree = "<group>"; };
 		DD0BDEF61E52F023006F550F /* QuizResultsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultsVC.swift; sourceTree = "<group>"; };
+		DD0BDF1C1E53C9AA006F550F /* QAType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAType.swift; sourceTree = "<group>"; };
+		DD0BDF1E1E53CF08006F550F /* QuizQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizQuestions.swift; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizScreen.storyboard; sourceTree = "<group>"; };
 		DDDF2E211E5264FC00EAD0ED /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +195,7 @@
 				1751ABD21E4D514500E2AE75 /* Environment */,
 				DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */,
 				1751ABA31E4D33AB00E2AE75 /* SignInScreen.storyboard */,
+				DD0BDF1C1E53C9AA006F550F /* QAType.swift */,
 				17CFD04F1E4F73110007ADEC /* HomeScreen.storyboard */,
 				1751ABA81E4D33AB00E2AE75 /* LaunchScreen.storyboard */,
 				1751ABAB1E4D33AB00E2AE75 /* Info.plist */,
@@ -348,6 +353,7 @@
 				DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */,
 				DD0BDEF41E52D233006F550F /* QuizPartOneVC.swift */,
 				DD0BDEF61E52F023006F550F /* QuizResultsVC.swift */,
+				DD0BDF1E1E53CF08006F550F /* QuizQuestions.swift */,
 			);
 			name = "Quiz Sreen";
 			sourceTree = "<group>";
@@ -673,11 +679,13 @@
 				17CFD0601E4F7CE40007ADEC /* AlertView.swift in Sources */,
 				DDDF2E221E5264FC00EAD0ED /* QuizViewController.swift in Sources */,
 				17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */,
+				DD0BDF1D1E53C9AB006F550F /* QAType.swift in Sources */,
 				17CFD06A1E50215C0007ADEC /* SignInInteractor.swift in Sources */,
 				1751ABA21E4D33AB00E2AE75 /* SignInScreenViewController.swift in Sources */,
 				17CFD05E1E4F7C630007ADEC /* AlertViewable.swift in Sources */,
 				1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */,
 				DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */,
+				DD0BDF1F1E53CF08006F550F /* QuizQuestions.swift in Sources */,
 				174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */,
 				17CFD0531E4F76D40007ADEC /* Injector.swift in Sources */,
 				1751ABA01E4D33AB00E2AE75 /* AppDelegate.swift in Sources */,
