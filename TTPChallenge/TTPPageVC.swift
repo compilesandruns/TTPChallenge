@@ -30,7 +30,7 @@ class TTPPageVC: UIPageViewController {
     }()
     
     private func newPageVC(VCorder: String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil) .
+        return UIStoryboard(name: "TTPInformation", bundle: nil) .
             instantiateViewController(withIdentifier: "\(VCorder)VC")
     }
 }
