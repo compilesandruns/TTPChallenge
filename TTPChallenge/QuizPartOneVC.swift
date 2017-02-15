@@ -70,7 +70,6 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             allQuestions.append(newQuestions)
             
-            
         }
         
         super.viewDidLoad()

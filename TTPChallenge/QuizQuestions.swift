@@ -178,5 +178,10 @@ class QuizQuestions: UIViewController, UITableViewDelegate, UITableViewDataSourc
         })
     }
     
+    @IBAction func resultButtonTapped(_ sender: Any) {
+     
+        // logic here - based on the results, it will segue to a different tech type
+        performSegue(withIdentifier: "resultToIT", sender: self)
+    }
 }
 
