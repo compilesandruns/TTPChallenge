@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var objectsArray = [QuizGroup]()
     
@@ -48,32 +48,26 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var tableView: UITableView!
    
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
         
         for data in personalityData {
             
             var newQuestions: [Question] = []
             
             for string in data {
-                
                 newQuestions.append(Question(string: string))
-                
             }
-            
             allQuestions.append(newQuestions)
-            
         }
-        
-        super.viewDidLoad()
+
         tableView.separatorStyle = .none
         nextButton.layer.cornerRadius = 20
+        
         for i in 0..<5 {
-            
             let quizObject = QuizGroup(sectionName: techJobs[i], questions: allQuestions[i], isYes: false)
-            
+
             objectsArray.append(quizObject)
         }
-     
     }
     
     @IBAction func dismissVC(_ sender: Any) {
@@ -114,6 +108,22 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+    
+    func resultButtonTapped(_ sender: Any) {
+        
+        // logic here - based on the results, it will segue to a different tech type
+        // algo needed
+        performSegue(withIdentifier: "resultToIT", sender: self)
+        /*
+         performSegue(withIdentifier: "resultToDA", sender: self)
+         performSegue(withIdentifier: "resultToWD", sender: self)
+         performSegue(withIdentifier: "resultToAll", sender: self)
+         performSegue(withIdentifier: "resultToMD", sender: self)
+         performSegue(withIdentifier: "resultToQA", sender: self)
+         
+         */
+    }
+
 
 }
 
