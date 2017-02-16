@@ -183,6 +183,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         for n in emptyArray {
             techJobsForResult.append(techJobs[n])
+            print("********* \(techJobsForResult)")
         }
         
         print("********* \(techJobsForResult)")
