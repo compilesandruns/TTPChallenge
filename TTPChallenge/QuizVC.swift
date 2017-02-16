@@ -109,11 +109,11 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return 140
     }
     
-    func resultButtonTapped(_ sender: Any) {
+    @IBAction func resultButtonTapped(_ sender: UIButton) {
         
         // logic here - based on the results, it will segue to a different tech type
         // algo needed
-        performSegue(withIdentifier: "resultToIT", sender: self)
+        performSegue(withIdentifier: "resultToWD", sender: self)
         /*
          performSegue(withIdentifier: "resultToDA", sender: self)
          performSegue(withIdentifier: "resultToWD", sender: self)

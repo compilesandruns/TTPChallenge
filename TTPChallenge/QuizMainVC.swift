@@ -32,8 +32,4 @@ class QuizMainVC: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isTranslucent = false
-    }
-
 }

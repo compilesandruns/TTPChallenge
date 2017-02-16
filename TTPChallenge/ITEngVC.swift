@@ -50,7 +50,10 @@ class ITEngVC: UIViewController {
     
     
     
-    @IBAction func retakeQuizBtnTapped(_ sender: Any) {
+    @IBAction func retakeQuizBtnTapped(_ sender: UIButton) {
+        
+    
+
     }
     
     

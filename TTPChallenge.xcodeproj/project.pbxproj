@@ -48,9 +48,7 @@
 		DD0BDEF11E52C0E3006F550F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DD0BDEF01E52C0E3006F550F /* Fonts */; };
 		DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */; };
 		DD0BDEF51E52D233006F550F /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF41E52D233006F550F /* QuizVC.swift */; };
-		DD0BDEF71E52F023006F550F /* QuizResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF61E52F023006F550F /* QuizResultsVC.swift */; };
 		DD0BDF1D1E53C9AB006F550F /* QAType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF1C1E53C9AA006F550F /* QAType.swift */; };
-		DD0BDF1F1E53CF08006F550F /* QuizQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF1E1E53CF08006F550F /* QuizQuestions.swift */; };
 		DD0BDF211E5403F6006F550F /* QAVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF201E5403F6006F550F /* QAVC.swift */; };
 		DD0BDF241E552754006F550F /* MobileDevVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF231E552754006F550F /* MobileDevVC.swift */; };
 		DD0BDF261E55276C006F550F /* WebDevVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF251E55276C006F550F /* WebDevVC.swift */; };
@@ -134,9 +132,7 @@
 		DD0BDEF01E52C0E3006F550F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizMainVC.swift; sourceTree = "<group>"; };
 		DD0BDEF41E52D233006F550F /* QuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
-		DD0BDEF61E52F023006F550F /* QuizResultsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultsVC.swift; sourceTree = "<group>"; };
 		DD0BDF1C1E53C9AA006F550F /* QAType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAType.swift; sourceTree = "<group>"; };
-		DD0BDF1E1E53CF08006F550F /* QuizQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizQuestions.swift; sourceTree = "<group>"; };
 		DD0BDF201E5403F6006F550F /* QAVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAVC.swift; sourceTree = "<group>"; };
 		DD0BDF231E552754006F550F /* MobileDevVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileDevVC.swift; sourceTree = "<group>"; };
 		DD0BDF251E55276C006F550F /* WebDevVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDevVC.swift; sourceTree = "<group>"; };
@@ -380,8 +376,6 @@
 				DD0BDF351E5537A5006F550F /* Custom Cells */,
 				DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */,
 				DD0BDEF41E52D233006F550F /* QuizVC.swift */,
-				DD0BDEF61E52F023006F550F /* QuizResultsVC.swift */,
-				DD0BDF1E1E53CF08006F550F /* QuizQuestions.swift */,
 			);
 			name = QuizVCs;
 			sourceTree = "<group>";
@@ -719,7 +713,6 @@
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
 				17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */,
 				17CFD04E1E4F6FA10007ADEC /* SignInScreenViewable.swift in Sources */,
-				DD0BDEF71E52F023006F550F /* QuizResultsVC.swift in Sources */,
 				1749799E1E50DD2800B901DC /* CreateUserScreenViewable.swift in Sources */,
 				DD0BDF2A1E552791006F550F /* ITEngVC.swift in Sources */,
 				17CFD05B1E4F7B9F0007ADEC /* FirebaseInteracting.swift in Sources */,
@@ -747,7 +740,6 @@
 				17CFD05E1E4F7C630007ADEC /* AlertViewable.swift in Sources */,
 				1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */,
 				DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */,
-				DD0BDF1F1E53CF08006F550F /* QuizQuestions.swift in Sources */,
 				174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */,
 				17CFD0531E4F76D40007ADEC /* Injector.swift in Sources */,
 				DD0BDF301E5534E2006F550F /* QuizGroup.swift in Sources */,
