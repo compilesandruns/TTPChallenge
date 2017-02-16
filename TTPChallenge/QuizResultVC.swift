@@ -10,6 +10,9 @@ import UIKit
 
 class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var retakeQuizButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
     var techTypesFromResults:[String]?
     var indexArrayPassed: [Int]?
     
@@ -22,12 +25,11 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     ]
     
     let colors = [Colors.qaPeach, Colors.itPink, Colors.wdRose, Colors.mdBlue, Colors.daGreen]
-
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
+        retakeQuizButton.layer.cornerRadius = 20
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,8 +49,9 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        cell.backgroundColor = colors[indexPath.row]
+        let resultCell = cell as! ResultCell
+        resultCell.backgroundColor = colors[indexPath.row]
+        resultCell.selectionStyle = .none
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

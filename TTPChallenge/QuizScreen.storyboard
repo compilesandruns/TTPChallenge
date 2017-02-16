@@ -1603,6 +1603,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="retakeQuizButton" destination="MUo-rU-umP" id="IUV-he-wcw"/>
                         <outlet property="tableView" destination="WWR-ar-HFA" id="xpw-16-Ies"/>
                         <segue destination="2vF-Nk-R4w" kind="presentation" identifier="segueTo0" id="iIP-bK-pAN"/>
                         <segue destination="yUG-Ta-IB4" kind="presentation" identifier="segueTo3" id="inx-b5-Rsd"/>
