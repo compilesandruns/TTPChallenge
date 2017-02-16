@@ -13,15 +13,29 @@ class MeetUp {
     let name: String
     let memberCount: Int
     let summary: String
+    var image: UIImage?
+    var delegate: UpdateTableView?
     
-    init(name: String, memberCount: Int, summary: String) {
+    
+    init(name: String, memberCount: Int, summary: String, urlString: String) {
         
         self.name = name
         self.memberCount = memberCount
         self.summary = summary.removeHTML()
+        
+        urlString.downloadedFromURLString(completion: { (picture) in
+            
+            let resizedImage = picture.resizeImage(targetSize: CGSize(width: 500.0, height: 200.0))
+            self.image = resizedImage
+            self.delegate?.updateTableView()
+        })
     }
 }
 
+protocol UpdateTableView {
+    
+    func updateTableView()
+}
 extension String {
     
     func removeHTML() -> String {
@@ -30,13 +44,13 @@ extension String {
         
         removed = removed.replacingOccurrences(of: "<p>", with: "")
         removed = removed.replacingOccurrences(of: "</p>", with: "")
-
+        
         removed = removed.replacingOccurrences(of: "<b>", with: "")
         removed = removed.replacingOccurrences(of: "</b>", with: "")
-
+        
         removed = removed.replacingOccurrences(of: "<a href=", with: "")
         removed = removed.replacingOccurrences(of: "</a>", with: "")
-
+        
         removed = removed.replacingOccurrences(of: "&nbsp;", with: " ")
         removed = removed.replacingOccurrences(of: "</span>", with: "")
         removed = removed.replacingOccurrences(of: "<span>", with: "")
@@ -44,7 +58,55 @@ extension String {
         removed = removed.replacingOccurrences(of: "<br>", with: "")
         removed = removed.replacingOccurrences(of: "<ul>", with: "")
         removed = removed.replacingOccurrences(of: "</ul>", with: "")
-
+        
         return removed
     }
+
+    func downloadedFromURLString(completion: @escaping (UIImage) -> Void){
+        
+        guard let url = URL(string: self) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let result = UIImage(data: data)
+                else { return }
+            
+            DispatchQueue.main.async() { () -> Void in
+                completion(result)
+            }
+            }.resume()
+    }
 }
+
+extension UIImage {
+    
+    func resizeImage(targetSize: CGSize) -> UIImage {
+        let size = self.size
+        
+        let widthRatio  = targetSize.width  / self.size.width
+        let heightRatio = targetSize.height / self.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+}
+

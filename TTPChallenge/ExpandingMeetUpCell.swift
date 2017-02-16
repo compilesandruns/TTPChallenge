@@ -10,35 +10,13 @@ import UIKit
 
 class ExpandingMeetUpCell: UITableViewCell {
 
+    @IBOutlet weak var mainImage: UIImageView!
+
     @IBOutlet weak var title: UILabel!
     
-    @IBOutlet weak var memberCount: UILabel!
-    
     @IBOutlet weak var summary: UITextView!
-    
-    @IBOutlet weak var titleHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var favBtn: UIButton!
-    
-    @IBOutlet weak var memberLabelHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var summaryHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var favBtnHeight: NSLayoutConstraint!
-    
-    var isExpanded = false
-//        {
-//        didSet
-//        {
-//            if !isExpanded {
-//                self.summaryHeight.constant = 0.0
-//                
-//            }
-////            else {
-////                self.imgHeightConstraint.constant = 128.0
-////            }
-//        }
-//    }
+
+    var isExpanded:Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()

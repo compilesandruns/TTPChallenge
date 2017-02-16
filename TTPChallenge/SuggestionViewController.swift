@@ -8,9 +8,12 @@
 
 import UIKit
 
-class SuggestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SuggestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UpdateTableView {
     
     @IBOutlet weak var suggestionTableView: UITableView!
+    
+//    @IBOutlet weak var suggestionTableView: UITableView!
+    
     var meetups = [MeetUp]()
     
     override func viewDidLoad() {
@@ -18,6 +21,8 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         suggestionTableView.delegate = self
         suggestionTableView.dataSource = self
+        suggestionTableView.rowHeight = UITableViewAutomaticDimension
+        suggestionTableView.estimatedRowHeight = 300.0
         
         MeetUpAPIClient.getMeetupSuggestions(query: "women") {meetupResults in
             
@@ -26,17 +31,27 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
                 let name = each["name"] as? String
                 let count = each ["members"] as? Int
                 let summary = each["description"] as? String
-                
-                if let name = name,
+                let photo = each["key_photo"] as? [String : Any]
+                print(each)
+                if let photo = photo,
+                    let name = name,
                     let count = count,
                     let summary = summary{
                     
-                    let meetup = MeetUp(name: name, memberCount: count, summary: summary)
-                    self.meetups.append(meetup)
-                    OperationQueue.main.addOperation {
-                        self.suggestionTableView.reloadData()
+                    let photoURL = photo["highres_link"] as? String
+//                    print(photoURL)
+                    if let photoURL = photoURL {
+                        
+                        let meetup = MeetUp(name: name, memberCount: count, summary: summary, urlString: photoURL)
+                        self.meetups.append(meetup)
+                        OperationQueue.main.addOperation {
+                            self.suggestionTableView.reloadData()
+                        }
+                        
                     }
+                    
                 }
+                
             }
         }
     }
@@ -46,10 +61,16 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
         
         if indexPath.section == 0{
-            cell.title.text = meetups[indexPath.row].name
-            cell.summary.text = meetups[indexPath.row].summary
-            cell.memberCount.text = String(meetups[indexPath.row].memberCount)
-        } else {
+            let meetup = meetups[indexPath.row]
+            meetup.delegate = self
+            cell.title.text = meetup.name
+            cell.summary.text = cell.isExpanded ? meetup.summary : "Read More"
+            cell.summary.textAlignment = cell.isExpanded ? .left : .center
+            cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor.lightGray
+            cell.mainImage.image = meetup.image
+            cell.selectionStyle = .none
+            
+            } else {
             
             cell.title.text = "not a meetup"
         }
@@ -84,16 +105,33 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! ExpandingMeetUpCell
+        // 1
+        guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingMeetUpCell else { return }
         
-//        if cell.isExpanded{
-//            
-//            
-//            
-//        } else {
-//            
-//
-//        }
+        if indexPath.section == 0{
+            
+        let meetup = meetups[indexPath.row]
+        
+        // 2
+        cell.isExpanded = !cell.isExpanded
+        meetups[indexPath.row] = meetup
+        
+        // 3
+        cell.summary.text = cell.isExpanded ? meetup.summary : "Read More"
+        cell.summary.textAlignment = cell.isExpanded ? .left : .center
+        
+        // 4
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
+        // 5
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
+    }
+    
+    func updateTableView() {
+        
+        suggestionTableView.reloadData()
     }
 }
 

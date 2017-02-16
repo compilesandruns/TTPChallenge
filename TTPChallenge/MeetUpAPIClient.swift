@@ -12,7 +12,7 @@ class MeetUpAPIClient {
     
     class func getMeetupSuggestions(query: String, with completion: @escaping ([[String : Any]]) -> ()) {
 
-        let urlString = "https://api.meetup.com/find/groups?&sign=true&photo-host=public&upcoming_events=true&fallback_suggestions=true&text=\(query)&category=34&order=most_active&page=5&key=\(Secrets.key)"
+        let urlString = "https://api.meetup.com/find/groups?&sign=true&photo-host=public&upcoming_events=true&fallback_suggestions=true&text=\(query)&category=34&order=most_active&page=3&key=\(Secrets.key)"
         
         let url = URL(string: urlString)
         let session = URLSession.shared
