@@ -24,6 +24,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var allQuestions: [[Question]] = []
     var responsesArray: [Int] = []
     var techJobsForResult: [String] = []
+    var jobIndexArray: [Int] = []
     var respondedQuestions = 0
     
     var qa = [String]()
@@ -177,21 +178,18 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         var counter = 0
-        var emptyArray:[Int] = []
         
         for (i,n) in responsesArray.enumerated() {
             if n == max {
                 counter += 1
-                emptyArray.append(i)
+                jobIndexArray.append(i)
             }
         }
         
-        for n in emptyArray {
+        for n in jobIndexArray {
             techJobsForResult.append(techJobs[n])
-            print("********* \(techJobsForResult)")
         }
         
-        print("********* \(techJobsForResult)")
         performSegue(withIdentifier: "toResult", sender: self)
     }
     
@@ -200,7 +198,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         switch section {
         case 0:
-            print("Quality Assurance Analyst")
             switch row {
             case 0, 1, 2, 3:
                 qa[row] = Answers.yes.rawValue
@@ -208,7 +205,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             }
         case 1:
-            print("IT Engineer")
             switch row {
             case 0, 1, 2, 3:
                 it[row] = Answers.yes.rawValue
@@ -216,7 +212,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             }
         case 2:
-            print("Web Developer")
             switch row {
             case 0, 1, 2, 3:
                 wd[row] = Answers.yes.rawValue
@@ -224,7 +219,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             }
         case 3:
-            print("Mobile Developer")
             switch row {
             case 0, 1, 2, 3:
                 md[row] = Answers.yes.rawValue
@@ -232,7 +226,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             }
         case 4:
-            print("Data Analyst")
             switch row {
             case 0, 1, 2, 3:
                 da[row] = Answers.yes.rawValue
@@ -242,19 +235,13 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
-    
         self.activateResultButton()
-
-        print("\n\(qa)\n\(it)\n\(wd)\n\(md)\n\(da)")
-        
     }
-    
     
     func noForEachTechType(section: Int, row: Int){
         
         switch section {
         case 0:
-            print("Quality Assurance Analyst")
             switch row {
             case 0, 1, 2, 3:
                 qa[row] = Answers.no.rawValue
@@ -262,7 +249,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             }
         case 1:
-            print("IT Engineer")
             switch row {
             case 0, 1, 2, 3:
                 it[row] = Answers.no.rawValue
@@ -270,7 +256,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             }
         case 2:
-            print("Web Developer")
             switch row {
             case 0, 1, 2, 3:
                 wd[row] = Answers.no.rawValue
@@ -278,7 +263,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             }
         case 3:
-            print("Mobile Developer")
             switch row {
             case 0, 1, 2, 3:
                 md[row] = Answers.no.rawValue
@@ -286,7 +270,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             }
         case 4:
-            print("Data Analyst")
             switch row {
             case 0, 1, 2, 3:
                 da[row] = Answers.no.rawValue
@@ -301,7 +284,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.activateResultButton()
 
         }
-        print("\n\(qa)\n\(it)\n\(wd)\n\(md)\n\(da)")
     }
     
 
@@ -312,7 +294,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let mdCount = md.filter{$0 == Answers.none.rawValue}.count
         let daCount = da.filter{$0 == Answers.none.rawValue}.count
         
-        let allQuestionsToBeResponded = qa.count + it.count + wd.count + md.count + da.count //20
+        let allQuestionsToBeResponded = qa.count + it.count + wd.count + md.count + da.count
         let allEmptyStrs = qaCount + itCount + wdCount + mdCount + daCount
         respondedQuestions = 20 - allEmptyStrs
     
@@ -321,16 +303,18 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             nextButton.isEnabled = true
         }
-  
         progressLabel.text = "\(respondedQuestions)/\(allQuestionsToBeResponded)"
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toResult" {
+        let id = "toResult"
+        if segue.identifier == id {
             let destVC = segue.destination as! QuizResultVC
             DispatchQueue.main.async {
+                destVC.indexArrayPassed = self.jobIndexArray
+                print("\(self.jobIndexArray) <3 <3 jobindexarray")
                 destVC.techTypesFromResults = self.techJobsForResult
+                print("\(self.techJobsForResult) <3 <3 <3 <3 techjobsforresult")
 
             }
         }

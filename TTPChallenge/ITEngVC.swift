@@ -47,15 +47,7 @@ class ITEngVC: UIViewController {
         
     }
     
-    
-    
-    
     @IBAction func retakeQuizBtnTapped(_ sender: UIButton) {
-        
-    
-
+        dismiss(animated: true, completion: nil)
     }
-    
-    
-
 }

@@ -11,6 +11,15 @@ import UIKit
 class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var techTypesFromResults:[String]?
+    var indexArrayPassed: [Int]?
+    
+    let techJobs = [
+        "Quality Assurance Analyst",
+        "IT Engineer",
+        "Web Developer",
+        "Mobile Developer",
+        "Data Analyst"
+    ]
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,7 +46,20 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("tapped at \(indexPath.row)")
         
-
+        if let types = techTypesFromResults {
+            for (i,job) in techJobs.enumerated() {
+                if types[indexPath.row] == job {
+                    print("\(i)")
+                    performSegue(withIdentifier: "segueTo\(i)", sender: self)
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func retakeQuizBtnTapped(_ sender: Any) {
+        let id = "backHome"
+        performSegue(withIdentifier: id, sender: self)
     }
 
 }
