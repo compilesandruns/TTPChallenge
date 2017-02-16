@@ -10,6 +10,7 @@ import UIKit
 
 class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var progressLabel: UILabel!
     var objectsArray = [QuizGroup]()
     var counter = 0
     
@@ -86,7 +87,10 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             objectsArray.append(quizObject)
         }
         
-        activateResultButton()
+        DispatchQueue.main.async {
+            self.activateResultButton()
+
+        }
         
     }
     
@@ -239,7 +243,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
-        
+    
         self.activateResultButton()
 
         print("\n\(qa)\n\(it)\n\(wd)\n\(md)\n\(da)")
@@ -341,21 +345,14 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let allEmptyCounts = qaCount + itCount + wdCount + mdCount + daCount
         counter = 20 - allEmptyCounts
-        print("kdfjlkajfkldafjldkffdj \(counter)")
-        
+    
         if allEmptyCounts > 0 {
             nextButton.isEnabled = false
         } else {
             nextButton.isEnabled = true
-            nextButton.setTitleColor(UIColor.red, for: .normal)
-        }
-        
-        DispatchQueue.main.async {
-            self.progressBar.setProgress(Float(self.counter/20*100) + 0.1, animated: true)
-            print(Float(self.counter/20*100) + 0.1)
-            
-            print("hello")
         }
   
+        progressLabel.text = "\(counter)/20"
+
     }
 }

@@ -234,7 +234,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What tech type am I?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss7-Mp-l9Y">
-                                        <rect key="frame" x="15" y="32" width="262.5" height="21"/>
+                                        <rect key="frame" x="15" y="49.5" width="262.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="CWD-El-wjZ"/>
                                         </constraints>
@@ -243,7 +243,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To find out, take the quiz below." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic0-IP-OHr">
-                                        <rect key="frame" x="15" y="56" width="262.5" height="21"/>
+                                        <rect key="frame" x="15" y="73.5" width="262.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="kP0-W7-uUl"/>
                                         </constraints>
@@ -251,13 +251,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHz-Ch-lHW">
+                                        <rect key="frame" x="326" y="75" width="33.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="15"/>
+                                        <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ic0-IP-OHr" firstAttribute="leading" secondItem="Ss7-Mp-l9Y" secondAttribute="leading" id="307-Ar-lQy"/>
-                                    <constraint firstItem="Ss7-Mp-l9Y" firstAttribute="centerY" secondItem="FRE-M8-cgX" secondAttribute="centerY" multiplier="0.85" id="JBY-q0-mvf"/>
+                                    <constraint firstAttribute="trailing" secondItem="pHz-Ch-lHW" secondAttribute="trailing" constant="15" id="HzO-zT-9dn"/>
+                                    <constraint firstItem="Ss7-Mp-l9Y" firstAttribute="centerY" secondItem="FRE-M8-cgX" secondAttribute="centerY" multiplier="1.2" id="JBY-q0-mvf"/>
                                     <constraint firstItem="cN6-6e-SCj" firstAttribute="centerY" secondItem="FRE-M8-cgX" secondAttribute="centerY" multiplier="0.85" id="NLZ-ps-uQo"/>
+                                    <constraint firstItem="pHz-Ch-lHW" firstAttribute="centerY" secondItem="ic0-IP-OHr" secondAttribute="centerY" id="TFy-DV-OQO"/>
                                     <constraint firstItem="cN6-6e-SCj" firstAttribute="width" secondItem="FRE-M8-cgX" secondAttribute="width" multiplier="0.1" id="Urr-QH-tIX"/>
+                                    <constraint firstItem="pHz-Ch-lHW" firstAttribute="trailing" secondItem="cN6-6e-SCj" secondAttribute="trailing" id="Xil-Hn-eRN"/>
                                     <constraint firstAttribute="trailing" secondItem="cN6-6e-SCj" secondAttribute="trailing" constant="15" id="fPi-E9-TT1"/>
                                     <constraint firstItem="Ss7-Mp-l9Y" firstAttribute="leading" secondItem="FRE-M8-cgX" secondAttribute="leading" constant="15" id="j4u-Yh-xdm"/>
                                     <constraint firstItem="Ss7-Mp-l9Y" firstAttribute="width" secondItem="FRE-M8-cgX" secondAttribute="width" multiplier="0.7" id="mX2-gw-D5b"/>
@@ -265,14 +274,6 @@
                                     <constraint firstItem="ic0-IP-OHr" firstAttribute="top" secondItem="Ss7-Mp-l9Y" secondAttribute="bottom" constant="3" id="zAt-YJ-ssA"/>
                                 </constraints>
                             </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="YGQ-zX-lB0">
-                                <rect key="frame" x="0.0" y="100" width="375" height="6"/>
-                                <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.0" green="0.68235294117647061" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="Cni-2X-Gz8"/>
-                                </constraints>
-                            </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLD-Ux-nHV">
                                 <rect key="frame" x="0.0" y="110" width="375" height="557"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -435,10 +436,7 @@
                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="eLD-Ux-nHV" firstAttribute="centerX" secondItem="FRE-M8-cgX" secondAttribute="centerX" id="EvG-h1-2qI"/>
-                            <constraint firstItem="YGQ-zX-lB0" firstAttribute="top" secondItem="FRE-M8-cgX" secondAttribute="bottom" id="NAl-6j-Jih"/>
-                            <constraint firstItem="YGQ-zX-lB0" firstAttribute="centerX" secondItem="FRE-M8-cgX" secondAttribute="centerX" id="OfD-9G-oav"/>
                             <constraint firstItem="hdy-x6-Mfl" firstAttribute="top" secondItem="eLD-Ux-nHV" secondAttribute="bottom" id="T5e-WB-q6h"/>
-                            <constraint firstItem="YGQ-zX-lB0" firstAttribute="width" secondItem="FRE-M8-cgX" secondAttribute="width" id="bNd-Dd-y2W"/>
                             <constraint firstItem="eLD-Ux-nHV" firstAttribute="top" secondItem="FRE-M8-cgX" secondAttribute="bottom" constant="10" id="gtC-gU-NYb"/>
                             <constraint firstItem="FRE-M8-cgX" firstAttribute="top" secondItem="JOO-ou-dcG" secondAttribute="top" id="he0-bO-4fJ"/>
                             <constraint firstItem="eLD-Ux-nHV" firstAttribute="width" secondItem="FRE-M8-cgX" secondAttribute="width" id="uK3-T2-sU4"/>
@@ -449,7 +447,7 @@
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="c4X-CS-QeT" id="kKg-Lf-jVS"/>
-                        <outlet property="progressBar" destination="YGQ-zX-lB0" id="X7W-FN-YFk"/>
+                        <outlet property="progressLabel" destination="pHz-Ch-lHW" id="xCi-r8-DLT"/>
                         <outlet property="tableView" destination="eLD-Ux-nHV" id="hY8-1L-lGj"/>
                         <segue destination="2vF-Nk-R4w" kind="presentation" identifier="resultToQA" id="fJ6-5B-k0D"/>
                         <segue destination="yUG-Ta-IB4" kind="presentation" identifier="resultToMD" id="4C5-dV-5Oo"/>
@@ -461,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQc-wQ-dAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4569" y="-27"/>
+            <point key="canvasLocation" x="4568.8000000000002" y="-27.436281859070466"/>
         </scene>
         <!--Your Tech Type-->
         <scene sceneID="emY-7j-BKT">
