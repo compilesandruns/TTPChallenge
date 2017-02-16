@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum Answers: String {
+    case none = ""
+    case yes = "1"
+    case no = "0"
+}
+
 class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var progressLabel: UILabel!
@@ -66,12 +72,11 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         for _ in 1...4 {
-            let emptyStr = ""
-            qa.append(emptyStr)
-            it.append(emptyStr)
-            wd.append(emptyStr)
-            md.append(emptyStr)
-            da.append(emptyStr)
+            qa.append(Answers.none.rawValue)
+            it.append(Answers.none.rawValue)
+            wd.append(Answers.none.rawValue)
+            md.append(Answers.none.rawValue)
+            da.append(Answers.none.rawValue)
         }
         
         for (i,data) in personalityData.enumerated() {
@@ -158,11 +163,11 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {
         
-        let yesesInQa = qa.filter{$0 == "1"}.count
-        let yesesInIt = it.filter{$0 == "1"}.count
-        let yesesInWd = wd.filter{$0 == "1"}.count
-        let yesesInMd = md.filter{$0 == "1"}.count
-        let yesesInDa = da.filter{$0 == "1"}.count
+        let yesesInQa = qa.filter{$0 == Answers.yes.rawValue}.count
+        let yesesInIt = it.filter{$0 == Answers.yes.rawValue}.count
+        let yesesInWd = wd.filter{$0 == Answers.yes.rawValue}.count
+        let yesesInMd = md.filter{$0 == Answers.yes.rawValue}.count
+        let yesesInDa = da.filter{$0 == Answers.yes.rawValue}.count
         
         responsesArray = [yesesInQa, yesesInIt, yesesInWd, yesesInMd, yesesInDa]
         
@@ -198,7 +203,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Quality Assurance Analyst")
             switch row {
             case 0, 1, 2, 3:
-                qa[row] = "1"
+                qa[row] = Answers.yes.rawValue
             default:
                 break
             }
@@ -206,7 +211,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("IT Engineer")
             switch row {
             case 0, 1, 2, 3:
-                it[row] = "1"
+                it[row] = Answers.yes.rawValue
             default:
                 break
             }
@@ -214,7 +219,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Web Developer")
             switch row {
             case 0, 1, 2, 3:
-                wd[row] = "1"
+                wd[row] = Answers.yes.rawValue
             default:
                 break
             }
@@ -222,7 +227,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Mobile Developer")
             switch row {
             case 0, 1, 2, 3:
-                md[row] = "1"
+                md[row] = Answers.yes.rawValue
             default:
                 break
             }
@@ -230,7 +235,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Data Analyst")
             switch row {
             case 0, 1, 2, 3:
-                da[row] = "1"
+                da[row] = Answers.yes.rawValue
             default:
                 break
             }
@@ -252,7 +257,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Quality Assurance Analyst")
             switch row {
             case 0, 1, 2, 3:
-                qa[row] = "0"
+                qa[row] = Answers.no.rawValue
             default:
                 break
             }
@@ -260,7 +265,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("IT Engineer")
             switch row {
             case 0, 1, 2, 3:
-                it[row] = "0"
+                it[row] = Answers.no.rawValue
             default:
                 break
             }
@@ -268,7 +273,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Web Developer")
             switch row {
             case 0, 1, 2, 3:
-                wd[row] = "0"
+                wd[row] = Answers.no.rawValue
             default:
                 break
             }
@@ -276,7 +281,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Mobile Developer")
             switch row {
             case 0, 1, 2, 3:
-                md[row] = "0"
+                md[row] = Answers.no.rawValue
             default:
                 break
             }
@@ -284,7 +289,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Data Analyst")
             switch row {
             case 0, 1, 2, 3:
-                da[row] = "0"
+                da[row] = Answers.no.rawValue
             default:
                 break
             }
@@ -301,11 +306,11 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
     func activateResultButton(){
-        let qaCount = qa.filter{$0 == ""}.count
-        let itCount = it.filter{$0 == ""}.count
-        let wdCount = wd.filter{$0 == ""}.count
-        let mdCount = md.filter{$0 == ""}.count
-        let daCount = da.filter{$0 == ""}.count
+        let qaCount = qa.filter{$0 == Answers.none.rawValue}.count
+        let itCount = it.filter{$0 == Answers.none.rawValue}.count
+        let wdCount = wd.filter{$0 == Answers.none.rawValue}.count
+        let mdCount = md.filter{$0 == Answers.none.rawValue}.count
+        let daCount = da.filter{$0 == Answers.none.rawValue}.count
         
         let allQuestionsToBeResponded = qa.count + it.count + wd.count + md.count + da.count //20
         let allEmptyStrs = qaCount + itCount + wdCount + mdCount + daCount
