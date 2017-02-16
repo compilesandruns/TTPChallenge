@@ -1,39 +1,36 @@
 //
-//  QAResultVC.swift
+//  DataAnalystVC.swift
 //  TTPChallenge
 //
-//  Created by Luna An on 2/14/17.
+//  Created by Mirim An on 2/15/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
 import UIKit
 
-class QAResultVC: UIViewController {
+class DataAnalystVC: UIViewController {
+
+    @IBOutlet var informationButtons:[UIButton]!
     
-    @IBOutlet var programInfoButtons:[UIButton]!
-    @IBOutlet weak var retakeButton: UIButton!
-    
+    @IBOutlet weak var retakeQuizButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // button styling
-        for button in programInfoButtons {
+
+        for button in informationButtons {
             button.layer.cornerRadius = 12
         }
-        retakeButton.layer.cornerRadius = 20
+        retakeQuizButton.layer.cornerRadius = 20
 
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func shareButtonTapped(_ sender: Any) {
-        print("sharebuttontapped")
-        // implement activity view controller
-        // share via social networks?
-    }
-    
-    @IBAction func homeButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "backToQuizMain", sender: self)
-    }
-    
-    @IBAction func programInfoButtonTapped(_ sender: UIButton) {
+    @IBAction func informationBtnTapped(_ sender: UIButton) {
+        
         let index = sender.tag
         switch index {
         case 0:
@@ -45,13 +42,13 @@ class QAResultVC: UIViewController {
         default:
             break
         }
+
     }
+    
+    
     
     @IBAction func retakeQuizBtnTapped(_ sender: Any) {
-        performSegue(withIdentifier: "backToQuizMain", sender: self)
     }
-    
-    
 
     /*
     // MARK: - Navigation

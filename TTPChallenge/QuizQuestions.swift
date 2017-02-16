@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct Quiz {
-    
-    var question : String
-    var isYes = false
-    
-}
-
 class QuizQuestions: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var objectsArray = [Quiz]()
@@ -181,7 +174,16 @@ class QuizQuestions: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBAction func resultButtonTapped(_ sender: Any) {
      
         // logic here - based on the results, it will segue to a different tech type
+        // algo needed 
         performSegue(withIdentifier: "resultToIT", sender: self)
+        /*
+         performSegue(withIdentifier: "resultToDA", sender: self)
+         performSegue(withIdentifier: "resultToWD", sender: self)
+         performSegue(withIdentifier: "resultToAll", sender: self)
+         performSegue(withIdentifier: "resultToMD", sender: self)
+         performSegue(withIdentifier: "resultToQA", sender: self)
+         
+         */
     }
 }
 

@@ -8,14 +8,6 @@
 
 import UIKit
 
-struct QuizGroup {
-    
-    var sectionName : String
-    var questions : [Question]
-    var isYes = false
-    
-}
-
 class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var objectsArray = [QuizGroup]()
@@ -113,10 +105,6 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
-
-    
-    
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         // Making the section header invisible
         return 0
@@ -129,72 +117,3 @@ class QuizPartOneVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
 }
 
-class PersonalityTestCell: UITableViewCell {
-
-    @IBOutlet weak var noButton: UIButton!
-    @IBOutlet weak var yesButton: UIButton!
-    @IBOutlet weak var personalityView: UIView!
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var yesLabel: UILabel!
-    @IBOutlet weak var noLabel: UILabel!
-    
-    var tapActionForYes: ((UITableViewCell) -> Void)?
-    var tapActionForNo: ((UITableViewCell) -> Void)?
-    var yesSelected: Bool = false
-    var noSelected: Bool = false
-    
-    weak var question: Question! {
-        didSet {
-            questionLabel.text = question.string
-            
-            if question.selectedYes {
-                yesButton.isSelected = true
-            }
-            
-            if question.selectedNo {
-                noButton.isSelected = true
-            }
-        }
-    }
-    
-    func reset() {
-        yesButton.isSelected = false
-        noButton.isSelected = false
-    }
-
-    @IBAction func yesTapped(_ sender: UIButton) {
-        question.changeToYes()
-        yesButton.isSelected = true
-    }
-    @IBAction func noTapped(_ sender: Any) {
-        question.changeToNo()
-        noButton.isSelected = true
-    }
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        reset()
-    }
-    
-}
-
-final class Question {
-    
-    let string: String
-    var selectedYes: Bool = false
-    var selectedNo: Bool = false
-    
-    init(string: String) {
-        self.string = string
-    }
-    
-    func changeToYes() {
-        selectedNo = false
-        selectedYes = true
-    }
-    
-    func changeToNo() {
-        selectedNo = true
-        selectedYes = false
-    }
-    
-}
