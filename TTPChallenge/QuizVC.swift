@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum Answers: String {
-    case none = ""
-    case yes = "1"
-    case no = "0"
-}
-
 class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var progressLabel: UILabel!

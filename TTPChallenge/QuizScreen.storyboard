@@ -774,7 +774,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRF-Ui-w6B">
-                                <rect key="frame" x="0.0" y="151" width="414" height="950"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="799"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUP-WB-yG6">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
@@ -960,8 +960,8 @@
                             <constraint firstItem="kRF-Ui-w6B" firstAttribute="top" secondItem="5Uz-CT-Diq" secondAttribute="bottom" id="2m6-w5-Mg0"/>
                             <constraint firstItem="kRF-Ui-w6B" firstAttribute="width" secondItem="sMj-3U-E7f" secondAttribute="width" id="2sA-ZT-T5g"/>
                             <constraint firstItem="UUP-WB-yG6" firstAttribute="width" secondItem="sMj-3U-E7f" secondAttribute="width" id="8vT-2q-5yN"/>
+                            <constraint firstItem="FCE-7e-YRZ" firstAttribute="top" secondItem="kRF-Ui-w6B" secondAttribute="bottom" id="A2j-Ri-KPa"/>
                             <constraint firstItem="5Uz-CT-Diq" firstAttribute="width" secondItem="sMj-3U-E7f" secondAttribute="width" id="Bgu-c0-TgS"/>
-                            <constraint firstItem="kRF-Ui-w6B" firstAttribute="height" secondItem="sMj-3U-E7f" secondAttribute="height" id="LTa-ev-PYx"/>
                             <constraint firstItem="kRF-Ui-w6B" firstAttribute="centerX" secondItem="sMj-3U-E7f" secondAttribute="centerX" id="Lwk-wn-Jbs"/>
                             <constraint firstItem="5Uz-CT-Diq" firstAttribute="centerX" secondItem="sMj-3U-E7f" secondAttribute="centerX" id="doX-LY-ONh"/>
                             <constraint firstItem="kRF-Ui-w6B" firstAttribute="top" secondItem="sMj-3U-E7f" secondAttribute="top" constant="151" id="lF1-O9-zCe"/>
@@ -1242,7 +1242,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tDt-5p-maP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bdg-8Y-A8P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A70-nc-B4F" userLabel="topView">
@@ -1278,13 +1278,13 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzz-aZ-zfy">
-                                <rect key="frame" x="0.0" y="151" width="414" height="799"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="749"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wa-AE-VYn">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7B-rU-dBd" userLabel="bodyView">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dataAnalystImg" translatesAutoresizingMaskIntoConstraints="NO" id="wnv-KA-hrM">
                                                         <rect key="frame" x="137" y="5" width="140" height="140"/>
@@ -1429,7 +1429,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="850" id="2he-8U-MdV"/>
+                                            <constraint firstAttribute="height" constant="750" id="2he-8U-MdV"/>
                                             <constraint firstItem="m7B-rU-dBd" firstAttribute="width" secondItem="5wa-AE-VYn" secondAttribute="width" id="AhU-wi-XUJ"/>
                                             <constraint firstItem="m7B-rU-dBd" firstAttribute="centerY" secondItem="5wa-AE-VYn" secondAttribute="centerY" id="BhP-Nm-zpw"/>
                                             <constraint firstItem="m7B-rU-dBd" firstAttribute="centerX" secondItem="5wa-AE-VYn" secondAttribute="centerX" id="rAN-cD-f1h"/>
@@ -1461,7 +1461,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="M2x-iS-djA"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="950"/>
+                    <size key="freeformSize" width="414" height="900"/>
                     <connections>
                         <outlet property="retakeQuizButton" destination="Ouy-Wd-Ev2" id="gRX-Mi-SR9"/>
                         <outletCollection property="informationButtons" destination="VTP-Ea-DF1" collectionClass="NSMutableArray" id="twu-E2-x1L"/>
@@ -1489,7 +1489,6 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mop-Mj-67I">
                                         <rect key="frame" x="0.0" y="75" width="375" height="64"/>
-                                        <color key="backgroundColor" red="0.96686241610000001" green="0.83529411760000005" blue="0.85900796980000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="bDH-sY-bir"/>
                                         </constraints>
@@ -1498,20 +1497,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Based on the quiz data we received from you, the following tech types are good matches for your personaliy and interest!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxv-H0-5X3">
-                                        <rect key="frame" x="0.0" y="146.5" width="375" height="112.5"/>
+                                        <rect key="frame" x="0.0" y="146.5" width="375" height="120.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.50739303690000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="mop-Mj-67I" firstAttribute="centerX" secondItem="Ift-Dv-SP1" secondAttribute="centerX" id="D9C-NU-poY"/>
                                     <constraint firstItem="mop-Mj-67I" firstAttribute="width" secondItem="Ift-Dv-SP1" secondAttribute="width" id="FTB-QA-AYq"/>
                                     <constraint firstItem="jxv-H0-5X3" firstAttribute="width" secondItem="Ift-Dv-SP1" secondAttribute="width" id="Qj4-JN-wa0"/>
                                     <constraint firstItem="mop-Mj-67I" firstAttribute="centerY" secondItem="Ift-Dv-SP1" secondAttribute="centerY" multiplier="0.8" id="bFr-1P-oMD"/>
                                     <constraint firstItem="jxv-H0-5X3" firstAttribute="centerX" secondItem="Ift-Dv-SP1" secondAttribute="centerX" id="e92-yE-eAU"/>
-                                    <constraint firstAttribute="bottom" secondItem="jxv-H0-5X3" secondAttribute="bottom" constant="8" id="eQ4-Fl-mcu"/>
+                                    <constraint firstAttribute="bottom" secondItem="jxv-H0-5X3" secondAttribute="bottom" id="eQ4-Fl-mcu"/>
                                     <constraint firstItem="jxv-H0-5X3" firstAttribute="top" secondItem="mop-Mj-67I" secondAttribute="bottom" constant="7.5" id="pyn-3a-21M"/>
                                 </constraints>
                             </view>
@@ -1520,7 +1520,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WWR-ar-HFA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
-                                        <color key="backgroundColor" red="1" green="0.83529411760000005" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" rowHeight="60" id="esn-aT-Y6l" customClass="ResultCell" customModule="TTPChallenge" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
@@ -1536,7 +1536,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="0.83529411760000005" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="sG3-yb-zsJ" firstAttribute="width" secondItem="dmV-cv-Elr" secondAttribute="width" id="JGU-v2-dGC"/>
                                                         <constraint firstItem="sG3-yb-zsJ" firstAttribute="centerY" secondItem="dmV-cv-Elr" secondAttribute="centerY" id="Xjp-sb-dLL"/>
@@ -1544,7 +1543,6 @@
                                                         <constraint firstItem="sG3-yb-zsJ" firstAttribute="centerX" secondItem="dmV-cv-Elr" secondAttribute="centerX" id="tG6-iI-1VR"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" red="1" green="0.83529411760000005" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <outlet property="techTypeTitleLabel" destination="sG3-yb-zsJ" id="FwG-Ea-G4r"/>
                                                 </connections>
@@ -1627,7 +1625,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6tp-eC-dLS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ghl-Il-b9J">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPJ-8n-OPv" userLabel="topView">
@@ -1663,13 +1661,13 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSS-aw-cVm">
-                                <rect key="frame" x="0.0" y="151" width="414" height="849"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="799"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vh-xe-vbx">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOh-kn-w9K" userLabel="bodyView">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itEngImg" translatesAutoresizingMaskIntoConstraints="NO" id="Yl0-Tv-WpE">
                                                         <rect key="frame" x="137" y="5" width="140" height="140"/>
@@ -1833,7 +1831,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                             <constraint firstItem="AOh-kn-w9K" firstAttribute="top" secondItem="2Vh-xe-vbx" secondAttribute="top" id="0x4-0L-neI"/>
                                             <constraint firstAttribute="bottom" secondItem="AOh-kn-w9K" secondAttribute="bottom" id="3MG-NR-iNj"/>
                                             <constraint firstItem="AOh-kn-w9K" firstAttribute="centerX" secondItem="2Vh-xe-vbx" secondAttribute="centerX" id="5cd-cI-4T6"/>
-                                            <constraint firstAttribute="height" constant="850" id="Y3q-kl-eu4"/>
+                                            <constraint firstAttribute="height" constant="800" id="Y3q-kl-eu4"/>
                                             <constraint firstItem="AOh-kn-w9K" firstAttribute="width" secondItem="2Vh-xe-vbx" secondAttribute="width" id="qLN-RW-rLk"/>
                                         </constraints>
                                     </view>
@@ -1861,7 +1859,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                     </view>
                     <navigationItem key="navigationItem" id="Z2q-kJ-lyQ"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="1000"/>
+                    <size key="freeformSize" width="414" height="950"/>
                     <connections>
                         <outlet property="retakeQuizButton" destination="Lad-ix-zGf" id="g3p-jw-za0"/>
                         <outletCollection property="informationButtons" destination="do7-vh-i8Z" collectionClass="NSMutableArray" id="IOd-77-ewa"/>
@@ -1900,7 +1898,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Siv-at-XAu" firstAttribute="centerY" secondItem="0cC-3g-Z2O" secondAttribute="centerY" id="DUi-Eb-Jr4"/>
                                             <constraint firstItem="Siv-at-XAu" firstAttribute="centerX" secondItem="0cC-3g-Z2O" secondAttribute="centerX" id="OVz-Pk-z8H"/>
@@ -1940,7 +1938,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                             </button>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4p8-6G-EKc">
                                                                 <rect key="frame" x="0.0" y="126.5" width="375" height="53.5"/>
-                                                                <color key="backgroundColor" red="0.089266988259999999" green="0.65406539929999996" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" red="0.090196078431372548" green="0.65490196078431373" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="24"/>
                                                                 <state key="normal" title="Mobile Developer">
                                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>

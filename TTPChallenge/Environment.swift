@@ -25,3 +25,9 @@ struct Environment {
         static let userNotFound = "Unable to locate account. Please create a new account."
     }
 }
+
+enum Answers: String {
+    case none = ""
+    case yes = "1"
+    case no = "0"
+}

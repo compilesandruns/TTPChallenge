@@ -20,6 +20,8 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         "Mobile Developer",
         "Data Analyst"
     ]
+    
+    let colors = [Colors.qaPeach, Colors.itPink, Colors.wdRose, Colors.mdBlue, Colors.daGreen]
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -40,7 +42,13 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if let techTypes = techTypesFromResults {
              cell.techTypeTitleLabel.text = techTypes[indexPath.row]
         }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.backgroundColor = colors[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
