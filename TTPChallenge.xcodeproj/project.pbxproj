@@ -128,6 +128,7 @@
 		17BB265D1E5176A30005D787 /* AuthInteracting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthInteracting.swift; sourceTree = "<group>"; };
 		17BB265F1E51795A0005D787 /* MenuViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewable.swift; sourceTree = "<group>"; };
 		17BB26611E517A5F0005D787 /* MenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
+		17CD8BFC1E55F68800EB4860 /* TTPChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TTPChallenge.entitlements; sourceTree = "<group>"; };
 		17CFD0401E4F5EB40007ADEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		17CFD0481E4F69FF0007ADEC /* TTPChallenge-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTPChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		17CFD0491E4F6F900007ADEC /* SignInScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenPresenter.swift; sourceTree = "<group>"; };
@@ -223,6 +224,7 @@
 		1751AB9E1E4D33AB00E2AE75 /* TTPChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				17CD8BFC1E55F68800EB4860 /* TTPChallenge.entitlements */,
 				17CFD0711E50BA3C0007ADEC /* UI Helpers */,
 				17CFD0611E4F85C90007ADEC /* Firebase Extensions */,
 				17CFD0581E4F7B770007ADEC /* Interactors */,
@@ -481,8 +483,13 @@
 				TargetAttributes = {
 					1751AB9B1E4D33AB00E2AE75 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = Y3XW7PXBLT;
+						DevelopmentTeam = 78BEW79T42;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					1751ABB41E4D3D9F00E2AE75 = {
 						CreatedOnToolsVersion = 8.1;
@@ -886,8 +893,10 @@
 			baseConfigurationReference = BBE3DA305B2BD4B2954AA8B8 /* Pods-TTPChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = Y3XW7PXBLT;
+				CODE_SIGN_ENTITLEMENTS = TTPChallenge/TTPChallenge.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = 78BEW79T42;
 				INFOPLIST_FILE = TTPChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeamMDC.TTPChallenge;
@@ -904,8 +913,10 @@
 			baseConfigurationReference = D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = Y3XW7PXBLT;
+				CODE_SIGN_ENTITLEMENTS = TTPChallenge/TTPChallenge.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = 78BEW79T42;
 				INFOPLIST_FILE = TTPChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeamMDC.TTPChallenge;

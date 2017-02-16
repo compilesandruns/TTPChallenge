@@ -78,9 +78,14 @@ extension SignInScreenViewController : SignInScreenViewable {
         }
     }
     
-    func openSignUpScreen() {
+    func showSignUpScreen() {
         performSegue(withIdentifier: "SignUpSegue", sender: nil)
     }
+    
+    func showHomeScreen() {
+        performSegue(withIdentifier: "HomeScreenSegue", sender: nil)
+    }
+    
     func dismissKeyboard() {
         view.endEditing(true)
     }

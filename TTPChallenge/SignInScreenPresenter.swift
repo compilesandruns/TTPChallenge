@@ -24,6 +24,8 @@ class SignInScreenPresenter: SignInScreenPresenting {
         signInInteractor.signIn(email: view.email, password: view.password).then{ errorMessage -> Void in
             if !errorMessage.isEmpty {
                 self.view.showAlert(message: errorMessage, title: Environment.Alert.errorTitle)
+            } else {
+                self.view.showHomeScreen()
             }
         }.catch { error in
             if let errCode = FIRAuthErrorCode(rawValue: error._code) {
@@ -45,6 +47,6 @@ class SignInScreenPresenter: SignInScreenPresenting {
     }
     
     func didTapSignUp() {
-        view.openSignUpScreen()
+        view.showSignUpScreen()
     }
 }
