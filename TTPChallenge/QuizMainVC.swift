@@ -28,7 +28,7 @@ class QuizMainVC: UIViewController {
         // Trasnparent navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        print("\nThis is about to get called.")
+        print("\nThis is a quiz main view.")
         self.navigationController?.navigationBar.isTranslucent = true
     }
     

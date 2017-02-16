@@ -28,11 +28,15 @@ class PersonalityTestCell: UITableViewCell {
             
             if question.selectedYes {
                 yesButton.isSelected = true
+                print("hahahahaha")
+                
             }
             
             if question.selectedNo {
                 noButton.isSelected = true
+                
             }
+            
         }
     }
     

@@ -11,11 +11,13 @@ import Foundation
 final class Question {
     
     let string: String
+    let section: String
     var selectedYes: Bool = false
     var selectedNo: Bool = false
     
-    init(string: String) {
+    init(string: String, section: String) {
         self.string = string
+        self.section = section
     }
     
     func changeToYes() {

@@ -11,12 +11,13 @@ import UIKit
 class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var objectsArray = [QuizGroup]()
+    var counter = 0
     
-    var qa = [false, false, false, false]
-    var it = [false, false, false, false]
-    var wd = [false, false, false, false]
-    var md = [false, false, false, false]
-    var da = [false, false, false, false]
+    var qa = [String]()
+    var it = [String]()
+    var wd = [String]()
+    var md = [String]()
+    var da = [String]()
     
     let techJobs = [
         "Quality Assurance Analyst",
@@ -42,7 +43,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
          "Have tried or are interested in learning how to code"],
         ["Are iPhone or Android obsessed",
          "Are Always on the hunt for the latest cool app",
-         "Enjoy learning about new technology",
          "Have strong preferences for specific technology or apps",
          "Have tried or areinterested in learning how to code"],
         ["Able to work across teams and with a variety of stakeholders",
@@ -59,13 +59,20 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for _ in 1...4 {
+            qa.append("")
+            it.append("")
+            wd.append("")
+            md.append("")
+            da.append("")
+        }
         
-        for data in personalityData {
+        for (i,data) in personalityData.enumerated() {
             
             var newQuestions: [Question] = []
             
             for string in data {
-                newQuestions.append(Question(string: string))
+                newQuestions.append(Question(string: string, section: techJobs[i]))
             }
             allQuestions.append(newQuestions)
         }
@@ -74,12 +81,21 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         nextButton.layer.cornerRadius = 20
         
         for i in 0..<5 {
-            let quizObject = QuizGroup(sectionName: techJobs[i], questions: allQuestions[i], isYes: false)
-            
+            let quizObject = QuizGroup(sectionName: techJobs[i], questions: allQuestions[i])
+            print(quizObject)
             objectsArray.append(quizObject)
         }
+        
+        activateResultButton()
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        activateResultButton()
+    }
+    
+   
     @IBAction func dismissVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -92,6 +108,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objectsArray[section].questions.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,6 +132,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let personalityCell = cell as! PersonalityTestCell
         let question = objectsArray[indexPath.section].questions[indexPath.row]
         personalityCell.question = question
+        
     }
     
     
@@ -129,20 +147,11 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {
-        
-        let qaCount = qa.filter{$0}.count
-        let itCount = it.filter{$0}.count
-        let wdCount = wd.filter{$0}.count
-        let mdCount = md.filter{$0}.count
-        let daCount = da.filter{$0}.count
-        
-        
-        
-        
+        print("love")
         
         // logic here - based on the results, it will segue to a different tech type
         // algo needed
-        performSegue(withIdentifier: "resultToWD", sender: self)
+        //performSegue(withIdentifier: "resultToWD", sender: self)
         /*
          performSegue(withIdentifier: "resultToDA", sender: self)
          performSegue(withIdentifier: "resultToWD", sender: self)
@@ -161,15 +170,13 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Quality Assurance Analyst")
             switch row {
             case 0:
-                qa[0] = true
+                qa[0] = "1"
             case 1:
-                qa[1] = true
+                qa[1] = "1"
             case 2:
-                qa[2] = true
+                qa[2] = "1"
             case 3:
-                qa[3] = true
-            case 4:
-                qa[4] = true
+                qa[3] = "1"
             default:
                 break
             }
@@ -177,15 +184,13 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("IT Engineer")
             switch row {
             case 0:
-                it[0] = true
+                it[0] = "1"
             case 1:
-                it[1] = true
+                it[1] = "1"
             case 2:
-                it[2] = true
+                it[2] = "1"
             case 3:
-                it[3] = true
-            case 4:
-                it[4] = true
+                it[3] = "1"
             default:
                 break
             }
@@ -193,15 +198,13 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Web Developer")
             switch row {
             case 0:
-                wd[0] = true
+                wd[0] = "1"
             case 1:
-                wd[1] = true
+                wd[1] = "1"
             case 2:
-                wd[2] = true
+                wd[2] = "1"
             case 3:
-                wd[3] = true
-            case 4:
-                wd[4] = true
+                wd[3] = "1"
             default:
                 break
             }
@@ -209,15 +212,13 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Mobile Developer")
             switch row {
             case 0:
-                md[0] = true
+                md[0] = "1"
             case 1:
-                md[1] = true
+                md[1] = "1"
             case 2:
-                md[2] = true
+                md[2] = "1"
             case 3:
-                md[3] = true
-            case 4:
-                md[4] = true
+                md[3] = "1"
             default:
                 break
             }
@@ -225,21 +226,22 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Data Analyst")
             switch row {
             case 0:
-                da[0] = true
+                da[0] = "1"
             case 1:
-                da[1] = true
+                da[1] = "1"
             case 2:
-                da[2] = true
+                da[2] = "1"
             case 3:
-                da[3] = true
-            case 4:
-                da[4] = true
+                da[3] = "1"
             default:
                 break
             }
         default:
             break
         }
+        
+        self.activateResultButton()
+
         print("\n\(qa)\n\(it)\n\(wd)\n\(md)\n\(da)")
         
     }
@@ -252,15 +254,13 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Quality Assurance Analyst")
             switch row {
             case 0:
-                qa[0] = false
+                qa[0] = "0"
             case 1:
-                qa[1] = false
+                qa[1] = "0"
             case 2:
-                qa[2] = false
+                qa[2] = "0"
             case 3:
-                qa[3] = false
-            case 4:
-                qa[4] = false
+                qa[3] = "0"
             default:
                 break
             }
@@ -268,15 +268,13 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("IT Engineer")
             switch row {
             case 0:
-                it[0] = false
+                it[0] = "0"
             case 1:
-                it[1] = false
+                it[1] = "0"
             case 2:
-                it[2] = false
+                it[2] = "0"
             case 3:
-                it[3] = false
-            case 4:
-                it[4] = false
+                it[3] = "0"
             default:
                 break
             }
@@ -284,15 +282,13 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Web Developer")
             switch row {
             case 0:
-                wd[0] = false
+                wd[0] = "0"
             case 1:
-                wd[1] = false
+                wd[1] = "0"
             case 2:
-                wd[2] = false
+                wd[2] = "0"
             case 3:
-                wd[3] = false
-            case 4:
-                wd[4] = false
+                wd[3] = "0"
             default:
                 break
             }
@@ -300,15 +296,13 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Mobile Developer")
             switch row {
             case 0:
-                md[0] = false
+                md[0] = "0"
             case 1:
-                md[1] = false
+                md[1] = "0"
             case 2:
-                md[2] = false
+                md[2] = "0"
             case 3:
-                md[3] = false
-            case 4:
-                md[4] = false
+                md[3] = "0"
             default:
                 break
             }
@@ -316,22 +310,52 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("Data Analyst")
             switch row {
             case 0:
-                da[0] = false
+                da[0] = "0"
             case 1:
-                da[1] = false
+                da[1] = "0"
             case 2:
-                da[2] = false
+                da[2] = "0"
             case 3:
-                da[3] = false
-            case 4:
-                da[4] = false
+                da[3] = "0"
             default:
                 break
             }
         default:
             break
         }
+
+        DispatchQueue.main.async {
+            self.activateResultButton()
+
+        }
         print("\n\(qa)\n\(it)\n\(wd)\n\(md)\n\(da)")
     }
     
+
+    func activateResultButton(){
+        let qaCount = qa.filter{$0 == ""}.count
+        let itCount = it.filter{$0 == ""}.count
+        let wdCount = wd.filter{$0 == ""}.count
+        let mdCount = md.filter{$0 == ""}.count
+        let daCount = da.filter{$0 == ""}.count
+        
+        let allEmptyCounts = qaCount + itCount + wdCount + mdCount + daCount
+        counter = 20 - allEmptyCounts
+        print("kdfjlkajfkldafjldkffdj \(counter)")
+        
+        if allEmptyCounts > 0 {
+            nextButton.isEnabled = false
+        } else {
+            nextButton.isEnabled = true
+            nextButton.setTitleColor(UIColor.red, for: .normal)
+        }
+        
+        DispatchQueue.main.async {
+            self.progressBar.setProgress(Float(self.counter/20*100) + 0.1, animated: true)
+            print(Float(self.counter/20*100) + 0.1)
+            
+            print("hello")
+        }
+  
+    }
 }

@@ -25,17 +25,17 @@
                         <viewControllerLayoutGuide type="bottom" id="XLY-lQ-lEE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cWI-m6-MoR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nb6-6q-s5N">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banner" translatesAutoresizingMaskIntoConstraints="NO" id="7pp-mi-Ojs">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Tech Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCK-PH-W2h">
-                                        <rect key="frame" x="0.0" y="162.5" width="375" height="35"/>
+                                        <rect key="frame" x="0.0" y="102.5" width="375" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35.5" id="JEs-3Q-4Iy"/>
                                         </constraints>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7G2-wj-oFY">
-                                <rect key="frame" x="0.0" y="300" width="375" height="700"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interested in knowing what job suits you?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-RM-wUr">
                                         <rect key="frame" x="24" y="18" width="330" height="62"/>
@@ -149,7 +149,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54l-US-Xvi">
-                                        <rect key="frame" x="24" y="610" width="135" height="40"/>
+                                        <rect key="frame" x="24" y="377" width="135" height="40"/>
                                         <color key="backgroundColor" red="0.1803921568627451" green="0.19215686274509802" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="lb8-aQ-bS1"/>
@@ -281,16 +281,16 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4X-CS-QeT">
-                                            <rect key="frame" x="118" y="2" width="140" height="45"/>
+                                            <rect key="frame" x="57" y="2" width="262.5" height="45"/>
                                             <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="Kyq-qA-Z9x"/>
-                                                <constraint firstAttribute="width" constant="140" id="ss0-aa-BQg"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="16"/>
                                             <state key="normal" title="See Result &gt;">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <state key="disabled" title="Answer All To See Result"/>
                                             <connections>
                                                 <action selector="resultButtonTapped:" destination="x8d-Kf-t3G" eventType="touchUpInside" id="dIB-C9-qUn"/>
                                             </connections>
@@ -299,6 +299,7 @@
                                     <constraints>
                                         <constraint firstItem="c4X-CS-QeT" firstAttribute="centerX" secondItem="xoa-1i-rgh" secondAttribute="centerX" id="Cfi-dE-QwB"/>
                                         <constraint firstItem="c4X-CS-QeT" firstAttribute="centerY" secondItem="xoa-1i-rgh" secondAttribute="centerY" multiplier="0.95" id="HCa-RD-4zH"/>
+                                        <constraint firstItem="c4X-CS-QeT" firstAttribute="width" secondItem="xoa-1i-rgh" secondAttribute="width" multiplier="0.7" id="aUr-i4-3HW"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -1771,7 +1772,6 @@ When an application crashes or the internet stalls, they save the day.</string>
         <!--All Tech TypesVC-->
         <scene sceneID="zD9-Uk-0m5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jtt-Qr-l9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ljl-kn-2kY" customClass="AllTechTypesVC" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DDY-gN-viL"/>
@@ -1936,6 +1936,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                         <outletCollection property="allTechJobsButtons" destination="n2V-iv-Qof" collectionClass="NSMutableArray" id="kTF-71-tBp"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jtt-Qr-l9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5465" y="853"/>
         </scene>
@@ -1990,6 +1991,6 @@ When an application crashes or the internet stalls, they save the day.</string>
         <image name="webDevImg" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="48f-zF-XgR"/>
+        <segue reference="VA7-Rt-wEm"/>
     </inferredMetricsTieBreakers>
 </document>

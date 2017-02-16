@@ -8,10 +8,11 @@
 
 import Foundation
 
-struct QAType {
+struct TechType {
     
-    var jobTitle = "Quality Assurance Analyst"
-    var qualities : [String]
-    var relatedPrograms : String = "https://perscholas.org/apply/quality-assurance-part-time"
-    
+    var jobTitle: String
+    var description: String
+    var qualities: [String]
+    var relatedPrograms : String
+
 }

@@ -12,7 +12,6 @@ struct QuizGroup {
     
     var sectionName : String
     var questions : [Question]
-    var isYes = false
     
 }
 
