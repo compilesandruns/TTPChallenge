@@ -50,7 +50,8 @@ extension String {
         
         removed = removed.replacingOccurrences(of: "<a href=", with: "")
         removed = removed.replacingOccurrences(of: "</a>", with: "")
-        
+        removed = removed.replacingOccurrences(of: "<a>", with: "")
+
         removed = removed.replacingOccurrences(of: "&nbsp;", with: " ")
         removed = removed.replacingOccurrences(of: "</span>", with: "")
         removed = removed.replacingOccurrences(of: "<span>", with: "")
