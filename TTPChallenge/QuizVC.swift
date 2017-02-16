@@ -16,6 +16,8 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var objectsArray: [QuizGroup] = []
     var allQuestions: [[Question]] = []
+    var responsesArray: [Int] = []
+    var techJobsForResult: [String] = []
     var respondedQuestions = 0
     
     var qa = [String]()
@@ -155,29 +157,36 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {
-        print("love")
         
-        //logic here - based on the results, it will segue to a different tech type
-        // algo needed
+        let yesesInQa = qa.filter{$0 == "1"}.count
+        let yesesInIt = it.filter{$0 == "1"}.count
+        let yesesInWd = wd.filter{$0 == "1"}.count
+        let yesesInMd = md.filter{$0 == "1"}.count
+        let yesesInDa = da.filter{$0 == "1"}.count
         
-        let t = "1"
-        let truesInQa = qa.filter{$0 == t}.count
-        let truesInIt = it.filter{$0 == t}.count
-        let truesInWd = wd.filter{$0 == t}.count
-        let truesInMd = md.filter{$0 == t}.count
-        let truesInDa = da.filter{$0 == t}.count
-    
+        responsesArray = [yesesInQa, yesesInIt, yesesInWd, yesesInMd, yesesInDa]
         
-        /*
+        let max = responsesArray.max()
+        if let maxN = max {
+            print(maxN)
+        }
         
-         performSegue(withIdentifier: "resultToWD", sender: self)
-         performSegue(withIdentifier: "resultToDA", sender: self)
-         performSegue(withIdentifier: "resultToWD", sender: self)
-         performSegue(withIdentifier: "resultToAll", sender: self)
-         performSegue(withIdentifier: "resultToMD", sender: self)
-         performSegue(withIdentifier: "resultToQA", sender: self)
-         
-        */
+        var counter = 0
+        var emptyArray:[Int] = []
+        
+        for (i,n) in responsesArray.enumerated() {
+            if n == max {
+                counter += 1
+                emptyArray.append(i)
+            }
+        }
+        
+        for n in emptyArray {
+            techJobsForResult.append(techJobs[n])
+        }
+        
+        print("********* \(techJobsForResult)")
+        performSegue(withIdentifier: "toResult", sender: self)
     }
     
     
@@ -309,5 +318,15 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
         progressLabel.text = "\(respondedQuestions)/\(allQuestionsToBeResponded)"
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResult" {
+            let destVC = segue.destination as! QuizResultVC
+            DispatchQueue.main.async {
+                destVC.techTypesFromResults = self.techJobsForResult
+
+            }
+        }
     }
 }

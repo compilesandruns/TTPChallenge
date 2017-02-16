@@ -58,6 +58,7 @@
 		DD0BDF301E5534E2006F550F /* QuizGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF2F1E5534E2006F550F /* QuizGroup.swift */; };
 		DD0BDF321E55353B006F550F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF311E55353B006F550F /* Question.swift */; };
 		DD0BDF391E5537F8006F550F /* PersonalityTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */; };
+		DD8586B11E562AE000065DDD /* QuizResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8586B01E562AE000065DDD /* QuizResultVC.swift */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +143,7 @@
 		DD0BDF2F1E5534E2006F550F /* QuizGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizGroup.swift; sourceTree = "<group>"; };
 		DD0BDF311E55353B006F550F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityTestCell.swift; sourceTree = "<group>"; };
+		DD8586B01E562AE000065DDD /* QuizResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultVC.swift; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizScreen.storyboard; sourceTree = "<group>"; };
 		E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -376,6 +378,7 @@
 				DD0BDF351E5537A5006F550F /* Custom Cells */,
 				DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */,
 				DD0BDEF41E52D233006F550F /* QuizVC.swift */,
+				DD8586B01E562AE000065DDD /* QuizResultVC.swift */,
 			);
 			name = QuizVCs;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
 				17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */,
 				17CFD04E1E4F6FA10007ADEC /* SignInScreenViewable.swift in Sources */,
+				DD8586B11E562AE000065DDD /* QuizResultVC.swift in Sources */,
 				1749799E1E50DD2800B901DC /* CreateUserScreenViewable.swift in Sources */,
 				DD0BDF2A1E552791006F550F /* ITEngVC.swift in Sources */,
 				17CFD05B1E4F7B9F0007ADEC /* FirebaseInteracting.swift in Sources */,
