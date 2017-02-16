@@ -281,7 +281,7 @@
                                     <rect key="frame" x="0.0" y="168" width="375" height="51"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4X-CS-QeT">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4X-CS-QeT">
                                             <rect key="frame" x="57" y="2" width="262.5" height="45"/>
                                             <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
