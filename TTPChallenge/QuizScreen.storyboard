@@ -1283,8 +1283,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzz-aZ-zfy">
                                 <rect key="frame" x="0.0" y="151" width="414" height="799"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wa-AE-VYn">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wa-AE-VYn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7B-rU-dBd" userLabel="bodyView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
@@ -1876,7 +1876,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="l5X-W1-gnu" kind="show" id="VA7-Rt-wEm"/>
+                                                            <action selector="retakeQuizBtnTapped:" destination="ljl-kn-2kY" eventType="touchUpInside" id="3LC-eI-lKF"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1932,6 +1932,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                         <outletCollection property="allTechJobsButtons" destination="4p8-6G-EKc" collectionClass="NSMutableArray" id="a0w-E6-kPu"/>
                         <outletCollection property="allTechJobsButtons" destination="fWd-H6-zVg" collectionClass="NSMutableArray" id="h21-8T-fch"/>
                         <outletCollection property="allTechJobsButtons" destination="n2V-iv-Qof" collectionClass="NSMutableArray" id="kTF-71-tBp"/>
+                        <segue destination="l5X-W1-gnu" kind="show" identifier="backHomeFromAllType" id="0v2-C6-R4V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jtt-Qr-l9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1989,6 +1990,6 @@ When an application crashes or the internet stalls, they save the day.</string>
         <image name="webDevImg" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VA7-Rt-wEm"/>
+        <segue reference="0v2-C6-R4V"/>
     </inferredMetricsTieBreakers>
 </document>

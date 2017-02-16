@@ -30,11 +30,31 @@ class AllTechTypesVC: UIViewController {
         
         let index = sender.tag
         
+        switch index {
+        case 0:
+            print("qa")
+        case 1:
+            print("it")
+        case 2:
+            print("wd")
+        case 3:
+            print("md")
+        case 4:
+            print("da")
+        default:
+            break
+        }
+        
+        // segue based on the index value
         
         
         
     }
     
+    @IBAction func retakeQuizBtnTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "backHomeFromAllType", sender: self)
+    }
 
     /*
     // MARK: - Navigation
