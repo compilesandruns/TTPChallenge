@@ -41,6 +41,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
   - Nimble (6.0.1)
+  - PKHUD (4.2.0)
   - PromiseKit (4.1.7):
     - PromiseKit/Foundation (= 4.1.7)
     - PromiseKit/QuartzCore (= 4.1.7)
@@ -60,6 +61,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Nimble
+  - PKHUD
   - PromiseKit
   - SwiftyJSON
 
@@ -76,9 +78,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
+  PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: c8e3f690995786dfd89aedc383cdbfca61d064ab
+PODFILE CHECKSUM: 508dc2aa901e7e53a70ce4a55e92a8b7f2666fe8
 
 COCOAPODS: 1.2.0

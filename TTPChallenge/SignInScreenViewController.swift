@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class SignInScreenViewController: BaseViewController {
     
@@ -84,6 +85,14 @@ extension SignInScreenViewController : SignInScreenViewable {
     
     func showHomeScreen() {
         performSegue(withIdentifier: "HomeScreenSegue", sender: nil)
+    }
+    
+    func showLoader() {
+        HUD.show(.progress)
+    }
+
+    func hideLoader() {
+        HUD.hide()
     }
     
     func dismissKeyboard() {

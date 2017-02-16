@@ -21,13 +21,16 @@ class SignInScreenPresenter: SignInScreenPresenting {
     
     //TODO: add error handling
     func didTapLogin() {
+        view.showLoader()
         signInInteractor.signIn(email: view.email, password: view.password).then{ errorMessage -> Void in
             if !errorMessage.isEmpty {
+                self.view.hideLoader()
                 self.view.showAlert(message: errorMessage, title: Environment.Alert.errorTitle)
             } else {
                 self.view.showHomeScreen()
             }
         }.catch { error in
+            self.view.hideLoader()
             if let errCode = FIRAuthErrorCode(rawValue: error._code) {
                 
             switch errCode {
@@ -35,7 +38,6 @@ class SignInScreenPresenter: SignInScreenPresenting {
                     self.view.showAlert(message:Environment.Alert.userNotFound, title: Environment.Alert.errorTitle)
                 default:
                     self.view.showAlert(message:Environment.Alert.defaultError , title: Environment.Alert.errorTitle)
-                        
                     }    
                 }
         }
