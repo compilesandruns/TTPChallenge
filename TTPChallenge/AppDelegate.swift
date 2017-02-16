@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Injector.setInjector(injector: injector)
         
         FIRApp.configure()
+        
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
 
         return true
     }

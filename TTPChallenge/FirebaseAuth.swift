@@ -23,4 +23,9 @@ extension FIRAuth {
             signIn(withEmail: email, password: password, completion: resolve)
         }
     }
+    
+    func setUserName(username: String) {
+//        ref.child("users").child(user.uid).setValue(["username": username])
+    }
+    
 }
