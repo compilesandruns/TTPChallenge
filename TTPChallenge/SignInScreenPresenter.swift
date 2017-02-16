@@ -23,8 +23,8 @@ class SignInScreenPresenter: SignInScreenPresenting {
     func didTapLogin() {
         view.showLoader()
         signInInteractor.signIn(email: view.email, password: view.password).then{ errorMessage -> Void in
+            self.view.hideLoader()
             if !errorMessage.isEmpty {
-                self.view.hideLoader()
                 self.view.showAlert(message: errorMessage, title: Environment.Alert.errorTitle)
             } else {
                 self.view.showHomeScreen()
