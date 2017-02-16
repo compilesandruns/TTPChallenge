@@ -2,7 +2,7 @@
 //  PersonalityTestCell.swift
 //  TTPChallenge
 //
-//  Created by Mirim An on 2/15/17.
+//  Created by Luna An on 2/15/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
@@ -43,11 +43,15 @@ class PersonalityTestCell: UITableViewCell {
     
     @IBAction func yesTapped(_ sender: UIButton) {
         question.changeToYes()
+        tapActionForYes?(self)
         yesButton.isSelected = true
+        noButton.isSelected = false
     }
     @IBAction func noTapped(_ sender: Any) {
         question.changeToNo()
+        tapActionForNo?(self)
         noButton.isSelected = true
+        yesButton.isSelected = false
     }
     override func prepareForReuse() {
         super.prepareForReuse()
