@@ -14,188 +14,8 @@
         <array key="CircularStd-Bold.otf">
             <string>CircularStd-Bold</string>
         </array>
-        <array key="Montserrat-Light.otf">
-            <string>Montserrat-Light</string>
-        </array>
     </customFonts>
     <scenes>
-        <!--Take Quizzes-->
-        <scene sceneID="pJG-4K-haH">
-            <objects>
-                <viewController storyboardIdentifier="QuizStoryboard" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aHr-9E-Tv3" customClass="QuizViewController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mEK-5m-U2D"/>
-                        <viewControllerLayoutGuide type="bottom" id="HSh-8J-Tpb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="msU-x8-pUR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-2K-XF9" userLabel="topView">
-                                <rect key="frame" x="0.0" y="64" width="414" height="184"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quizzMain_ttp" translatesAutoresizingMaskIntoConstraints="NO" id="5oP-Wb-QoW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="184"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="5oP-Wb-QoW" firstAttribute="centerX" secondItem="pbn-2K-XF9" secondAttribute="centerX" id="4pY-LJ-be4"/>
-                                    <constraint firstItem="5oP-Wb-QoW" firstAttribute="height" secondItem="pbn-2K-XF9" secondAttribute="height" id="KH8-JG-lR7"/>
-                                    <constraint firstItem="5oP-Wb-QoW" firstAttribute="top" secondItem="pbn-2K-XF9" secondAttribute="top" id="Ym1-Z4-ud1"/>
-                                    <constraint firstItem="5oP-Wb-QoW" firstAttribute="width" secondItem="pbn-2K-XF9" secondAttribute="width" id="hFq-4p-qJT"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rGm-ZO-3vd">
-                                <rect key="frame" x="0.0" y="253" width="414" height="403"/>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="quizCell" rowHeight="130" id="dW9-cd-nhy" customClass="QuizCell" customModule="TTPChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="130"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dW9-cd-nhy" id="Ilo-kc-Pzy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="129.66666666666666"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWx-dk-W7T">
-                                                    <rect key="frame" x="13" y="12" width="388" height="109"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay up to date on the latest and greatest in tech and devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEk-gL-Bxf">
-                                                            <rect key="frame" x="10" y="25" width="278" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="ieY-tu-s1G"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="13"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0w-rb-7Rr">
-                                                            <rect key="frame" x="298" y="35" width="80" height="40"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liB-UC-BbU">
-                                                                    <rect key="frame" x="0.0" y="4" width="32" height="32"/>
-                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
-                                                                    <state key="normal" title="Yes">
-                                                                        <color key="titleColor" red="0.1529411765" green="0.81176470590000005" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </state>
-                                                                </button>
-                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MH-6r-Zhv">
-                                                                    <rect key="frame" x="48" y="4" width="32" height="32"/>
-                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
-                                                                    <state key="normal" title="No">
-                                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    </state>
-                                                                </button>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="4MH-6r-Zhv" firstAttribute="height" secondItem="liB-UC-BbU" secondAttribute="height" id="D00-Xc-zOu"/>
-                                                                <constraint firstItem="4MH-6r-Zhv" firstAttribute="centerY" secondItem="liB-UC-BbU" secondAttribute="centerY" id="HYt-k4-tj8"/>
-                                                                <constraint firstItem="liB-UC-BbU" firstAttribute="width" secondItem="J0w-rb-7Rr" secondAttribute="width" multiplier="0.4" id="Iw3-2e-C2T"/>
-                                                                <constraint firstItem="liB-UC-BbU" firstAttribute="centerY" secondItem="J0w-rb-7Rr" secondAttribute="centerY" id="Lfc-m9-3Sy"/>
-                                                                <constraint firstAttribute="trailing" secondItem="4MH-6r-Zhv" secondAttribute="trailing" id="MWW-FO-1rR"/>
-                                                                <constraint firstAttribute="width" constant="80" id="fNv-4J-qtw"/>
-                                                                <constraint firstItem="4MH-6r-Zhv" firstAttribute="width" secondItem="liB-UC-BbU" secondAttribute="width" id="hdZ-Ol-TwA"/>
-                                                                <constraint firstItem="liB-UC-BbU" firstAttribute="height" secondItem="J0w-rb-7Rr" secondAttribute="height" multiplier="0.8" id="mt9-vX-XeU"/>
-                                                                <constraint firstItem="liB-UC-BbU" firstAttribute="leading" secondItem="J0w-rb-7Rr" secondAttribute="leading" id="qVX-RN-kLf"/>
-                                                                <constraint firstAttribute="height" constant="40" id="wtu-Is-z9Q"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvZ-RE-fDs">
-                                                            <rect key="frame" x="346" y="82" width="42" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="42" id="KZR-Fg-62v"/>
-                                                                <constraint firstAttribute="height" constant="21" id="lbA-4Z-ORK"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="10"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="GvZ-RE-fDs" secondAttribute="trailing" id="5FM-he-gor"/>
-                                                        <constraint firstItem="J0w-rb-7Rr" firstAttribute="leading" secondItem="QEk-gL-Bxf" secondAttribute="trailing" constant="10" id="Dbd-6a-tJa"/>
-                                                        <constraint firstItem="QEk-gL-Bxf" firstAttribute="leading" secondItem="zWx-dk-W7T" secondAttribute="leading" constant="10" id="h9u-BH-JiZ"/>
-                                                        <constraint firstItem="QEk-gL-Bxf" firstAttribute="centerY" secondItem="zWx-dk-W7T" secondAttribute="centerY" id="jDr-sg-OYg"/>
-                                                        <constraint firstItem="J0w-rb-7Rr" firstAttribute="centerY" secondItem="zWx-dk-W7T" secondAttribute="centerY" id="msY-2A-EAp"/>
-                                                        <constraint firstAttribute="bottom" secondItem="GvZ-RE-fDs" secondAttribute="bottom" constant="6" id="pcn-8S-0EP"/>
-                                                        <constraint firstAttribute="trailing" secondItem="J0w-rb-7Rr" secondAttribute="trailing" constant="10" id="y2W-uO-Juj"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zWx-dk-W7T" secondAttribute="bottom" id="Dzr-AC-VCP"/>
-                                                <constraint firstItem="zWx-dk-W7T" firstAttribute="top" secondItem="Ilo-kc-Pzy" secondAttribute="topMargin" constant="3.5" id="euC-gu-Ssq"/>
-                                                <constraint firstItem="zWx-dk-W7T" firstAttribute="leading" secondItem="Ilo-kc-Pzy" secondAttribute="leadingMargin" constant="5" id="ol2-Qf-gaq"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zWx-dk-W7T" secondAttribute="trailing" constant="5" id="ydK-qK-02Y"/>
-                                                <constraint firstItem="zWx-dk-W7T" firstAttribute="centerX" secondItem="Ilo-kc-Pzy" secondAttribute="centerX" id="ygB-hR-2Nh"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <outlet property="buttonView" destination="J0w-rb-7Rr" id="c05-4b-ySE"/>
-                                            <outlet property="progressLabel" destination="GvZ-RE-fDs" id="1k9-oi-1Fu"/>
-                                            <outlet property="quizLabel" destination="QEk-gL-Bxf" id="qcl-9V-C8I"/>
-                                            <outletCollection property="buttons" destination="4MH-6r-Zhv" collectionClass="NSMutableArray" id="muY-4z-OPz"/>
-                                            <outletCollection property="buttons" destination="liB-UC-BbU" collectionClass="NSMutableArray" id="1uL-z2-COT"/>
-                                            <outletCollection property="buttons" destination="liB-UC-BbU" collectionClass="NSMutableArray" id="3Bn-1D-uWo"/>
-                                            <outletCollection property="buttons" destination="4MH-6r-Zhv" collectionClass="NSMutableArray" id="WfI-gw-K0g"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="aHr-9E-Tv3" id="ELe-uO-80d"/>
-                                    <outlet property="delegate" destination="aHr-9E-Tv3" id="DcH-Gf-yX5"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQM-tN-X5l" userLabel="Next Button">
-                                <rect key="frame" x="20" y="676" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="6rx-jd-TDq"/>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButtonTapped:" destination="aHr-9E-Tv3" eventType="touchUpInside" id="d0v-G3-ieg"/>
-                                </connections>
-                            </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Z11-jP-SIY">
-                                <rect key="frame" x="20" y="686" width="374" height="21"/>
-                                <color key="tintColor" red="0.1529411765" green="0.81176470590000005" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
-                            </progressView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Z11-jP-SIY" firstAttribute="width" secondItem="lQM-tN-X5l" secondAttribute="width" id="6ve-vI-1Lo"/>
-                            <constraint firstItem="Z11-jP-SIY" firstAttribute="centerY" secondItem="lQM-tN-X5l" secondAttribute="centerY" id="Dhj-CJ-OsH"/>
-                            <constraint firstItem="Z11-jP-SIY" firstAttribute="centerX" secondItem="lQM-tN-X5l" secondAttribute="centerX" id="H8A-8Z-mVQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lQM-tN-X5l" secondAttribute="trailing" id="MLf-US-2UW"/>
-                            <constraint firstItem="pbn-2K-XF9" firstAttribute="centerX" secondItem="msU-x8-pUR" secondAttribute="centerX" id="NKg-HQ-fwJ"/>
-                            <constraint firstItem="Z11-jP-SIY" firstAttribute="height" secondItem="lQM-tN-X5l" secondAttribute="height" multiplier="0.5" id="VnK-eh-zLc"/>
-                            <constraint firstItem="rGm-ZO-3vd" firstAttribute="centerX" secondItem="msU-x8-pUR" secondAttribute="centerX" id="XSf-Nx-iLo"/>
-                            <constraint firstItem="pbn-2K-XF9" firstAttribute="height" secondItem="msU-x8-pUR" secondAttribute="height" multiplier="0.25" id="XTs-VI-PvQ"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="lQM-tN-X5l" secondAttribute="leading" id="a4S-Iw-lSa"/>
-                            <constraint firstItem="lQM-tN-X5l" firstAttribute="top" secondItem="rGm-ZO-3vd" secondAttribute="bottom" constant="20" id="gCg-bS-glF"/>
-                            <constraint firstItem="HSh-8J-Tpb" firstAttribute="top" secondItem="rGm-ZO-3vd" secondAttribute="bottom" constant="80" id="iCh-bO-e1M"/>
-                            <constraint firstItem="rGm-ZO-3vd" firstAttribute="top" secondItem="pbn-2K-XF9" secondAttribute="bottom" constant="5" id="neJ-2Q-PdT"/>
-                            <constraint firstItem="pbn-2K-XF9" firstAttribute="top" secondItem="mEK-5m-U2D" secondAttribute="bottom" id="rWj-5b-57d"/>
-                            <constraint firstItem="rGm-ZO-3vd" firstAttribute="width" secondItem="msU-x8-pUR" secondAttribute="width" id="y1l-uW-uvX"/>
-                            <constraint firstItem="lQM-tN-X5l" firstAttribute="centerX" secondItem="msU-x8-pUR" secondAttribute="centerX" id="yJk-DC-li2"/>
-                            <constraint firstItem="pbn-2K-XF9" firstAttribute="width" secondItem="msU-x8-pUR" secondAttribute="width" id="ytl-1F-z7H"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Take Quizzes" id="VFE-6H-rj1"/>
-                    <connections>
-                        <outlet property="nextButton" destination="lQM-tN-X5l" id="Cv6-rh-0ek"/>
-                        <outlet property="progressBar" destination="Z11-jP-SIY" id="ReN-Zc-r45"/>
-                        <outlet property="tableView" destination="rGm-ZO-3vd" id="Gl6-3Y-eIL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bnJ-dr-fFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1894" y="201"/>
-        </scene>
         <!--Quiz MainVC-->
         <scene sceneID="MhP-yi-elE">
             <objects>
@@ -766,13 +586,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWT-Wj-uU5" userLabel="topView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375.33333333333331" height="151.33333333333334"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT Engineer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8y-B3-Fju">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QA Analyst" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8y-B3-Fju">
                                                         <rect key="frame" x="0.0" y="42.333333333333329" width="375.33333333333331" height="37.999999999999986"/>
                                                         <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep things up and running" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjP-x2-JdL">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test the limits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjP-x2-JdL">
                                                         <rect key="frame" x="0.0" y="93.333333333333329" width="375.33333333333331" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Cxx-3u-gVB"/>
@@ -796,7 +616,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVs-SF-zVG" userLabel="bodyView">
                                                 <rect key="frame" x="0.0" y="151.33333333333337" width="375.33333333333331" height="850"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itEngImg" translatesAutoresizingMaskIntoConstraints="NO" id="gXu-HI-bNJ">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qaAnalystImg" translatesAutoresizingMaskIntoConstraints="NO" id="gXu-HI-bNJ">
                                                         <rect key="frame" x="117.66666666666669" y="5" width="140" height="139.99999999999997"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="140" id="ce9-Xo-4td"/>
@@ -808,8 +628,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="140" id="J0S-gH-IKF"/>
                                                         </constraints>
-                                                        <string key="text">IT Engineers maintain the systems and tools that employees need to work in and outside of an office.
-When an application crashes or the internet stalls, they save the day.</string>
+                                                        <string key="text">Quality Assurance Analysts test products to find errors and uncover problems before they’re released to the public. They're responsible for making sure that products are designed well and function properly.</string>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1328,7 +1147,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="140" id="BLu-d1-JJt"/>
                                                         </constraints>
-                                                        <string key="text">Mobile Developers create the tools, games, and social content you love on iOS and Android devices. They provide easy access to resources and tools to people around the world.</string>
+                                                        <string key="text">Web developers create the look, feel, and functionality of web applications, from simple pages to complex tools, making them accessible and easy for people across devices.</string>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1342,7 +1161,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work with businesses to create or improve mobile experiences for customers across multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaT-ws-I3q">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build interactive websites and web apps that allow people to communicate and interact" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaT-ws-I3q">
                                                         <rect key="frame" x="62" y="335" width="290" height="61"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="rXH-lF-6Bc"/>
@@ -1351,20 +1170,24 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work with businesses to create or improve mobile experiences for customers across multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-bX-umS">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-bX-umS">
                                                         <rect key="frame" x="62" y="406" width="290" height="61"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="Ebv-eV-AIU"/>
                                                         </constraints>
+                                                        <string key="text">Ensure that website designs are intuitive, easy to access and uniform throughout 
+</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work with businesses to create or improve mobile experiences for customers across multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7w-58-9Px">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7w-58-9Px">
                                                         <rect key="frame" x="62" y="477" width="290" height="61"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="RBk-Q0-3Y6"/>
                                                         </constraints>
+                                                        <string key="text">Maintain the code that power websites
+</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1388,7 +1211,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                                     <constraint firstAttribute="height" constant="35" id="FiK-0Y-RZR"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
-                                                                <state key="normal" title="QA Program">
+                                                                <state key="normal" title="Web Dev Fellowship">
                                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -1399,7 +1222,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                                 <rect key="frame" x="0.0" y="40" width="331" height="35"/>
                                                                 <color key="backgroundColor" red="1" green="0.50739303690000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
-                                                                <state key="normal" title="Apply for QA Program">
+                                                                <state key="normal" title="Internship Programs for CS Majors">
                                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -1425,6 +1248,20 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                             <constraint firstItem="92B-Yd-q52" firstAttribute="height" secondItem="Bbl-e6-79f" secondAttribute="height" id="tQM-t9-xlK"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3m-kv-dEM">
+                                                        <rect key="frame" x="62.333333333333343" y="789" width="289.66666666666663" height="40"/>
+                                                        <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="udI-O0-Bn9"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="17"/>
+                                                        <state key="normal" title="Retake the quiz">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="retakeQuizBtnTapped:" destination="2vF-Nk-R4w" eventType="touchUpInside" id="vfI-9H-1fM"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1442,8 +1279,11 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                     <constraint firstItem="l7w-58-9Px" firstAttribute="width" secondItem="nd4-bX-umS" secondAttribute="width" id="O2i-sz-vr2"/>
                                                     <constraint firstItem="qgR-xj-glB" firstAttribute="top" secondItem="aEL-sI-RXU" secondAttribute="bottom" id="O6U-AT-erE"/>
                                                     <constraint firstItem="p1A-8E-nHi" firstAttribute="top" secondItem="qgR-xj-glB" secondAttribute="bottom" constant="5" id="b3q-RG-S3k"/>
+                                                    <constraint firstItem="H3m-kv-dEM" firstAttribute="centerX" secondItem="epH-oo-RjW" secondAttribute="centerX" id="bC4-oG-70H"/>
+                                                    <constraint firstItem="H3m-kv-dEM" firstAttribute="width" secondItem="epH-oo-RjW" secondAttribute="width" multiplier="0.7" id="cpq-CQ-JzA"/>
                                                     <constraint firstItem="aEL-sI-RXU" firstAttribute="centerX" secondItem="epH-oo-RjW" secondAttribute="centerX" id="d8h-Aw-Pli"/>
                                                     <constraint firstItem="pQK-Pa-Q60" firstAttribute="width" secondItem="p1A-8E-nHi" secondAttribute="width" id="dSL-pc-BQS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="H3m-kv-dEM" secondAttribute="bottom" constant="20" id="hRi-wF-2wJ"/>
                                                     <constraint firstItem="l7w-58-9Px" firstAttribute="centerX" secondItem="nd4-bX-umS" secondAttribute="centerX" id="nku-IL-umk"/>
                                                     <constraint firstItem="MaT-ws-I3q" firstAttribute="width" secondItem="qgR-xj-glB" secondAttribute="width" id="nw9-o6-aWX"/>
                                                     <constraint firstItem="MaT-ws-I3q" firstAttribute="centerX" secondItem="qgR-xj-glB" secondAttribute="centerX" id="qWN-fz-XFP"/>
@@ -1559,7 +1399,8 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="140" id="IKC-Qd-Spj"/>
                                                         </constraints>
-                                                        <string key="text">Mobile Developers create the tools, games, and social content you love on iOS and Android devices. They provide easy access to resources and tools to people around the world.</string>
+                                                        <string key="text">Data Analysts collect, manage, and study data from various sources to help businesses make smart decisions.
+</string>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1573,25 +1414,29 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work with businesses to create or improve mobile experiences for customers across multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-nc-u6m">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-nc-u6m">
                                                         <rect key="frame" x="62" y="335" width="290" height="61"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="b8A-DF-lpt"/>
                                                         </constraints>
+                                                        <string key="text">Work with businesses and customers to answer questions using data
+</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work with businesses to create or improve mobile experiences for customers across multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqU-qi-krT">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqU-qi-krT">
                                                         <rect key="frame" x="62" y="406" width="290" height="61"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="eYz-Lv-D6U"/>
                                                         </constraints>
+                                                        <string key="text">Measure performance across a company, product or website
+</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work with businesses to create or improve mobile experiences for customers across multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxF-aK-GKD">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create dashboards, graphs and visualizations" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxF-aK-GKD">
                                                         <rect key="frame" x="62" y="477" width="290" height="61"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="Uox-Ub-aMd"/>
@@ -1613,13 +1458,13 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <rect key="frame" x="41.666666666666657" y="601" width="331" height="115"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTP-Ea-DF1">
-                                                                <rect key="frame" x="0.33333333333331439" y="0.0" width="331" height="35"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="331" height="35"/>
                                                                 <color key="backgroundColor" red="1" green="0.83529411760000005" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="gcm-9Q-KuV"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
-                                                                <state key="normal" title="QA Program">
+                                                                <state key="normal" title="Data Training Program">
                                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -1627,10 +1472,10 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B81-kq-cG2">
-                                                                <rect key="frame" x="0.33333333333331439" y="40" width="331" height="35"/>
+                                                                <rect key="frame" x="0.0" y="40" width="331" height="35"/>
                                                                 <color key="backgroundColor" red="1" green="0.50739303690000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
-                                                                <state key="normal" title="Apply for QA Program">
+                                                                <state key="normal" title="Explore More">
                                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -1638,7 +1483,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXZ-QA-ndF">
-                                                                <rect key="frame" x="0.33333333333331439" y="80" width="331" height="35"/>
+                                                                <rect key="frame" x="0.0" y="80" width="331" height="35"/>
                                                                 <color key="backgroundColor" red="0.18039215689999999" green="0.74816484900000002" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                                                 <state key="normal" title="Sign Up for PPT Alerts">
@@ -1656,6 +1501,20 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                             <constraint firstItem="DXZ-QA-ndF" firstAttribute="width" secondItem="B81-kq-cG2" secondAttribute="width" id="pPH-gn-oj6"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouy-Wd-Ev2">
+                                                        <rect key="frame" x="62.333333333333343" y="759" width="289.66666666666663" height="40"/>
+                                                        <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="IWe-p6-iD4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="17"/>
+                                                        <state key="normal" title="Retake the quiz">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="retakeQuizBtnTapped:" destination="2vF-Nk-R4w" eventType="touchUpInside" id="1Sc-UL-jhq"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1671,6 +1530,8 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                     <constraint firstItem="DG8-tw-bSV" firstAttribute="top" secondItem="iye-ue-i7P" secondAttribute="bottom" constant="8" id="Hb0-dM-YZb"/>
                                                     <constraint firstItem="s9x-nc-u6m" firstAttribute="top" secondItem="qXK-Qe-Ew3" secondAttribute="bottom" constant="10" id="LvQ-6E-wyG"/>
                                                     <constraint firstItem="RxF-aK-GKD" firstAttribute="centerX" secondItem="eqU-qi-krT" secondAttribute="centerX" id="Nb7-IN-hDz"/>
+                                                    <constraint firstItem="Ouy-Wd-Ev2" firstAttribute="width" secondItem="m7B-rU-dBd" secondAttribute="width" multiplier="0.7" id="Nfd-gM-wyi"/>
+                                                    <constraint firstItem="Ouy-Wd-Ev2" firstAttribute="centerX" secondItem="m7B-rU-dBd" secondAttribute="centerX" id="PeH-jm-6ok"/>
                                                     <constraint firstItem="wnv-KA-hrM" firstAttribute="centerX" secondItem="m7B-rU-dBd" secondAttribute="centerX" id="Qv9-Bb-M58"/>
                                                     <constraint firstItem="eqU-qi-krT" firstAttribute="centerX" secondItem="s9x-nc-u6m" secondAttribute="centerX" id="Sw5-bF-EFc"/>
                                                     <constraint firstItem="iye-ue-i7P" firstAttribute="height" secondItem="qXK-Qe-Ew3" secondAttribute="height" id="aya-ZZ-hPV"/>
@@ -1680,6 +1541,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                     <constraint firstItem="s9x-nc-u6m" firstAttribute="width" secondItem="kt1-RZ-izh" secondAttribute="width" id="n9e-QE-NWs"/>
                                                     <constraint firstItem="iye-ue-i7P" firstAttribute="centerX" secondItem="qXK-Qe-Ew3" secondAttribute="centerX" id="nth-bj-6my"/>
                                                     <constraint firstItem="wnv-KA-hrM" firstAttribute="top" secondItem="m7B-rU-dBd" secondAttribute="top" constant="5" id="oI5-OY-HJX"/>
+                                                    <constraint firstItem="Ouy-Wd-Ev2" firstAttribute="top" secondItem="DG8-tw-bSV" secondAttribute="bottom" constant="43" id="ooz-Ni-maB"/>
                                                     <constraint firstItem="RxF-aK-GKD" firstAttribute="width" secondItem="eqU-qi-krT" secondAttribute="width" id="pbz-vr-BCc"/>
                                                     <constraint firstItem="DG8-tw-bSV" firstAttribute="centerX" secondItem="m7B-rU-dBd" secondAttribute="centerX" id="vS0-TV-sGt"/>
                                                     <constraint firstItem="kt1-RZ-izh" firstAttribute="centerX" secondItem="m7B-rU-dBd" secondAttribute="centerX" id="xTI-OF-a2I"/>
@@ -1751,13 +1613,13 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="onL-61-kRl"/>
                                                         </constraints>
-                                                        <string key="text">Test the limits
+                                                        <string key="text">Keep things up and running
 </string>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QA Analyst" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOq-wc-D6E">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT Engineer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOq-wc-D6E">
                                                         <rect key="frame" x="0.66666666666665719" y="41.666666666666671" width="414" height="38.000000000000014"/>
                                                         <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="30"/>
                                                         <nil key="textColor"/>
@@ -1778,7 +1640,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOh-kn-w9K" userLabel="bodyView">
                                                 <rect key="frame" x="0.0" y="159" width="414" height="841"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qaAnalystImg" translatesAutoresizingMaskIntoConstraints="NO" id="Yl0-Tv-WpE">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itEngImg" translatesAutoresizingMaskIntoConstraints="NO" id="Yl0-Tv-WpE">
                                                         <rect key="frame" x="137" y="5" width="140" height="140"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="140" id="opN-D7-xrP"/>
@@ -1790,7 +1652,8 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="140" id="OED-E0-UQO"/>
                                                         </constraints>
-                                                        <string key="text">Mobile Developers create the tools, games, and social content you love on iOS and Android devices. They provide easy access to resources and tools to people around the world.</string>
+                                                        <string key="text">IT Engineers maintain the systems and tools that employees need to work in and outside of an office.
+When an application crashes or the internet stalls, they save the day.</string>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1804,17 +1667,20 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work with businesses to create or improve mobile experiences for customers across multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKp-E5-po7">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKp-E5-po7">
                                                         <rect key="frame" x="62" y="335" width="290" height="61"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="MiJ-e5-MkA"/>
                                                         </constraints>
+                                                        <string key="text">Work with different people to understand their needs
+
+</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work with businesses to create or improve mobile experiences for customers across multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-Xu-Lb2">
-                                                        <rect key="frame" x="62" y="406" width="290" height="61"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resolve issues that affect users and systems" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-Xu-Lb2">
+                                                        <rect key="frame" x="62" y="401" width="290" height="61"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="2mw-PE-6sQ"/>
                                                         </constraints>
@@ -1822,17 +1688,19 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work with businesses to create or improve mobile experiences for customers across multiple devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yL-wb-czU">
-                                                        <rect key="frame" x="62" y="477" width="290" height="61"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yL-wb-czU">
+                                                        <rect key="frame" x="62" y="467" width="290" height="61"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="jZf-Wn-ooJ"/>
                                                         </constraints>
+                                                        <string key="text">Update and install computer software for users
+</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where to start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tak-Rv-vRu">
-                                                        <rect key="frame" x="42" y="558" width="331.33333333333331" height="35"/>
+                                                        <rect key="frame" x="42" y="614" width="331.33333333333331" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="NSX-hA-1c8"/>
                                                         </constraints>
@@ -1840,17 +1708,28 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2u-9p-4FK">
+                                                        <rect key="frame" x="62" y="533" width="290" height="61"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="61" id="tRp-GD-YWL"/>
+                                                        </constraints>
+                                                        <string key="text">Set up and update systems across the company
+</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ehg-6E-cHA">
-                                                        <rect key="frame" x="41.666666666666657" y="601" width="331" height="115"/>
+                                                        <rect key="frame" x="42" y="657" width="331" height="115"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="do7-vh-i8Z">
-                                                                <rect key="frame" x="0.33333333333331439" y="0.0" width="331" height="35"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="331" height="35"/>
                                                                 <color key="backgroundColor" red="1" green="0.83529411760000005" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="fpL-fh-64J"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
-                                                                <state key="normal" title="QA Program">
+                                                                <state key="normal" title="IT Program">
                                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -1858,10 +1737,10 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-vR-GTG">
-                                                                <rect key="frame" x="0.33333333333331439" y="40" width="331" height="35"/>
+                                                                <rect key="frame" x="0.0" y="40" width="331" height="35"/>
                                                                 <color key="backgroundColor" red="1" green="0.50739303690000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
-                                                                <state key="normal" title="Apply for QA Program">
+                                                                <state key="normal" title="Apply for IT Program">
                                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -1869,7 +1748,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q16-UR-gYX">
-                                                                <rect key="frame" x="0.33333333333331439" y="80" width="331" height="35"/>
+                                                                <rect key="frame" x="0.0" y="80" width="331" height="35"/>
                                                                 <color key="backgroundColor" red="0.18039215689999999" green="0.74816484900000002" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                                                 <state key="normal" title="Sign Up for PPT Alerts">
@@ -1887,19 +1766,37 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                             <constraint firstItem="Q16-UR-gYX" firstAttribute="width" secondItem="tBs-vR-GTG" secondAttribute="width" id="pno-RW-8FO"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lad-ix-zGf">
+                                                        <rect key="frame" x="62" y="793" width="290" height="40"/>
+                                                        <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="sBx-cD-MHg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="17"/>
+                                                        <state key="normal" title="Retake the quiz">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="retakeQuizBtnTapped:" destination="2vF-Nk-R4w" eventType="touchUpInside" id="fNf-aH-xDh"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="H2u-9p-4FK" firstAttribute="top" secondItem="7yL-wb-czU" secondAttribute="bottom" constant="5" id="1ay-d1-cpC"/>
                                                     <constraint firstItem="ZKp-E5-po7" firstAttribute="top" secondItem="Ega-m1-Q62" secondAttribute="bottom" constant="10" id="2Ew-4z-oBY"/>
+                                                    <constraint firstItem="Lad-ix-zGf" firstAttribute="width" secondItem="AOh-kn-w9K" secondAttribute="width" multiplier="0.7" id="2cC-f1-s9D"/>
                                                     <constraint firstItem="ehg-6E-cHA" firstAttribute="centerX" secondItem="AOh-kn-w9K" secondAttribute="centerX" id="2pD-Ga-hak"/>
                                                     <constraint firstItem="R1T-fw-wDT" firstAttribute="centerX" secondItem="AOh-kn-w9K" secondAttribute="centerX" id="4cE-87-G9W"/>
                                                     <constraint firstItem="7yL-wb-czU" firstAttribute="width" secondItem="eU6-Xu-Lb2" secondAttribute="width" id="5bP-4P-p3H"/>
                                                     <constraint firstItem="7yL-wb-czU" firstAttribute="centerX" secondItem="eU6-Xu-Lb2" secondAttribute="centerX" id="8pm-Ip-KJe"/>
                                                     <constraint firstItem="Tak-Rv-vRu" firstAttribute="width" secondItem="Ega-m1-Q62" secondAttribute="width" id="BmG-ON-Hmj"/>
                                                     <constraint firstItem="Yl0-Tv-WpE" firstAttribute="centerX" secondItem="AOh-kn-w9K" secondAttribute="centerX" id="DP7-Gw-s4E"/>
-                                                    <constraint firstItem="7yL-wb-czU" firstAttribute="top" secondItem="eU6-Xu-Lb2" secondAttribute="bottom" constant="10" id="Fyl-gn-Ujz"/>
+                                                    <constraint firstItem="7yL-wb-czU" firstAttribute="top" secondItem="eU6-Xu-Lb2" secondAttribute="bottom" constant="5" id="Fyl-gn-Ujz"/>
                                                     <constraint firstItem="ehg-6E-cHA" firstAttribute="width" secondItem="Tak-Rv-vRu" secondAttribute="width" id="I0P-Eu-FBX"/>
-                                                    <constraint firstItem="Tak-Rv-vRu" firstAttribute="top" secondItem="7yL-wb-czU" secondAttribute="bottom" constant="20" id="Jql-RY-Kpd"/>
+                                                    <constraint firstItem="Lad-ix-zGf" firstAttribute="centerX" secondItem="AOh-kn-w9K" secondAttribute="centerX" id="Inv-10-be7"/>
+                                                    <constraint firstItem="Lad-ix-zGf" firstAttribute="top" secondItem="ehg-6E-cHA" secondAttribute="bottom" constant="21" id="Isb-Ms-Xbp"/>
+                                                    <constraint firstItem="H2u-9p-4FK" firstAttribute="height" secondItem="7yL-wb-czU" secondAttribute="height" id="N59-Bv-8px"/>
                                                     <constraint firstItem="eU6-Xu-Lb2" firstAttribute="centerX" secondItem="ZKp-E5-po7" secondAttribute="centerX" id="Naf-9d-md9"/>
                                                     <constraint firstItem="ZKp-E5-po7" firstAttribute="centerX" secondItem="R1T-fw-wDT" secondAttribute="centerX" id="Nzc-Oj-ieR"/>
                                                     <constraint firstItem="Yl0-Tv-WpE" firstAttribute="top" secondItem="AOh-kn-w9K" secondAttribute="top" constant="5" id="O0f-oS-u8k"/>
@@ -1910,8 +1807,11 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                     <constraint firstItem="eU6-Xu-Lb2" firstAttribute="width" secondItem="ZKp-E5-po7" secondAttribute="width" id="haQ-Vm-QFI"/>
                                                     <constraint firstItem="Tak-Rv-vRu" firstAttribute="centerX" secondItem="Ega-m1-Q62" secondAttribute="centerX" id="lAf-Zo-FXj"/>
                                                     <constraint firstItem="Ega-m1-Q62" firstAttribute="centerX" secondItem="AOh-kn-w9K" secondAttribute="centerX" id="laV-TR-uZ4"/>
-                                                    <constraint firstItem="eU6-Xu-Lb2" firstAttribute="top" secondItem="ZKp-E5-po7" secondAttribute="bottom" constant="10" id="p1a-5W-7a3"/>
+                                                    <constraint firstItem="H2u-9p-4FK" firstAttribute="centerX" secondItem="7yL-wb-czU" secondAttribute="centerX" id="n7O-6k-Hmf"/>
+                                                    <constraint firstItem="eU6-Xu-Lb2" firstAttribute="top" secondItem="ZKp-E5-po7" secondAttribute="bottom" constant="5" id="p1a-5W-7a3"/>
                                                     <constraint firstItem="Tak-Rv-vRu" firstAttribute="height" secondItem="Ega-m1-Q62" secondAttribute="height" id="uHd-BZ-5Sj"/>
+                                                    <constraint firstItem="Tak-Rv-vRu" firstAttribute="top" secondItem="H2u-9p-4FK" secondAttribute="bottom" constant="20" id="uTp-fT-5lL"/>
+                                                    <constraint firstItem="H2u-9p-4FK" firstAttribute="width" secondItem="7yL-wb-czU" secondAttribute="width" id="v2E-aD-IOm"/>
                                                     <constraint firstItem="Ega-m1-Q62" firstAttribute="top" secondItem="R1T-fw-wDT" secondAttribute="bottom" constant="5" id="x2P-bk-H4V"/>
                                                     <constraint firstItem="ehg-6E-cHA" firstAttribute="top" secondItem="Tak-Rv-vRu" secondAttribute="bottom" constant="8" id="zK7-Bd-RXa"/>
                                                 </constraints>
@@ -2090,24 +1990,6 @@ When an application crashes or the internet stalls, they save the day.</string>
             <point key="canvasLocation" x="16100.000000000002" y="-147.55434782608697"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="yVX-cS-MlJ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qo8-T9-JqN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tLP-CI-nlJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aHr-9E-Tv3" kind="relationship" relationship="rootViewController" id="3J0-Kz-YmG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qqt-PN-oxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1023" y="200"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="iGc-J7-c8A">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gks-P8-O6s" sceneMemberID="viewController">
@@ -2155,7 +2037,6 @@ When an application crashes or the internet stalls, they save the day.</string>
         <image name="itEngImg" width="150" height="150"/>
         <image name="mobileDevImg" width="150" height="150"/>
         <image name="qaAnalystImg" width="150" height="150"/>
-        <image name="quizzMain_ttp" width="600" height="261"/>
         <image name="webDevImg" width="150" height="150"/>
     </resources>
 </document>
