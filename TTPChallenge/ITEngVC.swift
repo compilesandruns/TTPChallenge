@@ -2,11 +2,12 @@
 //  ITEngVC.swift
 //  TTPChallenge
 //
-//  Created by Mirim An on 2/15/17.
+//  Created by Luna An on 2/15/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
 import UIKit
+import SafariServices
 
 class ITEngVC: UIViewController {
     
@@ -21,30 +22,25 @@ class ITEngVC: UIViewController {
             button.layer.cornerRadius = 12
         }
         retakeQuizButton.layer.cornerRadius = 20
-
-
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func informationBtnTapped(_ sender: UIButton) {
         
         let index = sender.tag
         switch index {
         case 0:
-            print("open safari for 1")
+            if let url = URL(string: "https://ttp.nyc/accelerated-programs") {
+                let safariVC = SFSafariViewController(url: url)
+                present(safariVC, animated: true, completion: nil)
+            }
         case 1:
-            print("open safari for 2")
-        case 2:
-            print("open safari for 3")
+            if let url = URL(string: "https://ttp.nyc/join") {
+                let safariVC = SFSafariViewController(url: url)
+                present(safariVC, animated: true, completion: nil)
+            }
         default:
             break
         }
-        
     }
     
     @IBAction func retakeQuizBtnTapped(_ sender: UIButton) {

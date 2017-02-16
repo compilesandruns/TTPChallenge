@@ -446,6 +446,11 @@
                             <constraint firstAttribute="trailing" secondItem="FRE-M8-cgX" secondAttribute="trailing" id="ydU-MP-he0"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="nextButton" destination="c4X-CS-QeT" id="kKg-Lf-jVS"/>
                         <outlet property="progressLabel" destination="pHz-Ch-lHW" id="xCi-r8-DLT"/>
@@ -1346,7 +1351,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DG8-tw-bSV">
-                                                        <rect key="frame" x="42" y="542" width="331" height="115"/>
+                                                        <rect key="frame" x="42" y="542" width="331" height="75"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTP-Ea-DF1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="331" height="35"/>
@@ -1362,19 +1367,8 @@
                                                                     <action selector="informationBtnTapped:" destination="4Xd-qJ-iNv" eventType="touchUpInside" id="YxR-DX-Q1k"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B81-kq-cG2">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXZ-QA-ndF">
                                                                 <rect key="frame" x="0.0" y="40" width="331" height="35"/>
-                                                                <color key="backgroundColor" red="1" green="0.50739303690000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
-                                                                <state key="normal" title="Explore More">
-                                                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="informationBtnTapped:" destination="4Xd-qJ-iNv" eventType="touchUpInside" id="UKo-Mc-3TV"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXZ-QA-ndF">
-                                                                <rect key="frame" x="0.0" y="80" width="331" height="35"/>
                                                                 <color key="backgroundColor" red="0.18039215689999999" green="0.74816484900000002" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                                                 <state key="normal" title="Sign Up for PPT Alerts">
@@ -1385,15 +1379,9 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="B81-kq-cG2" firstAttribute="height" secondItem="VTP-Ea-DF1" secondAttribute="height" id="07Y-Jg-QkW"/>
-                                                            <constraint firstItem="B81-kq-cG2" firstAttribute="width" secondItem="VTP-Ea-DF1" secondAttribute="width" id="eWp-CW-FxG"/>
-                                                            <constraint firstItem="DXZ-QA-ndF" firstAttribute="height" secondItem="B81-kq-cG2" secondAttribute="height" id="mwB-5Y-Hl9"/>
-                                                            <constraint firstItem="DXZ-QA-ndF" firstAttribute="width" secondItem="B81-kq-cG2" secondAttribute="width" id="pPH-gn-oj6"/>
-                                                        </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouy-Wd-Ev2">
-                                                        <rect key="frame" x="62.5" y="692" width="289.5" height="40"/>
+                                                        <rect key="frame" x="62.5" y="652" width="289.5" height="40"/>
                                                         <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="IWe-p6-iD4"/>
@@ -1477,7 +1465,6 @@
                     <connections>
                         <outlet property="retakeQuizButton" destination="Ouy-Wd-Ev2" id="gRX-Mi-SR9"/>
                         <outletCollection property="informationButtons" destination="VTP-Ea-DF1" collectionClass="NSMutableArray" id="twu-E2-x1L"/>
-                        <outletCollection property="informationButtons" destination="B81-kq-cG2" collectionClass="NSMutableArray" id="61X-TH-0Lp"/>
                         <outletCollection property="informationButtons" destination="DXZ-QA-ndF" collectionClass="NSMutableArray" id="HSd-lo-zgo"/>
                     </connections>
                 </viewController>
@@ -1761,7 +1748,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ehg-6E-cHA">
-                                                        <rect key="frame" x="42" y="618" width="331" height="115"/>
+                                                        <rect key="frame" x="42" y="618" width="331" height="75"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="do7-vh-i8Z">
                                                                 <rect key="frame" x="0.0" y="0.0" width="331" height="35"/>
@@ -1777,19 +1764,8 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                                     <action selector="informationBtnTapped:" destination="Jrs-NW-mwC" eventType="touchUpInside" id="WNq-AL-wJy"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-vR-GTG">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q16-UR-gYX">
                                                                 <rect key="frame" x="0.0" y="40" width="331" height="35"/>
-                                                                <color key="backgroundColor" red="1" green="0.50739303690000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
-                                                                <state key="normal" title="Apply for IT Program">
-                                                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="informationBtnTapped:" destination="Jrs-NW-mwC" eventType="touchUpInside" id="2a1-gt-5dT"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q16-UR-gYX">
-                                                                <rect key="frame" x="0.0" y="80" width="331" height="35"/>
                                                                 <color key="backgroundColor" red="0.18039215689999999" green="0.74816484900000002" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="14"/>
                                                                 <state key="normal" title="Sign Up for PPT Alerts">
@@ -1800,15 +1776,9 @@ When an application crashes or the internet stalls, they save the day.</string>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="tBs-vR-GTG" firstAttribute="height" secondItem="do7-vh-i8Z" secondAttribute="height" id="0uI-mc-pDD"/>
-                                                            <constraint firstItem="Q16-UR-gYX" firstAttribute="height" secondItem="tBs-vR-GTG" secondAttribute="height" id="foe-sG-TDY"/>
-                                                            <constraint firstItem="tBs-vR-GTG" firstAttribute="width" secondItem="do7-vh-i8Z" secondAttribute="width" id="hky-D4-2iT"/>
-                                                            <constraint firstItem="Q16-UR-gYX" firstAttribute="width" secondItem="tBs-vR-GTG" secondAttribute="width" id="pno-RW-8FO"/>
-                                                        </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lad-ix-zGf">
-                                                        <rect key="frame" x="62" y="768" width="290" height="40"/>
+                                                        <rect key="frame" x="62" y="728" width="290" height="40"/>
                                                         <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="sBx-cD-MHg"/>
@@ -1895,7 +1865,6 @@ When an application crashes or the internet stalls, they save the day.</string>
                     <connections>
                         <outlet property="retakeQuizButton" destination="Lad-ix-zGf" id="g3p-jw-za0"/>
                         <outletCollection property="informationButtons" destination="do7-vh-i8Z" collectionClass="NSMutableArray" id="IOd-77-ewa"/>
-                        <outletCollection property="informationButtons" destination="tBs-vR-GTG" collectionClass="NSMutableArray" id="Uut-rR-Glb"/>
                         <outletCollection property="informationButtons" destination="Q16-UR-gYX" collectionClass="NSMutableArray" id="HDy-kA-107"/>
                     </connections>
                 </viewController>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class QAVC: UIViewController {
     
@@ -16,18 +17,15 @@ class QAVC: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        // button styling
+
         for button in informationButtons {
             button.layer.cornerRadius = 12
         }
         retakeQuizButton.layer.cornerRadius = 20
-
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
-        print("sharebuttontapped")
-        // implement activity view controller
-        // share via social networks?
+   //
     }
     
     @IBAction func homeButtonTapped(_ sender: Any) {
@@ -40,17 +38,24 @@ class QAVC: UIViewController {
         let index = sender.tag
         switch index {
         case 0:
-            print("open safari for 1")
+            if let url = URL(string: "https://ttp.nyc/accelerated-programs") {
+                let safariVC = SFSafariViewController(url: url)
+                present(safariVC, animated: true, completion: nil)
+            }
         case 1:
-            print("open safari for 2")
+            if let url = URL(string: "https://perscholas.org/apply/quality-assurance-part-time") {
+                let safariVC = SFSafariViewController(url: url)
+                present(safariVC, animated: true, completion: nil)
+            }
         case 2:
-            print("open safari for 3")
+            if let url = URL(string: "https://ttp.nyc/join") {
+                let safariVC = SFSafariViewController(url: url)
+                present(safariVC, animated: true, completion: nil)
+            }
         default:
             break
         }
     }
-
-    
     
     @IBAction func retakeQuizBtnTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

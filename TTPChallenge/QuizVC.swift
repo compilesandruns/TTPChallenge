@@ -81,7 +81,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         for (i,data) in personalityData.enumerated() {
-            
             var newQuestions: [Question] = []
             
             for string in data {
@@ -89,21 +88,16 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
             allQuestions.append(newQuestions)
         }
-        
         tableView.separatorStyle = .none
         nextButton.layer.cornerRadius = 20
         
         for i in 0..<5 {
             let quizObject = QuizGroup(sectionName: techJobs[i], questions: allQuestions[i])
-            print(quizObject)
             objectsArray.append(quizObject)
         }
-        
         DispatchQueue.main.async {
             self.activateResultButton()
-
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -150,14 +144,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         personalityCell.question = question
         
     }
-    
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        // Making the section header invisible
-        return 0
-    }
-    
-    
+   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
@@ -174,25 +161,21 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let max = responsesArray.max()
         if let maxN = max {
-            print(maxN)
-        }
-        
-        var counter = 0
-        
-        for (i,n) in responsesArray.enumerated() {
-            if n == max {
-                counter += 1
-                jobIndexArray.append(i)
+            var counter = 0
+            
+            for (i,n) in responsesArray.enumerated() {
+                if n == maxN {
+                    counter += 1
+                    jobIndexArray.append(i)
+                }
+            }
+            
+            for n in jobIndexArray {
+                techJobsForResult.append(techJobs[n])
             }
         }
-        
-        for n in jobIndexArray {
-            techJobsForResult.append(techJobs[n])
-        }
-        
         performSegue(withIdentifier: "toResult", sender: self)
     }
-    
     
     func yesForEachTechType(section: Int, row: Int){
         
@@ -285,7 +268,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         }
     }
-    
 
     func activateResultButton(){
         let qaCount = qa.filter{$0 == Answers.none.rawValue}.count
@@ -312,10 +294,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let destVC = segue.destination as! QuizResultVC
             DispatchQueue.main.async {
                 destVC.indexArrayPassed = self.jobIndexArray
-                print("\(self.jobIndexArray) <3 <3 jobindexarray")
                 destVC.techTypesFromResults = self.techJobsForResult
-                print("\(self.techJobsForResult) <3 <3 <3 <3 techjobsforresult")
-
             }
         }
     }
