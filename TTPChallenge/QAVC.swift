@@ -24,12 +24,8 @@ class QAVC: UIViewController {
         retakeQuizButton.layer.cornerRadius = 20
     }
     
-    @IBAction func shareButtonTapped(_ sender: Any) {
-   //
-    }
-    
     @IBAction func homeButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "backToQuizMain", sender: self)
+        performSegue(withIdentifier: Identifier.Segue.backToQuizMain, sender: self)
     }
     
  
@@ -38,17 +34,17 @@ class QAVC: UIViewController {
         let index = sender.tag
         switch index {
         case 0:
-            if let url = URL(string: "https://ttp.nyc/accelerated-programs") {
+            if let url = URL(string: URLS.acceleratedProgram) {
                 let safariVC = SFSafariViewController(url: url)
                 present(safariVC, animated: true, completion: nil)
             }
         case 1:
-            if let url = URL(string: "https://perscholas.org/apply/quality-assurance-part-time") {
+            if let url = URL(string: URLS.qaPartTime) {
                 let safariVC = SFSafariViewController(url: url)
                 present(safariVC, animated: true, completion: nil)
             }
         case 2:
-            if let url = URL(string: "https://ttp.nyc/join") {
+            if let url = URL(string: URLS.signUpForTTP) {
                 let safariVC = SFSafariViewController(url: url)
                 present(safariVC, animated: true, completion: nil)
             }

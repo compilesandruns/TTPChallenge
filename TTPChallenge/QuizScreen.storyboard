@@ -713,9 +713,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Thp-9d-SCh">
                             <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="shareButtonTapped:" destination="2vF-Nk-R4w" id="1hF-5W-xl0"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

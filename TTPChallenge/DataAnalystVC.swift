@@ -28,12 +28,12 @@ class DataAnalystVC: UIViewController {
         let index = sender.tag
         switch index {
         case 0:
-            if let url = URL(string: "https://ttp.nyc/accelerated-programs") {
+            if let url = URL(string: URLS.acceleratedProgram) {
                 let safariVC = SFSafariViewController(url: url)
                 present(safariVC, animated: true, completion: nil)
             }
         case 1:
-            if let url = URL(string: "https://ttp.nyc/join") {
+            if let url = URL(string: URLS.signUpForTTP) {
                 let safariVC = SFSafariViewController(url: url)
                 present(safariVC, animated: true, completion: nil)
             }

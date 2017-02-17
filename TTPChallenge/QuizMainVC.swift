@@ -17,15 +17,12 @@ class QuizMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Styling elements
         startButton.layer.cornerRadius = 20
         partOneCircle.layer.cornerRadius = partOneCircle.frame.width/2
         partOneCircle.layer.masksToBounds = true
         partTwoCircle.layer.cornerRadius = partTwoCircle.frame.width/2
         partTwoCircle.layer.masksToBounds = true
-        
-        
-        // Trasnparent navigation bar
+    
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true

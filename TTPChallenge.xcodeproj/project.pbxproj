@@ -58,7 +58,6 @@
 		DD0BDF321E55353B006F550F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF311E55353B006F550F /* Question.swift */; };
 		DD0BDF391E5537F8006F550F /* PersonalityTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */; };
 		DD8586B11E562AE000065DDD /* QuizResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8586B01E562AE000065DDD /* QuizResultVC.swift */; };
-		DD8586B41E56629300065DDD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8586B31E56629300065DDD /* Colors.swift */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -143,7 +142,6 @@
 		DD0BDF311E55353B006F550F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityTestCell.swift; sourceTree = "<group>"; };
 		DD8586B01E562AE000065DDD /* QuizResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultVC.swift; sourceTree = "<group>"; };
-		DD8586B31E56629300065DDD /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizScreen.storyboard; sourceTree = "<group>"; };
 		E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -210,7 +208,6 @@
 				DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */,
 				1751ABA31E4D33AB00E2AE75 /* SignInScreen.storyboard */,
 				17CFD04F1E4F73110007ADEC /* HomeScreen.storyboard */,
-				DD8586B21E56626600065DDD /* Colors */,
 				1751ABA81E4D33AB00E2AE75 /* LaunchScreen.storyboard */,
 				1751ABAB1E4D33AB00E2AE75 /* Info.plist */,
 				DD0BDEE71E52A8F6006F550F /* Fonts */,
@@ -399,14 +396,6 @@
 				DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */,
 			);
 			name = "Custom Cells";
-			sourceTree = "<group>";
-		};
-		DD8586B21E56626600065DDD /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				DD8586B31E56629300065DDD /* Colors.swift */,
-			);
-			name = Colors;
 			sourceTree = "<group>";
 		};
 		DDDF2E201E52334D00EAD0ED /* Quiz Sreen */ = {
@@ -719,7 +708,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				174979AA1E5102E700B901DC /* CreateUserInteracting.swift in Sources */,
-				DD8586B41E56629300065DDD /* Colors.swift in Sources */,
 				17CFD0681E5015F90007ADEC /* CridentialsValidationInteractor.swift in Sources */,
 				1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */,
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,

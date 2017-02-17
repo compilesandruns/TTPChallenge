@@ -16,14 +16,6 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var techTypesFromResults:[String]?
     var indexArrayPassed: [Int]?
     
-    let techJobs = [
-        "Quality Assurance Analyst",
-        "IT Engineer",
-        "Web Developer",
-        "Mobile Developer",
-        "Data Analyst"
-    ]
-    
     let colors = [Colors.qaPeach, Colors.itPink, Colors.wdRose, Colors.mdBlue, Colors.daGreen]
     
     override func viewDidLoad() {
@@ -40,7 +32,7 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell") as! ResultCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.Cell.resultCell) as! ResultCell
         if let techTypes = techTypesFromResults {
              cell.techTypeTitleLabel.text = techTypes[indexPath.row]
         }
@@ -57,7 +49,7 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let types = techTypesFromResults {
-            for (i,job) in techJobs.enumerated() {
+            for (i,job) in Quizzes.techJobs.enumerated() {
                 if types[indexPath.row] == job {
                     performSegue(withIdentifier: "segueTo\(i)", sender: self)
                 }
@@ -66,8 +58,7 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     @IBAction func retakeQuizBtnTapped(_ sender: Any) {
-        let id = "backHome"
-        performSegue(withIdentifier: id, sender: self)
+        performSegue(withIdentifier: Identifier.Segue.backHome, sender: self)
     }
 }
 
