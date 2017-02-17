@@ -48,7 +48,6 @@
 		DD0BDEF11E52C0E3006F550F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DD0BDEF01E52C0E3006F550F /* Fonts */; };
 		DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */; };
 		DD0BDEF51E52D233006F550F /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDEF41E52D233006F550F /* QuizVC.swift */; };
-		DD0BDF1D1E53C9AB006F550F /* QAType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF1C1E53C9AA006F550F /* QAType.swift */; };
 		DD0BDF211E5403F6006F550F /* QAVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF201E5403F6006F550F /* QAVC.swift */; };
 		DD0BDF241E552754006F550F /* MobileDevVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF231E552754006F550F /* MobileDevVC.swift */; };
 		DD0BDF261E55276C006F550F /* WebDevVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF251E55276C006F550F /* WebDevVC.swift */; };
@@ -58,6 +57,7 @@
 		DD0BDF321E55353B006F550F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF311E55353B006F550F /* Question.swift */; };
 		DD0BDF391E5537F8006F550F /* PersonalityTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */; };
 		DD8586B11E562AE000065DDD /* QuizResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8586B01E562AE000065DDD /* QuizResultVC.swift */; };
+		DD8586B81E56789900065DDD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8586B71E56789900065DDD /* CustomButton.swift */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -132,7 +132,6 @@
 		DD0BDEF01E52C0E3006F550F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizMainVC.swift; sourceTree = "<group>"; };
 		DD0BDEF41E52D233006F550F /* QuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
-		DD0BDF1C1E53C9AA006F550F /* QAType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAType.swift; sourceTree = "<group>"; };
 		DD0BDF201E5403F6006F550F /* QAVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAVC.swift; sourceTree = "<group>"; };
 		DD0BDF231E552754006F550F /* MobileDevVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileDevVC.swift; sourceTree = "<group>"; };
 		DD0BDF251E55276C006F550F /* WebDevVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDevVC.swift; sourceTree = "<group>"; };
@@ -142,6 +141,7 @@
 		DD0BDF311E55353B006F550F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityTestCell.swift; sourceTree = "<group>"; };
 		DD8586B01E562AE000065DDD /* QuizResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultVC.swift; sourceTree = "<group>"; };
+		DD8586B71E56789900065DDD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizScreen.storyboard; sourceTree = "<group>"; };
 		E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -362,6 +362,7 @@
 			children = (
 				DD0BDF201E5403F6006F550F /* QAVC.swift */,
 				DD0BDF231E552754006F550F /* MobileDevVC.swift */,
+				DD8586B71E56789900065DDD /* CustomButton.swift */,
 				DD0BDF251E55276C006F550F /* WebDevVC.swift */,
 				DD0BDF271E552780006F550F /* DataAnalystVC.swift */,
 				DD0BDF291E552791006F550F /* ITEngVC.swift */,
@@ -372,10 +373,11 @@
 		DD0BDF2D1E553480006F550F /* QuizVCs */ = {
 			isa = PBXGroup;
 			children = (
-				DD0BDF351E5537A5006F550F /* Custom Cells */,
 				DD0BDEF21E52C84A006F550F /* QuizMainVC.swift */,
 				DD0BDEF41E52D233006F550F /* QuizVC.swift */,
 				DD8586B01E562AE000065DDD /* QuizResultVC.swift */,
+				DD0BDF221E55271D006F550F /* Tech Types */,
+				DD0BDF351E5537A5006F550F /* Custom Cells */,
 			);
 			name = QuizVCs;
 			sourceTree = "<group>";
@@ -383,7 +385,6 @@
 		DD0BDF2E1E5534CE006F550F /* QuizModels */ = {
 			isa = PBXGroup;
 			children = (
-				DD0BDF1C1E53C9AA006F550F /* QAType.swift */,
 				DD0BDF2F1E5534E2006F550F /* QuizGroup.swift */,
 				DD0BDF311E55353B006F550F /* Question.swift */,
 			);
@@ -398,12 +399,19 @@
 			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
+		DD8586B61E56774700065DDD /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
 		DDDF2E201E52334D00EAD0ED /* Quiz Sreen */ = {
 			isa = PBXGroup;
 			children = (
+				DD8586B61E56774700065DDD /* Custom Views */,
 				DD0BDF2E1E5534CE006F550F /* QuizModels */,
 				DD0BDF2D1E553480006F550F /* QuizVCs */,
-				DD0BDF221E55271D006F550F /* Tech Types */,
 			);
 			name = "Quiz Sreen";
 			sourceTree = "<group>";
@@ -733,9 +741,9 @@
 				DD0BDF211E5403F6006F550F /* QAVC.swift in Sources */,
 				17CFD0601E4F7CE40007ADEC /* AlertView.swift in Sources */,
 				DD0BDF321E55353B006F550F /* Question.swift in Sources */,
+				DD8586B81E56789900065DDD /* CustomButton.swift in Sources */,
 				17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */,
 				DD0BDF391E5537F8006F550F /* PersonalityTestCell.swift in Sources */,
-				DD0BDF1D1E53C9AB006F550F /* QAType.swift in Sources */,
 				17CFD06A1E50215C0007ADEC /* SignInInteractor.swift in Sources */,
 				1751ABA21E4D33AB00E2AE75 /* SignInScreenViewController.swift in Sources */,
 				17CFD05E1E4F7C630007ADEC /* AlertViewable.swift in Sources */,

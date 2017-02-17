@@ -17,7 +17,6 @@ class QuizMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startButton.layer.cornerRadius = 20
         partOneCircle.layer.cornerRadius = partOneCircle.frame.width/2
         partOneCircle.layer.masksToBounds = true
         partTwoCircle.layer.cornerRadius = partTwoCircle.frame.width/2

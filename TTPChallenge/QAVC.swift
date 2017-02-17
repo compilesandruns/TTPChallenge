@@ -12,23 +12,16 @@ import SafariServices
 class QAVC: UIViewController {
     
     @IBOutlet var informationButtons: [UIButton]!
-    
     @IBOutlet weak var retakeQuizButton: UIButton!
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        for button in informationButtons {
-            button.layer.cornerRadius = 12
-        }
-        retakeQuizButton.layer.cornerRadius = 20
     }
     
     @IBAction func homeButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: Identifier.Segue.backToQuizMain, sender: self)
     }
     
- 
     @IBAction func informationBtnTapped(_ sender: UIButton) {
         
         let index = sender.tag
@@ -56,5 +49,4 @@ class QAVC: UIViewController {
     @IBAction func retakeQuizBtnTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
- 
 }

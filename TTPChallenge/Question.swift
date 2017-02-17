@@ -9,7 +9,6 @@
 import Foundation
 
 final class Question {
-    
     let string: String
     let section: String
     var selectedYes: Bool = false
@@ -19,15 +18,12 @@ final class Question {
         self.string = string
         self.section = section
     }
-    
     func changeToYes() {
         selectedNo = false
         selectedYes = true
     }
-    
     func changeToNo() {
         selectedNo = true
         selectedYes = false
     }
-    
 }

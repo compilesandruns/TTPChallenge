@@ -9,9 +9,7 @@
 import Foundation
 
 struct QuizGroup {
-    
     var sectionName : String
     var questions : [Question]
-    
 }
 

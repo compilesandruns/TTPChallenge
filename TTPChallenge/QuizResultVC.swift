@@ -21,7 +21,6 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
-        retakeQuizButton.layer.cornerRadius = 20
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

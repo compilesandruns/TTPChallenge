@@ -45,7 +45,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             allQuestions.append(newQuestions)
         }
         tableView.separatorStyle = .none
-        nextButton.layer.cornerRadius = 20
         
         for i in 0..<5 {
             let quizObject = QuizGroup(sectionName: Quizzes.techJobs[i], questions: allQuestions[i])

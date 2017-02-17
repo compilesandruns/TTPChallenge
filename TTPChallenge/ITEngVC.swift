@@ -18,10 +18,6 @@ class ITEngVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for button in informationButtons {
-            button.layer.cornerRadius = 12
-        }
-        retakeQuizButton.layer.cornerRadius = 20
     }
 
     @IBAction func informationBtnTapped(_ sender: UIButton) {
