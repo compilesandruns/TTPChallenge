@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1706510F1E5277A600802807 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706510E1E5277A600802807 /* PresentMenuAnimator.swift */; };
 		170651111E52796D00802807 /* FullyReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170651101E52796D00802807 /* FullyReplaceSegue.swift */; };
+		1719F1F91E56C14A004E06A0 /* MenuSectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719F1F81E56C14A004E06A0 /* MenuSectionHeaderCell.swift */; };
+		1719F1FB1E56C344004E06A0 /* MenuSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719F1FA1E56C344004E06A0 /* MenuSectionType.swift */; };
 		174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979971E50DCE400B901DC /* CreateUserScreenTableViewController.swift */; };
 		1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979991E50DD0300B901DC /* CreateUserScreenPresenter.swift */; };
 		1749799C1E50DD1300B901DC /* CreateUserScreenPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749799B1E50DD1300B901DC /* CreateUserScreenPresenting.swift */; };
@@ -87,6 +89,8 @@
 		00B7C55616ACC4B1CE50045B /* Pods-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1706510E1E5277A600802807 /* PresentMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentMenuAnimator.swift; sourceTree = "<group>"; };
 		170651101E52796D00802807 /* FullyReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullyReplaceSegue.swift; sourceTree = "<group>"; };
+		1719F1F81E56C14A004E06A0 /* MenuSectionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionHeaderCell.swift; sourceTree = "<group>"; };
+		1719F1FA1E56C344004E06A0 /* MenuSectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionType.swift; sourceTree = "<group>"; };
 		174979971E50DCE400B901DC /* CreateUserScreenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenTableViewController.swift; sourceTree = "<group>"; };
 		174979991E50DD0300B901DC /* CreateUserScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenPresenter.swift; sourceTree = "<group>"; };
 		1749799B1E50DD1300B901DC /* CreateUserScreenPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenPresenting.swift; sourceTree = "<group>"; };
@@ -191,9 +195,10 @@
 				17BB26531E5171BD0005D787 /* MenuViewController.swift */,
 				17BB26491E516E7F0005D787 /* MenuDelegate.swift */,
 				17BB265F1E51795A0005D787 /* MenuViewable.swift */,
-				17BB264F1E516EAD0005D787 /* MenuPresenting.swift */,
 				17BB264D1E516EA20005D787 /* MenuPresenter.swift */,
+				17BB264F1E516EAD0005D787 /* MenuPresenting.swift */,
 				17BB26591E5175FE0005D787 /* MoreInformationButtonType.swift */,
+				1719F1FA1E56C344004E06A0 /* MenuSectionType.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				17BB263E1E5128740005D787 /* FirstResponderView.swift */,
 				17BB26511E5171A20005D787 /* MenuTableViewCell.swift */,
 				170651101E52796D00802807 /* FullyReplaceSegue.swift */,
+				1719F1F81E56C14A004E06A0 /* MenuSectionHeaderCell.swift */,
 			);
 			name = "UI Helpers";
 			sourceTree = "<group>";
@@ -719,6 +725,7 @@
 				17CFD04C1E4F6F990007ADEC /* SignInScreenPresenting.swift in Sources */,
 				17BB265A1E5175FE0005D787 /* MoreInformationButtonType.swift in Sources */,
 				17BB26411E516E340005D787 /* HomeScreenViewController.swift in Sources */,
+				1719F1F91E56C14A004E06A0 /* MenuSectionHeaderCell.swift in Sources */,
 				1749799C1E50DD1300B901DC /* CreateUserScreenPresenting.swift in Sources */,
 				17BB26501E516EAD0005D787 /* MenuPresenting.swift in Sources */,
 				174979A81E5102DB00B901DC /* CreateUserInteractor.swift in Sources */,
@@ -741,6 +748,7 @@
 				17BB264A1E516E7F0005D787 /* MenuDelegate.swift in Sources */,
 				1751ABA01E4D33AB00E2AE75 /* AppDelegate.swift in Sources */,
 				17CFD0551E4F7B4D0007ADEC /* FirebaseInteractor.swift in Sources */,
+				1719F1FB1E56C344004E06A0 /* MenuSectionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

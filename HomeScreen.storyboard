@@ -17,6 +17,14 @@
             </objects>
             <point key="canvasLocation" x="2422" y="152"/>
         </scene>
+        <!--SignInScreen-->
+        <scene sceneID="MlM-LR-uhx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignInScreen" id="5d5-1j-4fV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2N-xh-bZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="264"/>
+        </scene>
         <!--Home Screen View Controller-->
         <scene sceneID="p1W-wq-jlX">
             <objects>
@@ -41,6 +49,7 @@
                     <connections>
                         <outlet property="menuButtonItem" destination="LxD-w6-CIK" id="tBJ-5g-SuC"/>
                         <outlet property="navBarEdgePanGestureRecognizer" destination="jt2-rb-fck" id="1r0-tN-S0x"/>
+                        <segue destination="5d5-1j-4fV" kind="custom" identifier="showSignIn" customClass="FullyReplaceSegue" id="WgT-F5-A0l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIp-Iu-T7v" userLabel="First Responder" sceneMemberID="firstResponder"/>

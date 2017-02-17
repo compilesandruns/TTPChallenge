@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="272" id="Cnr-Kk-zc1"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuSectionHeader" rowHeight="57" id="6wP-8n-2fU" userLabel="Menu Section Header">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuSectionHeader" rowHeight="57" id="6wP-8n-2fU" userLabel="Menu Section Header" customClass="MenuSectionHeaderViewCell" customModule="TTPChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="272" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6wP-8n-2fU" id="8d1-vB-9N2">

@@ -6,6 +6,8 @@
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
+import PKHUD
+
 class HomeScreenViewController: BaseViewController {
     var presenter: HomeScreenPresenting!
     
@@ -37,12 +39,24 @@ extension HomeScreenViewController: HomeScreenViewable {
     }
     
     func closeMenu() {
-        self.presentedViewController?.dismiss(animated: true, completion: nil)
+        presentedViewController?.dismiss(animated: true, completion: nil)
     }
     
     func showWebView(url: String) {
         webScreenOptions = (url, false, "")
-        self.performSegue(withIdentifier: "showWebView", sender: self)
+        performSegue(withIdentifier: "showWebView", sender: self)
+    }
+    
+    func showLoginFlow() {
+        performSegue(withIdentifier: "showSignIn", sender: self)
+    }
+    
+    func showLoader() {
+        HUD.show(.progress)
+    }
+    
+    func hideLoader() {
+        HUD.hide()
     }
 }
 
@@ -79,12 +93,10 @@ extension HomeScreenViewController {
 extension HomeScreenViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PresentMenuAnimator()
-
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return DismissMenuAnimator()
-
     }
     
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {

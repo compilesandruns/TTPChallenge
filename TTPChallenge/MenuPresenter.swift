@@ -18,25 +18,25 @@ class MenuPresenter {
     func setupMoreInformationButtons() {
         var buttons = [MoreInformationButton]()
         
-        var aboutPhoneButton = MoreInformationButton()
-        aboutPhoneButton.type = .AboutMyPhone
-        aboutPhoneButton.name = "About My Phone"
-        buttons.append(aboutPhoneButton)
+        var retakeButton = MoreInformationButton()
+        retakeButton.type = .RetakeTheQuiz
+        retakeButton.name = "Retake the Quiz"
+        buttons.append(retakeButton)
+
+        var techTalkButton = MoreInformationButton()
+        techTalkButton.type = .TechTalk
+        techTalkButton.name = "Tech Talk"
+        buttons.append(techTalkButton)
         
-        var termsButton = MoreInformationButton()
-        termsButton.type = .TermsOfService
-        termsButton.name = "Terms Of Service"
-        buttons.append(termsButton)
+        var aboutButton = MoreInformationButton()
+        aboutButton.type = .AboutTTP
+        aboutButton.name = "About TTP"
+        buttons.append(aboutButton)
         
-        var privacyButton = MoreInformationButton()
-        privacyButton.type = .PrivacyPolicy
-        privacyButton.name = "Privacy Policy"
-        buttons.append(privacyButton)
-        
-        var aboutLSButton = MoreInformationButton()
-        aboutLSButton.type = .AboutLegalShield
-        aboutLSButton.name = "About LegalShield"
-        buttons.append(aboutLSButton)
+        var learnMoreButton = MoreInformationButton()
+        learnMoreButton.type = .LearnMore
+        learnMoreButton.name = "Learn More"
+        buttons.append(learnMoreButton)
         
         view.setMoreInformationButtons(buttons: buttons)
     }
@@ -64,15 +64,13 @@ extension MenuPresenter: MenuPresenting {
     func didTapMoreInformationButton(button: MoreInformationButton) {
         view.closeMenuForModal().then { _ -> Void in
             switch button.type! {
-            case .JoinOurCommunity:
+            case .RetakeTheQuiz:
                 self.delegate?.showWebView(url: "www.google.com")
-            case .AboutMyPhone:
+            case .TechTalk:
                 self.delegate?.showWebView(url: "www.google.com")
-            case .TermsOfService:
+            case .AboutTTP:
                 self.delegate?.showWebView(url: "www.google.com")
-            case .PrivacyPolicy:
-                self.delegate?.showWebView(url: "www.google.com")
-            case .AboutLegalShield:
+            case .LearnMore:
                 self.delegate?.showWebView(url: "www.google.com")
             }
         }

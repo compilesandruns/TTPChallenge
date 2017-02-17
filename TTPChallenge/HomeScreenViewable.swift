@@ -7,7 +7,13 @@
 //
 
 protocol HomeScreenViewable: class {
+    func openMenu()
+    func closeMenu()
     
+    func showLoginFlow()
     func showWebView(url: String)
+    
+    func showLoader()
+    func hideLoader()
 }
 

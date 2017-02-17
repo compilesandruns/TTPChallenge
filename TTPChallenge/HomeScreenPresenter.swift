@@ -22,7 +22,7 @@ extension HomeScreenPresenter: HomeScreenPresenting {
 
 extension HomeScreenPresenter: MenuDelegate {
     func menuWillAppear() {
-        
+    
     }
     
     func menuDidAppear() {
