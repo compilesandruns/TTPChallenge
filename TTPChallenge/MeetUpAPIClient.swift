@@ -25,7 +25,7 @@ class MeetUpAPIClient {
                 let results = try JSONSerialization.jsonObject(with: unwrappedata, options: []) as? [[String : Any]]
                 
                 if let results = results {
-//                    print(results)
+
                     completion(results)
                 }
             } catch {

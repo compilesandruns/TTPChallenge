@@ -10,6 +10,8 @@ import UIKit
 
 class ExpandingMeetUpCell: UITableViewCell {
     
+    var meetup: MeetUp!
+    
     @IBOutlet weak var mainImage: UIImageView!
     
     var starButton: DOFavoriteButton?
@@ -22,37 +24,87 @@ class ExpandingMeetUpCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-                
+        
+        addFavButton()
+
     }
-    
-    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         super.setSelected(selected, animated: animated)
         
-        // Configure the view for the selected state
-        
-//        if starButton == nil{
-//            addFavButton(cell: self)
-//        }
     }
     
-//    func addFavButton(cell: ExpandingMeetUpCell){
-//        
-//        cell.starButton = DOFavoriteButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44), image: UIImage(named: "star"))
-//        
-//        cell.starButton?.addTarget(self, action: #selector(favBtnTouched(sender:)), for: .touchUpInside)
-//        cell.mainImage.addSubview(cell.starButton!)
-//    }
+    func addFavButton(){
+        
+        let x = mainImage.frame.origin.x
+        let y = mainImage.frame.origin.y
+        
+        starButton = DOFavoriteButton(frame: CGRect(x: x, y: y, width: 50, height: 50), image: UIImage(named: "star"))
+        
+        starButton!.addTarget(self, action: #selector(favBtnTouched(sender:)), for: .touchUpInside)
+
+        self.contentView.addSubview(starButton!)
+    }
     
-//    func favBtnTouched(sender: DOFavoriteButton) {
-//        
-//        if sender.isSelected {
-//            sender.deselect()
-//        } else {
-//            sender.select()
-//        }
-//    }
+    func favBtnTouched(sender: UIButton) {
+        
+        let favSender = sender as! DOFavoriteButton
+        
+        if sender.isSelected {
+            
+            removeFavorite(meetup: meetup)
+            favSender.deselect()
+        } else {
+            saveFavorite(meetup: meetup)
+            favSender.select()
+        }
+    }
     
+    func saveFavorite(meetup: MeetUp) {
+        
+        let defaults = UserDefaults.standard
+        
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
+        
+        var favMeetup = ["name" : meetup.name,
+                         "summary" : meetup.summary]
+        
+        if let url = meetup.url {
+            favMeetup["url"] = url
+        }
+        if let favs = favs{
+
+            var updatedFavs = favs
+            updatedFavs.append(favMeetup)
+            defaults.set(updatedFavs, forKey: "favMeetups")
+            
+        } else {
+            
+            defaults.set([favMeetup], forKey: "favMeetups")
+            
+        }
+    }
+    
+    func removeFavorite(meetup: MeetUp){
+        
+        let defaults = UserDefaults.standard
+        
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
+        
+        guard let unwrappedFavs = favs else{return}
+        
+        for (index, each) in unwrappedFavs.enumerated(){
+            
+            guard let name = each["name"] else{return}
+            
+            if meetup.name == name {
+                
+                var adjustedFav = unwrappedFavs
+                adjustedFav.remove(at: index)
+                defaults.set(adjustedFav, forKey: "favMeetups")
+            }
+        }
+    }
 }
+

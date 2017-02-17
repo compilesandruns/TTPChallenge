@@ -25,7 +25,6 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         MeetUpAPIClient.getMeetupSuggestions(query: "women") {meetupResults in
             
             for each in meetupResults{
-                print(each)
                 let name = each["name"] as? String
                 let count = each ["members"] as? Int
                 let summary = each["description"] as? String
@@ -58,20 +57,14 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if indexPath.section == 0{
             let meetup = meetups[indexPath.row]
+            cell.meetup = meetup
             meetup.delegate = self
-            cell.title.text = meetup.name
-            cell.summary.text = cell.isExpanded ? meetup.summary : "Read More"
+            cell.title.text = cell.meetup.name
+            cell.summary.text = cell.isExpanded ? cell.meetup.summary : "Read More"
             cell.summary.textAlignment = cell.isExpanded ? .left : .center
             cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor.lightGray
-            cell.mainImage.image = meetup.image
-
-            if cell.starButton == nil{
-                addFavButton(cell: cell, tag: indexPath.row)
-            }
-            
-         cell.contentView.addSubview(cell.starButton!)
-            
-            
+            cell.mainImage.image = cell.meetup.image
+            cell.starButton?.isSelected = checkIfFavorited(meetup: cell.meetup)
             
             cell.selectionStyle = .none
             
@@ -105,28 +98,28 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingMeetUpCell else { return }
         
-        if indexPath.section == 0{
-            
-            let meetup = meetups[indexPath.row]
-            
-            cell.isExpanded = !cell.isExpanded
-            
-            cell.summary.text = cell.isExpanded ? meetup.summary : "Read More"
-            cell.summary.textAlignment = cell.isExpanded ? .left : .center
-            cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor.lightGray
-            cell.summary.textColor = cell.isExpanded ? UIColor.black : UIColor.white
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            
-            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-        }
+        //        if indexPath.section == 0{
+        
+        let meetup = meetups[indexPath.row]
+        
+        cell.isExpanded = !cell.isExpanded
+        
+        cell.summary.text = cell.isExpanded ? meetup.summary : "Read More"
+        cell.summary.textAlignment = cell.isExpanded ? .left : .center
+        cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor.lightGray
+        cell.summary.textColor = cell.isExpanded ? UIColor.black : UIColor.white
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        //    }
     }
     
     func updateTableView() {
@@ -135,33 +128,27 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
-    func addFavButton(cell: ExpandingMeetUpCell, tag: Int){
+    func checkIfFavorited(meetup: MeetUp) -> Bool {
         
-        let x = cell.mainImage.frame.origin.x
-        let y = cell.mainImage.frame.origin.y
+        let defaults = UserDefaults.standard
         
-        cell.starButton = DOFavoriteButton(frame: CGRect(x: x, y: y, width: 44, height: 44), image: UIImage(named: "star"))
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
         
-        cell.starButton!.addTarget(self, action: #selector(favBtnTouched(sender:)), for: .touchUpInside)
-        cell.contentView.addSubview(cell.starButton!)
-    }
-    
-    func favBtnTouched(sender: UIButton) {
+        guard let unwrappedFavs = favs else{return false}
         
-        let expSender = sender as! DOFavoriteButton
-        
-        if sender.isSelected {
-            expSender.deselect()
-        } else {
-            expSender.select()
+        for each in unwrappedFavs{
+            
+            guard let name = each["name"] else{return false}
+            
+            if meetup.name == name {
+                
+                return true
+            }
         }
+        
+        return false
     }
 }
-
-
-
-
-
 
 
 
