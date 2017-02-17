@@ -42,6 +42,8 @@
 		17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06B1E50216D0007ADEC /* SignInInteracting.swift */; };
 		17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */; };
 		17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0741E50C2E60007ADEC /* BaseInjector.swift */; };
+		3D14B4B21E575962005E2DBF /* SavedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D14B4B11E575962005E2DBF /* SavedContent.storyboard */; };
+		3D14B4B41E575979005E2DBF /* SavedContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */; };
 		3D36EB311E5257B100CB1432 /* SuggestionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */; };
 		3D36EB351E52580F00CB1432 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */; };
 		3D36EB371E52601000CB1432 /* MeetUpAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */; };
@@ -119,6 +121,8 @@
 		2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D809B8C9CFEADB0D6C0EC8 /* Pods-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		3A1B182A2191A30E3EA7F217 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
+		3D14B4B11E575962005E2DBF /* SavedContent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedContent.storyboard; sourceTree = "<group>"; };
+		3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedContentViewController.swift; sourceTree = "<group>"; };
 		3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SuggestionScreen.storyboard; sourceTree = "<group>"; };
 		3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetUpAPIClient.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 				17CFD04F1E4F73110007ADEC /* HomeScreen.storyboard */,
 				1751ABA81E4D33AB00E2AE75 /* LaunchScreen.storyboard */,
 				3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */,
+				3D14B4B11E575962005E2DBF /* SavedContent.storyboard */,
+				3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */,
 				3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */,
 				3D36EB3C1E53F91A00CB1432 /* ExpandingMeetUpCell.swift */,
 				3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */,
@@ -472,6 +478,7 @@
 				1751ABAA1E4D33AB00E2AE75 /* LaunchScreen.storyboard in Resources */,
 				1751ABD01E4D512200E2AE75 /* GoogleService-Info.plist in Resources */,
 				17CFD0501E4F73110007ADEC /* HomeScreen.storyboard in Resources */,
+				3D14B4B21E575962005E2DBF /* SavedContent.storyboard in Resources */,
 				1751ABA71E4D33AB00E2AE75 /* Assets.xcassets in Resources */,
 				3D36EB311E5257B100CB1432 /* SuggestionScreen.storyboard in Resources */,
 				1751ABA51E4D33AB00E2AE75 /* SignInScreen.storyboard in Resources */,
@@ -654,6 +661,7 @@
 				17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */,
 				17CFD0661E5015ED0007ADEC /* CridentialsValidationInteracting.swift in Sources */,
 				174979A21E50ED1D00B901DC /* BaseNavigationController.swift in Sources */,
+				3D14B4B41E575979005E2DBF /* SavedContentViewController.swift in Sources */,
 				17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */,
 				17CFD04C1E4F6F990007ADEC /* SignInScreenPresenting.swift in Sources */,
 				1749799C1E50DD1300B901DC /* CreateUserScreenPresenting.swift in Sources */,

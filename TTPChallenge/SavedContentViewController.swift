@@ -1,60 +1,39 @@
 //
-//  SuggestionViewController.swift
+//  SaveContentViewController.swift
 //  TTPChallenge
 //
-//  Created by susan lovaglio on 2/13/17.
+//  Created by susan lovaglio on 2/17/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
 import UIKit
 
-class SuggestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UpdateTableView {
+class SavedContentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UpdateTableView, RemoveFavorite {
     
-    @IBOutlet weak var suggestionTableView: UITableView!
+    @IBOutlet weak var savedContentTableView: UITableView!
     
     var meetups = [MeetUp]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        suggestionTableView.delegate = self
-        suggestionTableView.dataSource = self
-        suggestionTableView.rowHeight = UITableViewAutomaticDimension
-        suggestionTableView.estimatedRowHeight = 300.0
+        fillMeetups()
+        savedContentTableView.delegate = self
+        savedContentTableView.dataSource = self
+        savedContentTableView.rowHeight = UITableViewAutomaticDimension
+        savedContentTableView.estimatedRowHeight = 300.0
         
-        MeetUpAPIClient.getMeetupSuggestions(query: "women") {meetupResults in
-            
-            for each in meetupResults{
-                let name = each["name"] as? String
-                let count = each ["members"] as? Int
-                let summary = each["description"] as? String
-                let photo = each["key_photo"] as? [String : Any]
-                if let photo = photo,
-                    let name = name,
-                    let count = count,
-                    let summary = summary{
-                    
-                    let photoURL = photo["highres_link"] as? String
-                    if let photoURL = photoURL {
-                        
-                        let meetup = MeetUp(name: name, memberCount: count, summary: summary, urlString: photoURL)
-                        self.meetups.append(meetup)
-                        OperationQueue.main.addOperation {
-                            self.suggestionTableView.reloadData()
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
-        
+        cell.delegate = self
         if indexPath.section == 0{
             let meetup = meetups[indexPath.row]
             cell.meetup = meetup
@@ -72,7 +51,6 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
             
             cell.title.text = "not a meetup"
         }
-        
         return cell
     }
     
@@ -96,9 +74,51 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         return ""
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func fillMeetups() {
+        let defaults = UserDefaults.standard
         
-        return 1
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
+        
+        guard let unwrappedFavs = favs else{return}
+        
+        for each in unwrappedFavs{
+            
+            if let name = each["name"],
+                let summary = each["summary"],
+                let url = each["url"]{
+                
+                let meetup = MeetUp(name: name, memberCount: 0, summary: summary, urlString: url)
+                meetups.append(meetup)
+            }
+        }
+    }
+    
+    func checkIfFavorited(meetup: MeetUp) -> Bool {
+        
+        let defaults = UserDefaults.standard
+        
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
+        
+        guard let unwrappedFavs = favs else{return false}
+        
+        for each in unwrappedFavs{
+            
+            guard let name = each["name"] else{return false}
+            
+            if meetup.name == name {
+                
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func updateTableView() {
+        
+        
+            self.savedContentTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -122,34 +142,22 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         //    }
     }
     
-    func updateTableView() {
+    func removeFavorite(name: String) {
+        let notEmpty = meetups.isEmpty == false
         
-        suggestionTableView.reloadData()
-        
-    }
-    
-    func checkIfFavorited(meetup: MeetUp) -> Bool {
-        
-        let defaults = UserDefaults.standard
-        
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
-        
-        guard let unwrappedFavs = favs else{return false}
-        
-        for each in unwrappedFavs{
+        if notEmpty{
             
-            guard let name = each["name"] else{return false}
-            
-            if meetup.name == name {
+            for (index, each) in meetups.enumerated(){
                 
-                return true
+                if each.name == name{
+                    
+                    meetups.remove(at: index)
+                    savedContentTableView.reloadData()
+                }
             }
         }
         
-        return false
     }
+    
+    
 }
-
-
-
-

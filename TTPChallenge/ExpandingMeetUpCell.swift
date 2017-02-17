@@ -20,13 +20,14 @@ class ExpandingMeetUpCell: UITableViewCell {
     
     @IBOutlet weak var summary: UITextView!
     
+    var delegate: RemoveFavorite?
+    
     var isExpanded:Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         addFavButton()
-
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -103,8 +104,14 @@ class ExpandingMeetUpCell: UITableViewCell {
                 var adjustedFav = unwrappedFavs
                 adjustedFav.remove(at: index)
                 defaults.set(adjustedFav, forKey: "favMeetups")
+                delegate?.removeFavorite(name: name)
             }
         }
     }
+}
+
+protocol RemoveFavorite {
+    
+    func removeFavorite(name: String)
 }
 
