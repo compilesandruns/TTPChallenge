@@ -10,12 +10,6 @@ import UIKit
 import SafariServices
 
 class MobileDevVC: UIViewController {
-    
-    @IBOutlet var informationButtons:[UIButton]!
-    @IBOutlet weak var retakeQuizButton: UIButton!
-    
-    var buttons = [UIButton]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

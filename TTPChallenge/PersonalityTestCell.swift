@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalityTestCell: UITableViewCell {
+@IBDesignable class PersonalityTestCell: UITableViewCell {
     
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
@@ -17,6 +17,12 @@ class PersonalityTestCell: UITableViewCell {
     @IBOutlet weak var yesLabel: UILabel!
     @IBOutlet weak var noLabel: UILabel!
     
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
+        }
+    }
     var tapActionForYes: ((UITableViewCell) -> Void)?
     var tapActionForNo: ((UITableViewCell) -> Void)?
     var yesSelected: Bool = false
@@ -28,18 +34,12 @@ class PersonalityTestCell: UITableViewCell {
             
             if question.selectedYes {
                 yesButton.isSelected = true
-                print("hahahahaha")
-                
             }
-            
             if question.selectedNo {
                 noButton.isSelected = true
-                
             }
-            
         }
     }
-    
     func reset() {
         yesButton.isSelected = false
         noButton.isSelected = false
@@ -61,7 +61,6 @@ class PersonalityTestCell: UITableViewCell {
         super.prepareForReuse()
         reset()
     }
-    
 }
 
 

@@ -257,7 +257,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHz-Ch-lHW">
-                                        <rect key="frame" x="326" y="75" width="33.5" height="19"/>
+                                        <rect key="frame" x="326" y="74.5" width="33.5" height="19"/>
                                         <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="15"/>
                                         <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -279,7 +279,7 @@
                                     <constraint firstItem="ic0-IP-OHr" firstAttribute="top" secondItem="Ss7-Mp-l9Y" secondAttribute="bottom" constant="3" id="zAt-YJ-ssA"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLD-Ux-nHV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLD-Ux-nHV">
                                 <rect key="frame" x="0.0" y="110" width="375" height="557"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="xoa-1i-rgh" userLabel="footerView">
@@ -315,18 +315,18 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personalityCell" rowHeight="140" id="33h-Hf-fQQ" customClass="PersonalityTestCell" customModule="TTPChallenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personalityCell" rowHeight="140" id="33h-Hf-fQQ" customClass="PersonalityTestCell" customModule="TTPChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="33h-Hf-fQQ" id="ux9-DD-2CA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8R3-PO-DJz">
-                                                    <rect key="frame" x="18" y="8" width="339" height="123"/>
+                                                    <rect key="frame" x="18" y="8" width="339" height="124"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2eJ-DY-ziX" userLabel="yesNoView">
-                                                            <rect key="frame" x="9" y="79" width="322" height="44"/>
+                                                            <rect key="frame" x="9" y="80.5" width="322" height="43.5"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHw-RT-242" userLabel="yesButton">
                                                                     <rect key="frame" x="0.0" y="9" width="27" height="27"/>
@@ -386,10 +386,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEq-Ti-c1r" userLabel="questionView">
-                                                            <rect key="frame" x="9" y="0.0" width="322" height="79"/>
+                                                            <rect key="frame" x="9" y="0.0" width="322" height="80.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoy ..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAC-Ex-pn3">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="322" height="79"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="322" height="80.5"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                     <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -419,7 +419,6 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="8R3-PO-DJz" secondAttribute="bottom" id="IBp-YR-rc9"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="8R3-PO-DJz" secondAttribute="trailing" constant="10" id="Jeb-Yv-y1k"/>
                                                 <constraint firstItem="8R3-PO-DJz" firstAttribute="leading" secondItem="ux9-DD-2CA" secondAttribute="leadingMargin" constant="10" id="Kte-Bt-zmd"/>
                                                 <constraint firstItem="8R3-PO-DJz" firstAttribute="centerY" secondItem="ux9-DD-2CA" secondAttribute="centerY" id="a71-7R-qEH"/>
@@ -427,6 +426,12 @@
                                                 <constraint firstItem="8R3-PO-DJz" firstAttribute="centerX" secondItem="ux9-DD-2CA" secondAttribute="centerX" id="h1G-55-vUM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="noButton" destination="UIL-lx-9NS" id="sUV-I4-zYB"/>
                                             <outlet property="noLabel" destination="2Vr-Za-twK" id="Iw3-Ng-BGn"/>
@@ -747,12 +752,6 @@
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
-                    <connections>
-                        <outlet property="retakeQuizButton" destination="cqj-BJ-cSj" id="Eoe-CZ-Adh"/>
-                        <outletCollection property="informationButtons" destination="xjh-cP-OOn" collectionClass="NSMutableArray" id="KOS-jo-xeM"/>
-                        <outletCollection property="informationButtons" destination="Pzi-gD-L9o" collectionClass="NSMutableArray" id="lc8-Yq-Ki2"/>
-                        <outletCollection property="informationButtons" destination="2L2-V9-pkm" collectionClass="NSMutableArray" id="GiK-ub-bIA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLf-Uy-xca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1017,12 +1016,6 @@
                     <navigationItem key="navigationItem" title="Your Tech Type" id="zt1-mh-bjq"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="950"/>
-                    <connections>
-                        <outlet property="retakeQuizButton" destination="YsO-6e-08V" id="U6G-MM-Tu9"/>
-                        <outletCollection property="informationButtons" destination="lnu-68-DSL" collectionClass="NSMutableArray" id="Gd9-2v-y83"/>
-                        <outletCollection property="informationButtons" destination="TSO-Y7-j0G" collectionClass="NSMutableArray" id="Ipu-q2-u2a"/>
-                        <outletCollection property="informationButtons" destination="4dt-IU-br5" collectionClass="NSMutableArray" id="f2a-dS-f0x"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wb-9N-uzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1289,16 +1282,10 @@
                     <navigationItem key="navigationItem" id="hgy-QL-uM2"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="950"/>
-                    <connections>
-                        <outlet property="retakeQuizButton" destination="H3m-kv-dEM" id="9ke-OR-yI8"/>
-                        <outletCollection property="informationButtons" destination="I8E-66-g5S" collectionClass="NSMutableArray" id="wFg-Rg-bVy"/>
-                        <outletCollection property="informationButtons" destination="Bbl-e6-79f" collectionClass="NSMutableArray" id="fbX-2l-4N3"/>
-                        <outletCollection property="informationButtons" destination="92B-Yd-q52" collectionClass="NSMutableArray" id="4X1-1M-krz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hy7-tb-jgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6302" y="17"/>
+            <point key="canvasLocation" x="6304" y="39"/>
         </scene>
         <!--Data AnalystVC-->
         <scene sceneID="piN-xc-aOA">
@@ -1544,11 +1531,6 @@
                     <navigationItem key="navigationItem" id="M2x-iS-djA"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="900"/>
-                    <connections>
-                        <outlet property="retakeQuizButton" destination="Ouy-Wd-Ev2" id="gRX-Mi-SR9"/>
-                        <outletCollection property="informationButtons" destination="VTP-Ea-DF1" collectionClass="NSMutableArray" id="twu-E2-x1L"/>
-                        <outletCollection property="informationButtons" destination="DXZ-QA-ndF" collectionClass="NSMutableArray" id="HSd-lo-zgo"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y50-HE-o55" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1690,7 +1672,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="retakeQuizButton" destination="MUo-rU-umP" id="IUV-he-wcw"/>
                         <outlet property="tableView" destination="WWR-ar-HFA" id="xpw-16-Ies"/>
                         <segue destination="2vF-Nk-R4w" kind="presentation" identifier="segueTo0" id="iIP-bK-pAN"/>
                         <segue destination="yUG-Ta-IB4" kind="presentation" identifier="segueTo3" id="inx-b5-Rsd"/>
@@ -1963,11 +1944,6 @@ When an application crashes or the internet stalls, they save the day.</string>
                     <navigationItem key="navigationItem" id="Z2q-kJ-lyQ"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="950"/>
-                    <connections>
-                        <outlet property="retakeQuizButton" destination="Lad-ix-zGf" id="g3p-jw-za0"/>
-                        <outletCollection property="informationButtons" destination="do7-vh-i8Z" collectionClass="NSMutableArray" id="IOd-77-ewa"/>
-                        <outletCollection property="informationButtons" destination="Q16-UR-gYX" collectionClass="NSMutableArray" id="HDy-kA-107"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yA-sP-MBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

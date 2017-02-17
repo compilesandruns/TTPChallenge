@@ -9,7 +9,6 @@
 import UIKit
 
 class QuizMainVC: UIViewController {
-
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var partOneCircle: UILabel!
     @IBOutlet weak var partTwoCircle: UILabel!
@@ -26,5 +25,4 @@ class QuizMainVC: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
     }
-    
 }

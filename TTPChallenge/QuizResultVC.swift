@@ -35,7 +35,6 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if let techTypes = techTypesFromResults {
              cell.techTypeTitleLabel.text = techTypes[indexPath.row]
         }
-        
         return cell
     }
     
@@ -62,6 +61,5 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 }
 
 class ResultCell: UITableViewCell {
-    
     @IBOutlet weak var techTypeTitleLabel: UILabel!
 }

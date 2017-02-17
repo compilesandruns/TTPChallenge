@@ -64,7 +64,6 @@ struct Identifier {
         static let personalityCell = "personalityCell"
         static let resultCell = "resultCell"
     }
-    
     struct Segue {
         static let toResult = "toResult"
         static let backHome = "backHome"
@@ -78,7 +77,6 @@ struct URLS {
     static let cunyProgram = "https://ttp.nyc/cuny-programs"
     static let qaPartTime = "https://perscholas.org/apply/quality-assurance-part-time"
 }
-
 
 struct Answer {
     static let none = ""

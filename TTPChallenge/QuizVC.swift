@@ -44,8 +44,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
             allQuestions.append(newQuestions)
         }
-        tableView.separatorStyle = .none
-        
         for i in 0..<5 {
             let quizObject = QuizGroup(sectionName: Quizzes.techJobs[i], questions: allQuestions[i])
             objectsArray.append(quizObject)
@@ -63,9 +61,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func dismissVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    // Tableview methods
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return Quizzes.techJobs.count
     }
@@ -76,10 +72,8 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.Cell.personalityCell, for: indexPath) as! PersonalityTestCell
-        cell.selectionStyle = .none
-        cell.personalityView.layer.cornerRadius = 4
-        cell.personalityView.layer.masksToBounds = true
-        
+        //cell.personalityView.layer.cornerRadius = 4
+        //cell.personalityView.layer.masksToBounds = true
         cell.tapActionForYes = { (cell) in
             self.yesForEachTechType(section: indexPath.section, row: indexPath.row)
         }
@@ -212,10 +206,7 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
-
-        DispatchQueue.main.async {
-            self.activateResultButton()
-        }
+        activateResultButton()
     }
 
     func activateResultButton(){

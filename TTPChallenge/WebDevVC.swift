@@ -10,17 +10,11 @@ import UIKit
 import SafariServices
 
 class WebDevVC: UIViewController {
-    
-    @IBOutlet var informationButtons:[UIButton]!
-    
-    @IBOutlet weak var retakeQuizButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func informationBtnTapped(_ sender: UIButton) {
-        
         let index = sender.tag
         switch index {
         case 0:
