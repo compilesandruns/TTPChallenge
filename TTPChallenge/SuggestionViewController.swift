@@ -29,15 +29,17 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
                 let count = each ["members"] as? Int
                 let summary = each["description"] as? String
                 let photo = each["key_photo"] as? [String : Any]
+                let url = each["link"] as? String
                 if let photo = photo,
                     let name = name,
                     let count = count,
-                    let summary = summary{
+                    let summary = summary,
+                    let url = url{
                     
                     let photoURL = photo["highres_link"] as? String
                     if let photoURL = photoURL {
                         
-                        let meetup = MeetUp(name: name, memberCount: count, summary: summary, urlString: photoURL)
+                        let meetup = MeetUp(name: name, memberCount: count, summary: summary, imageUrl: photoURL, url: url)
                         self.meetups.append(meetup)
                         OperationQueue.main.addOperation {
                             self.suggestionTableView.reloadData()

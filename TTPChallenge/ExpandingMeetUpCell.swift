@@ -16,6 +16,8 @@ class ExpandingMeetUpCell: UITableViewCell {
     
     var starButton: DOFavoriteButton?
     
+    var joinbutton: DOFavoriteButton?
+    
     @IBOutlet weak var title: UILabel!
     
     @IBOutlet weak var summary: UITextView!
@@ -28,6 +30,7 @@ class ExpandingMeetUpCell: UITableViewCell {
         super.awakeFromNib()
         
         addFavButton()
+        addJoinButton()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -69,9 +72,11 @@ class ExpandingMeetUpCell: UITableViewCell {
         let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
         
         var favMeetup = ["name" : meetup.name,
-                         "summary" : meetup.summary]
+                         "summary" : meetup.summary,
+                         "url" : meetup.url]
         
-        if let url = meetup.url {
+        
+        if let url = meetup.imageUrl {
             favMeetup["url"] = url
         }
         if let favs = favs{
@@ -107,6 +112,41 @@ class ExpandingMeetUpCell: UITableViewCell {
                 delegate?.removeFavorite(name: name)
             }
         }
+    }
+    
+    func addJoinButton(){
+        
+        let x = mainImage.frame.origin.x + mainImage.frame.width - 25
+        let y = mainImage.frame.origin.y
+        
+        joinbutton = DOFavoriteButton(frame: CGRect(x: x, y: y, width: 50, height: 50), image: UIImage(named: "join"))
+        
+        joinbutton!.addTarget(self, action: #selector(joinButtonTouched(sender:)), for: .touchUpInside)
+        
+        self.contentView.addSubview(joinbutton!)
+    }
+    
+    func joinButtonTouched(sender: UIButton){
+        
+        let joinSender = sender as! DOFavoriteButton
+        
+        if joinSender.isSelected {
+            joinSender.deselect()
+        } else {
+            
+            joinSender.select()
+            visitMeetupWebsite(meetup: meetup)
+        }
+    }
+    
+    func visitMeetupWebsite(meetup: MeetUp){
+        
+        UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
+            
+            meetup.joined = true
+            print("peace ouuuuuttt")
+        }
+        
     }
 }
 

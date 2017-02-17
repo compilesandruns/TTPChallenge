@@ -86,9 +86,11 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
             
             if let name = each["name"],
                 let summary = each["summary"],
+                let imageUrl = each["url"],
                 let url = each["url"]{
                 
-                let meetup = MeetUp(name: name, memberCount: 0, summary: summary, urlString: url)
+                let meetup = MeetUp(name: name, memberCount: 0, summary: summary, imageUrl: imageUrl, url: url)
+
                 meetups.append(meetup)
             }
         }

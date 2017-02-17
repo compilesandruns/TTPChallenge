@@ -15,17 +15,20 @@ class MeetUp {
     let summary: String
     var image: UIImage?
     var delegate: UpdateTableView?
-    var url: String?
-    var favorited = false
+    var imageUrl: String?
+//    var favorited = false
+    var joined = false
+    var url: String
     
-    init(name: String, memberCount: Int, summary: String, urlString: String) {
+    init(name: String, memberCount: Int, summary: String, imageUrl: String, url: String) {
         
         self.name = name
         self.memberCount = memberCount
         self.summary = summary.removeHTML()
-        self.url = urlString
+        self.imageUrl = imageUrl
+        self.url = url
                 
-        urlString.downloadedFromURLString(completion: { (picture) in
+        imageUrl.downloadedFromURLString(completion: { (picture) in
             
             let resizedImage = picture.resizeImage(targetSize: CGSize(width: 500.0, height: 200.0))
             self.image = resizedImage
