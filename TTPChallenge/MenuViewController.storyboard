@@ -87,6 +87,7 @@
                                 <rect key="frame" x="272" y="0.0" width="103" height="667"/>
                                 <accessibility key="accessibilityConfiguration" identifier="closeMenuButton" label="Close Menu"/>
                                 <connections>
+                                    <action selector="didTapCloseMenuButtonWithSender:" destination="V1I-C1-kEG" eventType="touchUpInside" id="bXP-l7-7KD"/>
                                     <outletCollection property="gestureRecognizers" destination="HX1-nx-kQv" appends="YES" id="xYK-ql-lto"/>
                                 </connections>
                             </button>
@@ -103,11 +104,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="1Sh-v6-FK9" id="rCX-lD-dIh"/>
                         <segue destination="BjG-S7-EUX" kind="custom" identifier="showLoginFlow" customClass="FullyReplaceSegue" customModule="TTPChallenge" customModuleProvider="target" id="OCa-au-0ho"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhP-FK-Emm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="HX1-nx-kQv"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="HX1-nx-kQv">
+                    <connections>
+                        <action selector="panGestureWithSender:" destination="V1I-C1-kEG" id="bFp-8K-yXl"/>
+                    </connections>
+                </panGestureRecognizer>
                 <view contentMode="scaleToFill" id="2JH-so-ySc" userLabel="Header">
                     <rect key="frame" x="0.0" y="0.0" width="300" height="98"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -148,6 +154,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="57" id="NMk-jU-U79"/>
                             </constraints>
+                            <connections>
+                                <action selector="didTapLogoutButtonWithSender:" destination="V1I-C1-kEG" eventType="touchUpInside" id="Wre-Rb-UT0"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKT-Yw-rqy">
                             <rect key="frame" x="43" y="37.5" width="245" height="25"/>

@@ -158,7 +158,7 @@
                         <outlet property="passwordField" destination="Lq0-7N-Y3l" id="qP4-JG-zvu"/>
                         <outlet property="scrollView" destination="uqT-6X-CFV" id="NAY-XB-b9D"/>
                         <outlet property="scrollViewBottomConstraint" destination="L1z-ld-f0G" id="6dR-Yg-Fgx"/>
-                        <segue destination="DCj-Oq-0IT" kind="show" identifier="HomeScreenSegue" id="GD6-Kp-tcn"/>
+                        <segue destination="oLj-QP-Rdn" kind="show" identifier="HomeScreenSegue" id="Qqc-JC-zAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -305,31 +305,15 @@
             </objects>
             <point key="canvasLocation" x="2718.75" y="-94.014084507042256"/>
         </scene>
-        <!--Base Navigation Controller-->
-        <scene sceneID="uhb-ae-dUM">
-            <objects>
-                <navigationController id="DCj-Oq-0IT" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FXT-4t-unx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="oLj-QP-Rdn" kind="relationship" relationship="rootViewController" id="akc-AJ-WMn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T9s-S6-BIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1948" y="552"/>
-        </scene>
         <!--HomeScreen-->
         <scene sceneID="cY8-Bj-wdQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Hg-is-qyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="HomeScreen" id="oLj-QP-Rdn" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Kuh-BP-bjR"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Hg-is-qyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2640" y="551"/>
+            <point key="canvasLocation" x="1799" y="336"/>
         </scene>
     </scenes>
     <resources>

@@ -21,15 +21,19 @@ class HomeScreenViewController: BaseViewController {
         super.viewDidLoad()
         
         presenter = Injector.currentInjector.homeScreenPresenter(view: self)
+        
         navigationController?.navigationBar.addGestureRecognizer(navBarEdgePanGestureRecognizer)
         
         presenter.viewDidLoad()
+    }
+    deinit {
+        self.navigationController?.navigationBar.removeGestureRecognizer(navBarEdgePanGestureRecognizer)
     }
 }
 
 extension HomeScreenViewController: HomeScreenViewable {
     func openMenu() {
-        performSegue(withIdentifier: "openMenu", sender: nil)
+        performSegue(withIdentifier: "OpenMenu", sender: nil)
     }
     
     func closeMenu() {
@@ -39,6 +43,19 @@ extension HomeScreenViewController: HomeScreenViewable {
     func showWebView(url: String) {
         webScreenOptions = (url, false, "")
         self.performSegue(withIdentifier: "showWebView", sender: self)
+    }
+}
+
+extension HomeScreenViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? MenuViewController {
+            destinationViewController.transitioningDelegate = self
+            destinationViewController.interactiveTransition = interactiveTransition
+            
+            if let delegate = presenter as? MenuDelegate {
+                destinationViewController.menuDelegate = delegate
+            }
+        }
     }
 }
 
@@ -58,43 +75,23 @@ extension HomeScreenViewController {
     }
 }
 
-
-extension HomeScreenViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = segue.destination as? MenuViewController {
-            destinationViewController.transitioningDelegate = self
-            destinationViewController.interactiveTransition = interactiveTransition
-            
-            if let delegate = presenter as? MenuDelegate {
-                destinationViewController.menuDelegate = delegate
-            }
-        }
-        
-//        if let navController = segue.destination as? UINavigationController {
-//            if let destinationViewController = navController.viewControllers.first as? WebScreenViewController {
-//                destinationViewController.intendedUrl = webScreenOptions.url
-//                destinationViewController.showControls = webScreenOptions.showControls
-//                destinationViewController.title = webScreenOptions.title
-//            }
-//        }
-    }
-}
-
 //MARK: Slide Transitions
 extension HomeScreenViewController: UIViewControllerTransitioningDelegate {
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PresentMenuAnimator()
+
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return DismissMenuAnimator()
+
     }
     
-    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactiveTransition.hasStarted ? interactiveTransition : nil
     }
     
-    func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactiveTransition.hasStarted ? interactiveTransition : nil
     }
 }

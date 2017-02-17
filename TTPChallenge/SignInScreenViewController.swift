@@ -92,7 +92,7 @@ extension SignInScreenViewController : SignInScreenViewable {
     }
 
     func hideLoader() {
-        HUD.hide()
+        HUD.hide()  
     }
     
     func dismissKeyboard() {
