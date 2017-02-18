@@ -64,7 +64,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.title.text = cell.meetup.name
             cell.summary.text = cell.isExpanded ? cell.meetup.summary : "Read More"
             cell.summary.textAlignment = cell.isExpanded ? .left : .center
-            cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor.lightGray
+            cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor(red: 54/255, green: 34/255, blue: 149/255, alpha: 1.0)
             cell.mainImage.image = cell.meetup.image
             cell.starButton?.isSelected = checkIfFavorited(meetup: cell.meetup)
 //            cell.joinbutton?.isSelected = checkIfJoined(meetup: cell.meetup)
@@ -88,6 +88,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
+        
         if (section == 0){
             return "    Join a Community"
         }
@@ -96,6 +97,14 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         return ""
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        header.textLabel?.frame = header.frame
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -115,7 +124,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         cell.summary.text = cell.isExpanded ? meetup.summary : "Read More"
         cell.summary.textAlignment = cell.isExpanded ? .left : .center
-        cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor.lightGray
+        cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor(red: 54/255, green: 34/255, blue: 149/255, alpha: 1.0)
         cell.summary.textColor = cell.isExpanded ? UIColor.black : UIColor.white
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -143,11 +152,12 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
             let name = each["name"] as! String
             
             if meetup.name == name {
-                
+
                 return true
             }
+
         }
-        
+
         return false
     }
 }

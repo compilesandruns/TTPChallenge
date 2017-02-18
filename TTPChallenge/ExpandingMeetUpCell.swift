@@ -47,7 +47,7 @@ class ExpandingMeetUpCell: UITableViewCell {
         starButton = DOFavoriteButton(frame: CGRect(x: x, y: y, width: 50, height: 50), image: UIImage(named: "star"))
         starButton?.lineColor = UIColor.white
         starButton!.addTarget(self, action: #selector(favBtnTouched(sender:)), for: .touchUpInside)
-
+        
         self.contentView.addSubview(starButton!)
     }
     
@@ -73,19 +73,21 @@ class ExpandingMeetUpCell: UITableViewCell {
         let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
         var favMeetup: [String : Any] = ["name" : meetup.name,
-                         "summary" : meetup.summary,
-                         "url" : meetup.url,
-                         "favorited": meetup.favorited]
+                                         "summary" : meetup.summary,
+                                         "url" : meetup.url,
+                                         "favorited": meetup.favorited]
         
         
         if let url = meetup.imageUrl {
             favMeetup["url"] = url
         }
+        
         if let favs = favs{
-
+            
             var updatedFavs = favs
             updatedFavs.append(favMeetup)
             defaults.set(updatedFavs, forKey: "favMeetups")
+//            printFavNames(message: "")
             
         } else {
             
@@ -143,13 +145,29 @@ class ExpandingMeetUpCell: UITableViewCell {
     
     func visitMeetupWebsite(meetup: MeetUp){
         //todo uncomment when rolling out
-//        UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
-//            
-//            print("peace ouuuuuttt")
-//        }
-//        
+        //        UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
+        //
+        //            print("peace ouuuuuttt")
+        //        }
+        //
     }
 }
+
+func printFavNames(message: String){
+    let defaults = UserDefaults.standard
+    
+    let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
+    
+    guard let unwrappedFavs = favs else{return}
+    print("*******")
+    print(message)
+    for each in unwrappedFavs{
+        
+        print("/n\(each["name"]!)")
+    }
+    print("*******")
+}
+
 
 protocol RemoveFavorite {
     

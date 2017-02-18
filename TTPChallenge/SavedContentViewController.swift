@@ -41,7 +41,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
             cell.title.text = cell.meetup.name
             cell.summary.text = cell.isExpanded ? cell.meetup.summary : "Read More"
             cell.summary.textAlignment = cell.isExpanded ? .left : .center
-            cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor.lightGray
+            cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor(red: 54/255, green: 34/255, blue: 149/255, alpha: 1.0)
             cell.mainImage.image = cell.meetup.image
             cell.starButton?.isSelected = checkIfFavorited(meetup: cell.meetup)
             
@@ -135,7 +135,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         
         cell.summary.text = cell.isExpanded ? meetup.summary : "Read More"
         cell.summary.textAlignment = cell.isExpanded ? .left : .center
-        cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor.lightGray
+        cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor(red: 54/255, green: 34/255, blue: 149/255, alpha: 1.0)
         cell.summary.textColor = cell.isExpanded ? UIColor.black : UIColor.white
         tableView.beginUpdates()
         tableView.endUpdates()
