@@ -25,7 +25,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         suggestionTableView.estimatedRowHeight = 300.0
         
         store.fillMeetupStore { (success) in
-            if success{
+            if success {
                 OperationQueue.main.addOperation {
                     self.suggestionTableView.reloadData()
                 }
@@ -55,7 +55,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0{
+        if section == 0 {
             
             return store.meetups.count
             
@@ -63,7 +63,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         return 1
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         switch section {
         case 0:
@@ -111,7 +111,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    func showAlert(meetup: MeetUp){
+    func showAlert(meetup: MeetUp) {
         
         let alertController = UIAlertController(title: "See You Later", message: "You're about to leave.", preferredStyle: UIAlertControllerStyle.alert)
         

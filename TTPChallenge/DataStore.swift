@@ -16,7 +16,7 @@ class DataStore {
     
     func fillMeetupStore(with completion: @escaping (Bool)->()) {
         
-        MeetUpAPIClient.getMeetupSuggestions(query: "women") {meetupResults in
+        MeetUpAPIClient.getMeetupSuggestions(query: "women") { meetupResults in
             
             for each in meetupResults {
                 
@@ -29,7 +29,7 @@ class DataStore {
                     let name = name,
                     let count = count,
                     let summary = summary,
-                    let url = url{
+                    let url = url {
                     
                     let photoURL = photo["photo_link"] as? String
                     if let photoURL = photoURL {

@@ -43,7 +43,7 @@ class ExpandingMeetUpCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func addFavButton(){
+    func addFavButton() {
         
         let x = mainImage.frame.origin.x
         let y = mainImage.frame.origin.y
@@ -85,7 +85,7 @@ class ExpandingMeetUpCell: UITableViewCell {
             favMeetup["imageURL"] = imageURL
         }
         
-        if let favs = favs{
+        if let favs = favs {
             
             var updatedFavs = favs
             updatedFavs.append(favMeetup)
@@ -103,9 +103,9 @@ class ExpandingMeetUpCell: UITableViewCell {
         
         let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
-        guard let unwrappedFavs = favs else{return}
+        guard let unwrappedFavs = favs else { return }
         
-        for (index, each) in unwrappedFavs.enumerated(){
+        for (index, each) in unwrappedFavs.enumerated() {
             
             let name = each["name"] as! String
             
@@ -119,7 +119,7 @@ class ExpandingMeetUpCell: UITableViewCell {
         }
     }
     
-    func addJoinButton(){
+    func addJoinButton() {
         
         let x = mainImage.frame.origin.x + mainImage.frame.width - 10
         let y = mainImage.frame.origin.y
@@ -133,7 +133,7 @@ class ExpandingMeetUpCell: UITableViewCell {
         self.contentView.addSubview(joinbutton!)
     }
     
-    func joinButtonTouched(sender: UIButton){
+    func joinButtonTouched(sender: UIButton) {
         
         let joinSender = sender as! DOFavoriteButton
         if joinSender.isSelected {
@@ -144,16 +144,12 @@ class ExpandingMeetUpCell: UITableViewCell {
         }
     }
     
-    func visitMeetupWebsite(meetup: MeetUp){
+    func visitMeetupWebsite(meetup: MeetUp) {
         
         self.delegateAlert?.showAlert(meetup: meetup)
-            
-//            UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
-//                
-//        }
     }
     
-    func configureCell(){
+    func configureCell() {
         
         self.title.text = meetup.name
         
@@ -178,9 +174,9 @@ class ExpandingMeetUpCell: UITableViewCell {
         
         let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
-        guard let unwrappedFavs = favs else{return false}
+        guard let unwrappedFavs = favs else { return false }
         
-        for each in unwrappedFavs{
+        for each in unwrappedFavs {
             
             let name = each["name"] as! String
             
@@ -203,15 +199,15 @@ protocol CustomCellPresentAlert {
 }
 
 //func to print contents of nsuserdefaults meetups saves in a legible config
-func printFavNames(message: String){
+func printFavNames(message: String) {
     let defaults = UserDefaults.standard
     
     let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
     
-    guard let unwrappedFavs = favs else{return}
+    guard let unwrappedFavs = favs else { return }
     print("*******")
     print(message)
-    for each in unwrappedFavs{
+    for each in unwrappedFavs {
         
         print("/n\(each["name"]!)")
     }

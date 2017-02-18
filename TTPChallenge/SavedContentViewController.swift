@@ -35,7 +35,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
         cell.delegate = self
         
-        if indexPath.section == 0{
+        if indexPath.section == 0 {
             let meetup = meetups[indexPath.row]
             cell.meetup = meetup
             meetup.delegate = self
@@ -51,7 +51,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0{
+        if section == 0 {
             
             return meetups.count
         }
@@ -70,7 +70,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         header.textLabel?.frame = header.frame
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         switch section {
         case 0:
@@ -87,20 +87,20 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         
         let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
-        guard let unwrappedFavs = favs else{return}
+        guard let unwrappedFavs = favs else { return }
         
-        if favs?.count == 0{
+        if favs?.count == 0 {
             spinner.stopAnimating()
             nothingSavedLabel.isHidden = false
             return
         }
         
-        for each in unwrappedFavs{
+        for each in unwrappedFavs {
             
             if let name = each["name"] as? String,
                 let summary = each["summary"] as? String,
                 let url = each["url"] as? String,
-                let imageUrl = each["imageURL"] as? String{
+                let imageUrl = each["imageURL"] as? String {
                 
                 let meetup = MeetUp(name: name, memberCount: 0, summary: summary, imageUrl: imageUrl, url: url)
                 meetups.append(meetup)
@@ -118,9 +118,9 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         
         let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
-        guard let unwrappedFavs = favs else{return false}
+        guard let unwrappedFavs = favs else { return false }
         
-        for each in unwrappedFavs{
+        for each in unwrappedFavs {
             
             let name = each["name"] as! String
             
@@ -158,11 +158,11 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
     func removeFavorite(name: String) {
         let notEmpty = meetups.isEmpty == false
         
-        if notEmpty{
+        if notEmpty {
             
-            for (index, each) in meetups.enumerated(){
+            for (index, each) in meetups.enumerated() {
                 
-                if each.name == name{
+                if each.name == name {
                     
                     meetups.remove(at: index)
                     savedContentTableView.reloadData()
@@ -173,7 +173,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         nothingSavedLabel.isHidden = meetups.count > 0
     }
     
-    func showAlert(meetup: MeetUp){
+    func showAlert(meetup: MeetUp) {
         
         let alertController = UIAlertController(title: "See You Later", message: "You're about to leave.", preferredStyle: UIAlertControllerStyle.alert)
         

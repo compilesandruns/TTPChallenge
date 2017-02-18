@@ -19,8 +19,8 @@ class MeetUpAPIClient {
         
         let task = session.dataTask(with: url!) { (data, response, error) in
             
-            do{
-                guard let unwrappedata = data else{print("i have no data") ;return}
+            do {
+                guard let unwrappedata = data else { print("i have no data"); return }
                 
                 let results = try JSONSerialization.jsonObject(with: unwrappedata, options: []) as? [[String : Any]]
                 

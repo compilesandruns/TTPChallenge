@@ -68,7 +68,7 @@ extension String {
         return removed
     }
 
-    func downloadedFromURLString(completion: @escaping (UIImage) -> Void){
+    func downloadedFromURLString(completion: @escaping (UIImage) -> Void) {
         
         guard let url = URL(string: self) else { return }
         
