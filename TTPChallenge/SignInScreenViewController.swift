@@ -80,11 +80,11 @@ extension SignInScreenViewController : SignInScreenViewable {
     }
     
     func showSignUpScreen() {
-        performSegue(withIdentifier: "SignUpSegue", sender: nil)
+        self.performSegue(withIdentifier: "showSignUpScreen", sender: self)
     }
     
     func showHomeScreen() {
-        performSegue(withIdentifier: "HomeScreenSegue", sender: nil)
+        self.performSegue(withIdentifier: "showHomeScreen", sender: self)
     }
     
     func showLoader() {

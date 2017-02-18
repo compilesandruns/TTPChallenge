@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1706510F1E5277A600802807 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706510E1E5277A600802807 /* PresentMenuAnimator.swift */; };
-		170651111E52796D00802807 /* FullyReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170651101E52796D00802807 /* FullyReplaceSegue.swift */; };
 		1719F1F91E56C14A004E06A0 /* MenuSectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719F1F81E56C14A004E06A0 /* MenuSectionHeaderCell.swift */; };
 		1719F1FB1E56C344004E06A0 /* MenuSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719F1FA1E56C344004E06A0 /* MenuSectionType.swift */; };
 		174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979971E50DCE400B901DC /* CreateUserScreenTableViewController.swift */; };
@@ -63,6 +62,7 @@
 		17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06B1E50216D0007ADEC /* SignInInteracting.swift */; };
 		17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */; };
 		17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0741E50C2E60007ADEC /* BaseInjector.swift */; };
+		17DC3E6F1E589FBB00E4A9F4 /* FullyReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170651101E52796D00802807 /* FullyReplaceSegue.swift */; };
 		4422B78241332CF59F02F260 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */; };
 		ADC314E2882B7CC9D3DCE577 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
@@ -709,6 +709,7 @@
 				17BB26601E51795A0005D787 /* MenuViewable.swift in Sources */,
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
 				17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */,
+				17DC3E6F1E589FBB00E4A9F4 /* FullyReplaceSegue.swift in Sources */,
 				17BB265E1E5176A30005D787 /* AuthInteracting.swift in Sources */,
 				17CFD04E1E4F6FA10007ADEC /* SignInScreenViewable.swift in Sources */,
 				1706510F1E5277A600802807 /* PresentMenuAnimator.swift in Sources */,
@@ -717,7 +718,6 @@
 				17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */,
 				17CFD0661E5015ED0007ADEC /* CridentialsValidationInteracting.swift in Sources */,
 				174979A21E50ED1D00B901DC /* BaseNavigationController.swift in Sources */,
-				170651111E52796D00802807 /* FullyReplaceSegue.swift in Sources */,
 				17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */,
 				17BB26471E516E520005D787 /* HomeScreenViewable.swift in Sources */,
 				17BB26431E516E3C0005D787 /* HomeScreenPresenter.swift in Sources */,
