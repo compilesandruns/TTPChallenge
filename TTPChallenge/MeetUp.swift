@@ -65,6 +65,7 @@ extension String {
         removed = removed.replacingOccurrences(of: "<ul>", with: "")
         removed = removed.replacingOccurrences(of: "</ul>", with: "")
         
+        removed = removed.replacingOccurrences(of: ">", with: " ")
         return removed
     }
 
