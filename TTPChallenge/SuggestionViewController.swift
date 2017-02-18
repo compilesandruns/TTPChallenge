@@ -27,6 +27,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         MeetUpAPIClient.getMeetupSuggestions(query: "women") {meetupResults in
             
             for each in meetupResults{
+                print(each)
                 let name = each["name"] as? String
                 let count = each ["members"] as? Int
                 let summary = each["description"] as? String
@@ -38,7 +39,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
                     let summary = summary,
                     let url = url{
                     
-                    let photoURL = photo["highres_link"] as? String
+                    let photoURL = photo["photo_link"] as? String
                     if let photoURL = photoURL {
                         
                         let meetup = MeetUp(name: name, memberCount: count, summary: summary, imageUrl: photoURL, url: url)
@@ -61,6 +62,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if indexPath.section == 0{
             let meetup = meetups[indexPath.row]
+            
             cell.meetup = meetup
             meetup.delegate = self
             cell.title.text = cell.meetup.name
@@ -92,20 +94,24 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
         
         if (section == 0){
-            return "    Join a Community"
+            return "Join a Community"
         }
         if (section == 1){
-            return "    Take a Free Course"
+            return "Take a Free Course"
         }
         
         return ""
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.textColor = UIColor.black
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         header.textLabel?.frame = header.frame
     }
     
@@ -136,12 +142,11 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func updateTableView() {
-        self.spinner.stopAnimating()
         OperationQueue.main.addOperation {
+            
             self.suggestionTableView.reloadData()
-
         }
-        
+        self.spinner.stopAnimating()
     }
     
     func checkIfFavorited(meetup: MeetUp) -> Bool {
