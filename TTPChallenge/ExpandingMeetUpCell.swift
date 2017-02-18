@@ -45,7 +45,7 @@ class ExpandingMeetUpCell: UITableViewCell {
         let y = mainImage.frame.origin.y
         
         starButton = DOFavoriteButton(frame: CGRect(x: x, y: y, width: 50, height: 50), image: UIImage(named: "star"))
-        
+        starButton?.lineColor = UIColor.white
         starButton!.addTarget(self, action: #selector(favBtnTouched(sender:)), for: .touchUpInside)
 
         self.contentView.addSubview(starButton!)
@@ -56,10 +56,11 @@ class ExpandingMeetUpCell: UITableViewCell {
         let favSender = sender as! DOFavoriteButton
         
         if sender.isSelected {
-            
+            meetup.favorited = false
             removeFavorite(meetup: meetup)
             favSender.deselect()
         } else {
+            meetup.favorited = true
             saveFavorite(meetup: meetup)
             favSender.select()
         }
@@ -69,11 +70,12 @@ class ExpandingMeetUpCell: UITableViewCell {
         
         let defaults = UserDefaults.standard
         
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
-        var favMeetup = ["name" : meetup.name,
+        var favMeetup: [String : Any] = ["name" : meetup.name,
                          "summary" : meetup.summary,
-                         "url" : meetup.url]
+                         "url" : meetup.url,
+                         "favorited": meetup.favorited]
         
         
         if let url = meetup.imageUrl {
@@ -96,13 +98,13 @@ class ExpandingMeetUpCell: UITableViewCell {
         
         let defaults = UserDefaults.standard
         
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
         guard let unwrappedFavs = favs else{return}
         
         for (index, each) in unwrappedFavs.enumerated(){
             
-            guard let name = each["name"] else{return}
+            let name = each["name"] as! String
             
             if meetup.name == name {
                 
@@ -118,9 +120,11 @@ class ExpandingMeetUpCell: UITableViewCell {
         
         let x = mainImage.frame.origin.x + mainImage.frame.width - 25
         let y = mainImage.frame.origin.y
-        
         joinbutton = DOFavoriteButton(frame: CGRect(x: x, y: y, width: 50, height: 50), image: UIImage(named: "join"))
-        
+        joinbutton?.imageColorOn = UIColor.white
+        joinbutton?.imageColorOff = UIColor.white
+        joinbutton?.circleColor = UIColor.white
+        joinbutton?.lineColor = UIColor.white
         joinbutton!.addTarget(self, action: #selector(joinButtonTouched(sender:)), for: .touchUpInside)
         
         self.contentView.addSubview(joinbutton!)
@@ -129,24 +133,21 @@ class ExpandingMeetUpCell: UITableViewCell {
     func joinButtonTouched(sender: UIButton){
         
         let joinSender = sender as! DOFavoriteButton
-        
         if joinSender.isSelected {
             joinSender.deselect()
         } else {
-            
             joinSender.select()
             visitMeetupWebsite(meetup: meetup)
         }
     }
     
     func visitMeetupWebsite(meetup: MeetUp){
-        
-        UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
-            
-            meetup.joined = true
-            print("peace ouuuuuttt")
-        }
-        
+        //todo uncomment when rolling out
+//        UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
+//            
+//            print("peace ouuuuuttt")
+//        }
+//        
     }
 }
 

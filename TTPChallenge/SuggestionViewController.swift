@@ -67,7 +67,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor.lightGray
             cell.mainImage.image = cell.meetup.image
             cell.starButton?.isSelected = checkIfFavorited(meetup: cell.meetup)
-            
+//            cell.joinbutton?.isSelected = checkIfJoined(meetup: cell.meetup)
             cell.selectionStyle = .none
             
         } else {
@@ -134,13 +134,13 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let defaults = UserDefaults.standard
         
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
         guard let unwrappedFavs = favs else{return false}
         
         for each in unwrappedFavs{
             
-            guard let name = each["name"] else{return false}
+            let name = each["name"] as! String
             
             if meetup.name == name {
                 

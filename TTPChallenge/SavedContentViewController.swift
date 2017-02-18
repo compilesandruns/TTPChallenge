@@ -78,7 +78,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
     func fillMeetups() {
         let defaults = UserDefaults.standard
         
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
         guard let unwrappedFavs = favs else{return}
         
@@ -89,7 +89,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
                 let imageUrl = each["url"],
                 let url = each["url"]{
                 
-                let meetup = MeetUp(name: name, memberCount: 0, summary: summary, imageUrl: imageUrl, url: url)
+                let meetup = MeetUp(name: name as! String, memberCount: 0, summary: summary as! String, imageUrl: imageUrl as! String, url: url as! String)
 
                 meetups.append(meetup)
             }
@@ -100,13 +100,13 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         
         let defaults = UserDefaults.standard
         
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : String]]
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
         guard let unwrappedFavs = favs else{return false}
         
         for each in unwrappedFavs{
             
-            guard let name = each["name"] else{return false}
+            let name = each["name"] as! String
             
             if meetup.name == name {
                 

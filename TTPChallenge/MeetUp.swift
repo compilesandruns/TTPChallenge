@@ -16,8 +16,8 @@ class MeetUp {
     var image: UIImage?
     var delegate: UpdateTableView?
     var imageUrl: String?
-//    var favorited = false
-    var joined = false
+    var favorited = false
+//    var joined = false
     var url: String
     
     init(name: String, memberCount: Int, summary: String, imageUrl: String, url: String) {
