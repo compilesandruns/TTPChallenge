@@ -44,6 +44,7 @@
 		17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0741E50C2E60007ADEC /* BaseInjector.swift */; };
 		3D14B4B21E575962005E2DBF /* SavedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D14B4B11E575962005E2DBF /* SavedContent.storyboard */; };
 		3D14B4B41E575979005E2DBF /* SavedContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */; };
+		3D14B4B61E58D572005E2DBF /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D14B4B51E58D572005E2DBF /* DataStore.swift */; };
 		3D36EB311E5257B100CB1432 /* SuggestionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */; };
 		3D36EB351E52580F00CB1432 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */; };
 		3D36EB371E52601000CB1432 /* MeetUpAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */; };
@@ -123,6 +124,7 @@
 		3A1B182A2191A30E3EA7F217 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D14B4B11E575962005E2DBF /* SavedContent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedContent.storyboard; sourceTree = "<group>"; };
 		3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedContentViewController.swift; sourceTree = "<group>"; };
+		3D14B4B51E58D572005E2DBF /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SuggestionScreen.storyboard; sourceTree = "<group>"; };
 		3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetUpAPIClient.swift; sourceTree = "<group>"; };
@@ -200,8 +202,9 @@
 				1751ABA81E4D33AB00E2AE75 /* LaunchScreen.storyboard */,
 				3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */,
 				3D14B4B11E575962005E2DBF /* SavedContent.storyboard */,
-				3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */,
+				3D14B4B51E58D572005E2DBF /* DataStore.swift */,
 				3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */,
+				3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */,
 				3D36EB3C1E53F91A00CB1432 /* ExpandingMeetUpCell.swift */,
 				3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */,
 				3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */,
@@ -672,6 +675,7 @@
 				17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */,
 				17CFD06A1E50215C0007ADEC /* SignInInteractor.swift in Sources */,
 				1751ABA21E4D33AB00E2AE75 /* SignInScreenViewController.swift in Sources */,
+				3D14B4B61E58D572005E2DBF /* DataStore.swift in Sources */,
 				17CFD05E1E4F7C630007ADEC /* AlertViewable.swift in Sources */,
 				1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */,
 				174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */,

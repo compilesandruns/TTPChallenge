@@ -12,11 +12,15 @@ class ExpandingMeetUpCell: UITableViewCell {
     
     var meetup: MeetUp!
     
+    var delegateAlert:CustomCellPresentAlert?
+    
     @IBOutlet weak var mainImage: UIImageView!
     
     var starButton: DOFavoriteButton?
     
     var joinbutton: DOFavoriteButton?
+    
+    @IBOutlet weak var summaryTextView: UITextView!
     
     @IBOutlet weak var title: UILabel!
     
@@ -31,12 +35,12 @@ class ExpandingMeetUpCell: UITableViewCell {
         
         addFavButton()
         addJoinButton()
+        summary.layer.cornerRadius = 5.0
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         
         super.setSelected(selected, animated: animated)
-        
     }
     
     func addFavButton(){
@@ -75,11 +79,10 @@ class ExpandingMeetUpCell: UITableViewCell {
         var favMeetup: [String : Any] = ["name" : meetup.name,
                                          "summary" : meetup.summary,
                                          "url" : meetup.url,
-                                         "favorited": meetup.favorited]
+                                         "favorited" : meetup.favorited]
         
-        
-        if let url = meetup.imageUrl {
-            favMeetup["url"] = url
+        if let imageURL = meetup.imageUrl {
+            favMeetup["imageURL"] = imageURL
         }
         
         if let favs = favs{
@@ -87,16 +90,14 @@ class ExpandingMeetUpCell: UITableViewCell {
             var updatedFavs = favs
             updatedFavs.append(favMeetup)
             defaults.set(updatedFavs, forKey: "favMeetups")
-//            printFavNames(message: "")
             
         } else {
             
             defaults.set([favMeetup], forKey: "favMeetups")
-            
         }
     }
     
-    func removeFavorite(meetup: MeetUp){
+    func removeFavorite(meetup: MeetUp) {
         
         let defaults = UserDefaults.standard
         
@@ -144,15 +145,64 @@ class ExpandingMeetUpCell: UITableViewCell {
     }
     
     func visitMeetupWebsite(meetup: MeetUp){
-        //todo uncomment when rolling out
-        //        UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
-        //
-        //            print("peace ouuuuuttt")
-        //        }
-        //
+        
+        self.delegateAlert?.showAlert(meetup: meetup)
+            
+//            UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
+//                
+//        }
+    }
+    
+    func configureCell(){
+        
+        self.title.text = meetup.name
+        
+        self.mainImage.image = self.meetup.image
+        
+        self.summary.textAlignment = self.isExpanded ? .left : .center
+        
+        self.summary.text = self.isExpanded ? meetup.summary : "Read More"
+        
+        self.summary.backgroundColor = self.isExpanded ? UIColor.white : UIColor(red: 54/255, green: 34/255, blue: 149/255, alpha: 1.0)
+        
+        self.summary.textColor = self.isExpanded ? UIColor.black : UIColor.white
+        
+        self.starButton?.isSelected = checkIfFavorited()
+        
+        self.selectionStyle = .none
+    }
+    
+    func checkIfFavorited() -> Bool {
+        
+        let defaults = UserDefaults.standard
+        
+        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
+        
+        guard let unwrappedFavs = favs else{return false}
+        
+        for each in unwrappedFavs{
+            
+            let name = each["name"] as! String
+            
+            if meetup.name == name {
+                
+                return true
+            }
+        }
+        return false
     }
 }
 
+protocol RemoveFavorite {
+    
+    func removeFavorite(name: String)
+}
+
+protocol CustomCellPresentAlert {
+    func showAlert(meetup: MeetUp)
+}
+
+//func to print contents of nsuserdefaults meetups saves in a legible config
 func printFavNames(message: String){
     let defaults = UserDefaults.standard
     
@@ -167,10 +217,3 @@ func printFavNames(message: String){
     }
     print("*******")
 }
-
-
-protocol RemoveFavorite {
-    
-    func removeFavorite(name: String)
-}
-

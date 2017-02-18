@@ -81,6 +81,7 @@
                                         <connections>
                                             <outlet property="mainImage" destination="wcQ-2j-DdN" id="W4l-1R-UvD"/>
                                             <outlet property="summary" destination="3N4-aX-AXa" id="fBL-e8-dhl"/>
+                                            <outlet property="summaryTextView" destination="3N4-aX-AXa" id="8Zb-cI-PPd"/>
                                             <outlet property="title" destination="JBT-oH-7Zl" id="igC-YQ-nV7"/>
                                         </connections>
                                     </tableViewCell>
