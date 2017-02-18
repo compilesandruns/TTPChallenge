@@ -16,9 +16,9 @@ class MenuViewController: BaseViewController {
     weak var menuDelegate: MenuDelegate?
     var interactiveTransition: SlideMenuInteractiveTransition? = nil
     
-    @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerName: UILabel!
-    @IBOutlet var footerView: UIView!
+    @IBOutlet weak var footerView: UIView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,10 +29,10 @@ class MenuViewController: BaseViewController {
         
         presenter = Injector.currentInjector.menuPresenter(view: self, menuDelegate: menuDelegate!)
         
-        self.tableView.tableHeaderView = headerView
-        self.tableView.tableFooterView = footerView
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        tableView.tableHeaderView = headerView
+        tableView.tableFooterView = footerView
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {

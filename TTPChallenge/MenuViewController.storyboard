@@ -104,6 +104,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="footerView" destination="2f3-qX-KYi" id="Op4-pi-Bhp"/>
+                        <outlet property="headerName" destination="N92-D6-KPx" id="D4c-Ul-IEL"/>
+                        <outlet property="headerView" destination="2JH-so-ySc" id="Unm-iL-9zV"/>
                         <outlet property="tableView" destination="1Sh-v6-FK9" id="rCX-lD-dIh"/>
                         <segue destination="BjG-S7-EUX" kind="custom" identifier="showLoginFlow" customClass="FullyReplaceSegue" customModule="TTPChallenge" customModuleProvider="target" id="OCa-au-0ho"/>
                     </connections>
