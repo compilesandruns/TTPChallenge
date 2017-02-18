@@ -120,7 +120,7 @@ class ExpandingMeetUpCell: UITableViewCell {
     
     func addJoinButton(){
         
-        let x = mainImage.frame.origin.x + mainImage.frame.width - 25
+        let x = mainImage.frame.origin.x + mainImage.frame.width - 10
         let y = mainImage.frame.origin.y
         joinbutton = DOFavoriteButton(frame: CGRect(x: x, y: y, width: 50, height: 50), image: UIImage(named: "join"))
         joinbutton?.imageColorOn = UIColor.white

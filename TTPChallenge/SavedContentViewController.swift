@@ -12,6 +12,8 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var savedContentTableView: UITableView!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     var meetups = [MeetUp]()
     
     override func viewDidLoad() {
@@ -39,6 +41,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
             cell.meetup = meetup
             meetup.delegate = self
             cell.title.text = cell.meetup.name
+            
             cell.summary.text = cell.isExpanded ? cell.meetup.summary : "Read More"
             cell.summary.textAlignment = cell.isExpanded ? .left : .center
             cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor(red: 54/255, green: 34/255, blue: 149/255, alpha: 1.0)
@@ -90,7 +93,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
                 let url = each["url"]{
                 
                 let meetup = MeetUp(name: name as! String, memberCount: 0, summary: summary as! String, imageUrl: imageUrl as! String, url: url as! String)
-
+                
                 meetups.append(meetup)
             }
         }
@@ -119,8 +122,11 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
     
     func updateTableView() {
         
-        
+        OperationQueue.main.addOperation {
+            self.spinner.stopAnimating()
             self.savedContentTableView.reloadData()
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -132,7 +138,6 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         let meetup = meetups[indexPath.row]
         
         cell.isExpanded = !cell.isExpanded
-        
         cell.summary.text = cell.isExpanded ? meetup.summary : "Read More"
         cell.summary.textAlignment = cell.isExpanded ? .left : .center
         cell.summary.backgroundColor = cell.isExpanded ? UIColor.white : UIColor(red: 54/255, green: 34/255, blue: 149/255, alpha: 1.0)

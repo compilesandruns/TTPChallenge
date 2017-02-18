@@ -12,6 +12,8 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var suggestionTableView: UITableView!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     var meetups = [MeetUp]()
     
     override func viewDidLoad() {
@@ -134,8 +136,11 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func updateTableView() {
-        
-        suggestionTableView.reloadData()
+        self.spinner.stopAnimating()
+        OperationQueue.main.addOperation {
+            self.suggestionTableView.reloadData()
+
+        }
         
     }
     
