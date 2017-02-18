@@ -33,4 +33,10 @@ struct Environment {
         static let defaultError = "An error has occured. Please try again later."
         static let userNotFound = "Unable to locate account. Please create a new account."
     }
+    
+    struct Path {
+        static let meetThePipeline = "http://ttp.nyc/show-blog/"
+        static let aboutTTP = "http://www.techtalentpipeline.nyc/"
+        static let learnMore = "http://www.techtalentpipeline.nyc/contact-us-1/"
+    }
 }

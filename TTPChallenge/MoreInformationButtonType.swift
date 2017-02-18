@@ -7,7 +7,7 @@
 //
 
 enum MoreInformationButtonType {
-    case RetakeTheQuiz, TechTalk, AboutTTP, LearnMore
+    case RetakeTheQuiz, TechTalk, AboutTTP, LearnMore, MeetThePipeline
 }
 
 struct MoreInformationButton {

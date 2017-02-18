@@ -7,6 +7,7 @@
 //
 
 import PKHUD
+import SafariServices
 
 class HomeScreenViewController: BaseViewController {
     var presenter: HomeScreenPresenting!
@@ -43,8 +44,12 @@ extension HomeScreenViewController: HomeScreenViewable {
     }
     
     func showWebView(url: String) {
-        webScreenOptions = (url, false, "")
-        performSegue(withIdentifier: "showWebView", sender: self)
+        guard var _ = NSURL(string: url) else {
+            return
+        }
+        let safariViewController = SFSafariViewController(url: URL(string: url)!)
+        present(safariViewController, animated: true, completion: nil)
+
     }
     
     func showLoginFlow() {

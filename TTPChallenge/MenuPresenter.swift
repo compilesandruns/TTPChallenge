@@ -18,6 +18,7 @@ class MenuPresenter {
     func setupMenuSections() {
         var sections = [MenuSection]()
         
+        //Discover
         var discoverSection = MenuSection()
         discoverSection.type = .Discover
         discoverSection.name = "Discover"
@@ -29,6 +30,7 @@ class MenuPresenter {
         discoverSection.buttons.append(retakeButton)
         sections.append(discoverSection)
         
+        //Connect
         var connectSection = MenuSection()
         connectSection.type = .Connect
         connectSection.name = "Connect"
@@ -38,8 +40,14 @@ class MenuPresenter {
         techTalkButton.name = "Tech Talk"
         connectSection.buttons.append(techTalkButton)
         
+        var meetButton = MoreInformationButton()
+        meetButton.type = .MeetThePipeline
+        meetButton.name = "Meet The Pipeline"
+        connectSection.buttons.append(meetButton)
+        
         sections.append(connectSection)
         
+        //Learn
         var learnSection = MenuSection()
         learnSection.type = .Learn
         learnSection.name = "Learn"
@@ -83,13 +91,17 @@ extension MenuPresenter: MenuPresenting {
         view.closeMenuForModal().then { _ -> Void in
             switch button.type! {
             case .RetakeTheQuiz:
-                self.delegate?.showWebView(url: "www.google.com")
+                //TODO: change to showQuizFlow()
+                self.delegate?.showWebView(url: "http://www.google.com")
             case .TechTalk:
-                self.delegate?.showWebView(url: "www.google.com")
+                //TODO: change to showChatFlow()
+                self.delegate?.showWebView(url: "http://www.google.com")
+            case .MeetThePipeline:
+                self.delegate?.showWebView(url: Environment.Path.meetThePipeline)
             case .AboutTTP:
-                self.delegate?.showWebView(url: "www.google.com")
+                self.delegate?.showWebView(url: Environment.Path.aboutTTP)
             case .LearnMore:
-                self.delegate?.showWebView(url: "www.google.com")
+                self.delegate?.showWebView(url: Environment.Path.learnMore)
             }
         }
     }
