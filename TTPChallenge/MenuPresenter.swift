@@ -15,30 +15,48 @@ class MenuPresenter {
         self.delegate = delegate
     }
     
-    func setupMoreInformationButtons() {
-        var buttons = [MoreInformationButton]()
+    func setupMenuSections() {
+        var sections = [MenuSection]()
         
+        var discoverSection = MenuSection()
+        discoverSection.type = .Discover
+        discoverSection.name = "Discover"
+    
         var retakeButton = MoreInformationButton()
         retakeButton.type = .RetakeTheQuiz
         retakeButton.name = "Retake the Quiz"
-        buttons.append(retakeButton)
-
+    
+        discoverSection.buttons.append(retakeButton)
+        sections.append(discoverSection)
+        
+        var connectSection = MenuSection()
+        connectSection.type = .Connect
+        connectSection.name = "Connect"
+        
         var techTalkButton = MoreInformationButton()
         techTalkButton.type = .TechTalk
         techTalkButton.name = "Tech Talk"
-        buttons.append(techTalkButton)
+        connectSection.buttons.append(techTalkButton)
+        
+        sections.append(connectSection)
+        
+        var learnSection = MenuSection()
+        learnSection.type = .Learn
+        learnSection.name = "Learn"
         
         var aboutButton = MoreInformationButton()
         aboutButton.type = .AboutTTP
         aboutButton.name = "About TTP"
-        buttons.append(aboutButton)
         
         var learnMoreButton = MoreInformationButton()
         learnMoreButton.type = .LearnMore
         learnMoreButton.name = "Learn More"
-        buttons.append(learnMoreButton)
+
+        learnSection.buttons.append(aboutButton)
+        learnSection.buttons.append(learnMoreButton)
+        sections.append(learnSection)
         
-        view.setMoreInformationButtons(buttons: buttons)
+        view.setMenuSections(sections: sections)
     }
 }
 
@@ -46,7 +64,7 @@ extension MenuPresenter: MenuPresenting {
     func viewWillAppear() {
         delegate?.menuWillAppear()
     
-        setupMoreInformationButtons()
+        setupMenuSections()
     }
     
     func viewDidAppear() {

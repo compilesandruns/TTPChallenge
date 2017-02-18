@@ -13,4 +13,5 @@ enum MenuSectionType {
 struct MenuSection {
     var type: MenuSectionType!
     var name: String?
+    var buttons: [MoreInformationButton] = []
 }

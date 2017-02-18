@@ -23,7 +23,6 @@ class MenuViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var menuSections = [MenuSection]()
-    var moreInformationButtons = [MoreInformationButton]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,12 +91,7 @@ extension MenuViewController: MenuViewable {
         headerName.text = name
     }
     
-    func setMoreInformationButtons(buttons: [MoreInformationButton]) {
-        moreInformationButtons = buttons
-        tableView.reloadData()
-    }
-    
-    func setMenuSectionNames(sections: [MenuSection]) {
+    func setMenuSections(sections: [MenuSection]) {
         menuSections = sections
         tableView.reloadData()
     }
@@ -143,6 +137,7 @@ extension MenuViewController {
 
 //MARK: Table View
 extension MenuViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let sectionCell = tableView.dequeueReusableCell(withIdentifier: "MenuSectionHeader") as? MenuSectionHeaderViewCell else {
             return UIView()
@@ -152,52 +147,33 @@ extension MenuViewController: UITableViewDelegate {
         return sectionCell.contentView
     }
     
-    private func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 57
     }
     
-    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        guard indexPath.section < menuSections.count - 1 else {
-            presenter.didTapMoreInformationButton(button: moreInformationButtons[indexPath.row])
-            
-            return
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didTapMoreInformationButton(button: menuSections[indexPath.section].buttons[indexPath.row])
     }
 }
 
 extension MenuViewController: UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return menuSections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard section < menuSections.count - 1 else {
-            return moreInformationButtons.count
-        }
-        
-        return 1
+        return menuSections[section].buttons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let menuCell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as? MenuTableViewCell else {
             return UITableViewCell()
         }
-        
-        guard indexPath.section < menuSections.count - 1 else {
-            
-            menuCell.buttonLabel.text = moreInformationButtons[indexPath.row].name
-            
-            return menuCell
-        }
-            
-        return UITableViewCell()
+        menuCell.buttonLabel.text = menuSections[indexPath.section].buttons[indexPath.row].name
+        return menuCell
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        guard indexPath.section < menuSections.count - 1 else {
-            presenter.didTapMoreInformationButton(button: moreInformationButtons[indexPath.row])
-            
-            return
-        }
+        presenter.didTapMoreInformationButton(button: menuSections[indexPath.section].buttons[indexPath.row])
     }
 }

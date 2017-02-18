@@ -11,8 +11,7 @@ import PromiseKit
 protocol MenuViewable: class {
     func setName(name: String)
 
-    func setMoreInformationButtons(buttons: [MoreInformationButton])
-    func setMenuSectionNames(sections: [MenuSection])
+    func setMenuSections(sections: [MenuSection])
     
     func closeMenuForModal() -> Promise<Void>
     func closeMenu() -> Promise<Void>
