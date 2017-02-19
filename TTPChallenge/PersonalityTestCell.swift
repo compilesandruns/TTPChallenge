@@ -12,17 +12,11 @@ import UIKit
     
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
-    @IBOutlet weak var personalityView: UIView!
+    @IBInspectable @IBOutlet weak var personalityView: UIView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var yesLabel: UILabel!
     @IBOutlet weak var noLabel: UILabel!
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
-        }
-    }
     var tapActionForYes: ((UITableViewCell) -> Void)?
     var tapActionForNo: ((UITableViewCell) -> Void)?
     var yesSelected: Bool = false

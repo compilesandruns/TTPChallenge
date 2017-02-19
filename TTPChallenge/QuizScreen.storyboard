@@ -256,8 +256,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHz-Ch-lHW">
-                                        <rect key="frame" x="326" y="74.5" width="33.5" height="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHz-Ch-lHW">
+                                        <rect key="frame" x="319.5" y="75" width="40" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="mE8-01-f2O"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="15"/>
                                         <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -322,7 +325,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8R3-PO-DJz">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8R3-PO-DJz" customClass="CustomView" customModule="TTPChallenge" customModuleProvider="target">
                                                     <rect key="frame" x="18" y="8" width="339" height="124"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2eJ-DY-ziX" userLabel="yesNoView">
@@ -415,6 +418,11 @@
                                                         <constraint firstItem="wEq-Ti-c1r" firstAttribute="height" secondItem="8R3-PO-DJz" secondAttribute="height" multiplier="0.65" id="nP8-95-mmu"/>
                                                         <constraint firstItem="wEq-Ti-c1r" firstAttribute="top" secondItem="8R3-PO-DJz" secondAttribute="top" id="pVG-Ip-bcT"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -426,12 +434,6 @@
                                                 <constraint firstItem="8R3-PO-DJz" firstAttribute="centerX" secondItem="ux9-DD-2CA" secondAttribute="centerX" id="h1G-55-vUM"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="noButton" destination="UIL-lx-9NS" id="sUV-I4-zYB"/>
                                             <outlet property="noLabel" destination="2Vr-Za-twK" id="Iw3-Ng-BGn"/>
@@ -461,11 +463,6 @@
                             <constraint firstAttribute="trailing" secondItem="FRE-M8-cgX" secondAttribute="trailing" id="ydU-MP-he0"/>
                         </constraints>
                     </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="12"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="nextButton" destination="c4X-CS-QeT" id="kKg-Lf-jVS"/>
                         <outlet property="progressLabel" destination="pHz-Ch-lHW" id="xCi-r8-DLT"/>
@@ -1594,7 +1591,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quality Assurance Analyst" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sG3-yb-zsJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="342" height="84.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="342" height="85"/>
                                                             <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="20"/>
                                                             <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>

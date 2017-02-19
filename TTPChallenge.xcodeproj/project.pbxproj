@@ -56,6 +56,7 @@
 		DD0BDF301E5534E2006F550F /* QuizGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF2F1E5534E2006F550F /* QuizGroup.swift */; };
 		DD0BDF321E55353B006F550F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF311E55353B006F550F /* Question.swift */; };
 		DD0BDF391E5537F8006F550F /* PersonalityTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */; };
+		DD12A9E31E59135E0047417D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12A9E21E59135E0047417D /* CustomView.swift */; };
 		DD8586B11E562AE000065DDD /* QuizResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8586B01E562AE000065DDD /* QuizResultVC.swift */; };
 		DD8586B81E56789900065DDD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8586B71E56789900065DDD /* CustomButton.swift */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */; };
@@ -140,6 +141,7 @@
 		DD0BDF2F1E5534E2006F550F /* QuizGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizGroup.swift; sourceTree = "<group>"; };
 		DD0BDF311E55353B006F550F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityTestCell.swift; sourceTree = "<group>"; };
+		DD12A9E21E59135E0047417D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		DD8586B01E562AE000065DDD /* QuizResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultVC.swift; sourceTree = "<group>"; };
 		DD8586B71E56789900065DDD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizScreen.storyboard; sourceTree = "<group>"; };
@@ -362,7 +364,6 @@
 			children = (
 				DD0BDF201E5403F6006F550F /* QAVC.swift */,
 				DD0BDF231E552754006F550F /* MobileDevVC.swift */,
-				DD8586B71E56789900065DDD /* CustomButton.swift */,
 				DD0BDF251E55276C006F550F /* WebDevVC.swift */,
 				DD0BDF271E552780006F550F /* DataAnalystVC.swift */,
 				DD0BDF291E552791006F550F /* ITEngVC.swift */,
@@ -402,6 +403,8 @@
 		DD8586B61E56774700065DDD /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				DD12A9E21E59135E0047417D /* CustomView.swift */,
+				DD8586B71E56789900065DDD /* CustomButton.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */,
 				DD0BDF211E5403F6006F550F /* QAVC.swift in Sources */,
 				17CFD0601E4F7CE40007ADEC /* AlertView.swift in Sources */,
+				DD12A9E31E59135E0047417D /* CustomView.swift in Sources */,
 				DD0BDF321E55353B006F550F /* Question.swift in Sources */,
 				DD8586B81E56789900065DDD /* CustomButton.swift in Sources */,
 				17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */,

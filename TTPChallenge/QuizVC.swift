@@ -72,8 +72,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.Cell.personalityCell, for: indexPath) as! PersonalityTestCell
-        //cell.personalityView.layer.cornerRadius = 4
-        //cell.personalityView.layer.masksToBounds = true
         cell.tapActionForYes = { (cell) in
             self.yesForEachTechType(section: indexPath.section, row: indexPath.row)
         }
@@ -87,7 +85,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let personalityCell = cell as! PersonalityTestCell
         let question = objectsArray[indexPath.section].questions[indexPath.row]
         personalityCell.question = question
-        
     }
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -95,7 +92,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {
-        
         let yesesInQa = qa.filter{$0 == Answer.yes}.count
         let yesesInIt = it.filter{$0 == Answer.yes}.count
         let yesesInWd = wd.filter{$0 == Answer.yes}.count
@@ -122,7 +118,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func yesForEachTechType(section: Int, row: Int){
-        
         switch section {
         case 0:
             switch row {
@@ -166,7 +161,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func noForEachTechType(section: Int, row: Int){
-        
         switch section {
         case 0:
             switch row {
