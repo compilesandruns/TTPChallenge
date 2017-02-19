@@ -24,12 +24,12 @@ class CreateUserScreenViewController: BaseViewController {
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         presenter.didTapCloseButton()
+
     }
     
     @IBAction func getStartedButtonTapped(_ sender: Any) {
         presenter.didTapGetStartedButton()
     }
-    
 }
 
 extension CreateUserScreenViewController: CreateUserScreenViewable {
@@ -53,7 +53,7 @@ extension CreateUserScreenViewController: CreateUserScreenViewable {
     }
     
     func dismissView() {
-        dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "showSignInScreen", sender: self)
     }
     
     func dismissKeyboard() {

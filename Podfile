@@ -13,6 +13,8 @@ target 'TTPChallenge' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'PKHUD'
+  
 end
 
 target 'UnitTests' do

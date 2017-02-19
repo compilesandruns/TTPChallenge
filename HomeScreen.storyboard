@@ -9,10 +9,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Screen-->
+        <!--MenuViewController-->
+        <scene sceneID="WJX-eP-tri">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MenuViewController" id="5WT-X1-eyy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjW-pe-IVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2410" y="128"/>
+        </scene>
+        <!--SignInScreen-->
+        <scene sceneID="MlM-LR-uhx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignInScreen" id="5d5-1j-4fV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2N-xh-bZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2375" y="174"/>
+        </scene>
+        <!--Home Screen View Controller-->
         <scene sceneID="p1W-wq-jlX">
             <objects>
-                <viewController id="NtD-X7-O86" customClass="HomeScreen" sceneMemberID="viewController">
+                <viewController id="NtD-X7-O86" customClass="HomeScreenViewController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ryR-bs-bq5"/>
                         <viewControllerLayoutGuide type="bottom" id="lT7-sL-50s"/>
@@ -20,18 +36,35 @@
                     <view key="view" contentMode="scaleToFill" id="4Ek-us-P3c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="geo-nv-lQr"/>
+                    <navigationItem key="navigationItem" id="geo-nv-lQr">
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="LxD-w6-CIK">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="5WT-X1-eyy" kind="presentation" identifier="OpenMenu" modalPresentationStyle="overCurrentContext" id="ORV-Re-SBY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButtonItem" destination="LxD-w6-CIK" id="tBJ-5g-SuC"/>
+                        <outlet property="navBarEdgePanGestureRecognizer" destination="jt2-rb-fck" id="1r0-tN-S0x"/>
+                        <segue destination="5d5-1j-4fV" kind="custom" identifier="showSignIn" customClass="FullyReplaceSegue" id="WgT-F5-A0l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIp-Iu-T7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="jt2-rb-fck">
+                    <connections>
+                        <action selector="edgePanGestureWithSender:" destination="NtD-X7-O86" id="he4-Xa-1zd"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1783.2" y="153.37331334332833"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="Xat-d5-E6A">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jlf-Dz-mlj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jlf-Dz-mlj" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgy-jq-KWu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -47,4 +80,7 @@
             <point key="canvasLocation" x="844" y="153.37331334332833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menuIcon" width="25" height="18"/>
+    </resources>
 </document>
