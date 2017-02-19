@@ -48,13 +48,19 @@ class QuizVC: BaseViewController {
             let quizObject = QuizGroup(sectionName: Quizzes.techJobs[i], questions: allQuestions[i])
             objectsArray.append(quizObject)
         }
-        DispatchQueue.main.async {
-            self.activateResultButton()
-        }
+    
+        activateResultButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        for i in 0...3 {
+            qa[i] = Answer.none
+            it[i] = Answer.none
+            wd[i] = Answer.none
+            md[i] = Answer.none
+            da[i] = Answer.none
+        }
         activateResultButton()
     }
     
@@ -234,7 +240,7 @@ extension QuizVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Identifier.Segue.toResult {
             let destVC = segue.destination as! QuizResultVC
-            DispatchQueue.main.async {
+            DispatchQueue.global(qos: .background).async {
                 destVC.indexArrayPassed = self.jobIndexArray
                 destVC.techTypesFromResults = self.techJobsForResult
             }

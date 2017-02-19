@@ -1676,8 +1676,8 @@
                         <segue destination="4Xd-qJ-iNv" kind="presentation" identifier="segueTo4" id="zdA-3X-Ouz"/>
                         <segue destination="Jrs-NW-mwC" kind="presentation" identifier="segueTo1" id="ptr-7G-nit"/>
                         <segue destination="l5X-W1-gnu" kind="show" identifier="backHome" id="HCH-MK-g64"/>
-                        <segue destination="j6A-yr-76j" kind="unwind" identifier="unwindToQuizMain" unwindAction="unwindToQuizMainWithSegue:" id="5AL-l3-guO"/>
                         <segue destination="j6A-yr-76j" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHomeWithSegue:" id="u92-aA-hHp"/>
+                        <segue destination="j6A-yr-76j" kind="unwind" identifier="unwindToQuizMain" unwindAction="unwindToQuizMainWithSegue:" id="GFH-82-uHN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixr-S2-bSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
