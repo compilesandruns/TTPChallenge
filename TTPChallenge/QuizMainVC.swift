@@ -25,4 +25,7 @@ class QuizMainVC: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
     }
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
