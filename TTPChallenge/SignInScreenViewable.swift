@@ -11,6 +11,10 @@ protocol SignInScreenViewable: class, AlertViewable {
     var password: String { set get }
     
     func dismissKeyboard()
-    func openSignUpScreen()
     
+    func showLoader()
+    func hideLoader()
+    
+    func showSignUpScreen()
+    func showHomeScreen()
 }

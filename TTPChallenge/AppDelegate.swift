@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let injector = Injector()
         Injector.setInjector(injector: injector)
         
+        //Firebase
         FIRApp.configure()
+        
+        //Setup Default Loader
+        PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
+        PKHUD.sharedHUD.dimsBackground = true
 
         return true
     }
