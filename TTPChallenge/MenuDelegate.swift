@@ -17,5 +17,5 @@ protocol MenuDelegate: class {
     func showQuizFlow()
     func showSuggestedEventsFlow()
     func showSavedEventsFlow()
-    func showProfileScreen()
+    func showChatFlow()
 }

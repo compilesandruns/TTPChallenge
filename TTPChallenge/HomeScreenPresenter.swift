@@ -53,8 +53,8 @@ extension HomeScreenPresenter: MenuDelegate {
         view.showSavedEventsFlow()
     }
     
-    func showProfileScreen() {
-        
+    func showChatFlow() {
+        view.showChatFlow()
     }
     
     func showWebView(url: String) {
