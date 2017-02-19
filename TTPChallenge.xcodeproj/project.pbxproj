@@ -62,6 +62,7 @@
 		17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06B1E50216D0007ADEC /* SignInInteracting.swift */; };
 		17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */; };
 		17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0741E50C2E60007ADEC /* BaseInjector.swift */; };
+		17DC3E6F1E589FBB00E4A9F4 /* FullyReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170651101E52796D00802807 /* FullyReplaceSegue.swift */; };
 		3D14B4B21E575962005E2DBF /* SavedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D14B4B11E575962005E2DBF /* SavedContent.storyboard */; };
 		3D14B4B41E575979005E2DBF /* SavedContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */; };
 		3D14B4B61E58D572005E2DBF /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D14B4B51E58D572005E2DBF /* DataStore.swift */; };
@@ -72,9 +73,6 @@
 		3D36EB3B1E53E09A00CB1432 /* MeetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */; };
 		3D36EB3D1E53F91A00CB1432 /* ExpandingMeetUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB3C1E53F91A00CB1432 /* ExpandingMeetUpCell.swift */; };
 		3D4E89301E56455D00ED4080 /* DoFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E892F1E56455D00ED4080 /* DoFavoriteButton.swift */; };
-
-		17DC3E6F1E589FBB00E4A9F4 /* FullyReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170651101E52796D00802807 /* FullyReplaceSegue.swift */; };
-
 		4422B78241332CF59F02F260 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */; };
 		ADC314E2882B7CC9D3DCE577 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
@@ -839,12 +837,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				3D36EB351E52580F00CB1432 /* SuggestionViewController.swift in Sources */,
 				3D36EB391E5260E800CB1432 /* Secrets.swift in Sources */,
-
 				17BB26581E51723E0005D787 /* DismissMenuAnimator.swift in Sources */,
-
 				174979AA1E5102E700B901DC /* CreateUserInteracting.swift in Sources */,
 				17CFD0681E5015F90007ADEC /* CridentialsValidationInteractor.swift in Sources */,
 				1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */,
