@@ -106,8 +106,8 @@ extension CridentialsValidationInteractor: CridentialsValidationInteracting {
             missingMessage.append("username")
         }
         
-        var errorString: String = ""
-        var missingString = ""
+        var errorString: String?
+        var missingString: String?
         if errorMessage.count >= 2 {
             errorMessage[errorMessage.count - 1] = String(format: "and \(errorMessage.last!)")
         }

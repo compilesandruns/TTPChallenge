@@ -26,8 +26,10 @@ class CreateUserScreenPresenter: CreateUserScreenPresenting {
     }
     
     func didTapGetStartedButton() {
-        createUserInteractor.createUser(email: view.email, password: view.password, username: view.username)
-            .catch { error in
+        createUserInteractor.createUser(email: view.email, password: view.password, username: view.username).then {
+            _ -> Void in
+                self.view.showHomeScreen()
+            }.catch { error in
                 if let errCode = FIRAuthErrorCode(rawValue: error._code) {
                     switch errCode {
                     case .errorCodeInvalidEmail:

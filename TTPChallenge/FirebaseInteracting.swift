@@ -9,7 +9,7 @@
 import PromiseKit
 import FirebaseAuth
 
-protocol FirebaseInteracting {
+protocol FirebaseInteracting {    
     func createUser(email:String, password: String) -> Promise<FIRUser>
     func signIn(email: String, password: String) -> Promise<FIRUser>
 }

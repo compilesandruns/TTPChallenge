@@ -18,6 +18,7 @@ struct Environment {
     }
     
     struct Firebase {
+        static let ref = FIRDatabase.database().reference()
         static let loginToList = "LoginToList"
     }
     

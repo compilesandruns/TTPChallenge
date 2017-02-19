@@ -13,4 +13,6 @@ protocol CreateUserScreenViewable: class, AlertViewable {
     
     func dismissView()
     func dismissKeyboard()
+    
+    func showHomeScreen()
 }

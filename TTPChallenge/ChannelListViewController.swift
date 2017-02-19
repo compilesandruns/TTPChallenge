@@ -14,9 +14,11 @@ enum ChannelSection: Int {
 }
 
 class ChannelListViewController: BaseTableViewController {
-    var senderDisplayName: String?
     var newChannelTextField: UITextField?
+    
+    var username: String!
     var channels: [Channel] = []
+    
     lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
     var channelRefHandle: FIRDatabaseHandle?
 
@@ -34,10 +36,19 @@ class ChannelListViewController: BaseTableViewController {
         })
     }
     
+    private func getCurrentUsername() {
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        Environment.Firebase.ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            self.username = value?["username"] as? String ?? "User"
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "RW RIC"
         observeChannels()
+        getCurrentUsername()
     }
     
     deinit {
@@ -109,7 +120,7 @@ extension ChannelListViewController {
         if let channel = sender as? Channel {
             let chatVc = segue.destination as! ChatViewController
             
-            chatVc.senderDisplayName = senderDisplayName
+            chatVc.senderDisplayName = username ?? "Me"
             chatVc.channel = channel
             chatVc.channelRef = channelRef.child(channel.id)
         }

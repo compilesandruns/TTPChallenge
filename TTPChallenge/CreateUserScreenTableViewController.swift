@@ -65,6 +65,10 @@ extension CreateUserScreenViewController: CreateUserScreenViewable {
         }
     }
     
+    func showHomeScreen() {
+        self.performSegue(withIdentifier: "showHomeScreen", sender: self)
+    }
+    
     func dismissView() {
         self.performSegue(withIdentifier: "showSignInScreen", sender: self)
     }
