@@ -41,7 +41,7 @@ class QAVC: UIViewController {
         }
     }
     
-    @IBAction func exit(_ sender: Any) {
+    @IBAction func exit(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 }
