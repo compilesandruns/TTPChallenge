@@ -25,6 +25,14 @@
             </objects>
             <point key="canvasLocation" x="2393" y="177"/>
         </scene>
+        <!--SavedContentScreen-->
+        <scene sceneID="xvt-je-URD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SavedContentScreen" id="b8t-gA-aHN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTT-49-2qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="749"/>
+        </scene>
         <!--QuizFlow-->
         <scene sceneID="xCt-wG-qzu">
             <objects>
@@ -68,6 +76,7 @@
                         <segue destination="5d5-1j-4fV" kind="custom" identifier="showSignIn" customClass="FullyReplaceSegue" id="WgT-F5-A0l"/>
                         <segue destination="E1a-zP-gbA" kind="show" identifier="showQuizFlow" id="tBr-SZ-A61"/>
                         <segue destination="pX4-y3-kRr" kind="show" identifier="showSuggestedEventsFlow" id="Was-kg-Oum"/>
+                        <segue destination="b8t-gA-aHN" kind="show" identifier="showSavedEventsFlow" id="9ul-lU-RcF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIp-Iu-T7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,7 +93,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jlf-Dz-mlj" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgy-jq-KWu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wgy-jq-KWu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

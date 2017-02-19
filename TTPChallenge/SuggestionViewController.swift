@@ -17,7 +17,6 @@ class SuggestionViewController: BaseViewController {
     
     @IBOutlet var navScrollGestureRecognizer: UIPanGestureRecognizer!
     @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
-//    @IBOutlet weak var labelHeightConstraint: NSLayoutConstraint!
     
     var navScrollResetPositionY: CGFloat!
     

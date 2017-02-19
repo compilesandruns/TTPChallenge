@@ -7,14 +7,30 @@
 //
 
 import UIKit
+import PKHUD
 
-class SavedContentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UpdateTableView, RemoveFavorite,CustomCellPresentAlert {
+class SavedContentViewController: BaseViewController, RemoveFavorite {
     
-    @IBOutlet weak var savedContentTableView: UITableView!
-    
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nothingSavedLabel: UILabel!
+    
+    @IBOutlet weak var headerView: UIImageView!
+    @IBOutlet weak var labelView: UILabel!
+    
+    @IBOutlet var navScrollGestureRecognizer: UIPanGestureRecognizer!
+    @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
+    
+    var navScrollResetPositionY: CGFloat!
+    
+    var kMaxScrollVelocity: CGFloat = 65.0
+    
+    var kContractedHeaderHeight: CGFloat = 70.0
+    var kExpandedHeaderHeight: CGFloat!
+    
+    let kContractedLabelFontSize: CGFloat = 20.0
+    var kExpandedLabelFontSize: CGFloat!
+    
+    var kLargeLogoDistanceMultiplier: CGFloat = 0.1
     
     var meetups = [MeetUp]()
     
@@ -22,63 +38,28 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         
         fillMeetups()
-        savedContentTableView.delegate = self
-        savedContentTableView.dataSource = self
-        savedContentTableView.rowHeight = UITableViewAutomaticDimension
-        savedContentTableView.estimatedRowHeight = 300.0
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300.0
+        
+        labelView.adjustsFontSizeToFitWidth = true
+        
+        navScrollGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleNavScrollGesture))
+        navScrollGestureRecognizer.delegate = self
+        tableView.addGestureRecognizer(navScrollGestureRecognizer)
     }
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
-        cell.delegate = self
-        
-        if indexPath.section == 0 {
-            let meetup = meetups[indexPath.row]
-            cell.meetup = meetup
-            meetup.delegate = self
-            cell.configureCell()
-            cell.delegateAlert = self
-            
-        } else {
-            
-            cell.title.text = "not a meetup"
+        if kExpandedLabelFontSize == nil {
+            kExpandedLabelFontSize = labelView.font.pointSize
         }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
-            
-            return meetups.count
-        }
-        return meetups.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        
-        guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.textColor = UIColor.black
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        header.textLabel?.frame = header.frame
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        switch section {
-        case 0:
-            return "Join a Community"
-            
-        default:
-            return "Take a Free Course"
-            
+        if kExpandedHeaderHeight == nil {
+            kExpandedHeaderHeight = headerView.frame.height
         }
     }
     
@@ -90,7 +71,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         guard let unwrappedFavs = favs else { return }
         
         if favs?.count == 0 {
-            spinner.stopAnimating()
+            HUD.hide()
             nothingSavedLabel.isHidden = false
             return
         }
@@ -106,7 +87,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
                 meetups.append(meetup)
                 
                 OperationQueue.main.addOperation {
-                    self.savedContentTableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -132,14 +113,63 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         
         return false
     }
-    
-    func updateTableView() {
+}
+
+extension SavedContentViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        OperationQueue.main.addOperation {
-            self.spinner.stopAnimating()
-            self.savedContentTableView.reloadData()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
+        cell.delegate = self
+        
+        if indexPath.section == 0 {
+            let meetup = meetups[indexPath.row]
+            cell.meetup = meetup
+            meetup.delegate = self
+            cell.configureCell()
+            cell.delegateAlert = self
+            
+        } else {
+            
+            cell.title.text = "not a meetup"
         }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
+        switch section {
+        case 0:
+            return "Join a Community"
+            
+        default:
+            return "Take a Free Course"
+            
+        }
+    }
+}
+
+extension SavedContentViewController: UITableViewDelegate {
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 0 {
+            
+            return meetups.count
+        }
+        return meetups.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        header.textLabel?.frame = header.frame
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -165,34 +195,113 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
                 if each.name == name {
                     
                     meetups.remove(at: index)
-                    savedContentTableView.reloadData()
+                    tableView.reloadData()
                 }
             }
         }
         
         nothingSavedLabel.isHidden = meetups.count > 0
     }
+}
+
+extension SavedContentViewController: UpdateTableView {
     
+    func updateTableView() {
+        HUD.show(.progress)
+        OperationQueue.main.addOperation {
+            self.tableView.reloadData()
+            HUD.hide()
+        }
+    }
+}
+
+extension SavedContentViewController: CustomCellPresentAlert {
     func showAlert(meetup: MeetUp) {
+        showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok",cancelButtonTitle: "Cancel")
+    }
+}
+
+extension SavedContentViewController : UIGestureRecognizerDelegate {
+    func handleNavScrollGesture() {
         
-        let alertController = UIAlertController(title: "See You Later", message: "You're about to leave.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let DestructiveAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.destructive) {
-            (result : UIAlertAction) -> Void in
-            
+        if navScrollGestureRecognizer.state == .began {
+            navScrollResetPositionY = 0
         }
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-            (result : UIAlertAction) -> Void in
-            UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
-                
+        var cappedVelocity = navScrollGestureRecognizer.velocity(in: self.view).y
+        if cappedVelocity > kMaxScrollVelocity {
+            cappedVelocity = kMaxScrollVelocity
+        } else if cappedVelocity < -kMaxScrollVelocity {
+            cappedVelocity = -kMaxScrollVelocity
+        }
+        
+        var finalHeaderHeight = headerViewHeightConstraint.constant + cappedVelocity / ((kExpandedHeaderHeight-kContractedHeaderHeight))
+        if finalHeaderHeight > kExpandedHeaderHeight {
+            finalHeaderHeight = kExpandedHeaderHeight
+        } else if finalHeaderHeight < kContractedHeaderHeight {
+            finalHeaderHeight = kContractedHeaderHeight
+        }
+        
+        if cappedVelocity < 0 {
+            if tableView.contentOffset.y >= 0 && finalHeaderHeight >= kContractedHeaderHeight {
+                headerViewHeightConstraint.constant = finalHeaderHeight
+            }
+        } else if cappedVelocity > 0 {
+            if tableView.contentOffset.y <= 0 && finalHeaderHeight <= kExpandedHeaderHeight {
+                headerViewHeightConstraint.constant = finalHeaderHeight
             }
         }
         
-        alertController.addAction(DestructiveAction)
-        alertController.addAction(okAction)
+        var finalFontSize = labelView.font.pointSize + cappedVelocity / (kExpandedLabelFontSize - kContractedLabelFontSize)
         
-        present(alertController, animated: true, completion: nil)
+        if finalFontSize > kExpandedLabelFontSize {
+            finalFontSize = kExpandedLabelFontSize
+        } else if finalFontSize < kContractedLabelFontSize {
+            finalFontSize = kContractedLabelFontSize
+        }
+        
+        if cappedVelocity < 0 {
+            if tableView.contentOffset.y >= 0 && finalFontSize >= kContractedLabelFontSize {
+                self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)            }
+        } else if cappedVelocity > 0 {
+            if tableView.contentOffset.y <= 0 && finalFontSize <= kExpandedLabelFontSize {
+                self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)
+            }
+        }
+        
+        let headerPercentageOffset = (kExpandedHeaderHeight - headerViewHeightConstraint.constant) / (kExpandedHeaderHeight - kContractedHeaderHeight)
+        
+        if navScrollGestureRecognizer.state == .ended || navScrollGestureRecognizer.state == .cancelled  {
+            if (headerPercentageOffset > 0.5 && cappedVelocity > -30 && cappedVelocity < 30) || cappedVelocity < -30 {
+                let pixels = min(headerViewHeightConstraint.constant - kContractedHeaderHeight, (labelView.font.pointSize - kContractedHeaderHeight)*kLargeLogoDistanceMultiplier)
+                
+                self.view.layoutIfNeeded()
+                
+                UIView.animate(withDuration: Double(pixels/kMaxScrollVelocity), animations: { [unowned self] in
+                    
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: self.kContractedLabelFontSize)
+                    
+                    self.headerViewHeightConstraint.constant = self.kContractedHeaderHeight
+                    
+                    self.view.layoutIfNeeded()
+                })
+            } else {
+                let pixels = min(kExpandedHeaderHeight - headerViewHeightConstraint.constant, (kExpandedLabelFontSize - labelView.font.pointSize)*kLargeLogoDistanceMultiplier)
+                
+                self.view.layoutIfNeeded()
+                
+                UIView.animate(withDuration: Double(pixels/kMaxScrollVelocity), animations: { [unowned self] in
+                    
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: self.kExpandedLabelFontSize)
+                    self.headerViewHeightConstraint.constant = self.kExpandedHeaderHeight
+                    
+                    self.view.layoutIfNeeded()
+                })
+            }
+        }
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }

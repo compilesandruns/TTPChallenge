@@ -17,6 +17,22 @@ class MenuPresenter {
     
     func setupMenuSections() {
         var sections = [MenuSection]()
+        //My TTP
+        var myTTPSection = MenuSection()
+        myTTPSection.type = .MyTTP
+        myTTPSection.name = "My TTP"
+        
+        var myEventsButton = MoreInformationButton()
+        myEventsButton.type = .MyEvents
+        myEventsButton.name = "My Events"
+        myTTPSection.buttons.append(myEventsButton)
+        
+        var myProfileButton = MoreInformationButton()
+        myProfileButton.type = .MyProfile
+        myProfileButton.name = "My Profile"
+        myTTPSection.buttons.append(myProfileButton)
+        
+        sections.append(myTTPSection)
         
         //Discover
         var discoverSection = MenuSection()
@@ -95,6 +111,13 @@ extension MenuPresenter: MenuPresenting {
     func didTapMoreInformationButton(button: MoreInformationButton) {
         view.closeMenuForModal().then { _ -> Void in
             switch button.type! {
+            case .MyEvents:
+                self.delegate?.showSavedEventsFlow()
+            
+            case .MyProfile:
+                //TODO: change to showProfileFlow()
+                self.delegate?.showWebView(url: "http://www.google.com")
+            
             case .TakeTheQuiz:
                 self.delegate?.showQuizFlow()
             
