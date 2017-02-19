@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="436" y="445"/>
         </scene>
-        <!--SignInScreen-->
+        <!--SignInFlow-->
         <scene sceneID="sNm-He-hE6">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignInScreen" id="BjG-S7-EUX" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SignInFlow" id="BjG-S7-EUX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCL-J6-5XQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1054" y="445"/>

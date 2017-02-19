@@ -37,6 +37,26 @@ extension HomeScreenPresenter: MenuDelegate {
         
     }
     
+    func showLoginFlow() {
+        view.showLoginFlow()
+    }
+    
+    func showQuizFlow() {
+        view.showQuizFlow()
+    }
+    
+    func showSuggestedEventsFlow() {
+    
+    }
+    
+    func showSavedEventsFlow() {
+        
+    }
+    
+    func showProfileScreen() {
+        
+    }
+    
     func showWebView(url: String) {
         view.showWebView(url: url)
     }

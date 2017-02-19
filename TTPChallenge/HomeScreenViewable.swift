@@ -10,10 +10,13 @@ protocol HomeScreenViewable: class {
     func openMenu()
     func closeMenu()
     
-    func showLoginFlow()
     func showWebView(url: String)
+    func showLoginFlow()
+    func showQuizFlow()
+    func showSuggestedEventsFlow()
+    func showSavedEventsFlow()
+    func showProfileScreen()
     
     func showLoader()
     func hideLoader()
 }
-
