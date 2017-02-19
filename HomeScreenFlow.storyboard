@@ -67,7 +67,7 @@
                         <outlet property="navBarEdgePanGestureRecognizer" destination="jt2-rb-fck" id="1r0-tN-S0x"/>
                         <segue destination="5d5-1j-4fV" kind="custom" identifier="showSignIn" customClass="FullyReplaceSegue" id="WgT-F5-A0l"/>
                         <segue destination="E1a-zP-gbA" kind="show" identifier="showQuizFlow" id="tBr-SZ-A61"/>
-                        <segue destination="pX4-y3-kRr" kind="show" identifier="showSuggestionsScreen" id="Was-kg-Oum"/>
+                        <segue destination="pX4-y3-kRr" kind="show" identifier="showSuggestedEventsFlow" id="Was-kg-Oum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIp-Iu-T7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,7 +84,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jlf-Dz-mlj" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wgy-jq-KWu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgy-jq-KWu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

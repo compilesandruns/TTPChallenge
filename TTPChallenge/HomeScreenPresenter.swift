@@ -46,11 +46,11 @@ extension HomeScreenPresenter: MenuDelegate {
     }
     
     func showSuggestedEventsFlow() {
-    
+        view.showSuggestedEventsFlow()
     }
     
     func showSavedEventsFlow() {
-        
+        view.showSavedEventsFlow()
     }
     
     func showProfileScreen() {

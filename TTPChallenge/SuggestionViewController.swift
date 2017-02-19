@@ -7,28 +7,69 @@
 //
 
 import UIKit
+import PKHUD
 
 class SuggestionViewController: BaseViewController {
     
-    @IBOutlet weak var suggestionTableView: UITableView!
-    @IBOutlet var navScrollGestureRecognizer: UIPanGestureRecognizer!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: UIImageView!
+    @IBOutlet weak var labelView: UILabel!
     
+    @IBOutlet var navScrollGestureRecognizer: UIPanGestureRecognizer!
+    @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var labelHeightConstraint: NSLayoutConstraint!
+    
+    var navScrollResetPositionY: CGFloat!
+    
+    var kMaxScrollVelocity: CGFloat = 65.0
+
+    var kContractedHeaderHeight: CGFloat = 70.0
+    var kExpandedHeaderHeight: CGFloat!
+    
+    let kContractedLabelFontSize: CGFloat = 20.0
+    var kExpandedLabelFontSize: CGFloat!
+    
+    var kLargeLogoDistanceMultiplier: CGFloat = 0.1
+
+
     let store = DataStore.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        suggestionTableView.delegate = self
-        suggestionTableView.dataSource = self
-        suggestionTableView.rowHeight = UITableViewAutomaticDimension
-        suggestionTableView.estimatedRowHeight = 300.0
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300.0
+        
+        labelView.adjustsFontSizeToFitWidth = true
+        
+        navScrollGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleNavScrollGesture))
+        navScrollGestureRecognizer.delegate = self
+        tableView.addGestureRecognizer(navScrollGestureRecognizer)
         
         store.fillMeetupStore { (success) in
             if success {
                 OperationQueue.main.addOperation {
-                    self.suggestionTableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
+        }
+    }
+    
+    deinit {
+        self.navigationController?.navigationBar.removeGestureRecognizer(navScrollGestureRecognizer)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if kExpandedLabelFontSize == nil {
+            kExpandedLabelFontSize = labelView.font.pointSize
+        }
+        
+        if kExpandedHeaderHeight == nil {
+            kExpandedHeaderHeight = headerView.frame.height
         }
     }
 }
@@ -110,10 +151,11 @@ extension SuggestionViewController: UITableViewDataSource {
 
 extension SuggestionViewController : UpdateTableView {
     func updateTableView() {
+        HUD.show(.progress)
         OperationQueue.main.addOperation {
             
-            self.suggestionTableView.reloadData()
-            self.spinner.stopAnimating()
+            self.tableView.reloadData()
+            HUD.hide()
         }
     }
 }
@@ -127,105 +169,76 @@ extension SuggestionViewController: CustomCellPresentAlert {
 extension SuggestionViewController : UIGestureRecognizerDelegate {
     func handleNavScrollGesture() {
         
-        if navScrollGestureRecognizer.state == .Began {
+        if navScrollGestureRecognizer.state == .began {
             navScrollResetPositionY = 0
         }
         
-        var cappedVelocity = navScrollGestureRecognizer.velocityInView(self.view).y
+        var cappedVelocity = navScrollGestureRecognizer.velocity(in: self.view).y
         if cappedVelocity > kMaxScrollVelocity {
             cappedVelocity = kMaxScrollVelocity
         } else if cappedVelocity < -kMaxScrollVelocity {
             cappedVelocity = -kMaxScrollVelocity
         }
         
-        var finalPlanHeaderHeight = planHeaderViewHeightConstraint.constant + cappedVelocity / ((kExpandedHeaderHeight-kContractedHeaderHeight))
-        if finalPlanHeaderHeight > kExpandedHeaderHeight {
-            finalPlanHeaderHeight = kExpandedHeaderHeight
-        } else if finalPlanHeaderHeight < kContractedHeaderHeight {
-            finalPlanHeaderHeight = kContractedHeaderHeight
+        var finalHeaderHeight = headerViewHeightConstraint.constant + cappedVelocity / ((kExpandedHeaderHeight-kContractedHeaderHeight))
+        if finalHeaderHeight > kExpandedHeaderHeight {
+            finalHeaderHeight = kExpandedHeaderHeight
+        } else if finalHeaderHeight < kContractedHeaderHeight {
+            finalHeaderHeight = kContractedHeaderHeight
         }
         
         if cappedVelocity < 0 {
-            if tableView.contentOffset.y >= 0 && finalPlanHeaderHeight >= kContractedHeaderHeight {
-                planHeaderViewHeightConstraint.constant = finalPlanHeaderHeight
+            if tableView.contentOffset.y >= 0 && finalHeaderHeight >= kContractedHeaderHeight {
+                headerViewHeightConstraint.constant = finalHeaderHeight
             }
         } else if cappedVelocity > 0 {
-            if tableView.contentOffset.y <= 0 && finalPlanHeaderHeight <= kExpandedHeaderHeight {
-                planHeaderViewHeightConstraint.constant = finalPlanHeaderHeight
+            if tableView.contentOffset.y <= 0 && finalHeaderHeight <= kExpandedHeaderHeight {
+                headerViewHeightConstraint.constant = finalHeaderHeight
             }
         }
         
-        var finalLargeLogoHeight = largeLogoViewHeightConstraint.constant + cappedVelocity / ((kExpandedLogoHeight-kContractedLogoHeight)*kLargeLogoDistanceMultiplier)
+        var finalFontSize = labelView.font.pointSize + cappedVelocity / (kExpandedLabelFontSize - kContractedLabelFontSize)
         
-        if finalLargeLogoHeight > kExpandedLogoHeight {
-            finalLargeLogoHeight = kExpandedLogoHeight
-        } else if finalLargeLogoHeight < kContractedLogoHeight {
-            finalLargeLogoHeight = kContractedLogoHeight
+        if finalFontSize > kExpandedLabelFontSize {
+            finalFontSize = kExpandedLabelFontSize
+        } else if finalFontSize < kContractedLabelFontSize {
+            finalFontSize = kContractedLabelFontSize
         }
         
         if cappedVelocity < 0 {
-            if tableView.contentOffset.y >= 0 && finalLargeLogoHeight >= kContractedLogoHeight {
-                largeLogoViewHeightConstraint.constant = finalLargeLogoHeight
-            }
+            if tableView.contentOffset.y >= 0 && finalFontSize >= kContractedLabelFontSize {
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)            }
         } else if cappedVelocity > 0 {
-            if tableView.contentOffset.y <= 0 && finalLargeLogoHeight <= kExpandedLogoHeight {
-                largeLogoViewHeightConstraint.constant = finalLargeLogoHeight
+            if tableView.contentOffset.y <= 0 && finalFontSize <= kExpandedLabelFontSize {
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)
             }
         }
         
-        let headerPercentageOffset = (kExpandedHeaderHeight - planHeaderViewHeightConstraint.constant) / (kExpandedHeaderHeight - kContractedHeaderHeight)
+        let headerPercentageOffset = (kExpandedHeaderHeight - headerViewHeightConstraint.constant) / (kExpandedHeaderHeight - kContractedHeaderHeight)
         
-        if headerPercentageOffset >= 0.999 {
-            largeMembershipIdLabel.alpha = 1
-            memberNumberStringLabel.alpha = 0
-            membershipIdLabel.alpha = 0
-            planNameLabel.alpha = 0
-        } else if headerPercentageOffset <= 0.001 {
-            largeMembershipIdLabel.alpha = 0
-            memberNumberStringLabel.alpha = 1
-            membershipIdLabel.alpha = 1
-            planNameLabel.alpha = 1
-        } else {
-            
-            if headerPercentageOffset > 0.5 {
-                largeMembershipIdLabel.alpha = (2 * CGFloat(headerPercentageOffset)) - 1
-            } else {
-                memberNumberStringLabel.alpha = 1 - (2 * CGFloat(headerPercentageOffset))
-                membershipIdLabel.alpha = 1 - (2 * CGFloat(headerPercentageOffset))
-                planNameLabel.alpha = 1 - (2 * CGFloat(headerPercentageOffset))
-            }
-        }
-        
-        if navScrollGestureRecognizer.state == .Ended || navScrollGestureRecognizer.state == .Cancelled  {
+        if navScrollGestureRecognizer.state == .ended || navScrollGestureRecognizer.state == .cancelled  {
             if (headerPercentageOffset > 0.5 && cappedVelocity > -30 && cappedVelocity < 30) || cappedVelocity < -30 {
-                let pixels = min(planHeaderViewHeightConstraint.constant - kContractedHeaderHeight, (largeLogoViewHeightConstraint.constant - kContractedHeaderHeight)*kLargeLogoDistanceMultiplier)
+                let pixels = min(headerViewHeightConstraint.constant - kContractedHeaderHeight, (labelView.font.pointSize - kContractedHeaderHeight)*kLargeLogoDistanceMultiplier)
                 
                 self.view.layoutIfNeeded()
                 
-                UIView.animateWithDuration(Double(pixels/kMaxScrollVelocity), animations: { [unowned self] in
-                    self.largeMembershipIdLabel.alpha = 1
-                    self.memberNumberStringLabel.alpha = 0
-                    self.membershipIdLabel.alpha = 0
-                    self.planNameLabel.alpha = 0
-                    
-                    self.largeLogoViewHeightConstraint.constant = self.kContractedLogoHeight
-                    self.planHeaderViewHeightConstraint.constant = self.kContractedHeaderHeight
+                UIView.animate(withDuration: Double(pixels/kMaxScrollVelocity), animations: { [unowned self] in
+
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: self.kContractedLabelFontSize)
+
+                    self.headerViewHeightConstraint.constant = self.kContractedHeaderHeight
                     
                     self.view.layoutIfNeeded()
                 })
             } else {
-                let pixels = min(kExpandedHeaderHeight - planHeaderViewHeightConstraint.constant, (kExpandedLogoHeight - largeLogoViewHeightConstraint.constant)*kLargeLogoDistanceMultiplier)
+                let pixels = min(kExpandedHeaderHeight - headerViewHeightConstraint.constant, (kExpandedLabelFontSize - labelView.font.pointSize)*kLargeLogoDistanceMultiplier)
                 
                 self.view.layoutIfNeeded()
                 
-                UIView.animateWithDuration(Double(pixels/kMaxScrollVelocity), animations: { [unowned self] in
-                    self.largeMembershipIdLabel.alpha = 0
-                    self.memberNumberStringLabel.alpha = 1
-                    self.membershipIdLabel.alpha = 1
-                    self.planNameLabel.alpha = 1
+                UIView.animate(withDuration: Double(pixels/kMaxScrollVelocity), animations: { [unowned self] in
                     
-                    self.largeLogoViewHeightConstraint.constant = self.kExpandedLogoHeight
-                    self.planHeaderViewHeightConstraint.constant = self.kExpandedHeaderHeight
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: self.kExpandedLabelFontSize)
+                    self.headerViewHeightConstraint.constant = self.kExpandedHeaderHeight
                     
                     self.view.layoutIfNeeded()
                 })
@@ -233,7 +246,7 @@ extension SuggestionViewController : UIGestureRecognizerDelegate {
         }
     }
     
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }

@@ -41,7 +41,7 @@ class MenuPresenter {
         connectSection.buttons.append(techTalkButton)
         
         var attendButton = MoreInformationButton()
-        attendButton.type = .TechTalk
+        attendButton.type = .AttendAnEvent
         attendButton.name = "Attend An Event"
         connectSection.buttons.append(attendButton)
         
@@ -97,19 +97,26 @@ extension MenuPresenter: MenuPresenting {
             switch button.type! {
             case .TakeTheQuiz:
                 self.delegate?.showQuizFlow()
+            
             case .TechTalk:
                 //TODO: change to showChatFlow()
                 self.delegate?.showWebView(url: "http://www.google.com")
+            
             case .AttendAnEvent:
                 self.delegate?.showSuggestedEventsFlow()
+            
             case .MyEvents:
                 self.delegate?.showSavedEventsFlow()
+            
             case .MyProfile:
                 self.delegate?.showProfileScreen()
+            
             case .MeetThePipeline:
                 self.delegate?.showWebView(url: Environment.Path.meetThePipeline)
+            
             case .AboutTTP:
                 self.delegate?.showWebView(url: Environment.Path.aboutTTP)
+            
             case .LearnMore:
                 self.delegate?.showWebView(url: Environment.Path.learnMore)
             }
