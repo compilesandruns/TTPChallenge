@@ -9,21 +9,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MenuViewController-->
+        <!--MenuFlow-->
         <scene sceneID="WJX-eP-tri">
             <objects>
-                <viewControllerPlaceholder storyboardName="MenuViewController" id="5WT-X1-eyy" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MenuFlow" id="5WT-X1-eyy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjW-pe-IVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2410" y="128"/>
+            <point key="canvasLocation" x="2427" y="128"/>
         </scene>
-        <!--SignInScreen-->
+        <!--SignInFlow-->
         <scene sceneID="MlM-LR-uhx">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignInScreen" id="5d5-1j-4fV" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SignInFlow" id="5d5-1j-4fV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2N-xh-bZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2375" y="174"/>
+            <point key="canvasLocation" x="2393" y="177"/>
+        </scene>
+        <!--SavedContentScreen-->
+        <scene sceneID="xvt-je-URD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SavedContentScreen" id="b8t-gA-aHN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTT-49-2qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="749"/>
+        </scene>
+        <!--QuizFlow-->
+        <scene sceneID="xCt-wG-qzu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QuizFlow" id="E1a-zP-gbA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wm2-gX-UJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1995" y="614"/>
+        </scene>
+        <!--SuggestionScreen-->
+        <scene sceneID="MtR-Oy-Z4J">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SuggestionScreen" id="pX4-y3-kRr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGL-0S-3Aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="615"/>
         </scene>
         <!--Home Screen View Controller-->
         <scene sceneID="p1W-wq-jlX">
@@ -50,6 +74,9 @@
                         <outlet property="menuButtonItem" destination="LxD-w6-CIK" id="tBJ-5g-SuC"/>
                         <outlet property="navBarEdgePanGestureRecognizer" destination="jt2-rb-fck" id="1r0-tN-S0x"/>
                         <segue destination="5d5-1j-4fV" kind="custom" identifier="showSignIn" customClass="FullyReplaceSegue" id="WgT-F5-A0l"/>
+                        <segue destination="E1a-zP-gbA" kind="show" identifier="showQuizFlow" id="tBr-SZ-A61"/>
+                        <segue destination="pX4-y3-kRr" kind="show" identifier="showSuggestedEventsFlow" id="Was-kg-Oum"/>
+                        <segue destination="b8t-gA-aHN" kind="show" identifier="showSavedEventsFlow" id="9ul-lU-RcF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIp-Iu-T7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -66,7 +93,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jlf-Dz-mlj" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgy-jq-KWu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wgy-jq-KWu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

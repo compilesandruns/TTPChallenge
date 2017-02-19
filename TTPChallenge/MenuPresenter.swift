@@ -17,6 +17,22 @@ class MenuPresenter {
     
     func setupMenuSections() {
         var sections = [MenuSection]()
+        //My TTP
+        var myTTPSection = MenuSection()
+        myTTPSection.type = .MyTTP
+        myTTPSection.name = "My TTP"
+        
+        var myEventsButton = MoreInformationButton()
+        myEventsButton.type = .MyEvents
+        myEventsButton.name = "My Events"
+        myTTPSection.buttons.append(myEventsButton)
+        
+        var myProfileButton = MoreInformationButton()
+        myProfileButton.type = .MyProfile
+        myProfileButton.name = "My Profile"
+        myTTPSection.buttons.append(myProfileButton)
+        
+        sections.append(myTTPSection)
         
         //Discover
         var discoverSection = MenuSection()
@@ -24,8 +40,8 @@ class MenuPresenter {
         discoverSection.name = "Discover"
     
         var retakeButton = MoreInformationButton()
-        retakeButton.type = .RetakeTheQuiz
-        retakeButton.name = "Retake the Quiz"
+        retakeButton.type = .TakeTheQuiz
+        retakeButton.name = "Take the Quiz"
     
         discoverSection.buttons.append(retakeButton)
         sections.append(discoverSection)
@@ -40,10 +56,10 @@ class MenuPresenter {
         techTalkButton.name = "Tech Talk"
         connectSection.buttons.append(techTalkButton)
         
-        var meetButton = MoreInformationButton()
-        meetButton.type = .MeetThePipeline
-        meetButton.name = "Meet The Pipeline"
-        connectSection.buttons.append(meetButton)
+        var attendButton = MoreInformationButton()
+        attendButton.type = .AttendAnEvent
+        attendButton.name = "Attend An Event"
+        connectSection.buttons.append(attendButton)
         
         sections.append(connectSection)
         
@@ -55,6 +71,11 @@ class MenuPresenter {
         var aboutButton = MoreInformationButton()
         aboutButton.type = .AboutTTP
         aboutButton.name = "About TTP"
+        
+        var meetButton = MoreInformationButton()
+        meetButton.type = .MeetThePipeline
+        meetButton.name = "Meet The Pipeline"
+        learnSection.buttons.append(meetButton)
         
         var learnMoreButton = MoreInformationButton()
         learnMoreButton.type = .LearnMore
@@ -90,16 +111,35 @@ extension MenuPresenter: MenuPresenting {
     func didTapMoreInformationButton(button: MoreInformationButton) {
         view.closeMenuForModal().then { _ -> Void in
             switch button.type! {
-            case .RetakeTheQuiz:
-                //TODO: change to showQuizFlow()
+            case .MyEvents:
+                self.delegate?.showSavedEventsFlow()
+            
+            case .MyProfile:
+                //TODO: change to showProfileFlow()
                 self.delegate?.showWebView(url: "http://www.google.com")
+            
+            case .TakeTheQuiz:
+                self.delegate?.showQuizFlow()
+            
             case .TechTalk:
                 //TODO: change to showChatFlow()
                 self.delegate?.showWebView(url: "http://www.google.com")
+            
+            case .AttendAnEvent:
+                self.delegate?.showSuggestedEventsFlow()
+            
+            case .MyEvents:
+                self.delegate?.showSavedEventsFlow()
+            
+            case .MyProfile:
+                self.delegate?.showProfileScreen()
+            
             case .MeetThePipeline:
                 self.delegate?.showWebView(url: Environment.Path.meetThePipeline)
+            
             case .AboutTTP:
                 self.delegate?.showWebView(url: Environment.Path.aboutTTP)
+            
             case .LearnMore:
                 self.delegate?.showWebView(url: Environment.Path.learnMore)
             }
@@ -108,7 +148,6 @@ extension MenuPresenter: MenuPresenting {
     
     func logoutButtonTapped() {
         //TODO: Firebase Interactor logout
-        view.showLoginFlow()
-        
+        self.delegate?.showLoginFlow()
     }
 }

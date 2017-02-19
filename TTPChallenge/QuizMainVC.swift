@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizMainVC: UIViewController {
+class QuizMainVC: BaseViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var partOneCircle: UILabel!
     @IBOutlet weak var partTwoCircle: UILabel!

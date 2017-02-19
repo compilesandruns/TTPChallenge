@@ -53,7 +53,31 @@ extension HomeScreenViewController: HomeScreenViewable {
     }
     
     func showLoginFlow() {
-        performSegue(withIdentifier: "showSignIn", sender: self)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "showSignIn", sender: self)
+        }
+    }
+    
+    func showQuizFlow() {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "showQuizFlow", sender: self)
+        }
+    }
+    
+    func showSuggestedEventsFlow() {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "showSuggestedEventsFlow", sender: self)
+        }
+    }
+    
+    func showSavedEventsFlow() {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "showSavedEventsFlow", sender: self)
+        }
+    }
+    
+    func showProfileScreen() {
+        //TODO
     }
     
     func showLoader() {

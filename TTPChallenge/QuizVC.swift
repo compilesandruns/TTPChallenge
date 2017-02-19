@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class QuizVC: BaseViewController {
     
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
@@ -61,35 +61,6 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func dismissVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return Quizzes.techJobs.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objectsArray[section].questions.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.Cell.personalityCell, for: indexPath) as! PersonalityTestCell
-        cell.tapActionForYes = { (cell) in
-            self.yesForEachTechType(section: indexPath.section, row: indexPath.row)
-        }
-        cell.tapActionForNo = { (cell) in
-            self.noForEachTechType(section: indexPath.section, row: indexPath.row)
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let personalityCell = cell as! PersonalityTestCell
-        let question = objectsArray[indexPath.section].questions[indexPath.row]
-        personalityCell.question = question
-    }
-   
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
-    }
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {
         let yesesInQa = qa.filter{$0 == Answer.yes}.count
@@ -116,6 +87,44 @@ class QuizVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         performSegue(withIdentifier: Identifier.Segue.toResult, sender: self)
     }
+}
+
+extension QuizVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.Cell.personalityCell, for: indexPath) as! PersonalityTestCell
+        cell.tapActionForYes = { (cell) in
+            self.yesForEachTechType(section: indexPath.section, row: indexPath.row)
+        }
+        cell.tapActionForNo = { (cell) in
+            self.noForEachTechType(section: indexPath.section, row: indexPath.row)
+        }
+        return cell
+    }
+}
+
+extension QuizVC: UITableViewDelegate {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Quizzes.techJobs.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return objectsArray[section].questions.count
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let personalityCell = cell as! PersonalityTestCell
+        let question = objectsArray[indexPath.section].questions[indexPath.row]
+        personalityCell.question = question
+    }
+   
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
+}
+
+extension QuizVC {
     
     func yesForEachTechType(section: Int, row: Int){
         switch section {

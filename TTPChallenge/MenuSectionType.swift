@@ -7,7 +7,7 @@
 //
 
 enum MenuSectionType {
-    case Discover, Connect, Learn
+    case MyTTP, Discover, Connect, Learn
 }
 
 struct MenuSection {

@@ -7,31 +7,90 @@
 //
 
 import UIKit
+import PKHUD
 
-class SuggestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UpdateTableView, CustomCellPresentAlert {
+class SuggestionViewController: BaseViewController {
     
-    @IBOutlet weak var suggestionTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: UIImageView!
+    @IBOutlet weak var labelView: UILabel!
     
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet var navScrollGestureRecognizer: UIPanGestureRecognizer!
+    @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
     
+    var navScrollResetPositionY: CGFloat!
+    
+    var kMaxScrollVelocity: CGFloat = 65.0
+
+    var kContractedHeaderHeight: CGFloat = 70.0
+    var kExpandedHeaderHeight: CGFloat!
+    
+    let kContractedLabelFontSize: CGFloat = 20.0
+    var kExpandedLabelFontSize: CGFloat!
+    
+    var kLargeLogoDistanceMultiplier: CGFloat = 0.1
+
+
     let store = DataStore.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        suggestionTableView.delegate = self
-        suggestionTableView.dataSource = self
-        suggestionTableView.rowHeight = UITableViewAutomaticDimension
-        suggestionTableView.estimatedRowHeight = 300.0
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300.0
+        
+        labelView.adjustsFontSizeToFitWidth = true
+        
+        navScrollGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleNavScrollGesture))
+        navScrollGestureRecognizer.delegate = self
+        tableView.addGestureRecognizer(navScrollGestureRecognizer)
         
         store.fillMeetupStore { (success) in
             if success {
                 OperationQueue.main.addOperation {
-                    self.suggestionTableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
         }
     }
+    
+    deinit {
+        self.navigationController?.navigationBar.removeGestureRecognizer(navScrollGestureRecognizer)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if kExpandedLabelFontSize == nil {
+            kExpandedLabelFontSize = labelView.font.pointSize
+        }
+        
+        if kExpandedHeaderHeight == nil {
+            kExpandedHeaderHeight = headerView.frame.height
+        }
+    }
+}
+
+extension SuggestionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingMeetUpCell else { return }
+        
+        cell.isExpanded = !cell.isExpanded
+        cell.configureCell()
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+}
+
+extension SuggestionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -75,10 +134,6 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
-    }
-    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         guard let header = view as? UITableViewHeaderFooterView else { return }
@@ -91,50 +146,106 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return 1
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingMeetUpCell else { return }
-        
-        cell.isExpanded = !cell.isExpanded
-        cell.configureCell()
-        tableView.beginUpdates()
-        tableView.endUpdates()
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-    }
-    
+}
+
+extension SuggestionViewController : UpdateTableView {
     func updateTableView() {
+        HUD.show(.progress)
         OperationQueue.main.addOperation {
             
-            self.suggestionTableView.reloadData()
-            self.spinner.stopAnimating()
+            self.tableView.reloadData()
+            HUD.hide()
         }
     }
-    
-    func showAlert(meetup: MeetUp) {
-        
-        let alertController = UIAlertController(title: "See You Later", message: "You're about to leave.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let DestructiveAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.destructive) {
-            (result : UIAlertAction) -> Void in
+}
 
+extension SuggestionViewController: CustomCellPresentAlert {
+    func showAlert(meetup: MeetUp) {
+        showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok", cancelButtonTitle: "Cancel")
+    }
+}
+
+extension SuggestionViewController : UIGestureRecognizerDelegate {
+    func handleNavScrollGesture() {
+        
+        if navScrollGestureRecognizer.state == .began {
+            navScrollResetPositionY = 0
         }
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-            (result : UIAlertAction) -> Void in
-            UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
-                
+        var cappedVelocity = navScrollGestureRecognizer.velocity(in: self.view).y
+        if cappedVelocity > kMaxScrollVelocity {
+            cappedVelocity = kMaxScrollVelocity
+        } else if cappedVelocity < -kMaxScrollVelocity {
+            cappedVelocity = -kMaxScrollVelocity
+        }
+        
+        var finalHeaderHeight = headerViewHeightConstraint.constant + cappedVelocity / ((kExpandedHeaderHeight-kContractedHeaderHeight))
+        if finalHeaderHeight > kExpandedHeaderHeight {
+            finalHeaderHeight = kExpandedHeaderHeight
+        } else if finalHeaderHeight < kContractedHeaderHeight {
+            finalHeaderHeight = kContractedHeaderHeight
+        }
+        
+        if cappedVelocity < 0 {
+            if tableView.contentOffset.y >= 0 && finalHeaderHeight >= kContractedHeaderHeight {
+                headerViewHeightConstraint.constant = finalHeaderHeight
+            }
+        } else if cappedVelocity > 0 {
+            if tableView.contentOffset.y <= 0 && finalHeaderHeight <= kExpandedHeaderHeight {
+                headerViewHeightConstraint.constant = finalHeaderHeight
             }
         }
         
-        alertController.addAction(DestructiveAction)
-        alertController.addAction(okAction)
+        var finalFontSize = labelView.font.pointSize + cappedVelocity / (kExpandedLabelFontSize - kContractedLabelFontSize)
         
-        present(alertController, animated: true, completion: nil)
+        if finalFontSize > kExpandedLabelFontSize {
+            finalFontSize = kExpandedLabelFontSize
+        } else if finalFontSize < kContractedLabelFontSize {
+            finalFontSize = kContractedLabelFontSize
+        }
+        
+        if cappedVelocity < 0 {
+            if tableView.contentOffset.y >= 0 && finalFontSize >= kContractedLabelFontSize {
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)            }
+        } else if cappedVelocity > 0 {
+            if tableView.contentOffset.y <= 0 && finalFontSize <= kExpandedLabelFontSize {
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)
+            }
+        }
+        
+        let headerPercentageOffset = (kExpandedHeaderHeight - headerViewHeightConstraint.constant) / (kExpandedHeaderHeight - kContractedHeaderHeight)
+        
+        if navScrollGestureRecognizer.state == .ended || navScrollGestureRecognizer.state == .cancelled  {
+            if (headerPercentageOffset > 0.5 && cappedVelocity > -30 && cappedVelocity < 30) || cappedVelocity < -30 {
+                let pixels = min(headerViewHeightConstraint.constant - kContractedHeaderHeight, (labelView.font.pointSize - kContractedHeaderHeight)*kLargeLogoDistanceMultiplier)
+                
+                self.view.layoutIfNeeded()
+                
+                UIView.animate(withDuration: Double(pixels/kMaxScrollVelocity), animations: { [unowned self] in
+
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: self.kContractedLabelFontSize)
+
+                    self.headerViewHeightConstraint.constant = self.kContractedHeaderHeight
+                    
+                    self.view.layoutIfNeeded()
+                })
+            } else {
+                let pixels = min(kExpandedHeaderHeight - headerViewHeightConstraint.constant, (kExpandedLabelFontSize - labelView.font.pointSize)*kLargeLogoDistanceMultiplier)
+                
+                self.view.layoutIfNeeded()
+                
+                UIView.animate(withDuration: Double(pixels/kMaxScrollVelocity), animations: { [unowned self] in
+                    
+                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: self.kExpandedLabelFontSize)
+                    self.headerViewHeightConstraint.constant = self.kExpandedHeaderHeight
+                    
+                    self.view.layoutIfNeeded()
+                })
+            }
+        }
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
-
-
-
-
