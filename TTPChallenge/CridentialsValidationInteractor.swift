@@ -9,11 +9,11 @@
 class CridentialsValidationInteractor {
     
     func isValidEmail(email: String) -> Bool {
-        return NSPredicate(format:"SELF MATCHES %@", Environment.Validation.namePattern).evaluate(with: email)
+        return NSPredicate(format:"SELF MATCHES %@", Environment.Validation.emailPattern).evaluate(with: email)
     }
     
     func isValidPassword(password: String) -> Bool {
-        return NSPredicate(format: "SELF MATCHES %@", Environment.Validation.emailPattern).evaluate(with: password)
+        return NSPredicate(format: "SELF MATCHES %@", Environment.Validation.passwordPattern).evaluate(with: password)
     }
     
     func isSignUpComplete(name: String, email: String, password: String) -> Bool {
