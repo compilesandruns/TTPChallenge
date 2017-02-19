@@ -62,7 +62,19 @@
 		17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06B1E50216D0007ADEC /* SignInInteracting.swift */; };
 		17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */; };
 		17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0741E50C2E60007ADEC /* BaseInjector.swift */; };
+		3D14B4B21E575962005E2DBF /* SavedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D14B4B11E575962005E2DBF /* SavedContent.storyboard */; };
+		3D14B4B41E575979005E2DBF /* SavedContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */; };
+		3D14B4B61E58D572005E2DBF /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D14B4B51E58D572005E2DBF /* DataStore.swift */; };
+		3D36EB311E5257B100CB1432 /* SuggestionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */; };
+		3D36EB351E52580F00CB1432 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */; };
+		3D36EB371E52601000CB1432 /* MeetUpAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */; };
+		3D36EB391E5260E800CB1432 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB381E5260E800CB1432 /* Secrets.swift */; };
+		3D36EB3B1E53E09A00CB1432 /* MeetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */; };
+		3D36EB3D1E53F91A00CB1432 /* ExpandingMeetUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB3C1E53F91A00CB1432 /* ExpandingMeetUpCell.swift */; };
+		3D4E89301E56455D00ED4080 /* DoFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E892F1E56455D00ED4080 /* DoFavoriteButton.swift */; };
+
 		17DC3E6F1E589FBB00E4A9F4 /* FullyReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170651101E52796D00802807 /* FullyReplaceSegue.swift */; };
+
 		4422B78241332CF59F02F260 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */; };
 		ADC314E2882B7CC9D3DCE577 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
@@ -155,6 +167,16 @@
 		2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D809B8C9CFEADB0D6C0EC8 /* Pods-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		3A1B182A2191A30E3EA7F217 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
+		3D14B4B11E575962005E2DBF /* SavedContent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedContent.storyboard; sourceTree = "<group>"; };
+		3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedContentViewController.swift; sourceTree = "<group>"; };
+		3D14B4B51E58D572005E2DBF /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SuggestionScreen.storyboard; sourceTree = "<group>"; };
+		3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
+		3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetUpAPIClient.swift; sourceTree = "<group>"; };
+		3D36EB381E5260E800CB1432 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetUp.swift; sourceTree = "<group>"; };
+		3D36EB3C1E53F91A00CB1432 /* ExpandingMeetUpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingMeetUpCell.swift; sourceTree = "<group>"; };
+		3D4E892F1E56455D00ED4080 /* DoFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoFavoriteButton.swift; sourceTree = "<group>"; };
 		AACF7CC6C0A12E53D1CD653B /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBE3DA305B2BD4B2954AA8B8 /* Pods-TTPChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +261,16 @@
 				17BB26611E517A5F0005D787 /* MenuViewController.storyboard */,
 				17CFD04F1E4F73110007ADEC /* HomeScreen.storyboard */,
 				1751ABA81E4D33AB00E2AE75 /* LaunchScreen.storyboard */,
+				3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */,
+				3D14B4B11E575962005E2DBF /* SavedContent.storyboard */,
+				3D14B4B51E58D572005E2DBF /* DataStore.swift */,
+				3D36EB341E52580F00CB1432 /* SuggestionViewController.swift */,
+				3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */,
+				3D36EB3C1E53F91A00CB1432 /* ExpandingMeetUpCell.swift */,
+				3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */,
+				3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */,
+				3D36EB381E5260E800CB1432 /* Secrets.swift */,
+				3D4E892F1E56455D00ED4080 /* DoFavoriteButton.swift */,
 				1751ABAB1E4D33AB00E2AE75 /* Info.plist */,
 				1751ABA61E4D33AB00E2AE75 /* Assets.xcassets */,
 				1751ABCF1E4D512200E2AE75 /* GoogleService-Info.plist */,
@@ -538,7 +570,9 @@
 				1751ABAA1E4D33AB00E2AE75 /* LaunchScreen.storyboard in Resources */,
 				1751ABD01E4D512200E2AE75 /* GoogleService-Info.plist in Resources */,
 				17CFD0501E4F73110007ADEC /* HomeScreen.storyboard in Resources */,
+				3D14B4B21E575962005E2DBF /* SavedContent.storyboard in Resources */,
 				1751ABA71E4D33AB00E2AE75 /* Assets.xcassets in Resources */,
+				3D36EB311E5257B100CB1432 /* SuggestionScreen.storyboard in Resources */,
 				1751ABA51E4D33AB00E2AE75 /* SignInScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,12 +736,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				3D36EB351E52580F00CB1432 /* SuggestionViewController.swift in Sources */,
+				3D36EB391E5260E800CB1432 /* Secrets.swift in Sources */,
+
 				17BB26581E51723E0005D787 /* DismissMenuAnimator.swift in Sources */,
+
 				174979AA1E5102E700B901DC /* CreateUserInteracting.swift in Sources */,
 				17CFD0681E5015F90007ADEC /* CridentialsValidationInteractor.swift in Sources */,
 				1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */,
 				17BB26601E51795A0005D787 /* MenuViewable.swift in Sources */,
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
+				3D4E89301E56455D00ED4080 /* DoFavoriteButton.swift in Sources */,
+				3D36EB3B1E53E09A00CB1432 /* MeetUp.swift in Sources */,
+				3D36EB371E52601000CB1432 /* MeetUpAPIClient.swift in Sources */,
 				17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */,
 				17DC3E6F1E589FBB00E4A9F4 /* FullyReplaceSegue.swift in Sources */,
 				17BB265E1E5176A30005D787 /* AuthInteracting.swift in Sources */,
@@ -715,9 +757,11 @@
 				1706510F1E5277A600802807 /* PresentMenuAnimator.swift in Sources */,
 				1749799E1E50DD2800B901DC /* CreateUserScreenViewable.swift in Sources */,
 				17CFD05B1E4F7B9F0007ADEC /* FirebaseInteracting.swift in Sources */,
+				3D36EB3D1E53F91A00CB1432 /* ExpandingMeetUpCell.swift in Sources */,
 				17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */,
 				17CFD0661E5015ED0007ADEC /* CridentialsValidationInteracting.swift in Sources */,
 				174979A21E50ED1D00B901DC /* BaseNavigationController.swift in Sources */,
+				3D14B4B41E575979005E2DBF /* SavedContentViewController.swift in Sources */,
 				17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */,
 				17BB26471E516E520005D787 /* HomeScreenViewable.swift in Sources */,
 				17BB26431E516E3C0005D787 /* HomeScreenPresenter.swift in Sources */,
@@ -741,6 +785,7 @@
 				17CFD06A1E50215C0007ADEC /* SignInInteractor.swift in Sources */,
 				17BB264E1E516EA20005D787 /* MenuPresenter.swift in Sources */,
 				1751ABA21E4D33AB00E2AE75 /* SignInScreenViewController.swift in Sources */,
+				3D14B4B61E58D572005E2DBF /* DataStore.swift in Sources */,
 				17CFD05E1E4F7C630007ADEC /* AlertViewable.swift in Sources */,
 				1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */,
 				174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */,
