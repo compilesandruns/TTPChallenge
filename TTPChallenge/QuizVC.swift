@@ -59,7 +59,7 @@ class QuizVC: BaseViewController {
     }
     
     @IBAction func dismissVC(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "unwindToHomeFromQuizVC", sender: self)
     }
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {

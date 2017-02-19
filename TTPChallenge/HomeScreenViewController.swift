@@ -33,6 +33,7 @@ class HomeScreenViewController: BaseViewController {
         self.navigationController?.navigationBar.removeGestureRecognizer(navBarEdgePanGestureRecognizer)
     }
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToHomeFromQuizVC(segue: UIStoryboardSegue) {}
 }
 
 extension HomeScreenViewController: HomeScreenViewable {

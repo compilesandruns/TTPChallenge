@@ -58,6 +58,7 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBAction func backHome(_ sender: Any) {
         performSegue(withIdentifier: "unwindToHome", sender: self)
     }
+  
     @IBAction func retakeQuizBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "unwindToQuizMain", sender: self)
     }
