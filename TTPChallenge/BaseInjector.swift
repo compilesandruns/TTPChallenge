@@ -24,4 +24,11 @@ class BaseInjector {
     func createUserScreenPresenter(view: CreateUserScreenViewable) -> CreateUserScreenPresenter {
         return CreateUserScreenPresenter(view: view, createUserInteractor: createUserInteractor )
     }
+    func menuPresenter(view: MenuViewable, menuDelegate: MenuDelegate) -> MenuPresenter {
+        return MenuPresenter(view: view, delegate: menuDelegate)
+    }
+    
+    func homeScreenPresenter(view: HomeScreenViewable) -> HomeScreenPresenter {
+        return HomeScreenPresenter(view: view)
+    }
 }

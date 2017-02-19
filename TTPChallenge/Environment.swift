@@ -8,6 +8,15 @@
 
 struct Environment {
     
+    struct Colors {
+        //In order from lightest to darkest
+        static let primaryBlue = UIColor(red: 0/255, green: 152/255, blue: 238/255, alpha: 1)
+        static let secondaryBlue = UIColor(red: 0/255, green: 105/255, blue: 167/255, alpha: 1)
+        static let tertiaryBlue = UIColor(red: 0/255, green: 82/255, blue: 130/255, alpha: 1)
+        static let primaryBlack = UIColor(red: 21/255, green: 21/255, blue: 21/255, alpha: 1)
+        
+    }
+    
     struct Firebase {
         static let loginToList = "LoginToList"
     }
@@ -23,5 +32,11 @@ struct Environment {
         static let emailInUse = "Email already in use. Please sign in."
         static let defaultError = "An error has occured. Please try again later."
         static let userNotFound = "Unable to locate account. Please create a new account."
+    }
+    
+    struct Path {
+        static let meetThePipeline = "http://ttp.nyc/show-blog/"
+        static let aboutTTP = "http://www.techtalentpipeline.nyc/"
+        static let learnMore = "http://www.techtalentpipeline.nyc/contact-us-1/"
     }
 }
