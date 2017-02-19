@@ -26,14 +26,10 @@ class SignInInteractor: SignInInteracting {
 //        }
 //        
 //    }
-    func signIn(email: String, password: String) -> Promise<String> {
-        if let errorMessage = cridentialsValidationInteractor.validateCridentials(email: email, password: password) {
-            return Promise(value: errorMessage)
-        }
-        return firebaseInteractor.signIn(email: email, password: password).then{ _ -> Promise<String> in
-            return Promise(value: "")
-        }
-    
+    func signIn(email: String, password: String) -> Promise<Void> {
+        return cridentialsValidationInteractor.validateSignIn(email: email, password: password)
+            .then { _ -> Void in
+                self.firebaseInteractor.signIn(email: email, password: password)
+            }
     }
-    
 }

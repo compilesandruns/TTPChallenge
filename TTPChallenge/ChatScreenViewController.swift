@@ -6,17 +6,21 @@
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
-import UIKit
+import Firebase
+import JSQMessagesViewController
 
-enum Section: Int {
-    case createNewChannelSection = 0
-    case currentChannelsSection
-}
-
-class ChatScreenViewController: BaseViewController {
-
-    var senderDisplayName: String?
-    var newChannelTextField: UITextField?
-    private var channels: [Channel] = []
+final class ChatViewController: JSQMessagesViewController {
+    var channelRef: FIRDatabaseReference?
+    var channel: Channel? {
+        didSet {
+            title = channel?.name
+        }
+    }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.senderId = FIRAuth.auth()?.currentUser?.uid
+
+    }
 }

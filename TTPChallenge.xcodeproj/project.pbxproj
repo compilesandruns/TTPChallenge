@@ -24,6 +24,9 @@
 		1751ABC61E4D3E4B00E2AE75 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751ABC51E4D3E4B00E2AE75 /* UITests.swift */; };
 		1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751ABCD1E4D469D00E2AE75 /* Environment.swift */; };
 		1751ABD01E4D512200E2AE75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1751ABCF1E4D512200E2AE75 /* GoogleService-Info.plist */; };
+		1778D9561E5A29E10023C569 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D9551E5A29E10023C569 /* ValidationError.swift */; };
+		1778D9581E5A2A110023C569 /* DisplayableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D9571E5A2A110023C569 /* DisplayableError.swift */; };
+		1778D95B1E5A2A300023C569 /* ErrorDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D95A1E5A2A300023C569 /* ErrorDisplaying.swift */; };
 		17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB263E1E5128740005D787 /* FirstResponderView.swift */; };
 		17CFD0411E4F5EB40007ADEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD0401E4F5EB40007ADEC /* Images.xcassets */; };
 		17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0491E4F6F900007ADEC /* SignInScreenPresenter.swift */; };
@@ -42,12 +45,12 @@
 		17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06B1E50216D0007ADEC /* SignInInteracting.swift */; };
 		17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */; };
 		17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0741E50C2E60007ADEC /* BaseInjector.swift */; };
+		17DC3E731E5A0F9100E4A9F4 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DC3E721E5A0F9100E4A9F4 /* ChannelListViewController.swift */; };
+		17DC3E761E5A10A300E4A9F4 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DC3E751E5A10A300E4A9F4 /* Channel.swift */; };
+		17DC3E781E5A113B00E4A9F4 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DC3E771E5A113B00E4A9F4 /* CreateChannelCell.swift */; };
 		4422B78241332CF59F02F260 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */; };
 		9A5C1E6C1E554C3F0060FAC4 /* ChatFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5C1E6B1E554C3F0060FAC4 /* ChatFlow.storyboard */; };
 		9A5C1E6F1E554C6A0060FAC4 /* ChatScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C1E6E1E554C6A0060FAC4 /* ChatScreenViewController.swift */; };
-		9A5C1E711E555FBD0060FAC4 /* ChatScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C1E701E555FBD0060FAC4 /* ChatScreenPresenter.swift */; };
-		9A5C1E731E555FC70060FAC4 /* ChatScreenViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C1E721E555FC70060FAC4 /* ChatScreenViewable.swift */; };
-		9A5C1E751E555FD50060FAC4 /* ChatScreenPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C1E741E555FD50060FAC4 /* ChatScreenPresenting.swift */; };
 		ADC314E2882B7CC9D3DCE577 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +97,9 @@
 		1751ABC71E4D3E4B00E2AE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1751ABCD1E4D469D00E2AE75 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		1751ABCF1E4D512200E2AE75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1778D9551E5A29E10023C569 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationError.swift; path = TTPChallenge/ValidationError.swift; sourceTree = "<group>"; };
+		1778D9571E5A2A110023C569 /* DisplayableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayableError.swift; sourceTree = "<group>"; };
+		1778D95A1E5A2A300023C569 /* ErrorDisplaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDisplaying.swift; sourceTree = "<group>"; };
 		17BB263E1E5128740005D787 /* FirstResponderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstResponderView.swift; sourceTree = "<group>"; };
 		17CFD0401E4F5EB40007ADEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		17CFD0481E4F69FF0007ADEC /* TTPChallenge-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTPChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -113,15 +119,15 @@
 		17CFD06B1E50216D0007ADEC /* SignInInteracting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInInteracting.swift; sourceTree = "<group>"; };
 		17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		17CFD0741E50C2E60007ADEC /* BaseInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInjector.swift; sourceTree = "<group>"; };
+		17DC3E721E5A0F9100E4A9F4 /* ChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
+		17DC3E751E5A10A300E4A9F4 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		17DC3E771E5A113B00E4A9F4 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTPChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D809B8C9CFEADB0D6C0EC8 /* Pods-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		3A1B182A2191A30E3EA7F217 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 		9A5C1E6B1E554C3F0060FAC4 /* ChatFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatFlow.storyboard; sourceTree = "<group>"; };
 		9A5C1E6E1E554C6A0060FAC4 /* ChatScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenViewController.swift; sourceTree = "<group>"; };
-		9A5C1E701E555FBD0060FAC4 /* ChatScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenPresenter.swift; sourceTree = "<group>"; };
-		9A5C1E721E555FC70060FAC4 /* ChatScreenViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenViewable.swift; sourceTree = "<group>"; };
-		9A5C1E741E555FD50060FAC4 /* ChatScreenPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenPresenting.swift; sourceTree = "<group>"; };
 		AACF7CC6C0A12E53D1CD653B /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBE3DA305B2BD4B2954AA8B8 /* Pods-TTPChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 		1751ABD11E4D513600E2AE75 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				17DC3E741E5A0F9B00E4A9F4 /* Channel Screen */,
 				9A5C1E6D1E554C490060FAC4 /* Chat Screen */,
 				17CFD0511E4F73C80007ADEC /* Home Screen */,
 				17CFD06E1E502C570007ADEC /* Create User Screen */,
@@ -236,6 +243,16 @@
 				17CFD0741E50C2E60007ADEC /* BaseInjector.swift */,
 			);
 			name = Environment;
+			sourceTree = "<group>";
+		};
+		1778D9591E5A2A170023C569 /* Error Handling */ = {
+			isa = PBXGroup;
+			children = (
+				1778D9551E5A29E10023C569 /* ValidationError.swift */,
+				1778D9571E5A2A110023C569 /* DisplayableError.swift */,
+				1778D95A1E5A2A300023C569 /* ErrorDisplaying.swift */,
+			);
+			name = "Error Handling";
 			sourceTree = "<group>";
 		};
 		17CFD03D1E4F58040007ADEC /* SignIn Screen */ = {
@@ -272,6 +289,7 @@
 		17CFD0591E4F7B880007ADEC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1778D9591E5A2A170023C569 /* Error Handling */,
 				1751AB9F1E4D33AB00E2AE75 /* AppDelegate.swift */,
 				17CFD0481E4F69FF0007ADEC /* TTPChallenge-Bridging-Header.h */,
 			);
@@ -316,8 +334,18 @@
 				1749799F1E50E69B00B901DC /* BaseTableViewController.swift */,
 				174979A11E50ED1D00B901DC /* BaseNavigationController.swift */,
 				17BB263E1E5128740005D787 /* FirstResponderView.swift */,
+				17DC3E771E5A113B00E4A9F4 /* CreateChannelCell.swift */,
 			);
 			name = "UI Helpers";
+			sourceTree = "<group>";
+		};
+		17DC3E741E5A0F9B00E4A9F4 /* Channel Screen */ = {
+			isa = PBXGroup;
+			children = (
+				17DC3E721E5A0F9100E4A9F4 /* ChannelListViewController.swift */,
+				17DC3E751E5A10A300E4A9F4 /* Channel.swift */,
+			);
+			name = "Channel Screen";
 			sourceTree = "<group>";
 		};
 		35DA16894A511A83DAFAB07E /* Frameworks */ = {
@@ -334,9 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				9A5C1E6E1E554C6A0060FAC4 /* ChatScreenViewController.swift */,
-				9A5C1E701E555FBD0060FAC4 /* ChatScreenPresenter.swift */,
-				9A5C1E721E555FC70060FAC4 /* ChatScreenViewable.swift */,
-				9A5C1E741E555FD50060FAC4 /* ChatScreenPresenting.swift */,
 			);
 			name = "Chat Screen";
 			sourceTree = "<group>";
@@ -639,11 +664,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A5C1E731E555FC70060FAC4 /* ChatScreenViewable.swift in Sources */,
+				1778D95B1E5A2A300023C569 /* ErrorDisplaying.swift in Sources */,
+				1778D9581E5A2A110023C569 /* DisplayableError.swift in Sources */,
+				17DC3E781E5A113B00E4A9F4 /* CreateChannelCell.swift in Sources */,
 				174979AA1E5102E700B901DC /* CreateUserInteracting.swift in Sources */,
 				17CFD0681E5015F90007ADEC /* CridentialsValidationInteractor.swift in Sources */,
 				1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */,
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
+				1778D9561E5A29E10023C569 /* ValidationError.swift in Sources */,
 				17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */,
 				17CFD04E1E4F6FA10007ADEC /* SignInScreenViewable.swift in Sources */,
 				1749799E1E50DD2800B901DC /* CreateUserScreenViewable.swift in Sources */,
@@ -652,7 +680,9 @@
 				17CFD0661E5015ED0007ADEC /* CridentialsValidationInteracting.swift in Sources */,
 				174979A21E50ED1D00B901DC /* BaseNavigationController.swift in Sources */,
 				17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */,
+				17DC3E761E5A10A300E4A9F4 /* Channel.swift in Sources */,
 				17CFD04C1E4F6F990007ADEC /* SignInScreenPresenting.swift in Sources */,
+				17DC3E731E5A0F9100E4A9F4 /* ChannelListViewController.swift in Sources */,
 				1749799C1E50DD1300B901DC /* CreateUserScreenPresenting.swift in Sources */,
 				174979A81E5102DB00B901DC /* CreateUserInteractor.swift in Sources */,
 				174979A01E50E69B00B901DC /* BaseTableViewController.swift in Sources */,
@@ -661,11 +691,9 @@
 				17CFD0601E4F7CE40007ADEC /* AlertView.swift in Sources */,
 				17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */,
 				17CFD06A1E50215C0007ADEC /* SignInInteractor.swift in Sources */,
-				9A5C1E751E555FD50060FAC4 /* ChatScreenPresenting.swift in Sources */,
 				1751ABA21E4D33AB00E2AE75 /* SignInScreenViewController.swift in Sources */,
 				17CFD05E1E4F7C630007ADEC /* AlertViewable.swift in Sources */,
 				1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */,
-				9A5C1E711E555FBD0060FAC4 /* ChatScreenPresenter.swift in Sources */,
 				174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */,
 				17CFD0531E4F76D40007ADEC /* Injector.swift in Sources */,
 				1751ABA01E4D33AB00E2AE75 /* AppDelegate.swift in Sources */,

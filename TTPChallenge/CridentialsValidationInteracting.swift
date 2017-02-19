@@ -6,7 +6,9 @@
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
-protocol CridentialsValidationInteracting {
-    func validateCridentials(email: String, password: String) -> String?
+import PromiseKit
 
+protocol CridentialsValidationInteracting {
+    func validateSignIn(email: String, password: String) -> Promise<Void>
+    func validateSignUp(email: String, password: String, username: String) -> Promise<Void>
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class SignInScreenViewController: BaseViewController {
     
@@ -14,14 +15,10 @@ class SignInScreenViewController: BaseViewController {
         
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
 
-    
-    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
-
-    
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,9 +75,22 @@ extension SignInScreenViewController : SignInScreenViewable {
         }
     }
     
-    func openSignUpScreen() {
-        performSegue(withIdentifier: "SignUpSegue", sender: nil)
+    func showSignUpScreen() {
+        self.performSegue(withIdentifier: "showSignUpScreen", sender: self)
     }
+    
+    func showHomeScreen() {
+        self.performSegue(withIdentifier: "showHomeScreen", sender: self)
+    }
+    
+    func showLoader() {
+        HUD.show(.progress)
+    }
+    
+    func hideLoader() {
+        HUD.hide()
+    }
+    
     func dismissKeyboard() {
         view.endEditing(true)
     }

@@ -10,5 +10,5 @@ import PromiseKit
 
 protocol SignInInteracting {
 //    func createUser(email:String, password: String) -> Promise<String>
-    func signIn(email: String, password: String) -> Promise<String>
+    func signIn(email: String, password: String) -> Promise<Void>
 }

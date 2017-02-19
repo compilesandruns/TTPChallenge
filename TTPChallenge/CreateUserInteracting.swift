@@ -9,5 +9,5 @@
 import PromiseKit
 
 protocol CreateUserInteracting {
-    func createUser(email:String, password: String) -> Promise<String>
+    func createUser(email:String, password: String, username: String) -> Promise<Void>
 }

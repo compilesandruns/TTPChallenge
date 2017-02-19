@@ -9,6 +9,7 @@
 protocol CreateUserScreenViewable: class, AlertViewable {
     var email: String { set get }
     var password: String { set get }
+    var username: String { set get }
     
     func dismissView()
     func dismissKeyboard()

@@ -17,12 +17,9 @@ class CreateUserInteractor: CreateUserInteracting {
         self.cridentialsValidationInteractor = cridentialsValidationInteractor
     }
     
-    func createUser(email:String, password: String) -> Promise<String> {
-        if let errorMessage = cridentialsValidationInteractor.validateCridentials(email: email, password: password) {
-            return Promise(value: errorMessage)
-        }
-        return firebaseInteractor.createUser(email: email, password: password).then{ _ -> Promise<String> in
-            return Promise(value: "")
+    func createUser(email:String, password: String, username: String) -> Promise<Void> {
+        return cridentialsValidationInteractor.validateSignUp(email: email, password: password, username: username).then { _ -> Void in
+                self.firebaseInteractor.createUser(email: email, password: password)
         }
     }
 }

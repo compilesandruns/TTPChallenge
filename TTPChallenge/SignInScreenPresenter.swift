@@ -21,20 +21,25 @@ class SignInScreenPresenter: SignInScreenPresenting {
     
     //TODO: add error handling
     func didTapLogin() {
-        signInInteractor.signIn(email: view.email, password: view.password).then{ errorMessage -> Void in
-            if !errorMessage.isEmpty {
-                self.view.showAlert(message: errorMessage, title: Environment.Alert.errorTitle)
+        view.showLoader()
+        signInInteractor.signIn(email: view.email, password: view.password).then {
+            self.view.hideLoader()
+            self.view.showHomeScreen()
             }
-        }.catch { error in
-            if let errCode = FIRAuthErrorCode(rawValue: error._code) {
+            .catch { error in
+                if let errCode = FIRAuthErrorCode(rawValue: error._code) {
+                    switch errCode {
+                    case .errorCodeUserNotFound:
+                        self.view.showAlert(message:Environment.Alert.userNotFound, title: Environment.Alert.errorTitle)
+                    default:
+                        break
+                    }
+                }
                 
-            switch errCode {
-                case .errorCodeUserNotFound:
-                    self.view.showAlert(message:Environment.Alert.userNotFound, title: Environment.Alert.errorTitle)
-                default:
-                    self.view.showAlert(message:Environment.Alert.defaultError , title: Environment.Alert.errorTitle)
-                        
-                    }    
+                if error is ValidationError, (error as! ValidationError).errors.count > 0 {
+                    self.view.showAlert(message: (error as! ValidationError).displayMessage, title: (error as! ValidationError).displayTitle)
+                } else {
+                    self.view.showAlert(message:Environment.Alert.defaultError, title: Environment.Alert.errorTitle)
                 }
         }
 
@@ -45,6 +50,6 @@ class SignInScreenPresenter: SignInScreenPresenting {
     }
     
     func didTapSignUp() {
-        view.openSignUpScreen()
+        view.showSignUpScreen()
     }
 }
