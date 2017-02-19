@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwg-DQ-5nB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwg-DQ-5nB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -87,15 +87,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vCd-yU-50B">
-                                <rect key="frame" x="169" y="425.5" width="37" height="37"/>
-                                <color key="color" red="0.0012913781683892012" green="0.11368606239557266" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9t0-Im-dFf" firstAttribute="trailing" secondItem="k2m-R6-AHO" secondAttribute="trailing" id="8rp-WD-kXD"/>
-                            <constraint firstItem="vCd-yU-50B" firstAttribute="centerX" secondItem="2Ku-aM-wki" secondAttribute="centerX" id="9St-XO-Z9J"/>
                             <constraint firstItem="2Ku-aM-wki" firstAttribute="bottom" secondItem="Iid-ak-Rwd" secondAttribute="top" id="DHl-R9-ml0"/>
                             <constraint firstItem="9t0-Im-dFf" firstAttribute="top" secondItem="k2m-R6-AHO" secondAttribute="top" id="Gpx-nx-Mlj"/>
                             <constraint firstItem="9t0-Im-dFf" firstAttribute="leading" secondItem="k2m-R6-AHO" secondAttribute="leading" id="HSL-oR-pJl"/>
@@ -104,7 +99,6 @@
                             <constraint firstItem="2Ku-aM-wki" firstAttribute="leading" secondItem="k2m-R6-AHO" secondAttribute="leading" id="YLr-Cs-d6c"/>
                             <constraint firstItem="2Ku-aM-wki" firstAttribute="trailing" secondItem="k2m-R6-AHO" secondAttribute="trailing" id="bYt-la-IHb"/>
                             <constraint firstItem="2Ku-aM-wki" firstAttribute="top" secondItem="F9a-mZ-qLp" secondAttribute="bottom" id="cJa-aJ-e9L"/>
-                            <constraint firstItem="vCd-yU-50B" firstAttribute="centerY" secondItem="2Ku-aM-wki" secondAttribute="centerY" id="gCX-oH-xZ0"/>
                             <constraint firstItem="9t0-Im-dFf" firstAttribute="width" secondItem="k2m-R6-AHO" secondAttribute="width" id="jZz-56-hke"/>
                             <constraint firstItem="9t0-Im-dFf" firstAttribute="height" secondItem="k2m-R6-AHO" secondAttribute="height" multiplier="0.3" id="nbC-4r-EZK"/>
                             <constraint firstItem="F9a-mZ-qLp" firstAttribute="top" secondItem="2AE-Rf-93B" secondAttribute="bottom" id="t8t-FQ-t5t"/>
@@ -112,11 +106,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="spinner" destination="vCd-yU-50B" id="AI0-y7-EjQ"/>
+                        <outlet property="navScrollGestureRecognizer" destination="gKl-Il-oHZ" id="qfa-ce-H0h"/>
                         <outlet property="suggestionTableView" destination="2Ku-aM-wki" id="PQD-jl-31A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRf-1h-iZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="gKl-Il-oHZ"/>
             </objects>
             <point key="canvasLocation" x="1912.8" y="355.7721139430285"/>
         </scene>
