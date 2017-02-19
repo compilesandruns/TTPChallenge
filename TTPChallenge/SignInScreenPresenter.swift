@@ -22,11 +22,12 @@ class SignInScreenPresenter: SignInScreenPresenting {
     //TODO: add error handling
     func didTapLogin() {
         view.showLoader()
-        signInInteractor.signIn(email: view.email, password: view.password).then {
-            self.view.hideLoader()
-            self.view.showHomeScreen()
+        signInInteractor.signIn(email: view.email, password: view.password)
+            .then { _ -> Void in
+                self.view.hideLoader()
+                self.view.showHomeScreen()
             }
-            .catch { error in
+            .catch { error -> Void in
                 if let errCode = FIRAuthErrorCode(rawValue: error._code) {
                     switch errCode {
                     case .errorCodeUserNotFound:
@@ -36,7 +37,7 @@ class SignInScreenPresenter: SignInScreenPresenting {
                     }
                 }
                 
-                if error is ValidationError, (error as! ValidationError).errors.count > 0 {
+                if let err = error as? ValidationError, err.errors.count > 0 {
                     self.view.showAlert(message: (error as! ValidationError).displayMessage, title: (error as! ValidationError).displayTitle)
                 } else {
                     self.view.showAlert(message:Environment.Alert.defaultError, title: Environment.Alert.errorTitle)

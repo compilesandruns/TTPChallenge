@@ -15,6 +15,8 @@ target 'TTPChallenge' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'JSQMessagesViewController'
+  pod 'PKHUD'
+  
 end
 
 target 'UnitTests' do

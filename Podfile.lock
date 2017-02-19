@@ -50,6 +50,7 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - Nimble (6.0.1)
+  - PKHUD (4.2.0)
   - PromiseKit (4.1.7):
     - PromiseKit/Foundation (= 4.1.7)
     - PromiseKit/QuartzCore (= 4.1.7)
@@ -71,6 +72,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - JSQMessagesViewController
   - Nimble
+  - PKHUD
   - PromiseKit
   - SwiftyJSON
 
@@ -90,9 +92,10 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
+  PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 44d3e32207d90345be85a84a458053ad31ee4717
+PODFILE CHECKSUM: 7aa9f4cbf6fd74551d15e8ddac8e41277e0e2eab
 
 COCOAPODS: 1.2.0

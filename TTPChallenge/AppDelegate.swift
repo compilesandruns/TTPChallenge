@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let injector = Injector()
         Injector.setInjector(injector: injector)
-        
-        
-        var ref: FIRDatabaseReference!
-        ref = FIRDatabase.database().reference()
+
+        //Setup Default Loader
+        PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
+        PKHUD.sharedHUD.dimsBackground = true
 
         return true
     }
