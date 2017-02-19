@@ -29,7 +29,7 @@ class MeetUp {
                 
         imageUrl.downloadedFromURLString(completion: { (picture) in
             
-            let resizedImage = picture.resizeImage(targetSize: CGSize(width: 500.0, height: 200.0))
+            let resizedImage = picture.resizeImage(targetSize: CGSize(width: 500.0, height: 250.0))
             self.image = resizedImage
             self.delegate?.updateTableView()
         })
