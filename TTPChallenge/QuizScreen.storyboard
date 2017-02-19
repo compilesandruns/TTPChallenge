@@ -257,7 +257,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHz-Ch-lHW">
-                                        <rect key="frame" x="319.5" y="75" width="40" height="19"/>
+                                        <rect key="frame" x="319.5" y="75.5" width="40" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="mE8-01-f2O"/>
                                         </constraints>
