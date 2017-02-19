@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizMainVC: UIViewController {
+class QuizMainVC: BaseViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var partOneCircle: UILabel!
     @IBOutlet weak var partTwoCircle: UILabel!
@@ -25,7 +25,7 @@ class QuizMainVC: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
     }
-    @IBAction func dismiss(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    
+    @IBAction func unwindToQuizMain(segue: UIStoryboardSegue) {}
+    
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Gks-P8-O6s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="l5X-W1-gnu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -43,27 +43,13 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4N-kM-X1W">
-                                        <rect key="frame" x="323" y="32" width="37" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="b7L-iD-8Zq"/>
-                                        </constraints>
-                                        <state key="normal" image="Close-1"/>
-                                        <connections>
-                                            <action selector="dismiss:" destination="l5X-W1-gnu" eventType="touchUpInside" id="0Cn-ee-24p"/>
-                                            <action selector="dismissVC:" destination="x8d-Kf-t3G" eventType="touchUpInside" id="rIm-ki-Nwi"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="v4N-kM-X1W" firstAttribute="width" secondItem="7pp-mi-Ojs" secondAttribute="width" multiplier="0.1" id="8Hh-Q3-RNj"/>
                                     <constraint firstItem="pCK-PH-W2h" firstAttribute="centerX" secondItem="7pp-mi-Ojs" secondAttribute="centerX" id="8PE-5g-im9"/>
                                     <constraint firstItem="7pp-mi-Ojs" firstAttribute="height" secondItem="Nb6-6q-s5N" secondAttribute="height" id="9TP-cS-sCh"/>
                                     <constraint firstItem="pCK-PH-W2h" firstAttribute="centerY" secondItem="7pp-mi-Ojs" secondAttribute="centerY" multiplier="1.2" id="BZm-xe-Sft"/>
                                     <constraint firstItem="7pp-mi-Ojs" firstAttribute="centerX" secondItem="Nb6-6q-s5N" secondAttribute="centerX" id="JHz-kV-qTN"/>
-                                    <constraint firstAttribute="trailing" secondItem="v4N-kM-X1W" secondAttribute="trailing" constant="15" id="Nbz-a3-wuq"/>
                                     <constraint firstItem="pCK-PH-W2h" firstAttribute="width" secondItem="7pp-mi-Ojs" secondAttribute="width" id="Pbj-Jv-bj6"/>
-                                    <constraint firstItem="7pp-mi-Ojs" firstAttribute="top" secondItem="v4N-kM-X1W" secondAttribute="bottom" constant="-54" id="SGu-1f-4pG"/>
                                     <constraint firstItem="7pp-mi-Ojs" firstAttribute="centerY" secondItem="Nb6-6q-s5N" secondAttribute="centerY" id="Swq-sD-gBb"/>
                                     <constraint firstItem="7pp-mi-Ojs" firstAttribute="width" secondItem="Nb6-6q-s5N" secondAttribute="width" id="q0a-Hb-nsN"/>
                                 </constraints>
@@ -271,7 +257,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHz-Ch-lHW">
-                                        <rect key="frame" x="320" y="75.5" width="40" height="19"/>
+                                        <rect key="frame" x="320" y="75" width="40" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="mE8-01-f2O"/>
                                         </constraints>
@@ -321,7 +307,6 @@
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="resultButtonTapped:" destination="x8d-Kf-t3G" eventType="touchUpInside" id="dIB-C9-qUn"/>
-                                                <segue destination="DZb-qJ-0ct" kind="show" identifier="toResult" id="ZyF-wb-ibP"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -481,6 +466,7 @@
                         <outlet property="nextButton" destination="c4X-CS-QeT" id="kKg-Lf-jVS"/>
                         <outlet property="progressLabel" destination="pHz-Ch-lHW" id="xCi-r8-DLT"/>
                         <outlet property="tableView" destination="eLD-Ux-nHV" id="hY8-1L-lGj"/>
+                        <segue destination="DZb-qJ-0ct" kind="presentation" identifier="toResult" id="YGI-Lh-3Ey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQc-wQ-dAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -766,7 +752,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLf-Uy-xca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4599" y="-981"/>
+            <point key="canvasLocation" x="7684" y="-993"/>
         </scene>
         <!--Your Tech Type-->
         <scene sceneID="oLN-6M-7oI">
@@ -856,7 +842,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="t5A-1a-6xd"/>
                                                         </constraints>
-                                                        <string key="text">Meet with clients to translate their ideas into apps 
+                                                        <string key="text">Meet with clients to translate their ideas into apps
 </string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1030,7 +1016,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wb-9N-uzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5496" y="-981"/>
+            <point key="canvasLocation" x="8802" y="-1015"/>
         </scene>
         <!--Web DevVC-->
         <scene sceneID="vJy-Dq-9ge">
@@ -1120,7 +1106,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="61" id="Ebv-eV-AIU"/>
                                                         </constraints>
-                                                        <string key="text">Ensure that website designs are intuitive, easy to access and uniform throughout 
+                                                        <string key="text">Ensure that website designs are intuitive, easy to access and uniform throughout
 </string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1296,7 +1282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hy7-tb-jgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6304" y="39"/>
+            <point key="canvasLocation" x="7310" y="391"/>
         </scene>
         <!--Data AnalystVC-->
         <scene sceneID="piN-xc-aOA">
@@ -1545,7 +1531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y50-HE-o55" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7099" y="17"/>
+            <point key="canvasLocation" x="8622" y="39"/>
         </scene>
         <!--Quiz ResultVC-->
         <scene sceneID="MyD-Km-HBX">
@@ -1578,9 +1564,21 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdh-gR-j9Z">
+                                        <rect key="frame" x="320" y="32" width="40" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="a6D-c0-Z4c"/>
+                                            <constraint firstAttribute="width" constant="40" id="dcg-GH-php"/>
+                                        </constraints>
+                                        <state key="normal" image="Close-1"/>
+                                        <connections>
+                                            <action selector="backHome:" destination="DZb-qJ-0ct" eventType="touchUpInside" id="qI6-zI-gXJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Fdh-gR-j9Z" secondAttribute="trailing" constant="15" id="CVX-PJ-u0S"/>
                                     <constraint firstItem="mop-Mj-67I" firstAttribute="centerX" secondItem="Ift-Dv-SP1" secondAttribute="centerX" id="D9C-NU-poY"/>
                                     <constraint firstItem="mop-Mj-67I" firstAttribute="width" secondItem="Ift-Dv-SP1" secondAttribute="width" id="FTB-QA-AYq"/>
                                     <constraint firstItem="jxv-H0-5X3" firstAttribute="width" secondItem="Ift-Dv-SP1" secondAttribute="width" id="Qj4-JN-wa0"/>
@@ -1588,6 +1586,7 @@
                                     <constraint firstItem="jxv-H0-5X3" firstAttribute="centerX" secondItem="Ift-Dv-SP1" secondAttribute="centerX" id="e92-yE-eAU"/>
                                     <constraint firstAttribute="bottom" secondItem="jxv-H0-5X3" secondAttribute="bottom" id="eQ4-Fl-mcu"/>
                                     <constraint firstItem="jxv-H0-5X3" firstAttribute="top" secondItem="mop-Mj-67I" secondAttribute="bottom" constant="10" id="pyn-3a-21M"/>
+                                    <constraint firstItem="Fdh-gR-j9Z" firstAttribute="top" secondItem="Ift-Dv-SP1" secondAttribute="top" constant="32" id="quz-OZ-1GY"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6S-Mx-Yd1" userLabel="bottomView">
@@ -1690,11 +1689,14 @@
                         <segue destination="4Xd-qJ-iNv" kind="presentation" identifier="segueTo4" id="zdA-3X-Ouz"/>
                         <segue destination="Jrs-NW-mwC" kind="presentation" identifier="segueTo1" id="ptr-7G-nit"/>
                         <segue destination="l5X-W1-gnu" kind="show" identifier="backHome" id="HCH-MK-g64"/>
+                        <segue destination="j6A-yr-76j" kind="unwind" identifier="unwindToQuizMain" unwindAction="unwindToQuizMainWithSegue:" id="5AL-l3-guO"/>
+                        <segue destination="j6A-yr-76j" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHomeWithSegue:" id="u92-aA-hHp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixr-S2-bSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="j6A-yr-76j" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5464.8000000000002" y="-27.436281859070466"/>
+            <point key="canvasLocation" x="5260" y="-981"/>
         </scene>
         <!--EngVC-->
         <scene sceneID="3Ao-Gi-iiS">
@@ -1958,7 +1960,7 @@ When an application crashes or the internet stalls, they save the day.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yA-sP-MBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4564.8000000000002" y="1001.1994002998501"/>
+            <point key="canvasLocation" x="6346" y="852"/>
         </scene>
         <!--All Tech TypesVC-->
         <scene sceneID="zD9-Uk-0m5">
@@ -2136,24 +2138,6 @@ When an application crashes or the internet stalls, they save the day.</string>
             </objects>
             <point key="canvasLocation" x="5465" y="853"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="iGc-J7-c8A">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gks-P8-O6s" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KW4-IU-lLI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="l5X-W1-gnu" kind="relationship" relationship="rootViewController" id="nOp-6J-Lsl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8HS-Wv-YLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2735" y="-27"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="dK8-6f-xGp">
             <objects>
@@ -2186,7 +2170,4 @@ When an application crashes or the internet stalls, they save the day.</string>
         <image name="qaAnalystImg" width="150" height="150"/>
         <image name="webDevImg" width="150" height="150"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="HCH-MK-g64"/>
-    </inferredMetricsTieBreakers>
 </document>

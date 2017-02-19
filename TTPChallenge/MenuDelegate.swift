@@ -11,6 +11,11 @@ protocol MenuDelegate: class {
     func menuDidAppear()
     func menuWillDisappear()
     func menuDidDisappear()
- 
+    
     func showWebView(url: String)
+    func showLoginFlow()
+    func showQuizFlow()
+    func showSuggestedEventsFlow()
+    func showSavedEventsFlow()
+    func showProfileScreen()
 }

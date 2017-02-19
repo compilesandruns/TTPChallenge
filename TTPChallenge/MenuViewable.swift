@@ -15,6 +15,6 @@ protocol MenuViewable: class {
     
     func closeMenuForModal() -> Promise<Void>
     func closeMenu() -> Promise<Void>
-        
+    
     func showLoginFlow()
 }
