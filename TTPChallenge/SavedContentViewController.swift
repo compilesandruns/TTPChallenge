@@ -87,9 +87,7 @@ class SavedContentViewController: UIViewController, UITableViewDelegate, UITable
         
         let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
-        guard let unwrappedFavs = favs else { return }
-        
-        if favs?.count == 0 {
+        guard let unwrappedFavs = favs else {
             spinner.stopAnimating()
             nothingSavedLabel.isHidden = false
             return
