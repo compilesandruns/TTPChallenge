@@ -21,7 +21,7 @@ class SuggestionViewController: BaseViewController {
     var navScrollResetPositionY: CGFloat!
     
     var kMaxScrollVelocity: CGFloat = 65.0
-
+    
     var kContractedHeaderHeight: CGFloat = 70.0
     var kExpandedHeaderHeight: CGFloat!
     
@@ -29,8 +29,8 @@ class SuggestionViewController: BaseViewController {
     var kExpandedLabelFontSize: CGFloat!
     
     var kLargeLogoDistanceMultiplier: CGFloat = 0.1
-
-
+    
+    
     let store = DataStore.shared
     
     override func viewDidLoad() {
@@ -138,8 +138,9 @@ extension SuggestionViewController: UITableViewDataSource {
         
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.textColor = UIColor.black
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        header.textLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 25)
         header.textLabel?.frame = header.frame
+        header.tintColor = UIColor.white
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -161,7 +162,16 @@ extension SuggestionViewController : UpdateTableView {
 
 extension SuggestionViewController: CustomCellPresentAlert {
     func showAlert(meetup: MeetUp) {
-        showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok", cancelButtonTitle: "Cancel")
+        
+        let _ = showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok", cancelButtonTitle: "Cancel").then { (success) -> Bool in
+            
+            if success{
+                UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
+                    
+                }
+            }
+            return true
+        }
     }
 }
 
@@ -206,10 +216,10 @@ extension SuggestionViewController : UIGestureRecognizerDelegate {
         
         if cappedVelocity < 0 {
             if tableView.contentOffset.y >= 0 && finalFontSize >= kContractedLabelFontSize {
-                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)            }
+                self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)            }
         } else if cappedVelocity > 0 {
             if tableView.contentOffset.y <= 0 && finalFontSize <= kExpandedLabelFontSize {
-                    self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)
+                self.labelView.font = UIFont(name: self.labelView.font.fontName, size: finalFontSize)
             }
         }
         
@@ -222,9 +232,9 @@ extension SuggestionViewController : UIGestureRecognizerDelegate {
                 self.view.layoutIfNeeded()
                 
                 UIView.animate(withDuration: Double(pixels/kMaxScrollVelocity), animations: { [unowned self] in
-
+                    
                     self.labelView.font = UIFont(name: self.labelView.font.fontName, size: self.kContractedLabelFontSize)
-
+                    
                     self.headerViewHeightConstraint.constant = self.kContractedHeaderHeight
                     
                     self.view.layoutIfNeeded()
