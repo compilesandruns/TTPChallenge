@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwg-DQ-5nB">
+
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwg-DQ-5nB">
+
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Bold.otf">
+            <string>CircularStd-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Suggestion View Controller-->
         <scene sceneID="vk3-Hi-QMQ">
@@ -29,17 +37,17 @@
                                     <constraint firstAttribute="height" constant="200" id="8FC-RR-LOU"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Getting Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="F9a-mZ-qLp" userLabel="get started">
-                                <rect key="frame" x="65" y="79.5" width="246.5" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Community" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="F9a-mZ-qLp" userLabel="get started">
+                                <rect key="frame" x="64.5" y="99" width="246.5" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="F9a-mZ-qLp" secondAttribute="height" multiplier="41:7" id="44D-pH-sJH"/>
                                     <constraint firstAttribute="height" constant="42" id="zuP-na-dWw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="2Ku-aM-wki">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ku-aM-wki">
                                 <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,27 +56,27 @@
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="meetupCell" rowHeight="200" id="H4c-Oy-wXO" customClass="ExpandingMeetUpCell" customModule="TTPChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H4c-Oy-wXO" id="tyS-w1-ow4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="wcQ-2j-DdN">
-                                                    <rect key="frame" x="16" y="8" width="343" height="112.5"/>
+                                                    <rect key="frame" x="16" y="8" width="343" height="109"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBT-oH-7Zl">
-                                                    <rect key="frame" x="16" y="128.5" width="343" height="22.5"/>
+                                                    <rect key="frame" x="16" y="125" width="343" height="22.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Read More" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3N4-aX-AXa">
-                                                    <rect key="frame" x="16" y="159" width="343" height="33"/>
+                                                    <rect key="frame" x="16" y="155.5" width="343" height="36.5"/>
                                                     <color key="backgroundColor" red="0.21176470588235294" green="0.13333333333333333" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                                                     <gestureRecognizers/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -99,7 +107,7 @@
                         <constraints>
                             <constraint firstItem="9t0-Im-dFf" firstAttribute="trailing" secondItem="k2m-R6-AHO" secondAttribute="trailing" id="8rp-WD-kXD"/>
                             <constraint firstItem="2Ku-aM-wki" firstAttribute="bottom" secondItem="Iid-ak-Rwd" secondAttribute="top" id="DHl-R9-ml0"/>
-                            <constraint firstItem="F9a-mZ-qLp" firstAttribute="centerY" secondItem="9t0-Im-dFf" secondAttribute="centerY" id="G5n-Od-dN6"/>
+                            <constraint firstItem="F9a-mZ-qLp" firstAttribute="centerY" secondItem="9t0-Im-dFf" secondAttribute="centerY" multiplier="1.2" id="G5n-Od-dN6"/>
                             <constraint firstItem="9t0-Im-dFf" firstAttribute="top" secondItem="k2m-R6-AHO" secondAttribute="top" id="Gpx-nx-Mlj"/>
                             <constraint firstItem="9t0-Im-dFf" firstAttribute="leading" secondItem="k2m-R6-AHO" secondAttribute="leading" id="HSL-oR-pJl"/>
                             <constraint firstItem="F9a-mZ-qLp" firstAttribute="centerX" secondItem="9t0-Im-dFf" secondAttribute="centerX" id="UhI-UT-g6N"/>

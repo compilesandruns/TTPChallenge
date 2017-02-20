@@ -44,7 +44,6 @@ class SignInScreenPresenter: SignInScreenPresenting {
                     self.view.showAlert(message:Environment.Alert.defaultError, title: Environment.Alert.errorTitle)
                 }
         }
-
     }
     
     func didTapBackground() {

@@ -64,17 +64,21 @@ class SavedContentViewController: BaseViewController, RemoveFavorite {
     }
     
     func fillMeetups() {
+        
         let defaults = UserDefaults.standard
         
         let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
-        guard let unwrappedFavs = favs else { return }
-        
-        if favs?.count == 0 {
+        guard let unwrappedFavs = favs else {
             HUD.hide()
             nothingSavedLabel.isHidden = false
-            return
+            return }
+        
+        if unwrappedFavs.count == 0 {
+            HUD.hide()
+            nothingSavedLabel.isHidden = false
         }
+        
         
         for each in unwrappedFavs {
             
@@ -168,8 +172,9 @@ extension SavedContentViewController: UITableViewDelegate {
         
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.textColor = UIColor.black
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        header.textLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 25)
         header.textLabel?.frame = header.frame
+        header.tintColor = UIColor.white
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -217,7 +222,16 @@ extension SavedContentViewController: UpdateTableView {
 
 extension SavedContentViewController: CustomCellPresentAlert {
     func showAlert(meetup: MeetUp) {
-        showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok",cancelButtonTitle: "Cancel")
+        let _ = showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok", cancelButtonTitle: "Cancel").then { (success) -> Bool in
+            
+            if success{
+                UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
+                    
+                }
+            }
+            return true
+        }
+
     }
 }
 

@@ -25,4 +25,7 @@ class QuizMainVC: BaseViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
     }
+    
+    @IBAction func unwindToQuizMain(segue: UIStoryboardSegue) {}
+    
 }
