@@ -46,7 +46,7 @@
                                                 <rect key="frame" x="38" y="222" width="300" height="150"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-I4-hTf" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                         <userDefinedRuntimeAttributes>
@@ -59,7 +59,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lq0-7N-Y3l" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="53" width="300" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="53.5" width="300" height="43"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
@@ -100,7 +100,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tug-js-wch" customClass="CustomButton" customModule="TTPChallenge" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="431.5" width="300" height="43.5"/>
+                                                <rect key="frame" x="38" y="463.5" width="300" height="44"/>
                                                 <color key="backgroundColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="43.5" id="YAJ-IL-mba"/>
@@ -127,13 +127,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New to TTP? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfW-F7-Ot7">
-                                                <rect key="frame" x="38" y="410.5" width="300" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfW-F7-Ot7">
+                                                <rect key="frame" x="38" y="437.5" width="300" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="m8P-on-A2V"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                                <color key="textColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -142,7 +142,7 @@
                                             <constraint firstItem="FfW-F7-Ot7" firstAttribute="centerX" secondItem="Tug-js-wch" secondAttribute="centerX" id="4cS-3Y-TcP"/>
                                             <constraint firstItem="dBL-Ad-qOL" firstAttribute="top" secondItem="qA3-en-BhY" secondAttribute="top" constant="25" id="AF4-Dw-t0K"/>
                                             <constraint firstItem="BJJ-wZ-pbM" firstAttribute="width" secondItem="qA3-en-BhY" secondAttribute="width" multiplier="0.8" id="Hqe-qU-vFr"/>
-                                            <constraint firstItem="Tug-js-wch" firstAttribute="top" secondItem="FfW-F7-Ot7" secondAttribute="bottom" id="Snt-Jl-aP2"/>
+                                            <constraint firstItem="Tug-js-wch" firstAttribute="top" secondItem="FfW-F7-Ot7" secondAttribute="bottom" constant="5" id="Snt-Jl-aP2"/>
                                             <constraint firstItem="HQ6-gX-f3S" firstAttribute="width" secondItem="BJJ-wZ-pbM" secondAttribute="width" id="b8W-g1-xWu"/>
                                             <constraint firstItem="BJJ-wZ-pbM" firstAttribute="centerX" secondItem="qA3-en-BhY" secondAttribute="centerX" id="dph-dm-oOM"/>
                                             <constraint firstItem="dBL-Ad-qOL" firstAttribute="width" secondItem="BJJ-wZ-pbM" secondAttribute="width" id="f2D-op-Li2"/>
@@ -162,7 +162,7 @@
                                     <constraint firstItem="dg0-tC-Vy8" firstAttribute="centerY" secondItem="uqT-6X-CFV" secondAttribute="centerY" id="GWk-6r-Nty"/>
                                     <constraint firstItem="qA3-en-BhY" firstAttribute="top" secondItem="uqT-6X-CFV" secondAttribute="top" id="Jfn-91-OJ5"/>
                                     <constraint firstItem="qA3-en-BhY" firstAttribute="width" secondItem="uqT-6X-CFV" secondAttribute="width" id="T7k-g3-aHf"/>
-                                    <constraint firstItem="Tug-js-wch" firstAttribute="centerY" secondItem="uqT-6X-CFV" secondAttribute="centerY" multiplier="1.4" id="Vuz-Gf-Pg7"/>
+                                    <constraint firstItem="Tug-js-wch" firstAttribute="centerY" secondItem="uqT-6X-CFV" secondAttribute="centerY" multiplier="1.5" id="Vuz-Gf-Pg7"/>
                                     <constraint firstItem="dg0-tC-Vy8" firstAttribute="width" secondItem="uqT-6X-CFV" secondAttribute="width" id="aF9-X3-rGu"/>
                                     <constraint firstItem="qA3-en-BhY" firstAttribute="leading" secondItem="uqT-6X-CFV" secondAttribute="leading" id="jKy-sk-Ruf"/>
                                     <constraint firstAttribute="trailing" secondItem="qA3-en-BhY" secondAttribute="trailing" id="kJh-kJ-4mh"/>
@@ -237,7 +237,7 @@
                                                 <rect key="frame" x="37.5" y="222" width="300" height="150"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48B-vU-SLs" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -252,7 +252,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sse-0F-Mul" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="53" width="300" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="53.5" width="300" height="43"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -288,8 +288,8 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3h1-0X-Vne">
-                                                <rect key="frame" x="337" y="0.0" width="30" height="42"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                                <rect key="frame" x="337" y="0.0" width="30" height="44"/>
+                                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="25"/>
                                                 <state key="normal" title="X">
                                                     <color key="titleColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -374,6 +374,6 @@
         <image name="ttp_logoBlack" width="535" height="288"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dns-Tg-Nru"/>
+        <segue reference="lAM-sh-nKz"/>
     </inferredMetricsTieBreakers>
 </document>
