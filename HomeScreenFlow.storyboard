@@ -94,16 +94,16 @@
                                 <rect key="frame" x="56.5" y="218" width="262.5" height="133.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hs1" translatesAutoresizingMaskIntoConstraints="NO" id="ifc-IZ-vnJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="39.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="40"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivering training and education opportunities to equip New Yorkers with the skills to succeed." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Ad-QI-pyp">
-                                        <rect key="frame" x="10" y="39.5" width="236.5" height="89"/>
+                                        <rect key="frame" x="10" y="40" width="236.5" height="88.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="08c-Zk-9JS" customClass="CustomLabel" customModule="TTPChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="8" width="202.5" height="31.5"/>
+                                        <rect key="frame" x="56" y="8" width="202.5" height="32"/>
                                         <string key="text">DEVELOP SOLUTIONS
 
 </string>
@@ -137,10 +137,10 @@
                                 <rect key="frame" x="56.5" y="351.5" width="262.5" height="134"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hs2" translatesAutoresizingMaskIntoConstraints="NO" id="IfD-Dm-Vfd">
-                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="40.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILIZE NEW YORKERS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="o0r-4P-VlX" customClass="CustomLabel" customModule="TTPChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="8" width="202.5" height="32"/>
+                                        <rect key="frame" x="56" y="8" width="202.5" height="32.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -151,7 +151,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building a talented and diverse workforce to empower our people and strengthen our businesses." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="o6j-wQ-sk8">
-                                        <rect key="frame" x="10" y="40" width="236.5" height="89"/>
+                                        <rect key="frame" x="10" y="40.5" width="236.5" height="88.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -198,6 +198,12 @@
                                     <constraint firstItem="F9I-6b-Jiq" firstAttribute="top" secondItem="doh-KS-JHg" secondAttribute="bottom" id="aeQ-Xb-NCP"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YetiGrab_Main" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-WP-qrY">
+                                <rect key="frame" x="303" y="554" width="72" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="PE2-ix-Sae"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -212,6 +218,7 @@
                             <constraint firstItem="jeE-1Z-0tw" firstAttribute="height" secondItem="4Ek-us-P3c" secondAttribute="height" multiplier="0.2" id="86d-GG-qqF"/>
                             <constraint firstItem="kn8-Ze-eYB" firstAttribute="height" secondItem="4Ek-us-P3c" secondAttribute="height" multiplier="0.15" id="8zC-Kj-CWZ"/>
                             <constraint firstItem="F9I-6b-Jiq" firstAttribute="leading" secondItem="o6j-wQ-sk8" secondAttribute="leading" id="B10-s6-rlt"/>
+                            <constraint firstAttribute="trailing" secondItem="8aP-WP-qrY" secondAttribute="trailing" id="Dm3-1G-l7R"/>
                             <constraint firstItem="o6j-wQ-sk8" firstAttribute="width" secondItem="2Ad-QI-pyp" secondAttribute="width" id="FKe-NJ-tlk"/>
                             <constraint firstItem="fzC-Eq-8xT" firstAttribute="top" secondItem="gye-tw-Zl4" secondAttribute="bottom" id="GId-rC-6W1"/>
                             <constraint firstItem="doh-KS-JHg" firstAttribute="height" secondItem="IfD-Dm-Vfd" secondAttribute="height" id="GIo-QN-00n"/>
@@ -234,6 +241,7 @@
                             <constraint firstItem="jeE-1Z-0tw" firstAttribute="width" secondItem="4Ek-us-P3c" secondAttribute="width" multiplier="0.7" id="ch4-ij-4La"/>
                             <constraint firstItem="o0r-4P-VlX" firstAttribute="trailing" secondItem="08c-Zk-9JS" secondAttribute="trailing" id="dAR-YP-Lis"/>
                             <constraint firstItem="gye-tw-Zl4" firstAttribute="width" secondItem="jeE-1Z-0tw" secondAttribute="width" id="eKK-DC-vNo"/>
+                            <constraint firstItem="8aP-WP-qrY" firstAttribute="leading" secondItem="F9I-6b-Jiq" secondAttribute="trailing" id="gxg-Dc-gmk"/>
                             <constraint firstItem="IfD-Dm-Vfd" firstAttribute="leading" secondItem="ifc-IZ-vnJ" secondAttribute="leading" id="ikT-k6-qur"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VAg-cW-mJY" secondAttribute="trailing" id="jQh-Xi-yiU"/>
                             <constraint firstItem="PjW-Kf-UEo" firstAttribute="trailing" secondItem="o0r-4P-VlX" secondAttribute="trailing" id="lZO-VC-Rdw"/>
@@ -243,6 +251,7 @@
                             <constraint firstItem="o0r-4P-VlX" firstAttribute="height" secondItem="08c-Zk-9JS" secondAttribute="height" id="sHg-wV-FA4"/>
                             <constraint firstItem="F9I-6b-Jiq" firstAttribute="height" secondItem="o6j-wQ-sk8" secondAttribute="height" id="sz0-PE-qhh"/>
                             <constraint firstItem="kn8-Ze-eYB" firstAttribute="leading" secondItem="cUe-ro-OWF" secondAttribute="leading" id="tNA-Kw-cZq"/>
+                            <constraint firstItem="lT7-sL-50s" firstAttribute="top" secondItem="8aP-WP-qrY" secondAttribute="bottom" id="vIr-IW-x2A"/>
                             <constraint firstItem="cUe-ro-OWF" firstAttribute="height" secondItem="4Ek-us-P3c" secondAttribute="height" multiplier="0.06" id="zMp-m3-P6b"/>
                         </constraints>
                     </view>
@@ -278,7 +287,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jlf-Dz-mlj" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgy-jq-KWu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wgy-jq-KWu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -293,6 +302,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="YetiGrab_Main" width="900" height="1600"/>
         <image name="hs1" width="150" height="44"/>
         <image name="hs2" width="300" height="89"/>
         <image name="hs3" width="300" height="89"/>

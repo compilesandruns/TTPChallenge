@@ -94,7 +94,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tug-js-wch" customClass="CustomButton" customModule="TTPChallenge" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="408.5" width="300" height="44"/>
+                                                <rect key="frame" x="38" y="392" width="300" height="44"/>
                                                 <color key="backgroundColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="43.5" id="YAJ-IL-mba"/>
@@ -126,6 +126,7 @@
                                             <constraint firstItem="HQ6-gX-f3S" firstAttribute="centerX" secondItem="BJJ-wZ-pbM" secondAttribute="centerX" id="1hM-1d-xHw"/>
                                             <constraint firstItem="dBL-Ad-qOL" firstAttribute="top" secondItem="qA3-en-BhY" secondAttribute="top" constant="25" id="AF4-Dw-t0K"/>
                                             <constraint firstItem="BJJ-wZ-pbM" firstAttribute="width" secondItem="qA3-en-BhY" secondAttribute="width" multiplier="0.8" id="Hqe-qU-vFr"/>
+                                            <constraint firstItem="Tug-js-wch" firstAttribute="top" secondItem="LuW-Nt-4LR" secondAttribute="bottom" constant="20" id="aX0-5m-WTQ"/>
                                             <constraint firstItem="HQ6-gX-f3S" firstAttribute="width" secondItem="BJJ-wZ-pbM" secondAttribute="width" id="b8W-g1-xWu"/>
                                             <constraint firstItem="BJJ-wZ-pbM" firstAttribute="centerX" secondItem="qA3-en-BhY" secondAttribute="centerX" id="dph-dm-oOM"/>
                                             <constraint firstItem="dBL-Ad-qOL" firstAttribute="width" secondItem="BJJ-wZ-pbM" secondAttribute="width" id="f2D-op-Li2"/>
@@ -144,7 +145,6 @@
                                     <constraint firstItem="dg0-tC-Vy8" firstAttribute="centerY" secondItem="uqT-6X-CFV" secondAttribute="centerY" id="GWk-6r-Nty"/>
                                     <constraint firstItem="qA3-en-BhY" firstAttribute="top" secondItem="uqT-6X-CFV" secondAttribute="top" id="Jfn-91-OJ5"/>
                                     <constraint firstItem="qA3-en-BhY" firstAttribute="width" secondItem="uqT-6X-CFV" secondAttribute="width" id="T7k-g3-aHf"/>
-                                    <constraint firstItem="Tug-js-wch" firstAttribute="centerY" secondItem="uqT-6X-CFV" secondAttribute="centerY" multiplier="1.33" id="Vuz-Gf-Pg7"/>
                                     <constraint firstItem="dg0-tC-Vy8" firstAttribute="width" secondItem="uqT-6X-CFV" secondAttribute="width" id="aF9-X3-rGu"/>
                                     <constraint firstItem="qA3-en-BhY" firstAttribute="leading" secondItem="uqT-6X-CFV" secondAttribute="leading" id="jKy-sk-Ruf"/>
                                     <constraint firstAttribute="trailing" secondItem="qA3-en-BhY" secondAttribute="trailing" id="kJh-kJ-4mh"/>
