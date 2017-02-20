@@ -32,7 +32,7 @@ class DataAnalystVC: UIViewController {
         }
     }
     
-    @IBAction func retakeQuizBtnTapped(_ sender: Any) {
+    @IBAction func exit(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 }

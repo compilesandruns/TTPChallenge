@@ -34,6 +34,7 @@ import UIKit
             }
         }
     }
+    
     func reset() {
         yesButton.isSelected = false
         noButton.isSelected = false
@@ -45,12 +46,14 @@ import UIKit
         yesButton.isSelected = true
         noButton.isSelected = false
     }
+    
     @IBAction func noTapped(_ sender: Any) {
         question.changeToNo()
         tapActionForNo?(self)
         noButton.isSelected = true
         yesButton.isSelected = false
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         reset()
