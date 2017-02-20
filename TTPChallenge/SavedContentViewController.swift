@@ -168,8 +168,9 @@ extension SavedContentViewController: UITableViewDelegate {
         
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.textColor = UIColor.black
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        header.textLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 25)
         header.textLabel?.frame = header.frame
+        header.tintColor = UIColor.white
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

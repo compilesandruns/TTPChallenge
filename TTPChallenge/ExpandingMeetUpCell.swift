@@ -44,15 +44,38 @@ class ExpandingMeetUpCell: UITableViewCell {
     }
     
     func addFavButton() {
+
+        starButton = DOFavoriteButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50), image: UIImage(named: "star"))
+        self.contentView.addSubview(starButton!)
         
-        let x = mainImage.frame.origin.x
-        let y = mainImage.frame.origin.y
+        starButton?.translatesAutoresizingMaskIntoConstraints = false
+        starButton?.heightAnchor.constraint(equalToConstant: contentView.frame.height * 0.25).isActive = true
+        starButton?.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.135).isActive = true
         
-        starButton = DOFavoriteButton(frame: CGRect(x: x, y: y, width: 50, height: 50), image: UIImage(named: "star"))
+        starButton?.leadingAnchor.constraint(equalTo: mainImage.leadingAnchor).isActive = true
+        starButton?.topAnchor.constraint(equalTo: mainImage.topAnchor).isActive = true
         starButton?.lineColor = UIColor.white
         starButton!.addTarget(self, action: #selector(favBtnTouched(sender:)), for: .touchUpInside)
         
-        self.contentView.addSubview(starButton!)
+    }
+    
+    func addJoinButton() {
+
+        joinbutton = DOFavoriteButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50), image: UIImage(named: "join"))
+
+        self.contentView.addSubview(joinbutton!)
+        joinbutton?.translatesAutoresizingMaskIntoConstraints = false
+        joinbutton?.heightAnchor.constraint(equalToConstant: contentView.frame.height * 0.25).isActive = true
+        joinbutton?.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.135).isActive = true
+
+        joinbutton?.trailingAnchor.constraint(equalTo: mainImage.trailingAnchor).isActive = true
+        joinbutton?.topAnchor.constraint(equalTo: mainImage.topAnchor).isActive = true
+        joinbutton?.imageColorOn = UIColor.white
+        joinbutton?.imageColorOff = UIColor.white
+        joinbutton?.circleColor = UIColor.white
+        joinbutton?.lineColor = UIColor.white
+        joinbutton!.addTarget(self, action: #selector(joinButtonTouched(sender:)), for: .touchUpInside)
+        
     }
     
     func favBtnTouched(sender: UIButton) {
@@ -117,20 +140,6 @@ class ExpandingMeetUpCell: UITableViewCell {
                 delegate?.removeFavorite(name: name)
             }
         }
-    }
-    
-    func addJoinButton() {
-        
-        let x = mainImage.frame.origin.x + mainImage.frame.width - 10
-        let y = mainImage.frame.origin.y
-        joinbutton = DOFavoriteButton(frame: CGRect(x: x, y: y, width: 50, height: 50), image: UIImage(named: "join"))
-        joinbutton?.imageColorOn = UIColor.white
-        joinbutton?.imageColorOff = UIColor.white
-        joinbutton?.circleColor = UIColor.white
-        joinbutton?.lineColor = UIColor.white
-        joinbutton!.addTarget(self, action: #selector(joinButtonTouched(sender:)), for: .touchUpInside)
-        
-        self.contentView.addSubview(joinbutton!)
     }
     
     func joinButtonTouched(sender: UIButton) {
