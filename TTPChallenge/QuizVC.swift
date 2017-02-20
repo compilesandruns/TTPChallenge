@@ -48,7 +48,6 @@ class QuizVC: BaseViewController {
             let quizObject = QuizGroup(sectionName: Quizzes.techJobs[i], questions: allQuestions[i])
             objectsArray.append(quizObject)
         }
-    
         activateResultButton()
     }
     
