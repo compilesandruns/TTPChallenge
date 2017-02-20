@@ -64,17 +64,21 @@ class SavedContentViewController: BaseViewController, RemoveFavorite {
     }
     
     func fillMeetups() {
+        
         let defaults = UserDefaults.standard
         
         let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
         
-        guard let unwrappedFavs = favs else { return }
-        
-        if favs?.count == 0 {
+        guard let unwrappedFavs = favs else {
             HUD.hide()
             nothingSavedLabel.isHidden = false
-            return
+            return }
+        
+        if unwrappedFavs.count == 0 {
+            HUD.hide()
+            nothingSavedLabel.isHidden = false
         }
+        
         
         for each in unwrappedFavs {
             
@@ -218,7 +222,16 @@ extension SavedContentViewController: UpdateTableView {
 
 extension SavedContentViewController: CustomCellPresentAlert {
     func showAlert(meetup: MeetUp) {
-        showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok",cancelButtonTitle: "Cancel")
+        let _ = showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok", cancelButtonTitle: "Cancel").then { (success) -> Bool in
+            
+            if success{
+                UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
+                    
+                }
+            }
+            return true
+        }
+
     }
 }
 
