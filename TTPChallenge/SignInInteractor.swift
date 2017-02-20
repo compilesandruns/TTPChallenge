@@ -17,19 +17,14 @@ class SignInInteractor: SignInInteracting {
         self.cridentialsValidationInteractor = cridentialsValidationInteractor
     }
     
-//    func createUser(email:String, password: String) -> Promise<String> {
-//        if let errorMessage = cridentialsValidationInteractor.validateCridentials(email: email, password: password) {
-//            return Promise(value: errorMessage)
-//        }
-//        return firebaseInteractor.createUser(email: email, password: password).then{ _ -> Promise<String> in
-//            return Promise(value: "")
-//        }
-//        
-//    }
-    func signIn(email: String, password: String) -> Promise<Void> {
+    func signIn(email: String, password: String) -> Promise<FIRUser> {
         return cridentialsValidationInteractor.validateSignIn(email: email, password: password)
-            .then { _ -> Void in
-                self.firebaseInteractor.signIn(email: email, password: password)
+            .then { _ in
+                return self.firebaseInteractor.signIn(email: email, password: password).then { user -> Promise<FIRUser> in
+                    return Promise(value: user)
+                }
             }
     }
+    
+    
 }

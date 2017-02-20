@@ -23,9 +23,10 @@ class SignInScreenPresenter: SignInScreenPresenting {
     func didTapLogin() {
         view.showLoader()
         signInInteractor.signIn(email: view.email, password: view.password)
-            .then { _ -> Void in
-                self.view.hideLoader()
-                self.view.showHomeScreen()
+            .then { user -> Void in
+                    self.view.hideLoader()
+                    self.view.showHomeScreen()
+
             }
             .catch { error -> Void in
                 if let errCode = FIRAuthErrorCode(rawValue: error._code) {

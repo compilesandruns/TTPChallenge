@@ -24,8 +24,4 @@ extension FIRAuth {
         }
     }
     
-    func setUserName(username: String) {
-//        ref.child("users").child(user.uid).setValue(["username": username])
-    }
-    
 }

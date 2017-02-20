@@ -17,16 +17,16 @@ class FirebaseInteractor: FirebaseInteracting {
         return FIRAuth.auth()!.signIn(withEmail: email, password: password, completion: nil)
     }
     
-    func setUsername(username: String) {
+    func setUsername(username: String) -> Promise<String> {
         guard let user = FIRAuth.auth()!.currentUser else {
-            return
+            return Promise(error: ValidationError)
         }
        let changeRequest = user.profileChangeRequest()
         changeRequest.displayName = username
         
         changeRequest.commitChanges { error in
-            if let error = error {
-                // An error happened.
+             let error = error {
+                throw error
             } else {
                 // Profile updated.
             }
