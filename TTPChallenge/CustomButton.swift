@@ -14,12 +14,6 @@ import UIKit
             layer.cornerRadius = cornerRadius
         }
     }
-    @IBInspectable var borderWidth: CGFloat = 0 {
-        didSet {
-            layer.borderWidth = borderWidth
-            layer.borderColor = UIColor.black.cgColor
-        }
-    }
 }
 
 
