@@ -24,7 +24,7 @@ class MenuPresenter {
         
         var myEventsButton = MoreInformationButton()
         myEventsButton.type = .MyEvents
-        myEventsButton.name = "My Events"
+        myEventsButton.name = "My Favs"
         myTTPSection.buttons.append(myEventsButton)
         
         var myProfileButton = MoreInformationButton()
@@ -58,7 +58,7 @@ class MenuPresenter {
         
         var attendButton = MoreInformationButton()
         attendButton.type = .AttendAnEvent
-        attendButton.name = "Attend An Event"
+        attendButton.name = "Join a Community"
         connectSection.buttons.append(attendButton)
         
         sections.append(connectSection)
@@ -74,7 +74,7 @@ class MenuPresenter {
         
         var meetButton = MoreInformationButton()
         meetButton.type = .MeetThePipeline
-        meetButton.name = "Meet The Pipeline"
+        meetButton.name = "Meet the Pipeline"
         learnSection.buttons.append(meetButton)
         
         var learnMoreButton = MoreInformationButton()
