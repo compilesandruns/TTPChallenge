@@ -81,10 +81,10 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tug-js-wch" customClass="CustomButton" customModule="TTPChallenge" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="433" width="300" height="40"/>
+                                                <rect key="frame" x="38" y="431.5" width="300" height="43.5"/>
                                                 <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="YAJ-IL-mba"/>
+                                                    <constraint firstAttribute="height" constant="43.5" id="YAJ-IL-mba"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="15"/>
                                                 <state key="normal" title="Sign up"/>
@@ -119,7 +119,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you new to TTP? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfW-F7-Ot7">
-                                                <rect key="frame" x="38" y="404" width="300" height="21"/>
+                                                <rect key="frame" x="38" y="402.5" width="300" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="m8P-on-A2V"/>
                                                 </constraints>
