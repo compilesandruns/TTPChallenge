@@ -21,7 +21,16 @@ class FirebaseInteractor: FirebaseInteracting {
         guard let user = FIRAuth.auth()!.currentUser else {
             return
         }
-       Environment.Firebase.ref.child("users").child(user.uid).setValue(["username": username])
+       let changeRequest = user.profileChangeRequest()
+        changeRequest.displayName = username
+        
+        changeRequest.commitChanges { error in
+            if let error = error {
+                // An error happened.
+            } else {
+                // Profile updated.
+            }
+        }
     }
 }
 

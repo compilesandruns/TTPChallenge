@@ -12,7 +12,6 @@ import JSQMessagesViewController
 import SwiftGifOrigin
 
 final class ChatViewController: JSQMessagesViewController {
-    var username: String!
     var messages = [JSQMessage]()
     private var photoMessageMap = [String: JSQPhotoMediaItem]()
     private let imageURLNotSetKey = "NOTSET"
@@ -105,7 +104,7 @@ final class ChatViewController: JSQMessagesViewController {
     }
     
     private func addMessage(withId id: String, name: String, text: String) {
-        if let message = JSQMessage(senderId: id, displayName: name, text: text) {
+        if let message = JSQMessage(senderId: id, senderDisplayName: name, date: Date(), text: text) {
             messages.append(message)
         }
     }
@@ -313,6 +312,19 @@ extension ChatViewController {
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         return nil
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAt indexPath: IndexPath!) -> NSAttributedString! {
+        let message = messages[indexPath.item]
+
+        guard let senderDisplayName = message.senderDisplayName else {
+            return nil
+        }
+        return NSAttributedString(string: senderDisplayName)
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
+        return 13
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
