@@ -36,7 +36,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qA3-en-BhY" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttpLogoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="dBL-Ad-qOL">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttp_logoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="dBL-Ad-qOL">
                                                 <rect key="frame" x="38" y="25" width="300" height="74"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="74" id="iiL-Be-Bba"/>
@@ -236,7 +236,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02o-RK-DTV" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="371"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttpLogoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="KIQ-kw-uQf">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttp_logoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="KIQ-kw-uQf">
                                                 <rect key="frame" x="37.5" y="25" width="300" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBv-pb-bpY">
@@ -386,9 +386,9 @@
         <image name="OctoGrab_Connect" width="900" height="1600"/>
         <image name="YetiGrab_Main" width="900" height="1600"/>
         <image name="close" width="13" height="13"/>
-        <image name="ttpLogoBlack" width="360" height="188"/>
+        <image name="ttp_logoBlack" width="535" height="288"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dns-Tg-Nru"/>
+        <segue reference="lAM-sh-nKz"/>
     </inferredMetricsTieBreakers>
 </document>
