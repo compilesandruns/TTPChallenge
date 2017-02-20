@@ -34,21 +34,33 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qA3-en-BhY" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="428.5"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-gX-f3S">
+                                                <rect key="frame" x="37" y="104" width="300" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="AZv-Tz-LmH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttp_logoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="dBL-Ad-qOL">
                                                 <rect key="frame" x="38" y="25" width="300" height="74"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="74" id="iiL-Be-Bba"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BJJ-wZ-pbM">
-                                                <rect key="frame" x="38" y="222" width="300" height="150"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BJJ-wZ-pbM">
+                                                <rect key="frame" x="37" y="228.5" width="300" height="70"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-I4-hTf" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="57W-b7-jSQ"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="8"/>
@@ -65,7 +77,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Lq0-7N-Y3l" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="53.5" width="300" height="43"/>
+                                                        <rect key="frame" x="0.0" y="40" width="300" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
@@ -83,33 +95,33 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuW-Nt-4LR" customClass="CustomButton" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="106.5" width="300" height="43.5"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.68235294120000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="15"/>
-                                                        <state key="normal" title="Login">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Do8-PU-UNc"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="nUQ-PM-wIf"/>
-                                                </constraints>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuW-Nt-4LR" customClass="CustomButton" customModule="TTPChallenge" customModuleProvider="target">
+                                                <rect key="frame" x="37" y="318.5" width="300" height="45"/>
+                                                <color key="backgroundColor" red="0.0" green="0.68235294120000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="eyl-fv-4Ab"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="15"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Do8-PU-UNc"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tug-js-wch" customClass="CustomButton" customModule="TTPChallenge" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="392" width="300" height="44"/>
+                                                <rect key="frame" x="37" y="383.5" width="300" height="45"/>
                                                 <color key="backgroundColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="43.5" id="YAJ-IL-mba"/>
+                                                    <constraint firstAttribute="height" constant="45" id="YAJ-IL-mba"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="15"/>
                                                 <state key="normal" title="Sign up">
@@ -124,25 +136,19 @@
                                                     <action selector="signupTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aau-NC-aLu"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-gX-f3S">
-                                                <rect key="frame" x="38" y="104" width="300" height="32"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="AZv-Tz-LmH"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="HQ6-gX-f3S" firstAttribute="centerX" secondItem="BJJ-wZ-pbM" secondAttribute="centerX" id="1hM-1d-xHw"/>
+                                            <constraint firstItem="Tug-js-wch" firstAttribute="top" secondItem="LuW-Nt-4LR" secondAttribute="bottom" constant="20" id="4Ti-3K-9Sc"/>
                                             <constraint firstItem="dBL-Ad-qOL" firstAttribute="top" secondItem="qA3-en-BhY" secondAttribute="top" constant="25" id="AF4-Dw-t0K"/>
                                             <constraint firstItem="BJJ-wZ-pbM" firstAttribute="width" secondItem="qA3-en-BhY" secondAttribute="width" multiplier="0.8" id="Hqe-qU-vFr"/>
-                                            <constraint firstItem="Tug-js-wch" firstAttribute="top" secondItem="LuW-Nt-4LR" secondAttribute="bottom" constant="20" id="aX0-5m-WTQ"/>
+                                            <constraint firstItem="LuW-Nt-4LR" firstAttribute="leading" secondItem="BJJ-wZ-pbM" secondAttribute="leading" id="Wnp-D3-YeW"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tug-js-wch" secondAttribute="bottom" id="XSy-7L-hrE"/>
+                                            <constraint firstItem="LuW-Nt-4LR" firstAttribute="top" secondItem="BJJ-wZ-pbM" secondAttribute="bottom" constant="20" id="aKm-K7-Lu0"/>
                                             <constraint firstItem="HQ6-gX-f3S" firstAttribute="width" secondItem="BJJ-wZ-pbM" secondAttribute="width" id="b8W-g1-xWu"/>
-                                            <constraint firstItem="BJJ-wZ-pbM" firstAttribute="centerX" secondItem="qA3-en-BhY" secondAttribute="centerX" id="dph-dm-oOM"/>
+                                            <constraint firstItem="LuW-Nt-4LR" firstAttribute="centerX" secondItem="qA3-en-BhY" secondAttribute="centerX" id="cTK-pj-a8l"/>
+                                            <constraint firstItem="LuW-Nt-4LR" firstAttribute="trailing" secondItem="BJJ-wZ-pbM" secondAttribute="trailing" id="d2h-Se-bcU"/>
                                             <constraint firstItem="dBL-Ad-qOL" firstAttribute="width" secondItem="BJJ-wZ-pbM" secondAttribute="width" id="f2D-op-Li2"/>
-                                            <constraint firstAttribute="height" constant="520" id="gRm-ns-IQ9"/>
                                             <constraint firstItem="Tug-js-wch" firstAttribute="centerX" secondItem="BJJ-wZ-pbM" secondAttribute="centerX" id="iAp-mR-WAy"/>
                                             <constraint firstItem="Tug-js-wch" firstAttribute="width" secondItem="BJJ-wZ-pbM" secondAttribute="width" id="q2z-Qf-KdE"/>
                                             <constraint firstItem="dBL-Ad-qOL" firstAttribute="centerX" secondItem="qA3-en-BhY" secondAttribute="centerX" id="xMg-p5-BAj"/>
@@ -169,7 +175,7 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uqT-6X-CFV" secondAttribute="bottom" id="L1z-ld-f0G"/>
                             <constraint firstItem="uqT-6X-CFV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PMB-R7-pwJ"/>
-                            <constraint firstItem="BJJ-wZ-pbM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.95" id="j0k-al-kpT"/>
+                            <constraint firstItem="BJJ-wZ-pbM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.85" id="j0k-al-kpT"/>
                             <constraint firstItem="uqT-6X-CFV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mJ0-Za-lCX"/>
                             <constraint firstItem="uqT-6X-CFV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="peD-rb-KH8"/>
                         </constraints>
@@ -222,17 +228,62 @@
                                                 <rect key="frame" x="37.5" y="25" width="300" height="74"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBv-pb-bpY">
-                                                <rect key="frame" x="37.5" y="104" width="300.5" height="32"/>
+                                                <rect key="frame" x="38" y="104" width="299.5" height="32"/>
                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="25"/>
                                                 <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Drv-wO-kV9">
-                                                <rect key="frame" x="37.5" y="222" width="300" height="150"/>
+                                                <rect key="frame" x="37.5" y="237" width="300" height="120"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="48B-vU-SLs" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="26.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="uHb-PF-OHR"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingRight">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="sse-0F-Mul" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="45" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingRight">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="teD-QK-2Uv" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="90" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -251,63 +302,27 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="sse-0F-Mul" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="41.5" width="300" height="26"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="teD-QK-2Uv" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="82.5" width="300" height="26.5"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingRight">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlM-LH-32Z" customClass="CustomButton" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="124" width="300" height="26"/>
-                                                        <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="15"/>
-                                                        <state key="normal" title="Get Started">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="getStartedButtonTapped:" destination="SEU-wi-XGz" eventType="touchUpInside" id="i9h-gj-vRX"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="gYI-65-y07"/>
-                                                </constraints>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlM-LH-32Z" customClass="CustomButton" customModule="TTPChallenge" customModuleProvider="target">
+                                                <rect key="frame" x="37" y="377" width="300" height="45"/>
+                                                <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="KDx-iE-KXC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="15"/>
+                                                <state key="normal" title="Get Started">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="getStartedButtonTapped:" destination="SEU-wi-XGz" eventType="touchUpInside" id="i9h-gj-vRX"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3h1-0X-Vne">
                                                 <rect key="frame" x="337" y="0.0" width="30" height="44"/>
                                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="25"/>
@@ -320,12 +335,15 @@
                                             </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="WlM-LH-32Z" firstAttribute="trailing" secondItem="Drv-wO-kV9" secondAttribute="trailing" id="3gs-Ef-YY8"/>
                                             <constraint firstItem="KIQ-kw-uQf" firstAttribute="height" secondItem="02o-RK-DTV" secondAttribute="height" multiplier="0.2" id="41U-dy-eC3"/>
                                             <constraint firstItem="XBv-pb-bpY" firstAttribute="top" secondItem="KIQ-kw-uQf" secondAttribute="bottom" constant="5" id="6o8-PD-Cf1"/>
                                             <constraint firstItem="KIQ-kw-uQf" firstAttribute="centerX" secondItem="02o-RK-DTV" secondAttribute="centerX" id="ARE-oZ-SNO"/>
+                                            <constraint firstItem="WlM-LH-32Z" firstAttribute="leading" secondItem="Drv-wO-kV9" secondAttribute="leading" id="J08-37-vvz"/>
                                             <constraint firstItem="3h1-0X-Vne" firstAttribute="top" secondItem="02o-RK-DTV" secondAttribute="top" id="JfS-Ny-9vL"/>
                                             <constraint firstItem="KIQ-kw-uQf" firstAttribute="top" secondItem="02o-RK-DTV" secondAttribute="top" multiplier="10" constant="25" id="LK6-hW-gYf"/>
                                             <constraint firstItem="KIQ-kw-uQf" firstAttribute="width" secondItem="48B-vU-SLs" secondAttribute="width" id="Nr7-9j-oa6"/>
+                                            <constraint firstItem="WlM-LH-32Z" firstAttribute="top" secondItem="Drv-wO-kV9" secondAttribute="bottom" constant="20" id="PHm-qZ-y5K"/>
                                             <constraint firstAttribute="trailing" secondItem="3h1-0X-Vne" secondAttribute="trailing" constant="8" id="R3T-5i-RfX"/>
                                             <constraint firstItem="XBv-pb-bpY" firstAttribute="centerX" secondItem="02o-RK-DTV" secondAttribute="centerX" id="gzH-wG-zZr"/>
                                             <constraint firstAttribute="height" constant="371" id="hOd-Hz-bXP"/>

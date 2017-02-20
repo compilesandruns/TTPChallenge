@@ -298,7 +298,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jlf-Dz-mlj" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgy-jq-KWu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wgy-jq-KWu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
