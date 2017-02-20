@@ -162,7 +162,16 @@ extension SuggestionViewController : UpdateTableView {
 
 extension SuggestionViewController: CustomCellPresentAlert {
     func showAlert(meetup: MeetUp) {
-        showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok", cancelButtonTitle: "Cancel")
+        
+        let _ = showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok", cancelButtonTitle: "Cancel").then { (success) -> Bool in
+            
+            if success{
+                UIApplication.shared.open(URL(string: meetup.url)!, options: [:]) { (success) in
+                    
+                }
+            }
+            return true
+        }
     }
 }
 
