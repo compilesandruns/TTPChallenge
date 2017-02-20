@@ -6,9 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Bold.otf">
+            <string>CircularStd-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MenuFlow-->
         <scene sceneID="WJX-eP-tri">
@@ -62,23 +68,165 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YetiGrab_Main" translatesAutoresizingMaskIntoConstraints="NO" id="XCE-z9-SOp">
-                                <rect key="frame" x="0.0" y="-0.5" width="375" height="667"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NYC Tech Talent Pipline is delivering quality jobs for New Yorkers and quality talent for New York's businesses. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn8-Ze-eYB">
+                                <rect key="frame" x="57" y="107.5" width="262.5" height="113.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUe-ro-OWF">
+                                <rect key="frame" x="57" y="74" width="261" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="261" id="XWW-4j-U2o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttp_logoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="VAg-cW-mJY">
+                                <rect key="frame" x="259" y="20" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SoB-bW-ahG"/>
+                                    <constraint firstAttribute="width" constant="100" id="lEb-N4-1wQ"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttp_logoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="9bp-J0-Inx">
-                                <rect key="frame" x="112" y="45" width="150" height="133.5"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeE-1Z-0tw" userLabel="firstView">
+                                <rect key="frame" x="56.5" y="223" width="262.5" height="120"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hs1" translatesAutoresizingMaskIntoConstraints="NO" id="ifc-IZ-vnJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="36"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08c-Zk-9JS" customClass="CustomLabel" customModule="TTPChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="4" width="194" height="29"/>
+                                        <string key="text">DEVELOP SOLUTIONS
+
+</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're delivering training and education opportunities to equip New Yorkers with the skills to succeed in 21st century jobs." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ad-QI-pyp">
+                                        <rect key="frame" x="0.0" y="38" width="263" height="77"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2Ad-QI-pyp" firstAttribute="leading" secondItem="ifc-IZ-vnJ" secondAttribute="leading" id="0HN-Dx-XiD"/>
+                                    <constraint firstAttribute="trailing" secondItem="08c-Zk-9JS" secondAttribute="trailing" constant="10.5" id="21L-dd-9fP"/>
+                                    <constraint firstItem="08c-Zk-9JS" firstAttribute="centerY" secondItem="ifc-IZ-vnJ" secondAttribute="centerY" id="6Eg-aj-hHR"/>
+                                    <constraint firstItem="ifc-IZ-vnJ" firstAttribute="width" secondItem="jeE-1Z-0tw" secondAttribute="width" multiplier="0.2" id="EMr-jF-nx1"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Ad-QI-pyp" secondAttribute="bottom" constant="5" id="Kpn-Ve-Hhi"/>
+                                    <constraint firstItem="08c-Zk-9JS" firstAttribute="leading" secondItem="ifc-IZ-vnJ" secondAttribute="trailing" constant="5.5" id="WAn-E8-9Ez"/>
+                                    <constraint firstItem="2Ad-QI-pyp" firstAttribute="width" secondItem="jeE-1Z-0tw" secondAttribute="width" id="Ydv-KK-PSR"/>
+                                    <constraint firstItem="2Ad-QI-pyp" firstAttribute="centerY" secondItem="jeE-1Z-0tw" secondAttribute="centerY" id="cZ7-6V-gYT"/>
+                                    <constraint firstItem="ifc-IZ-vnJ" firstAttribute="height" secondItem="jeE-1Z-0tw" secondAttribute="height" multiplier="0.3" id="d2X-Sj-aCU"/>
+                                    <constraint firstItem="ifc-IZ-vnJ" firstAttribute="leading" secondItem="jeE-1Z-0tw" secondAttribute="leading" id="hFp-9J-Q5z"/>
+                                    <constraint firstItem="2Ad-QI-pyp" firstAttribute="top" secondItem="08c-Zk-9JS" secondAttribute="bottom" constant="5" id="hHE-dE-9R2"/>
+                                    <constraint firstItem="08c-Zk-9JS" firstAttribute="height" secondItem="ifc-IZ-vnJ" secondAttribute="height" multiplier="0.8" id="wv4-eI-lv7"/>
+                                    <constraint firstItem="ifc-IZ-vnJ" firstAttribute="top" secondItem="jeE-1Z-0tw" secondAttribute="top" id="yE4-qc-bcJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gye-tw-Zl4">
+                                <rect key="frame" x="56.5" y="351" width="262.5" height="120"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hs2" translatesAutoresizingMaskIntoConstraints="NO" id="IfD-Dm-Vfd">
+                                        <rect key="frame" x="0.0" y="2" width="50" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MOBILIZE NEW YORKERS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0r-4P-VlX" customClass="CustomLabel" customModule="TTPChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="10" width="197" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We're building a talented and diverse workforce to empower our people and strengthen our businesses." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6j-wQ-sk8">
+                                        <rect key="frame" x="8" y="50" width="200" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzC-Eq-8xT">
+                                <rect key="frame" x="56.5" y="479" width="262.5" height="120"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hs3" translatesAutoresizingMaskIntoConstraints="NO" id="doh-KS-JHg">
+                                        <rect key="frame" x="0.0" y="3" width="50" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We're working with New York's top employers to build today's solutions for the jobs of tomorrow." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9I-6b-Jiq">
+                                        <rect key="frame" x="8" y="48" width="200" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdD-n6-qqX">
+                                        <rect key="frame" x="233" y="87" width="21" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjW-Kf-UEo" customClass="CustomLabel" customModule="TTPChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="18" width="196" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">ENGAGE INDUSTRY
+
+</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XCE-z9-SOp" firstAttribute="height" secondItem="4Ek-us-P3c" secondAttribute="height" id="312-3n-nc4"/>
-                            <constraint firstItem="9bp-J0-Inx" firstAttribute="centerX" secondItem="4Ek-us-P3c" secondAttribute="centerX" id="5Fx-1A-d5Y"/>
-                            <constraint firstItem="9bp-J0-Inx" firstAttribute="width" secondItem="4Ek-us-P3c" secondAttribute="width" multiplier="0.4" id="A2D-IU-SRM"/>
-                            <constraint firstItem="XCE-z9-SOp" firstAttribute="centerY" secondItem="4Ek-us-P3c" secondAttribute="centerY" id="Av8-TR-vXp"/>
-                            <constraint firstItem="XCE-z9-SOp" firstAttribute="centerX" secondItem="4Ek-us-P3c" secondAttribute="centerX" id="EUX-cl-nwF"/>
-                            <constraint firstItem="9bp-J0-Inx" firstAttribute="top" secondItem="4Ek-us-P3c" secondAttribute="top" constant="45" id="cZk-yj-P9d"/>
-                            <constraint firstItem="XCE-z9-SOp" firstAttribute="width" secondItem="4Ek-us-P3c" secondAttribute="width" id="t3T-a9-68o"/>
-                            <constraint firstItem="9bp-J0-Inx" firstAttribute="height" secondItem="XCE-z9-SOp" secondAttribute="height" multiplier="0.2" id="vFK-bB-IVh"/>
+                            <constraint firstItem="cUe-ro-OWF" firstAttribute="top" secondItem="ryR-bs-bq5" secondAttribute="bottom" constant="10" id="2dm-XT-goD"/>
+                            <constraint firstItem="jeE-1Z-0tw" firstAttribute="centerX" secondItem="4Ek-us-P3c" secondAttribute="centerX" id="2nI-CP-3uX"/>
+                            <constraint firstItem="kn8-Ze-eYB" firstAttribute="width" secondItem="4Ek-us-P3c" secondAttribute="width" multiplier="0.7" id="49Y-Cx-iPt"/>
+                            <constraint firstItem="kn8-Ze-eYB" firstAttribute="top" secondItem="cUe-ro-OWF" secondAttribute="bottom" id="5xE-nC-MlF"/>
+                            <constraint firstItem="fzC-Eq-8xT" firstAttribute="centerX" secondItem="gye-tw-Zl4" secondAttribute="centerX" id="79L-wZ-ZgN"/>
+                            <constraint firstItem="jeE-1Z-0tw" firstAttribute="height" secondItem="4Ek-us-P3c" secondAttribute="height" multiplier="0.18" id="86d-GG-qqF"/>
+                            <constraint firstItem="kn8-Ze-eYB" firstAttribute="height" secondItem="4Ek-us-P3c" secondAttribute="height" multiplier="0.17" id="8zC-Kj-CWZ"/>
+                            <constraint firstItem="fzC-Eq-8xT" firstAttribute="top" secondItem="gye-tw-Zl4" secondAttribute="bottom" constant="8" id="GId-rC-6W1"/>
+                            <constraint firstItem="fzC-Eq-8xT" firstAttribute="width" secondItem="gye-tw-Zl4" secondAttribute="width" id="LVn-Jx-38C"/>
+                            <constraint firstItem="gye-tw-Zl4" firstAttribute="height" secondItem="jeE-1Z-0tw" secondAttribute="height" id="O4l-vz-zIM"/>
+                            <constraint firstItem="jeE-1Z-0tw" firstAttribute="top" secondItem="kn8-Ze-eYB" secondAttribute="bottom" constant="2" id="QKF-8y-Mdk"/>
+                            <constraint firstItem="cUe-ro-OWF" firstAttribute="centerX" secondItem="4Ek-us-P3c" secondAttribute="centerX" id="T7m-An-X6O"/>
+                            <constraint firstItem="gye-tw-Zl4" firstAttribute="centerX" secondItem="jeE-1Z-0tw" secondAttribute="centerX" id="ZXg-rg-SCG"/>
+                            <constraint firstItem="gye-tw-Zl4" firstAttribute="top" secondItem="jeE-1Z-0tw" secondAttribute="bottom" constant="8" id="Zos-gO-iwo"/>
+                            <constraint firstItem="fzC-Eq-8xT" firstAttribute="height" secondItem="gye-tw-Zl4" secondAttribute="height" id="apJ-cA-fFg"/>
+                            <constraint firstItem="VAg-cW-mJY" firstAttribute="top" secondItem="4Ek-us-P3c" secondAttribute="top" constant="20" id="avN-UV-DC8"/>
+                            <constraint firstItem="jeE-1Z-0tw" firstAttribute="width" secondItem="4Ek-us-P3c" secondAttribute="width" multiplier="0.7" id="ch4-ij-4La"/>
+                            <constraint firstItem="gye-tw-Zl4" firstAttribute="width" secondItem="jeE-1Z-0tw" secondAttribute="width" id="eKK-DC-vNo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VAg-cW-mJY" secondAttribute="trailing" id="jQh-Xi-yiU"/>
+                            <constraint firstItem="kn8-Ze-eYB" firstAttribute="leading" secondItem="cUe-ro-OWF" secondAttribute="leading" id="tNA-Kw-cZq"/>
+                            <constraint firstItem="cUe-ro-OWF" firstAttribute="height" secondItem="4Ek-us-P3c" secondAttribute="height" multiplier="0.05" id="zMp-m3-P6b"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="geo-nv-lQr">
@@ -128,7 +276,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="YetiGrab_Main" width="900" height="1600"/>
+        <image name="hs1" width="150" height="44"/>
+        <image name="hs2" width="300" height="89"/>
+        <image name="hs3" width="300" height="89"/>
         <image name="menuIcon" width="25" height="18"/>
         <image name="ttp_logoBlack" width="535" height="288"/>
     </resources>

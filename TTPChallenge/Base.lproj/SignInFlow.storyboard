@@ -46,7 +46,7 @@
                                                 <rect key="frame" x="38" y="222" width="300" height="150"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="XSe-I4-hTf" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                         <userDefinedRuntimeAttributes>
@@ -59,7 +59,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Lq0-7N-Y3l" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="53" width="300" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="53.5" width="300" height="43"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
@@ -219,7 +219,7 @@
                                                 <rect key="frame" x="37.5" y="222" width="300" height="150"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Email" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="48B-vU-SLs" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -234,7 +234,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Password" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="sse-0F-Mul" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="53" width="300" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="53.5" width="300" height="43"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
