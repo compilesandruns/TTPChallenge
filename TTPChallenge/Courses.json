@@ -1,0 +1,33 @@
+
+
+{"Web": [{"url": "https://www.udacity.com/course/intro-to-computer-science--cs101?utm_medium=referral&utm_campaign=api",
+         "name": "Intro to Computer Science",
+         "description": "In this introduction to computer programming course, you’ll learn and practice key computer science concepts by building your own versions of popular web applications. You’ll learn Python, a powerful, easy-to-learn, and widely used programming language, and you’ll explore computer science basics, as you build your own search engine and social network.",
+         "imageURL": "https://lh5.ggpht.com/UCA7Y75zHA5jwS9o5dmeAn8TlBiTZZbFQZ3ktLaVnfgSHNELh1rquY1dbzOB6BaYyXP0UMNNazdauW_g1w=s0#w=4680&h=968"},
+         {"url": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
+         "name": "Introduction to Computer Science",
+         "description": "",
+         "imageURL": "http://i.imgur.com/7xva5lz.jpg"},
+         {"url": "https://learn.skillcrush.com/skillcrush-10-day-bootcamp/",
+         "name": "Skillcrush 10-DAY Coding Bootcamp",
+         "description": "Everything You Need to Know to Go Seriously Digital",
+         "imageURL": "http://i.imgur.com/NtJlkrw.jpg"}
+         ],
+    
+    "QA Analyst": {"url": "",
+        "name": "",
+        "description": "",
+        "image": ""},
+    "Mobile" : {"url": "",
+        "name": "",
+        "description": "",
+        "imageURL": ""},
+    "IT Engineer" : {"url": "",
+        "name": "",
+        "description": "",
+        "imageURL": ""},
+    "Data Analyst" : {"url": "",
+        "name": "",
+        "description": "",
+        "imageURL": ""},
+}

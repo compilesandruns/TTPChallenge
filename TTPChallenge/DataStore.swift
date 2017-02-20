@@ -14,6 +14,8 @@ class DataStore {
     
     var meetups: [MeetUp] = []
     
+    var courses: [Course] = []
+    
     func fillMeetupStore(with completion: @escaping (Bool)->()) {
         
         MeetUpAPIClient.getMeetupSuggestions(query: "women") { meetupResults in
@@ -41,5 +43,12 @@ class DataStore {
                 }
             }
         }
+    }
+    
+    
+    func fillCoursesStore(with completion: @escaping (Bool) -> ()){
+        
+        
+        
     }
 }

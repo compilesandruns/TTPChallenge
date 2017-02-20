@@ -73,6 +73,12 @@
 		3D36EB3B1E53E09A00CB1432 /* MeetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */; };
 		3D36EB3D1E53F91A00CB1432 /* ExpandingMeetUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36EB3C1E53F91A00CB1432 /* ExpandingMeetUpCell.swift */; };
 		3D4E89301E56455D00ED4080 /* DoFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E892F1E56455D00ED4080 /* DoFavoriteButton.swift */; };
+		3D9D554A1E5B90A7006FB5CE /* Courses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9D55491E5B90A7006FB5CE /* Courses.storyboard */; };
+		3D9D554C1E5B90B6006FB5CE /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D554B1E5B90B6006FB5CE /* CoursesViewController.swift */; };
+		3D9D554E1E5B90C5006FB5CE /* Courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D9D554D1E5B90C5006FB5CE /* Courses.json */; };
+		3D9D55501E5B90FF006FB5CE /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D554F1E5B90FF006FB5CE /* Course.swift */; };
+		3D9D55521E5B9552006FB5CE /* ExpandingCoursesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D55511E5B9552006FB5CE /* ExpandingCoursesCell.swift */; };
+		3DD580A51E5B9ED500E4EA07 /* CoursesApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD580A41E5B9ED500E4EA07 /* CoursesApiClient.swift */; };
 		4422B78241332CF59F02F260 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */; };
 		ADC314E2882B7CC9D3DCE577 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
@@ -192,6 +198,12 @@
 		3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetUp.swift; sourceTree = "<group>"; };
 		3D36EB3C1E53F91A00CB1432 /* ExpandingMeetUpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingMeetUpCell.swift; sourceTree = "<group>"; };
 		3D4E892F1E56455D00ED4080 /* DoFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoFavoriteButton.swift; sourceTree = "<group>"; };
+		3D9D55491E5B90A7006FB5CE /* Courses.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Courses.storyboard; sourceTree = "<group>"; };
+		3D9D554B1E5B90B6006FB5CE /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		3D9D554D1E5B90C5006FB5CE /* Courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Courses.json; sourceTree = "<group>"; };
+		3D9D554F1E5B90FF006FB5CE /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		3D9D55511E5B9552006FB5CE /* ExpandingCoursesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingCoursesCell.swift; sourceTree = "<group>"; };
+		3DD580A41E5B9ED500E4EA07 /* CoursesApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesApiClient.swift; sourceTree = "<group>"; };
 		AACF7CC6C0A12E53D1CD653B /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBE3DA305B2BD4B2954AA8B8 /* Pods-TTPChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -296,8 +308,14 @@
 				1751ABA81E4D33AB00E2AE75 /* LaunchScreen.storyboard */,
 				3D36EB301E5257B100CB1432 /* SuggestionScreen.storyboard */,
 				3D14B4B11E575962005E2DBF /* SavedContentScreen.storyboard */,
+				3D9D55491E5B90A7006FB5CE /* Courses.storyboard */,
 				3D14B4B51E58D572005E2DBF /* DataStore.swift */,
+				3D9D55511E5B9552006FB5CE /* ExpandingCoursesCell.swift */,
 				3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */,
+				3DD580A41E5B9ED500E4EA07 /* CoursesApiClient.swift */,
+				3D9D554D1E5B90C5006FB5CE /* Courses.json */,
+				3D9D554F1E5B90FF006FB5CE /* Course.swift */,
+				3D9D554B1E5B90B6006FB5CE /* CoursesViewController.swift */,
 				3D36EB3A1E53E09A00CB1432 /* MeetUp.swift */,
 				1751ABAB1E4D33AB00E2AE75 /* Info.plist */,
 				1751ABA61E4D33AB00E2AE75 /* Assets.xcassets */,
@@ -690,11 +708,13 @@
 				17BB26621E517A5F0005D787 /* MenuFlow.storyboard in Resources */,
 				1751ABAA1E4D33AB00E2AE75 /* LaunchScreen.storyboard in Resources */,
 				1751ABD01E4D512200E2AE75 /* GoogleService-Info.plist in Resources */,
+				3D9D554E1E5B90C5006FB5CE /* Courses.json in Resources */,
 				17CFD0501E4F73110007ADEC /* HomeScreenFlow.storyboard in Resources */,
 				3D14B4B21E575962005E2DBF /* SavedContentScreen.storyboard in Resources */,
 				1751ABA71E4D33AB00E2AE75 /* Assets.xcassets in Resources */,
 				3D36EB311E5257B100CB1432 /* SuggestionScreen.storyboard in Resources */,
 				1751ABA51E4D33AB00E2AE75 /* SignInFlow.storyboard in Resources */,
+				3D9D554A1E5B90A7006FB5CE /* Courses.storyboard in Resources */,
 				DDDF2E1F1E52328000EAD0ED /* QuizFlow.storyboard in Resources */,
 				DD0BDEF11E52C0E3006F550F /* Fonts in Resources */,
 			);
@@ -865,6 +885,7 @@
 				174979AA1E5102E700B901DC /* CreateUserInteracting.swift in Sources */,
 				17CFD0681E5015F90007ADEC /* CridentialsValidationInteractor.swift in Sources */,
 				1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */,
+				3DD580A51E5B9ED500E4EA07 /* CoursesApiClient.swift in Sources */,
 				17BB26601E51795A0005D787 /* MenuViewable.swift in Sources */,
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
 				3D4E89301E56455D00ED4080 /* DoFavoriteButton.swift in Sources */,
@@ -879,6 +900,7 @@
 				1749799E1E50DD2800B901DC /* CreateUserScreenViewable.swift in Sources */,
 				DD0BDF2A1E552791006F550F /* ITEngVC.swift in Sources */,
 				17CFD05B1E4F7B9F0007ADEC /* FirebaseInteracting.swift in Sources */,
+				3D9D554C1E5B90B6006FB5CE /* CoursesViewController.swift in Sources */,
 				3D36EB3D1E53F91A00CB1432 /* ExpandingMeetUpCell.swift in Sources */,
 				17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */,
 				17CFD0661E5015ED0007ADEC /* CridentialsValidationInteracting.swift in Sources */,
@@ -902,8 +924,10 @@
 				174979A81E5102DB00B901DC /* CreateUserInteractor.swift in Sources */,
 				17BB264C1E516E930005D787 /* MenuHelper.swift in Sources */,
 				174979A01E50E69B00B901DC /* BaseTableViewController.swift in Sources */,
+				3D9D55501E5B90FF006FB5CE /* Course.swift in Sources */,
 				17BB265C1E51769A0005D787 /* AuthInteractor.swift in Sources */,
 				17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */,
+				3D9D55521E5B9552006FB5CE /* ExpandingCoursesCell.swift in Sources */,
 				DD1610291E5A683300BA87DE /* CustomTextfield.swift in Sources */,
 				DD0BDF211E5403F6006F550F /* QAVC.swift in Sources */,
 				17BB26451E516E460005D787 /* HomeScreenPresenting.swift in Sources */,

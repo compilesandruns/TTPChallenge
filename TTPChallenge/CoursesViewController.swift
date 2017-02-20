@@ -1,15 +1,16 @@
 //
-//  SuggestionViewController.swift
+//  CoursesViewController.swift
 //  TTPChallenge
 //
-//  Created by susan lovaglio on 2/13/17.
+//  Created by susan lovaglio on 2/20/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
 import UIKit
 import PKHUD
 
-class SuggestionViewController: BaseViewController {
+class CoursesViewController: UIViewController {
+//coursesCell
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIImageView!
@@ -36,8 +37,8 @@ class SuggestionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300.0
         
@@ -47,13 +48,7 @@ class SuggestionViewController: BaseViewController {
         navScrollGestureRecognizer.delegate = self
         tableView.addGestureRecognizer(navScrollGestureRecognizer)
         
-        store.fillMeetupStore { (success) in
-            if success {
-                OperationQueue.main.addOperation {
-                    self.tableView.reloadData()
-                }
-            }
-        }
+
     }
     
     deinit {
@@ -73,7 +68,7 @@ class SuggestionViewController: BaseViewController {
     }
 }
 
-extension SuggestionViewController: UITableViewDelegate {
+extension CoursesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingMeetUpCell else { return }
@@ -90,18 +85,18 @@ extension SuggestionViewController: UITableViewDelegate {
     }
 }
 
-extension SuggestionViewController: UITableViewDataSource {
+extension CoursesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "coursesCell", for: indexPath) as! ExpandingCoursesCell
         
         switch indexPath.section {
             
         case 0:
-            let meetup = store.meetups[indexPath.row]
-            cell.meetup = meetup
-            meetup.delegate = self
+            let course = store.courses[indexPath.row]
+            cell.course = course
+            course.delegate = self
             cell.configureCell()
             cell.delegateAlert = self
             
@@ -116,13 +111,15 @@ extension SuggestionViewController: UITableViewDataSource {
         
         if section == 0 {
             
-            return store.meetups.count
+            return store.courses.count
             
         }
         return 1
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return "Take a free Course"
         
         switch section {
         case 0:
@@ -149,7 +146,7 @@ extension SuggestionViewController: UITableViewDataSource {
     }
 }
 
-extension SuggestionViewController : UpdateTableView {
+extension CoursesViewController : UpdateTableView {
     func updateTableView() {
         HUD.show(.progress)
         OperationQueue.main.addOperation {
@@ -160,7 +157,7 @@ extension SuggestionViewController : UpdateTableView {
     }
 }
 
-extension SuggestionViewController: CustomCellPresentAlert {
+extension CoursesViewController: CustomCellPresentAlert {
     func showAlert(urlString: String) {
         
         let _ = showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok", cancelButtonTitle: "Cancel").then { (success) -> Bool in
@@ -175,7 +172,7 @@ extension SuggestionViewController: CustomCellPresentAlert {
     }
 }
 
-extension SuggestionViewController : UIGestureRecognizerDelegate {
+extension CoursesViewController : UIGestureRecognizerDelegate {
     func handleNavScrollGesture() {
         
         if navScrollGestureRecognizer.state == .began {

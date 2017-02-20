@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ExpandingMeetUpCell: UITableViewCell {
+class ExpandingCoursesCell: UITableViewCell {
     
-    var meetup: MeetUp!
+    var course: Course!
     
-    var delegateAlert:CustomCellPresentAlert?
+    var delegateAlert: CustomCellPresentAlert?
     
     @IBOutlet weak var mainImage: UIImageView!
     
@@ -28,7 +28,7 @@ class ExpandingMeetUpCell: UITableViewCell {
     
     var delegate: RemoveFavorite?
     
-    var isExpanded:Bool = false
+    var isExpanded: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,7 +44,7 @@ class ExpandingMeetUpCell: UITableViewCell {
     }
     
     func addFavButton() {
-
+        
         starButton = DOFavoriteButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50), image: UIImage(named: "star"))
         self.contentView.addSubview(starButton!)
         
@@ -60,14 +60,14 @@ class ExpandingMeetUpCell: UITableViewCell {
     }
     
     func addJoinButton() {
-
+        
         joinbutton = DOFavoriteButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50), image: UIImage(named: "join"))
-
+        
         self.contentView.addSubview(joinbutton!)
         joinbutton?.translatesAutoresizingMaskIntoConstraints = false
         joinbutton?.heightAnchor.constraint(equalToConstant: contentView.frame.height * 0.25).isActive = true
         joinbutton?.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.135).isActive = true
-
+        
         joinbutton?.trailingAnchor.constraint(equalTo: mainImage.trailingAnchor).isActive = true
         joinbutton?.topAnchor.constraint(equalTo: mainImage.topAnchor).isActive = true
         joinbutton?.imageColorOn = UIColor.white
@@ -83,48 +83,48 @@ class ExpandingMeetUpCell: UITableViewCell {
         let favSender = sender as! DOFavoriteButton
         
         if sender.isSelected {
-            meetup.favorited = false
-            removeFavorite(meetup: meetup)
+            course.favorited = false
+            removeFavorite(course: course)
             favSender.deselect()
         } else {
-            meetup.favorited = true
-            saveFavorite(meetup: meetup)
+            course.favorited = true
+            saveFavorite(course: course)
             favSender.select()
         }
     }
     
-    func saveFavorite(meetup: MeetUp) {
+    func saveFavorite(course: Course) {
         
         let defaults = UserDefaults.standard
         
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
+        let favs = defaults.object(forKey: "favCourses") as? [[String : Any]]
         
-        var favMeetup: [String : Any] = ["name" : meetup.name,
-                                         "summary" : meetup.summary,
-                                         "url" : meetup.url,
-                                         "favorited" : meetup.favorited]
+        var favCourses: [String : Any] = ["name" : course.name,
+                                         "summary" : course.summary,
+                                         "url" : course.url,
+                                         "favorited" : course.favorited]
         
-        if let imageURL = meetup.imageUrl {
-            favMeetup["imageURL"] = imageURL
+        if let imageURL = course.imageUrl {
+            favCourses["imageURL"] = imageURL
         }
         
         if let favs = favs {
             
             var updatedFavs = favs
-            updatedFavs.append(favMeetup)
-            defaults.set(updatedFavs, forKey: "favMeetups")
+            updatedFavs.append(favCourses)
+            defaults.set(updatedFavs, forKey: "favCourses")
             
         } else {
             
-            defaults.set([favMeetup], forKey: "favMeetups")
+            defaults.set([favCourses], forKey: "favCourses")
         }
     }
     
-    func removeFavorite(meetup: MeetUp) {
+    func removeFavorite(course: Course) {
         
         let defaults = UserDefaults.standard
         
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
+        let favs = defaults.object(forKey: "favCourses") as? [[String : Any]]
         
         guard let unwrappedFavs = favs else { return }
         
@@ -132,11 +132,11 @@ class ExpandingMeetUpCell: UITableViewCell {
             
             let name = each["name"] as! String
             
-            if meetup.name == name {
+            if course.name == name {
                 
                 var adjustedFav = unwrappedFavs
                 adjustedFav.remove(at: index)
-                defaults.set(adjustedFav, forKey: "favMeetups")
+                defaults.set(adjustedFav, forKey: "favCourses")
                 delegate?.removeFavorite(name: name)
             }
         }
@@ -149,24 +149,24 @@ class ExpandingMeetUpCell: UITableViewCell {
             joinSender.deselect()
         } else {
             joinSender.select()
-            visitMeetupWebsite(meetup: meetup)
+            visitMeetupWebsite(course: course)
         }
     }
     
-    func visitMeetupWebsite(meetup: MeetUp) {
+    func visitMeetupWebsite(course: Course) {
         
-        self.delegateAlert?.showAlert(urlString: meetup.url)
+        self.delegateAlert?.showAlert(urlString : course.url)
     }
     
     func configureCell() {
         
-        self.title.text = meetup.name
+        self.title.text = course.name
         
-        self.mainImage.image = self.meetup.image
+        self.mainImage.image = self.course.image
         
         self.summary.textAlignment = self.isExpanded ? .left : .center
         
-        self.summary.text = self.isExpanded ? meetup.summary : "Read More"
+        self.summary.text = self.isExpanded ? course.summary : "Read More"
         
         self.summary.backgroundColor = self.isExpanded ? UIColor.white : UIColor(red: 54/255, green: 34/255, blue: 149/255, alpha: 1.0)
         
@@ -181,7 +181,7 @@ class ExpandingMeetUpCell: UITableViewCell {
         
         let defaults = UserDefaults.standard
         
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
+        let favs = defaults.object(forKey: "favCourses") as? [[String : Any]]
         
         guard let unwrappedFavs = favs else { return false }
         
@@ -189,7 +189,7 @@ class ExpandingMeetUpCell: UITableViewCell {
             
             let name = each["name"] as! String
             
-            if meetup.name == name {
+            if course.name == name {
                 
                 return true
             }
@@ -198,27 +198,3 @@ class ExpandingMeetUpCell: UITableViewCell {
     }
 }
 
-protocol RemoveFavorite {
-    
-    func removeFavorite(name: String)
-}
-
-protocol CustomCellPresentAlert {
-    func showAlert(urlString: String)
-}
-
-//func to print contents of nsuserdefaults meetups saves in a legible config
-func printFavNames(message: String) {
-    let defaults = UserDefaults.standard
-    
-    let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
-    
-    guard let unwrappedFavs = favs else { return }
-    print("*******")
-    print(message)
-    for each in unwrappedFavs {
-        
-        print("/n\(each["name"]!)")
-    }
-    print("*******")
-}
