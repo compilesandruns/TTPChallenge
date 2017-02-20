@@ -17,7 +17,7 @@ import UIKit
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
-            layer.borderColor = UIColor.yellow.cgColor
+            layer.borderColor = Colors.whiteFive.cgColor
         }
     }
 
