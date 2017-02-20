@@ -62,6 +62,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.1.7):
     - PromiseKit/CorePromise
+  - SwiftGifOrigin (1.6.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - Nimble
   - PKHUD
   - PromiseKit
+  - SwiftGifOrigin (~> 1.6.1)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -94,8 +96,9 @@ SPEC CHECKSUMS:
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 7aa9f4cbf6fd74551d15e8ddac8e41277e0e2eab
+PODFILE CHECKSUM: 0b5a12437e03aa59b51cee66a160ab86f2bf20c3
 
 COCOAPODS: 1.2.0

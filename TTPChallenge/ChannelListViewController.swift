@@ -46,7 +46,7 @@ class ChannelListViewController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "RW RIC"
+        title = "Tech Talk"
         observeChannels()
         getCurrentUsername()
     }
@@ -66,7 +66,6 @@ class ChannelListViewController: BaseTableViewController {
             newChannelRef.setValue(channelItem)
         }
     }
-    
 }
 
 
