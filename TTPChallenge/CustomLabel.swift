@@ -1,24 +1,24 @@
 //
-//  CustomTextfield.swift
+//  CustomLabel.swift
 //  TTPChallenge
 //
-//  Created by Luna An on 2/19/17.
+//  Created by Luna An on 2/20/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class CustomTextfield: UITextField {
+@IBDesignable class CustomLabel: UILabel {
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
         }
     }
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
-            layer.borderColor = Colors.whiteFive.cgColor
+            layer.borderColor = UIColor.black.cgColor
         }
     }
-
 }
