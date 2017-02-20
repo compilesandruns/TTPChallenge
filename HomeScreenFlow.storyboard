@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jlf-Dz-mlj">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -65,17 +65,17 @@
                         <viewControllerLayoutGuide type="bottom" id="lT7-sL-50s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Ek-us-P3c">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NYC Tech Talent Pipline is delivering quality jobs for New Yorkers and quality talent for New York's businesses. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kn8-Ze-eYB">
-                                <rect key="frame" x="57" y="116" width="262.5" height="100"/>
+                                <rect key="frame" x="76.666666666666686" y="119.99999999999999" width="289.66666666666663" height="110.66666666666664"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="cUe-ro-OWF">
-                                <rect key="frame" x="57" y="74" width="261" height="40"/>
+                                <rect key="frame" x="76.666666666666686" y="74" width="261" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="261" id="XWW-4j-U2o"/>
                                 </constraints>
@@ -84,26 +84,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttp_logoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="VAg-cW-mJY">
-                                <rect key="frame" x="259" y="20" width="100" height="50"/>
+                                <rect key="frame" x="294" y="20" width="100" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SoB-bW-ahG"/>
                                     <constraint firstAttribute="width" constant="100" id="lEb-N4-1wQ"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeE-1Z-0tw" userLabel="firstView">
-                                <rect key="frame" x="56.5" y="218" width="262.5" height="133.5"/>
+                                <rect key="frame" x="62" y="232.66666666666669" width="290" height="147.00000000000006"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hs1" translatesAutoresizingMaskIntoConstraints="NO" id="ifc-IZ-vnJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home2" translatesAutoresizingMaskIntoConstraints="NO" id="ifc-IZ-vnJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="58" height="43.666666666666657"/>
+                                        <color key="tintColor" red="0.39215686274509803" green="0.17254901960784313" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivering training and education opportunities to equip New Yorkers with the skills to succeed." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Ad-QI-pyp">
-                                        <rect key="frame" x="10" y="40" width="236.5" height="88.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <rect key="frame" x="10" y="43.666666666666657" width="261.33333333333331" height="98.333333333333371"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="08c-Zk-9JS" customClass="CustomLabel" customModule="TTPChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="8" width="202.5" height="32"/>
+                                        <rect key="frame" x="61.666666666666657" y="8.6666666666666856" width="224.33333333333334" height="34.999999999999972"/>
                                         <string key="text">DEVELOP SOLUTIONS
 
 </string>
@@ -134,13 +135,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gye-tw-Zl4">
-                                <rect key="frame" x="56.5" y="351.5" width="262.5" height="134"/>
+                                <rect key="frame" x="62" y="379.66666666666663" width="290" height="147.66666666666663"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hs2" translatesAutoresizingMaskIntoConstraints="NO" id="IfD-Dm-Vfd">
-                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="40.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home3" translatesAutoresizingMaskIntoConstraints="NO" id="IfD-Dm-Vfd">
+                                        <rect key="frame" x="0.0" y="0.0" width="58" height="43.666666666666629"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILIZE NEW YORKERS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="o0r-4P-VlX" customClass="CustomLabel" customModule="TTPChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="8" width="202.5" height="32.5"/>
+                                        <rect key="frame" x="61.666666666666657" y="9" width="224.33333333333334" height="34.666666666666629"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -151,8 +152,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building a talented and diverse workforce to empower our people and strengthen our businesses." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="o6j-wQ-sk8">
-                                        <rect key="frame" x="10" y="40.5" width="236.5" height="88.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <rect key="frame" x="10" y="43.666666666666629" width="261.33333333333331" height="99.000000000000057"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -165,19 +166,20 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzC-Eq-8xT">
-                                <rect key="frame" x="56.5" y="485.5" width="262.5" height="134"/>
+                                <rect key="frame" x="62" y="527.33333333333348" width="290" height="147.66666666666663"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hs3" translatesAutoresizingMaskIntoConstraints="NO" id="doh-KS-JHg">
-                                        <rect key="frame" x="0.0" y="3" width="52.5" height="40.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home1" translatesAutoresizingMaskIntoConstraints="NO" id="doh-KS-JHg">
+                                        <rect key="frame" x="0.0" y="3" width="58" height="44.333333333333258"/>
+                                        <color key="tintColor" red="0.13725490200000001" green="0.83529411760000005" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working with New York's top employers to build today's solutions for the jobs of tomorrow." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="F9I-6b-Jiq">
-                                        <rect key="frame" x="10" y="43.5" width="236.5" height="88.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <rect key="frame" x="10" y="47.333333333333258" width="261.33333333333331" height="98.333333333333371"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="PjW-Kf-UEo" customClass="CustomLabel" customModule="TTPChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="11" width="202.5" height="32.5"/>
+                                        <rect key="frame" x="61.666666666666657" y="12.333333333333258" width="224.33333333333334" height="35"/>
                                         <string key="text">ENGAGE INDUSTRY
 
 </string>
@@ -199,7 +201,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YetiGrab_Main" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-WP-qrY">
-                                <rect key="frame" x="303" y="554" width="72" height="113"/>
+                                <rect key="frame" x="333.33333333333326" y="623" width="80.666666666666686" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="PE2-ix-Sae"/>
                                 </constraints>
@@ -287,7 +289,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jlf-Dz-mlj" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wgy-jq-KWu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgy-jq-KWu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -303,9 +305,9 @@
     </scenes>
     <resources>
         <image name="YetiGrab_Main" width="900" height="1600"/>
-        <image name="hs1" width="150" height="44"/>
-        <image name="hs2" width="300" height="89"/>
-        <image name="hs3" width="300" height="89"/>
+        <image name="home1" width="150" height="44"/>
+        <image name="home2" width="150" height="44"/>
+        <image name="home3" width="150" height="44"/>
         <image name="menuIcon" width="25" height="18"/>
         <image name="ttp_logoBlack" width="535" height="288"/>
     </resources>

@@ -6,7 +6,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "static1.squarespace-2.png",
+      "filename" : "static1.squarespace-2 copy.png",
       "scale" : "2x"
     },
     {
@@ -17,8 +17,5 @@
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }
