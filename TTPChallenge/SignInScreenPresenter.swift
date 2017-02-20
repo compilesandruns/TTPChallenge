@@ -41,7 +41,6 @@ class SignInScreenPresenter: SignInScreenPresenting {
                     }    
                 }
         }
-
     }
     
     func didTapBackground() {

@@ -1,21 +1,17 @@
 //
-//  CustomView.swift
+//  CustomTextfield.swift
 //  TTPChallenge
 //
-//  Created by Luna An on 2/18/17.
+//  Created by Mirim An on 2/19/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class CustomView: UIView {
+@IBDesignable class CustomTextfield: UITextField {
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
         }
     }
 }
-
-
-
