@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -61,22 +62,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdG-Ox-iaG">
-                                <rect key="frame" x="67" y="109" width="240" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YetiGrab_Main" translatesAutoresizingMaskIntoConstraints="NO" id="XCE-z9-SOp">
+                                <rect key="frame" x="0.0" y="-0.5" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ttp_logoBlack" translatesAutoresizingMaskIntoConstraints="NO" id="9bp-J0-Inx">
+                                <rect key="frame" x="112" y="45" width="150" height="133.5"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XCE-z9-SOp" firstAttribute="height" secondItem="4Ek-us-P3c" secondAttribute="height" id="312-3n-nc4"/>
+                            <constraint firstItem="9bp-J0-Inx" firstAttribute="centerX" secondItem="4Ek-us-P3c" secondAttribute="centerX" id="5Fx-1A-d5Y"/>
+                            <constraint firstItem="9bp-J0-Inx" firstAttribute="width" secondItem="4Ek-us-P3c" secondAttribute="width" multiplier="0.4" id="A2D-IU-SRM"/>
+                            <constraint firstItem="XCE-z9-SOp" firstAttribute="centerY" secondItem="4Ek-us-P3c" secondAttribute="centerY" id="Av8-TR-vXp"/>
+                            <constraint firstItem="XCE-z9-SOp" firstAttribute="centerX" secondItem="4Ek-us-P3c" secondAttribute="centerX" id="EUX-cl-nwF"/>
+                            <constraint firstItem="9bp-J0-Inx" firstAttribute="top" secondItem="4Ek-us-P3c" secondAttribute="top" constant="45" id="cZk-yj-P9d"/>
+                            <constraint firstItem="XCE-z9-SOp" firstAttribute="width" secondItem="4Ek-us-P3c" secondAttribute="width" id="t3T-a9-68o"/>
+                            <constraint firstItem="9bp-J0-Inx" firstAttribute="height" secondItem="XCE-z9-SOp" secondAttribute="height" multiplier="0.2" id="vFK-bB-IVh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="geo-nv-lQr">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="LxD-w6-CIK">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
                                 <segue destination="5WT-X1-eyy" kind="presentation" identifier="OpenMenu" modalPresentationStyle="overCurrentContext" id="ORV-Re-SBY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="menuButtonItem" destination="LxD-w6-CIK" id="tBJ-5g-SuC"/>
                         <outlet property="navBarEdgePanGestureRecognizer" destination="jt2-rb-fck" id="1r0-tN-S0x"/>
@@ -115,6 +128,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="YetiGrab_Main" width="900" height="1600"/>
         <image name="menuIcon" width="25" height="18"/>
+        <image name="ttp_logoBlack" width="535" height="288"/>
     </resources>
 </document>

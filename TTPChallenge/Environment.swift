@@ -107,4 +107,11 @@ struct Colors {
     static let itPink = UIColor(red: 247/255.0, green: 213/255.0, blue: 219/255.0, alpha: 1)
     static let resultPurple = UIColor(red: 102/255.0, green: 102/255.0, blue: 255/255.0, alpha: 1)
     static let closeNavy = UIColor(red: 46/255.0, green: 49/255.0, blue: 146/255.0, alpha: 1)
+    static let ttpPurple = UIColor(red: 100/255.0, green: 44/255.0, blue: 144/255.0, alpha: 1)
+    static let ttpGreen = UIColor(red: 2/255.0, green: 166/255.0, blue: 80/255.0, alpha: 1)
+    static let ttpPink = UIColor(red: 236/255.0, green: 0/255.0, blue: 140/255.0, alpha: 1)
+    static let ttpBlue = UIColor(red: 8/255.0, green: 171/255.0, blue: 238/255.0, alpha: 1)
+    static let ttpDarBlue = UIColor(red: 47/255.0, green: 49/255.0, blue: 146/255.0, alpha: 1)
+    static let whiteFive = UIColor(red: 213/255.0, green: 213/255.0, blue: 213/255.0, alpha: 1)
+
 }
