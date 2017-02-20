@@ -18,22 +18,17 @@ class SignInScreenViewController: BaseViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
-
     
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         presenter = Injector.currentInjector.signInScreenPresenter(view: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addKeyboardNotifications()
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,9 +51,8 @@ class SignInScreenViewController: BaseViewController {
     @IBAction func bacgroundTapGestureRecognizer(_ sender: Any) {
         presenter.didTapBackground()
     }
-    
-
 }
+
 extension SignInScreenViewController : SignInScreenViewable {
     
     var email: String {
