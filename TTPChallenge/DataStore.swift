@@ -46,9 +46,27 @@ class DataStore {
     }
     
     
-    func fillCoursesStore(with completion: @escaping (Bool) -> ()){
+    func fillCoursesStore(query: String, with completion: @escaping (Bool) -> ()){
         
+        let url = Bundle.main.url(forResource: "Courses", withExtension: "json")
+        let data = try! Data(contentsOf: url!, options: [])
         
+        do {
+            let results = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
+            
+            let queryResult = results[query] as! [[String:String]]
+            
+            for each in queryResult{
+                
+                let course = Course(dictionary: each)
+                self.courses.append(course)
+            }
+        } catch {
+            print(error)
+            completion(false)
+        }
+        completion(true)
+
         
     }
 }
