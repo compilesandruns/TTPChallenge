@@ -12,7 +12,7 @@ class BaseViewController: UIViewController, AlertView {
     var currentMainViewController: UIViewController { return self }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
     
     required init?(coder aDecoder: NSCoder) {
