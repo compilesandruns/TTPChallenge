@@ -11,12 +11,12 @@ import PKHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+  
+        //Firebase
         FIRApp.configure()
         
         let injector = Injector()
@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Setup Default Loader
         PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
         PKHUD.sharedHUD.dimsBackground = true
+
+		//UI Defaults
+        self.window?.tintColor = .black
 
         return true
     }

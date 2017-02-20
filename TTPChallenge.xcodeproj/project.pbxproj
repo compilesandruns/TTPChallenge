@@ -10,7 +10,7 @@
 		1706510F1E5277A600802807 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706510E1E5277A600802807 /* PresentMenuAnimator.swift */; };
 		1719F1F91E56C14A004E06A0 /* MenuSectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719F1F81E56C14A004E06A0 /* MenuSectionHeaderCell.swift */; };
 		1719F1FB1E56C344004E06A0 /* MenuSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719F1FA1E56C344004E06A0 /* MenuSectionType.swift */; };
-		174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979971E50DCE400B901DC /* CreateUserScreenTableViewController.swift */; };
+		174979981E50DCE400B901DC /* CreateUserScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979971E50DCE400B901DC /* CreateUserScreenViewController.swift */; };
 		1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979991E50DD0300B901DC /* CreateUserScreenPresenter.swift */; };
 		1749799C1E50DD1300B901DC /* CreateUserScreenPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749799B1E50DD1300B901DC /* CreateUserScreenPresenting.swift */; };
 		1749799E1E50DD2800B901DC /* CreateUserScreenViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749799D1E50DD2800B901DC /* CreateUserScreenViewable.swift */; };
@@ -98,6 +98,7 @@
 		DD0BDF391E5537F8006F550F /* PersonalityTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */; };
 		DD12A9E31E59135E0047417D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12A9E21E59135E0047417D /* CustomView.swift */; };
 		DD1610291E5A683300BA87DE /* CustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1610281E5A683300BA87DE /* CustomTextfield.swift */; };
+		DD22CCAE1E5B6A9D00314E65 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD22CCAD1E5B6A9D00314E65 /* CustomLabel.swift */; };
 		DD8586B11E562AE000065DDD /* QuizResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8586B01E562AE000065DDD /* QuizResultVC.swift */; };
 		DD8586B81E56789900065DDD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8586B71E56789900065DDD /* CustomButton.swift */; };
 		DDDF2E1F1E52328000EAD0ED /* QuizFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF2E1E1E52328000EAD0ED /* QuizFlow.storyboard */; };
@@ -126,7 +127,7 @@
 		170651101E52796D00802807 /* FullyReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullyReplaceSegue.swift; sourceTree = "<group>"; };
 		1719F1F81E56C14A004E06A0 /* MenuSectionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionHeaderCell.swift; sourceTree = "<group>"; };
 		1719F1FA1E56C344004E06A0 /* MenuSectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionType.swift; sourceTree = "<group>"; };
-		174979971E50DCE400B901DC /* CreateUserScreenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenTableViewController.swift; sourceTree = "<group>"; };
+		174979971E50DCE400B901DC /* CreateUserScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenViewController.swift; sourceTree = "<group>"; };
 		174979991E50DD0300B901DC /* CreateUserScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenPresenter.swift; sourceTree = "<group>"; };
 		1749799B1E50DD1300B901DC /* CreateUserScreenPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenPresenting.swift; sourceTree = "<group>"; };
 		1749799D1E50DD2800B901DC /* CreateUserScreenViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenViewable.swift; sourceTree = "<group>"; };
@@ -225,6 +226,7 @@
 		DD0BDF381E5537F8006F550F /* PersonalityTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityTestCell.swift; sourceTree = "<group>"; };
 		DD12A9E21E59135E0047417D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		DD1610281E5A683300BA87DE /* CustomTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextfield.swift; sourceTree = "<group>"; };
+		DD22CCAD1E5B6A9D00314E65 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		DD8586B01E562AE000065DDD /* QuizResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultVC.swift; sourceTree = "<group>"; };
 		DD8586B71E56789900065DDD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DDDF2E1E1E52328000EAD0ED /* QuizFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuizFlow.storyboard; sourceTree = "<group>"; };
@@ -471,7 +473,7 @@
 		17CFD06E1E502C570007ADEC /* Create User Screen */ = {
 			isa = PBXGroup;
 			children = (
-				174979971E50DCE400B901DC /* CreateUserScreenTableViewController.swift */,
+				174979971E50DCE400B901DC /* CreateUserScreenViewController.swift */,
 				174979991E50DD0300B901DC /* CreateUserScreenPresenter.swift */,
 				1749799B1E50DD1300B901DC /* CreateUserScreenPresenting.swift */,
 				1749799D1E50DD2800B901DC /* CreateUserScreenViewable.swift */,
@@ -484,6 +486,10 @@
 			children = (
 				1778D9661E5A47530023C569 /* CreateChannelCell.swift */,
 				DD0BDEE71E52A8F6006F550F /* Fonts */,
+				DD12A9E21E59135E0047417D /* CustomView.swift */,
+				DD8586B71E56789900065DDD /* CustomButton.swift */,
+				DD1610281E5A683300BA87DE /* CustomTextfield.swift */,
+				DD22CCAD1E5B6A9D00314E65 /* CustomLabel.swift */,
 				17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */,
 				1749799F1E50E69B00B901DC /* BaseTableViewController.swift */,
 				174979A11E50ED1D00B901DC /* BaseNavigationController.swift */,
@@ -572,20 +578,9 @@
 			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
-		DD8586B61E56774700065DDD /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				DD12A9E21E59135E0047417D /* CustomView.swift */,
-				DD8586B71E56789900065DDD /* CustomButton.swift */,
-				DD1610281E5A683300BA87DE /* CustomTextfield.swift */,
-			);
-			name = "Custom Views";
-			sourceTree = "<group>";
-		};
 		DDDF2E201E52334D00EAD0ED /* Quiz Sreen */ = {
 			isa = PBXGroup;
 			children = (
-				DD8586B61E56774700065DDD /* Custom Views */,
 				DD0BDF2E1E5534CE006F550F /* QuizModels */,
 				DD0BDF2D1E553480006F550F /* QuizVCs */,
 			);
@@ -934,6 +929,7 @@
 				17BB26431E516E3C0005D787 /* HomeScreenPresenter.swift in Sources */,
 				1778D96C1E5A47530023C569 /* CoursesJSON.swift in Sources */,
 				17BB26521E5171A20005D787 /* MenuTableViewCell.swift in Sources */,
+				DD22CCAE1E5B6A9D00314E65 /* CustomLabel.swift in Sources */,
 				17CFD04C1E4F6F990007ADEC /* SignInScreenPresenting.swift in Sources */,
 				DD0BDF261E55276C006F550F /* WebDevVC.swift in Sources */,
 				DD0BDF281E552780006F550F /* DataAnalystVC.swift in Sources */,
@@ -970,7 +966,7 @@
 				17CFD05E1E4F7C630007ADEC /* AlertViewable.swift in Sources */,
 				1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */,
 				DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */,
-				174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */,
+				174979981E50DCE400B901DC /* CreateUserScreenViewController.swift in Sources */,
 				17CFD0531E4F76D40007ADEC /* Injector.swift in Sources */,
 				DD0BDF301E5534E2006F550F /* QuizGroup.swift in Sources */,
 				17BB264A1E516E7F0005D787 /* MenuDelegate.swift in Sources */,
