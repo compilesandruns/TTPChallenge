@@ -11,8 +11,8 @@ import Foundation
 class MeetUpAPIClient {
     
     class func getMeetupSuggestions(query: String, with completion: @escaping ([[String : Any]]) -> ()) {
-
-        let urlString = "https://api.meetup.com/find/groups?&sign=true&photo-host=public&upcoming_events=true&fallback_suggestions=true&text=\(query)&category=34&order=most_active&page=3&key=\(Secrets.key)"
+//not using query - results of quiz aren't saved
+        let urlString = "https://api.meetup.com/find/groups?&sign=true&photo-host=public&upcoming_events=true&fallback_suggestions=true&text=tech&radius=3.0&upcoming_events=true&zip=11215&category=34&order=most_active&page=10&key=\(Secrets.key)"
         
         let url = URL(string: urlString)
         let session = URLSession.shared

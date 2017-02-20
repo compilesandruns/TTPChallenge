@@ -66,6 +66,11 @@ extension String {
         removed = removed.replacingOccurrences(of: "</ul>", with: "")
         
         removed = removed.replacingOccurrences(of: ">", with: " ")
+        removed = removed.replacingOccurrences(of: "<img src=", with: "")
+        removed = removed.replacingOccurrences(of: "&gt;", with: "")
+        
+        
+        
         return removed
     }
 
