@@ -56,10 +56,11 @@ final class ChatViewController: JSQMessagesViewController {
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
-        let backButton = UIButton(type:.custom)
-        backButton.setImage(UIImage(named: "close"), for: UIControlState.normal)
+        navigationController?.navigationBar.tintColor = Colors.ttpPink
         
-        inputToolbar.contentView.leftBarButtonItem = backButton
+        inputToolbar.contentView.tintColor = Colors.ttpPink
+        inputToolbar.contentView.leftBarButtonItem.tintColor = Colors.ttpPink
+        
         observeMessages()
         
         self.senderId = FIRAuth.auth()?.currentUser?.uid
@@ -89,7 +90,7 @@ final class ChatViewController: JSQMessagesViewController {
     //MARK: Message UI
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: Colors.ttpPurple)
     }
     
     private func setupIncomingBubble() -> JSQMessagesBubbleImage {
