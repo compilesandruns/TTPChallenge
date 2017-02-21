@@ -11,7 +11,11 @@
          {"url": "https://learn.skillcrush.com/skillcrush-10-day-bootcamp/",
          "name": "Skillcrush 10-DAY Coding Bootcamp",
          "summary": "Everything You Need to Know to Go Seriously Digital",
-         "imageURL": "http://i.imgur.com/pfFyykX.jpg"},
+             "imageURL": "http://i.imgur.com/pfFyykX.jpg"},
+             {"url": "https://www.udacity.com/course/intro-to-data-analysis--ud170",
+             "name": "Udacity Intro to Data Analysis",
+             "summary": "This course will introduce you to the world of data analysis. You'll learn how to go through the entire data analysis process, which includes:\nPosing a question\nWrangling your data into a format you can use and fixing any problems with it\nExploring the data, finding patterns in it, and building your intuition about it\nDrawing conclusions and/or making predictions\nCommunicating your findings/nYou'll also learn how to use the Python libraries NumPy, Pandas, and Matplotlib to write code that's cleaner, more concise, and runs faster.",
+             "imageURL": "http://i.imgur.com/GI4Fmeh.jpg"},
              {"url": "https://www.freecodecamp.com",
              "name": "Free Code Camp Web Dev",
              "summary": "Learn to code and help nonprofits. Here's why you should join our open source community right now:\nYou'll get help in real time from our community chat rooms.\n You'll meet up with other coders in your city.\nYou'll learn to code at your own pace, in your browser or on your phone.\nYou'll work through our focused, interactive courses and tutorials.\nYou'll learn state-of-the-art full stack JavaScript technologies.\nYou'll build projects that help nonprofits carry out their missions more effectively.\nYou'll assemble a portfolio of real apps used by real people.",
@@ -23,12 +27,6 @@
              {"url": "https://www.udacity.com/course/software-testing--cs258",
              "name": "Udacity Software Testing",
              "summary": "When writing software, destruction can be just as valuable as creation. Learn how to catch bugs and break software as you discover different testing methods that will help you build better software.",
-             "imageURL": "http://i.imgur.com/GI4Fmeh.jpg"},
-             {"url": "https://www.udacity.com/course/intro-to-data-analysis--ud170",
-             "name": "Udacity Intro to Data Analysis",
-             "summary": "This course will introduce you to the world of data analysis. You'll learn how to go through the entire data analysis process, which includes:\nPosing a question\nWrangling your data into a format you can use and fixing any problems with it\nExploring the data, finding patterns in it, and building your intuition about it\nDrawing conclusions and/or making predictions\nCommunicating your findings/nYou'll also learn how to use the Python libraries NumPy, Pandas, and Matplotlib to write code that's cleaner, more concise, and runs faster.",
              "imageURL": "http://i.imgur.com/GI4Fmeh.jpg"}
-             
-             
          ]
 }

@@ -84,6 +84,12 @@ extension HomeScreenViewController: HomeScreenViewable {
         }
     }
     
+    func showSuggeestedCoursesFlow() {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "showSuggeestedCoursesFlow", sender: self)
+        }
+    }
+    
     func showLoader() {
         HUD.show(.progress)
     }

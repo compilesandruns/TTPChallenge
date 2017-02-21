@@ -18,4 +18,5 @@ protocol MenuDelegate: class {
     func showSuggestedEventsFlow()
     func showSavedEventsFlow()
     func showChatFlow()
+    func showSuggeestedCoursesFlow()
 }
