@@ -64,7 +64,7 @@ struct Quizzes {
         ["Have a creative spirit",
          "Love following the latest web trends & technologies",
          "Think logically and critically",
-         "Have tried or are interested in learning how to code"],
+         "Have tried or are in terested in learning how to code"],
         ["Are iPhone or Android obsessed",
          "Are Always on the hunt for the latest cool app",
          "Have strong preferences for specific technology or apps",
