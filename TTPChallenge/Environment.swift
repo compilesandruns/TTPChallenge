@@ -68,7 +68,7 @@ struct Quizzes {
         ["Are iPhone or Android obsessed",
          "Are Always on the hunt for the latest cool app",
          "Have strong preferences for specific technology or apps",
-         "Are mostly interested in mobile development over web"],
+         "Are interested in mobile development"],
         ["Able to work across teams and with a variety of stakeholders",
          "Communicate effectively and build strong relationships with team members",
          "Have a knack for math, facts and figures",
