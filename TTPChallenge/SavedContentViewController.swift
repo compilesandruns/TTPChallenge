@@ -33,11 +33,14 @@ class SavedContentViewController: BaseViewController, RemoveFavorite {
     var kLargeLogoDistanceMultiplier: CGFloat = 0.1
     
     var meetups = [MeetUp]()
+    var courses = [Course]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fillMeetups()
+        fillCourses()
+        checkForNoFavs()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -71,12 +74,10 @@ class SavedContentViewController: BaseViewController, RemoveFavorite {
         
         guard let unwrappedFavs = favs else {
             HUD.hide()
-            nothingSavedLabel.isHidden = false
             return }
         
         if unwrappedFavs.count == 0 {
             HUD.hide()
-            nothingSavedLabel.isHidden = false
         }
         
         
@@ -94,6 +95,46 @@ class SavedContentViewController: BaseViewController, RemoveFavorite {
                     self.tableView.reloadData()
                 }
             }
+        }
+    }
+    
+    func fillCourses() {
+        
+        let defaults = UserDefaults.standard
+        
+        let favs = defaults.object(forKey: "favCourses") as? [[String : Any]]
+        
+        guard let unwrappedFavs = favs else {
+            HUD.hide()
+//            nothingSavedLabel.isHidden = false
+            return }
+        
+        if unwrappedFavs.count == 0 {
+            HUD.hide()
+//            nothingSavedLabel.isHidden = false
+        }
+        
+        
+        for each in unwrappedFavs {
+
+                let course = Course(dictionary: each)
+                
+                courses.append(course)
+            
+            OperationQueue.main.addOperation {
+                self.tableView.reloadData()
+            }
+//            }
+        }
+       
+    }
+    
+    func checkForNoFavs(){
+        
+        if courses.count == 0 && meetups.count == 0{
+            nothingSavedLabel.isHidden = false
+        } else {
+            nothingSavedLabel.isHidden = true
         }
     }
     
@@ -122,21 +163,33 @@ class SavedContentViewController: BaseViewController, RemoveFavorite {
 extension SavedContentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
-        cell.delegate = self
         
         if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
+            cell.delegate = self
+
             let meetup = meetups[indexPath.row]
             cell.meetup = meetup
             meetup.delegate = self
             cell.configureCell()
             cell.delegateAlert = self
+            return cell
             
-        } else {
+        } else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! ExpandingCoursesCell
             
-            cell.title.text = "not a meetup"
+            cell.delegate = self
+
+            let course = courses[indexPath.row]
+            cell.course = course
+            course.delegate = self
+            cell.configureCell()
+            cell.delegateAlert = self
+            
+            return cell
         }
-        return cell
+        
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -160,8 +213,15 @@ extension SavedContentViewController: UITableViewDelegate {
         if section == 0 {
             
             return meetups.count
+        } else if section == 1{
+            
+            return courses.count
         }
-        return meetups.count
+        return 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -179,18 +239,34 @@ extension SavedContentViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingMeetUpCell else { return }
         
-        cell.isExpanded = !cell.isExpanded
-        cell.configureCell()
-        
-        tableView.beginUpdates()
-        tableView.endUpdates()
-        
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        if indexPath.section == 0 {
+            guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingMeetUpCell else { return }
+            
+            cell.isExpanded = !cell.isExpanded
+            cell.configureCell()
+            
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+
+        } else if indexPath.section == 1 {
+            
+            guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingCoursesCell else { return }
+            
+            cell.isExpanded = !cell.isExpanded
+            cell.configureCell()
+            
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
     }
     
-    func removeFavorite(name: String) {
+    func removeFavoriteMeetup(name: String) {
+        
         let notEmpty = meetups.isEmpty == false
         
         if notEmpty {
@@ -204,9 +280,27 @@ extension SavedContentViewController: UITableViewDelegate {
                 }
             }
         }
-        
-        nothingSavedLabel.isHidden = meetups.count > 0
+        checkForNoFavs()
     }
+    
+    func removeFavoriteCourse(name: String) {
+        
+        let notEmpty = courses.isEmpty == false
+        
+        if notEmpty {
+            
+            for (index, each) in courses.enumerated() {
+                
+                if each.name == name {
+                    
+                    courses.remove(at: index)
+                    tableView.reloadData()
+                }
+            }
+        }
+        checkForNoFavs()
+    }
+
 }
 
 extension SavedContentViewController: UpdateTableView {

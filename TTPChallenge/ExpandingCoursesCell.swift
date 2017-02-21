@@ -20,8 +20,6 @@ class ExpandingCoursesCell: UITableViewCell {
     
     var joinbutton: DOFavoriteButton?
     
-//    @IBOutlet weak var summaryTextView: UITextView!
-    
     @IBOutlet weak var title: UILabel!
     
     @IBOutlet weak var summary: UITextView!
@@ -137,7 +135,7 @@ class ExpandingCoursesCell: UITableViewCell {
                 var adjustedFav = unwrappedFavs
                 adjustedFav.remove(at: index)
                 defaults.set(adjustedFav, forKey: "favCourses")
-                delegate?.removeFavorite(name: name)
+                delegate?.removeFavoriteCourse(name: name)
             }
         }
     }

@@ -78,7 +78,6 @@
 		3D9D554E1E5B90C5006FB5CE /* Courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D9D554D1E5B90C5006FB5CE /* Courses.json */; };
 		3D9D55501E5B90FF006FB5CE /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D554F1E5B90FF006FB5CE /* Course.swift */; };
 		3D9D55521E5B9552006FB5CE /* ExpandingCoursesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D55511E5B9552006FB5CE /* ExpandingCoursesCell.swift */; };
-		3DD580A51E5B9ED500E4EA07 /* CoursesApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD580A41E5B9ED500E4EA07 /* CoursesApiClient.swift */; };
 		4422B78241332CF59F02F260 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0133C79DCC2C3C378BE1E0D /* Pods_UITests.framework */; };
 		ADC314E2882B7CC9D3DCE577 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */; };
 		C69CFE130D13F6C8A5FC2ADA /* Pods_TTPChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */; };
@@ -203,7 +202,6 @@
 		3D9D554D1E5B90C5006FB5CE /* Courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Courses.json; sourceTree = "<group>"; };
 		3D9D554F1E5B90FF006FB5CE /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		3D9D55511E5B9552006FB5CE /* ExpandingCoursesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingCoursesCell.swift; sourceTree = "<group>"; };
-		3DD580A41E5B9ED500E4EA07 /* CoursesApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesApiClient.swift; sourceTree = "<group>"; };
 		AACF7CC6C0A12E53D1CD653B /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBE3DA305B2BD4B2954AA8B8 /* Pods-TTPChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		D793E59F206E6A5C6A728C9E /* Pods-TTPChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTPChallenge/Pods-TTPChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 				3D14B4B51E58D572005E2DBF /* DataStore.swift */,
 				3D9D55511E5B9552006FB5CE /* ExpandingCoursesCell.swift */,
 				3D36EB361E52601000CB1432 /* MeetUpAPIClient.swift */,
-				3DD580A41E5B9ED500E4EA07 /* CoursesApiClient.swift */,
 				3D9D554D1E5B90C5006FB5CE /* Courses.json */,
 				3D9D554F1E5B90FF006FB5CE /* Course.swift */,
 				3D9D554B1E5B90B6006FB5CE /* CoursesViewController.swift */,
@@ -885,7 +882,6 @@
 				174979AA1E5102E700B901DC /* CreateUserInteracting.swift in Sources */,
 				17CFD0681E5015F90007ADEC /* CridentialsValidationInteractor.swift in Sources */,
 				1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */,
-				3DD580A51E5B9ED500E4EA07 /* CoursesApiClient.swift in Sources */,
 				17BB26601E51795A0005D787 /* MenuViewable.swift in Sources */,
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
 				3D4E89301E56455D00ED4080 /* DoFavoriteButton.swift in Sources */,

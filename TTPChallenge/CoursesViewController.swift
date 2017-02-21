@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 
-class CoursesViewController: UIViewController {
+class CoursesViewController: BaseViewController {
 //coursesCell
     
     @IBOutlet weak var tableView: UITableView!
@@ -37,8 +37,8 @@ class CoursesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300.0
         
@@ -48,7 +48,12 @@ class CoursesViewController: UIViewController {
         navScrollGestureRecognizer.delegate = self
         tableView.addGestureRecognizer(navScrollGestureRecognizer)
         
-
+        store.fillCoursesStore(query: "courses") { (success) in
+            
+            OperationQueue.main.addOperation {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     deinit {
@@ -71,7 +76,7 @@ class CoursesViewController: UIViewController {
 extension CoursesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingMeetUpCell else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingCoursesCell else { return }
         
         cell.isExpanded = !cell.isExpanded
         cell.configureCell()
@@ -89,7 +94,7 @@ extension CoursesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "coursesCell", for: indexPath) as! ExpandingCoursesCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! ExpandingCoursesCell
         
         switch indexPath.section {
             
@@ -119,16 +124,8 @@ extension CoursesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return "Take a free Course"
+        return "Take a Free Course"
         
-        switch section {
-        case 0:
-            return "Join a Community"
-            
-        default:
-            return "Take a Free Course"
-            
-        }
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -171,6 +168,7 @@ extension CoursesViewController: CustomCellPresentAlert {
         }
     }
 }
+
 
 extension CoursesViewController : UIGestureRecognizerDelegate {
     func handleNavScrollGesture() {

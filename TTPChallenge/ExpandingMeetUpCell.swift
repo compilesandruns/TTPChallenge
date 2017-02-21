@@ -137,7 +137,7 @@ class ExpandingMeetUpCell: UITableViewCell {
                 var adjustedFav = unwrappedFavs
                 adjustedFav.remove(at: index)
                 defaults.set(adjustedFav, forKey: "favMeetups")
-                delegate?.removeFavorite(name: name)
+                delegate?.removeFavoriteMeetup(name: name)
             }
         }
     }
@@ -200,7 +200,8 @@ class ExpandingMeetUpCell: UITableViewCell {
 
 protocol RemoveFavorite {
     
-    func removeFavorite(name: String)
+    func removeFavoriteMeetup(name: String)
+    func removeFavoriteCourse(name: String)
 }
 
 protocol CustomCellPresentAlert {

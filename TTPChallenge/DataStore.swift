@@ -66,7 +66,5 @@ class DataStore {
             completion(false)
         }
         completion(true)
-
-        
     }
 }
