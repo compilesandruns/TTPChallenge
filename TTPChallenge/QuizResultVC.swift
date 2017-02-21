@@ -16,7 +16,7 @@ class QuizResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var techTypesFromResults:[String]?
     var indexArrayPassed: [Int]?
     
-    let colors = [Colors.qaPeach, Colors.itPink, Colors.wdRose, Colors.mdBlue, Colors.daGreen]
+    let colors = [Colors.ttpBlue, Colors.ttpPink, Colors.ttpPurple, Colors.ttpDarBlue, Colors.ttpGreen]
     
     override func viewDidLoad() {
         super.viewDidLoad()
