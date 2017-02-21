@@ -39,7 +39,6 @@ class ChannelListViewController: BaseTableViewController {
         super.viewDidLoad()
         title = "Tech Talk"
         observeChannels()
-//        getCurrentUsername()
     }
     
     deinit {
@@ -112,6 +111,7 @@ extension ChannelListViewController {
             
             chatVc.channel = channel
             chatVc.channelRef = channelRef.child(channel.id)
+            chatVc.senderDisplayName = Injector.currentInjector.memoryCacheDataStore.user.username
         }
     }
 }

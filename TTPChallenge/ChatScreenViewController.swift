@@ -13,6 +13,7 @@ import SwiftGifOrigin
 
 final class ChatViewController: JSQMessagesViewController {
     var messages = [JSQMessage]()
+    
     private var photoMessageMap = [String: JSQPhotoMediaItem]()
     private let imageURLNotSetKey = "NOTSET"
 
@@ -316,15 +317,29 @@ extension ChatViewController {
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAt indexPath: IndexPath!) -> NSAttributedString! {
         let message = messages[indexPath.item]
+        
+        guard let date = message.date else {
+            return NSAttributedString(string: "")
+        }
+            return JSQMessagesTimestampFormatter.shared().attributedTimestamp(for: date)
 
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString! {
+        let message = messages[indexPath.item]
+        
         guard let senderDisplayName = message.senderDisplayName else {
-            return nil
+            return NSAttributedString(string: "Anonymous user")
         }
         return NSAttributedString(string: senderDisplayName)
     }
     
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellTopLabelAt indexPath: IndexPath!) -> CGFloat {
+        return 20
+    }
+    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
-        return 13
+        return 20
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

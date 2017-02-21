@@ -17,19 +17,17 @@ class FirebaseInteractor: FirebaseInteracting {
         return FIRAuth.auth()!.signIn(withEmail: email, password: password, completion: nil)
     }
     
-    func setUsername(username: String) -> Promise<String> {
-        guard let user = FIRAuth.auth()!.currentUser else {
-            return Promise(value: "")
-
-//            return Promise(error: ValidationError(error: ))
+    func getCurrentUser() -> Promise<User?> {
+        var user: User?
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        Environment.Firebase.ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let username = value?["username"] as? String ?? ""
+            user = User.init(username: username)
+        }) { (error) in
+            print(error.localizedDescription)
         }
-       let changeRequest = user.profileChangeRequest()
-        changeRequest.displayName = username
-        
-        changeRequest.commitChanges { error in
-
-        }
-        return Promise(value: "")
+        return Promise(value: user)
     }
 }
 

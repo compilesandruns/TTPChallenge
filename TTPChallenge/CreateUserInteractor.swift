@@ -18,12 +18,12 @@ class CreateUserInteractor: CreateUserInteracting {
     }
     
     func createUser(email:String, password: String, username: String) -> Promise<Void> {
-        return cridentialsValidationInteractor.validateSignUp(email: email, password: password, username: username).then { _ -> Void in
-            return self.firebaseInteractor.createUser(email: email, password: password).then { _  -> Void in
-                if let user = FIRAuth.auth()?.currentUser {
-                    Environment.Firebase.ref.child("users").child(user.uid).setValue(["username": username])
-                }
+        return cridentialsValidationInteractor.validateSignUp(email: email, password: password, username: username)
+            .then { _ -> Void in
+                return self.firebaseInteractor.createUser(email: email, password: password)
+                    .then { user -> Void in
+                        Environment.Firebase.ref.child("users").child(user.uid).setValue(["username": username])
+                    }
             }
-        }
     }
 }

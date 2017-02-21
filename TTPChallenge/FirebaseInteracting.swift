@@ -12,4 +12,5 @@ import FirebaseAuth
 protocol FirebaseInteracting {    
     func createUser(email:String, password: String) -> Promise<FIRUser>
     func signIn(email: String, password: String) -> Promise<FIRUser>
+    func getCurrentUser() -> Promise<User?>
 }
