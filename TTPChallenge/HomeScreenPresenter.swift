@@ -60,4 +60,8 @@ extension HomeScreenPresenter: MenuDelegate {
     func showWebView(url: String) {
         view.showWebView(url: url)
     }
+    
+    func showSuggeestedCoursesFlow() {
+        view.showSuggeestedCoursesFlow()
+    }
 }
