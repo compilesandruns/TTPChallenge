@@ -6,6 +6,8 @@
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
+import PKHUD
+
 class CreateUserScreenViewController: BaseViewController {
     var presenter: CreateUserScreenPresenting!
     
@@ -75,6 +77,14 @@ extension CreateUserScreenViewController: CreateUserScreenViewable {
     
     func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func showLoader() {
+        HUD.show(.progress)
+    }
+    
+    func hideLoader() {
+        HUD.hide()
     }
 }
 

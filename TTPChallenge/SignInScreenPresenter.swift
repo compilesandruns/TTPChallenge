@@ -29,6 +29,7 @@ class SignInScreenPresenter: SignInScreenPresenting {
 
             }
             .catch { error -> Void in
+                self.view.hideLoader()
                 if let errCode = FIRAuthErrorCode(rawValue: error._code) {
                     switch errCode {
                     case .errorCodeUserNotFound:
