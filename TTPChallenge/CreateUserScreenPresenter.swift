@@ -29,7 +29,10 @@ class CreateUserScreenPresenter: CreateUserScreenPresenting {
         createUserInteractor.createUser(email: view.email, password: view.password, username: view.username).then {
             _ -> Void in
                 self.view.showHomeScreen()
+                self.view.hideLoader()
+
             }.catch { error in
+                self.view.hideLoader()
                 if let errCode = FIRAuthErrorCode(rawValue: error._code) {
                     switch errCode {
                     case .errorCodeInvalidEmail:

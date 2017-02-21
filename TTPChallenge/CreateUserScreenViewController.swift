@@ -76,6 +76,14 @@ extension CreateUserScreenViewController: CreateUserScreenViewable {
     func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func showLoader() {
+        HUD.show(.progress)
+    }
+    
+    func hideLoader() {
+        HUD.hide()
+    }
 }
 
 //MARK NotificationCenter
