@@ -970,12 +970,9 @@
 				174979A81E5102DB00B901DC /* CreateUserInteractor.swift in Sources */,
 				17BB264C1E516E930005D787 /* MenuHelper.swift in Sources */,
 				174979A01E50E69B00B901DC /* BaseTableViewController.swift in Sources */,
-
 				3D9D55501E5B90FF006FB5CE /* Course.swift in Sources */,
-
 				17D57DEA1E5BCCDF00465E1C /* MemoryCacheDataStoring.swift in Sources */,
 				1778D96E1E5A47530023C569 /* ValidationError.swift in Sources */,
-
 				17BB265C1E51769A0005D787 /* AuthInteractor.swift in Sources */,
 				17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */,
 				3D9D55521E5B9552006FB5CE /* ExpandingCoursesCell.swift in Sources */,
