@@ -78,8 +78,10 @@ extension HomeScreenViewController: HomeScreenViewable {
         }
     }
     
-    func showProfileScreen() {
-        //TODO
+    func showChatFlow() {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "showChatFlow", sender: self)
+        }
     }
     
     func showLoader() {

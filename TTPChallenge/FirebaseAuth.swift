@@ -23,4 +23,5 @@ extension FIRAuth {
             signIn(withEmail: email, password: password, completion: resolve)
         }
     }
+    
 }

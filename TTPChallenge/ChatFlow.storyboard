@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ShX-6E-Rej">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Channel List View Controller-->
+        <scene sceneID="M2t-rG-24y">
+            <objects>
+                <tableViewController id="1Yj-MR-nAU" customClass="ChannelListViewController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yyP-SU-wKA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="czF-Ua-bDl" customClass="CreateChannelCell" customModule="TTPChallenge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czF-Ua-bDl" id="ADA-iV-LT7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a New Channel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ohM-uh-OuH">
+                                            <rect key="frame" x="16" y="7" width="297" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Aq-Rg-xtj">
+                                            <rect key="frame" x="321" y="7" width="46" height="30"/>
+                                            <state key="normal" title="Create"/>
+                                            <connections>
+                                                <action selector="createChannel:" destination="1Yj-MR-nAU" eventType="touchUpInside" id="FRN-Q6-GH5"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="leading" secondItem="ohM-uh-OuH" secondAttribute="trailing" constant="8" id="GU0-R3-ZeF"/>
+                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="leading" secondItem="ohM-uh-OuH" secondAttribute="trailing" constant="8" id="Lal-sI-mmG"/>
+                                        <constraint firstItem="ohM-uh-OuH" firstAttribute="centerY" secondItem="ADA-iV-LT7" secondAttribute="centerY" id="MMU-RU-oao"/>
+                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="centerY" secondItem="ADA-iV-LT7" secondAttribute="centerY" id="Wap-za-H4i"/>
+                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="leading" secondItem="ohM-uh-OuH" secondAttribute="trailing" constant="8" id="uUa-bV-DbS"/>
+                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="trailing" secondItem="ADA-iV-LT7" secondAttribute="trailingMargin" id="vek-Eh-eLv"/>
+                                        <constraint firstItem="ohM-uh-OuH" firstAttribute="leading" secondItem="ADA-iV-LT7" secondAttribute="leadingMargin" constant="8" id="wQM-aH-ro3"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="GU0-R3-ZeF"/>
+                                            <exclude reference="Lal-sI-mmG"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="createChannelButton" destination="1Aq-Rg-xtj" id="BQP-5N-pCb"/>
+                                    <outlet property="newChannelNameField" destination="ohM-uh-OuH" id="zKY-Cl-4UH"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingChannel" textLabel="dos-BF-13N" style="IBUITableViewCellStyleDefault" id="Cdq-fv-ofK">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cdq-fv-ofK" id="AuH-Oz-vPN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dos-BF-13N">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1Yj-MR-nAU" id="AAS-lK-Ucy"/>
+                            <outlet property="delegate" destination="1Yj-MR-nAU" id="vXn-WW-7X0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="W0S-9g-tpz"/>
+                    <connections>
+                        <segue destination="UQY-lR-2GG" kind="show" identifier="ShowChannel" id="ne2-qJ-GE4"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vKT-bt-ORv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1823" y="389"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="ivl-gA-9zW">
+            <objects>
+                <viewController id="UQY-lR-2GG" customClass="ChatViewController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uTk-B7-uka"/>
+                        <viewControllerLayoutGuide type="bottom" id="oY2-Yb-iji"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I3b-gL-gFg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="brW-Hi-AMb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWk-JR-pA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2569" y="378"/>
+        </scene>
+        <!--Base Navigation Controller-->
+        <scene sceneID="VjJ-BR-lM6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ShX-6E-Rej" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lAf-kH-z0D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.32156862749999998" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Yj-MR-nAU" kind="relationship" relationship="rootViewController" id="CKM-WX-lN2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJb-fU-Yke" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1321" y="389"/>
+        </scene>
+    </scenes>
+</document>

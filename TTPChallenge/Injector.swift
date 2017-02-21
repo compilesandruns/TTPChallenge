@@ -19,9 +19,11 @@ class Injector: BaseInjector {
 
     override init() {
         super.init()
+        
+        memoryCacheDataStore = MemoryCacheDataStore()
         firebaseInteractor = FirebaseInteractor()
         cridentialsValidationInteractor = CridentialsValidationInteractor()
         createUserInteractor = CreateUserInteractor(firebaseInteractor:firebaseInteractor, cridentialsValidationInteractor: cridentialsValidationInteractor)
-        signInInteractor = SignInInteractor(firebaseInteractor:firebaseInteractor, cridentialsValidationInteractor: cridentialsValidationInteractor)
+        signInInteractor = SignInInteractor(firebaseInteractor:firebaseInteractor, cridentialsValidationInteractor: cridentialsValidationInteractor, memoryCacheDataStore: memoryCacheDataStore)
     }
 }

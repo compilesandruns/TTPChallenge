@@ -20,5 +20,14 @@ import UIKit
             layer.borderColor = Colors.whiteFive.cgColor
         }
     }
+    @IBInspectable var paddingLeft: CGFloat = 10.0
+    @IBInspectable var paddingRight: CGFloat = 10.0
 
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return super.textRect(forBounds: UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0, paddingLeft, 0, paddingRight)))
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return super.textRect(forBounds: UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0, paddingLeft, 0, paddingRight)))
+    }
 }

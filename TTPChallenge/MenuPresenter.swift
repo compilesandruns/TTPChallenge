@@ -27,11 +27,6 @@ class MenuPresenter {
         myEventsButton.name = "My Favs"
         myTTPSection.buttons.append(myEventsButton)
         
-        var myProfileButton = MoreInformationButton()
-        myProfileButton.type = .MyProfile
-        myProfileButton.name = "My Profile"
-        myTTPSection.buttons.append(myProfileButton)
-        
         sections.append(myTTPSection)
         
         //Discover
@@ -114,25 +109,16 @@ extension MenuPresenter: MenuPresenting {
             case .MyEvents:
                 self.delegate?.showSavedEventsFlow()
             
-            case .MyProfile:
-                //TODO: change to showProfileFlow()
-                self.delegate?.showWebView(url: "http://www.google.com")
-            
             case .TakeTheQuiz:
                 self.delegate?.showQuizFlow()
             
             case .TechTalk:
-                //TODO: change to showChatFlow()
-                self.delegate?.showWebView(url: "http://www.google.com")
-            
+                self.delegate?.showChatFlow()
             case .AttendAnEvent:
                 self.delegate?.showSuggestedEventsFlow()
             
             case .MyEvents:
                 self.delegate?.showSavedEventsFlow()
-            
-            case .MyProfile:
-                self.delegate?.showProfileScreen()
             
             case .MeetThePipeline:
                 self.delegate?.showWebView(url: Environment.Path.meetThePipeline)

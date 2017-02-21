@@ -15,7 +15,6 @@ class SignInScreenViewController: BaseViewController {
         
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     
@@ -84,9 +83,9 @@ extension SignInScreenViewController : SignInScreenViewable {
     func showLoader() {
         HUD.show(.progress)
     }
-
+    
     func hideLoader() {
-        HUD.hide()  
+        HUD.hide()
     }
     
     func dismissKeyboard() {
