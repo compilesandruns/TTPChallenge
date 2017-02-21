@@ -39,6 +39,10 @@ class ChannelListViewController: BaseTableViewController {
         super.viewDidLoad()
         title = "Tech Talk"
         observeChannels()
+        
+        let backButton = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action: #selector(didTapBackButton(sender:)))
+        
+        navigationItem.rightBarButtonItem = backButton
     }
     
     deinit {
@@ -46,6 +50,12 @@ class ChannelListViewController: BaseTableViewController {
             channelRef.removeObserver(withHandle: refHandle)
         }
     }
+
+    
+    func didTapBackButton(sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func createChannel(_ sender: AnyObject) {
         if let name = newChannelTextField?.text {

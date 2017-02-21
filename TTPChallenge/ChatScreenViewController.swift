@@ -56,6 +56,10 @@ final class ChatViewController: JSQMessagesViewController {
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
+        let backButton = UIButton(type:.custom)
+        backButton.setImage(UIImage(named: "close"), for: UIControlState.normal)
+        
+        inputToolbar.contentView.leftBarButtonItem = backButton
         observeMessages()
         
         self.senderId = FIRAuth.auth()?.currentUser?.uid
@@ -74,6 +78,12 @@ final class ChatViewController: JSQMessagesViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         observeTyping()
+    }
+    
+    func didTapBackButton(sender: UIBarButtonItem) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
     }
     
     //MARK: Message UI
