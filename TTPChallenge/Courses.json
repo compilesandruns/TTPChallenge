@@ -1,0 +1,32 @@
+
+
+{"courses": [{"url": "https://www.udacity.com/course/intro-to-computer-science--cs101?utm_medium=referral&utm_campaign=api",
+         "name": "Udacity Intro to Computer Science",
+         "summary": "In this introduction to computer programming course, you’ll learn and practice key computer science concepts by building your own versions of popular web applications. You’ll learn Python, a powerful, easy-to-learn, and widely used programming language, and you’ll explore computer science basics, as you build your own search engine and social network.",
+         "imageURL": "http://i.imgur.com/GI4Fmeh.jpg"},
+         {"url": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
+         "name": "EDX Introduction to Computer Science",
+         "summary": "This is CS50x, Harvard University's introduction to the intellectual enterprises of computer science and the art of programming for majors and non-majors alike, with or without prior programming experience. An entry-level course taught by David J. Malan, CS50x teaches students how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. Languages include C, Python, SQL, and JavaScript plus CSS and HTML. Problem sets inspired by real-world domains of biology, cryptography, finance, forensics, and gaming. As of Fall 2016, the on-campus version of CS50x, CS50, was Harvard's largest course.",
+         "imageURL": "http://i.imgur.com/iO0CI0W.jpg"},
+         {"url": "https://learn.skillcrush.com/skillcrush-10-day-bootcamp/",
+         "name": "Skillcrush 10-DAY Coding Bootcamp",
+         "summary": "Everything You Need to Know to Go Seriously Digital",
+             "imageURL": "http://i.imgur.com/pfFyykX.jpg"},
+             {"url": "https://www.udacity.com/course/intro-to-data-analysis--ud170",
+             "name": "Udacity Intro to Data Analysis",
+             "summary": "This course will introduce you to the world of data analysis. You'll learn how to go through the entire data analysis process, which includes:\nPosing a question\nWrangling your data into a format you can use and fixing any problems with it\nExploring the data, finding patterns in it, and building your intuition about it\nDrawing conclusions and/or making predictions\nCommunicating your findings/nYou'll also learn how to use the Python libraries NumPy, Pandas, and Matplotlib to write code that's cleaner, more concise, and runs faster.",
+             "imageURL": "http://i.imgur.com/GI4Fmeh.jpg"},
+             {"url": "https://www.freecodecamp.com",
+             "name": "Free Code Camp Web Dev",
+             "summary": "Learn to code and help nonprofits. Here's why you should join our open source community right now:\nYou'll get help in real time from our community chat rooms.\n You'll meet up with other coders in your city.\nYou'll learn to code at your own pace, in your browser or on your phone.\nYou'll work through our focused, interactive courses and tutorials.\nYou'll learn state-of-the-art full stack JavaScript technologies.\nYou'll build projects that help nonprofits carry out their missions more effectively.\nYou'll assemble a portfolio of real apps used by real people.",
+             "imageURL": "http://i.imgur.com/DOwJWef.jpg"},
+             {"url": "https://www.coursera.org/learn/python",
+             "name": "Coursera Programming for Everybody (Python)",
+             "summary": "About this course: This course aims to teach everyone the basics of programming computers using Python. We cover the basics of how one constructs a program from a series of simple instructions in Python.  The course has no pre-requisites and avoids all but the simplest mathematics. Anyone with moderate computer experience should be able to master the materials in this course. This course will cover Chapters 1-5 of the textbook “Python for Informatics”.   This course is equivalent to the first half of the 11-week Programming for Everybody (Python) course.  Once a student completes this course, they will be ready to take more advanced programming courses. This course covers Python 2.",
+             "imageURL": "http://i.imgur.com/jLSs7m8.png"},
+             {"url": "https://www.udacity.com/course/software-testing--cs258",
+             "name": "Udacity Software Testing",
+             "summary": "When writing software, destruction can be just as valuable as creation. Learn how to catch bugs and break software as you discover different testing methods that will help you build better software.",
+             "imageURL": "http://i.imgur.com/GI4Fmeh.jpg"}
+         ]
+}

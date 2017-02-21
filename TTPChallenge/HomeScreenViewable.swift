@@ -16,6 +16,7 @@ protocol HomeScreenViewable: class {
     func showSuggestedEventsFlow()
     func showSavedEventsFlow()
     func showChatFlow()
+    func showSuggeestedCoursesFlow()
     
     func showLoader()
     func hideLoader()

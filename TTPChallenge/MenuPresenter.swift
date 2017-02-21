@@ -63,6 +63,10 @@ class MenuPresenter {
         learnSection.type = .Learn
         learnSection.name = "Learn"
         
+        var courseButton = MoreInformationButton()
+        courseButton.type = .FreeCourse
+        courseButton.name = "Free Courses"
+        
         var aboutButton = MoreInformationButton()
         aboutButton.type = .AboutTTP
         aboutButton.name = "About TTP"
@@ -70,12 +74,13 @@ class MenuPresenter {
         var meetButton = MoreInformationButton()
         meetButton.type = .MeetThePipeline
         meetButton.name = "Meet the Pipeline"
-        learnSection.buttons.append(meetButton)
         
         var learnMoreButton = MoreInformationButton()
         learnMoreButton.type = .LearnMore
         learnMoreButton.name = "Learn More"
 
+        learnSection.buttons.append(courseButton)
+        learnSection.buttons.append(meetButton)
         learnSection.buttons.append(aboutButton)
         learnSection.buttons.append(learnMoreButton)
         sections.append(learnSection)
@@ -128,7 +133,10 @@ extension MenuPresenter: MenuPresenting {
             
             case .LearnMore:
                 self.delegate?.showWebView(url: Environment.Path.learnMore)
+            case .FreeCourse:
+                self.delegate?.showSuggeestedCoursesFlow()
             }
+            
         }
     }
     

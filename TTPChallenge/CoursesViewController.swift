@@ -1,19 +1,18 @@
 //
-//  SaveContentViewController.swift
+//  CoursesViewController.swift
 //  TTPChallenge
 //
-//  Created by susan lovaglio on 2/17/17.
+//  Created by susan lovaglio on 2/20/17.
 //  Copyright © 2017 TeamMDC. All rights reserved.
 //
 
 import UIKit
 import PKHUD
 
-class SavedContentViewController: BaseViewController, RemoveFavorite {
+class CoursesViewController: BaseViewController {
+//coursesCell
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nothingSavedLabel: UILabel!
-    
     @IBOutlet weak var headerView: UIImageView!
     @IBOutlet weak var labelView: UILabel!
     
@@ -32,15 +31,11 @@ class SavedContentViewController: BaseViewController, RemoveFavorite {
     
     var kLargeLogoDistanceMultiplier: CGFloat = 0.1
     
-    var meetups = [MeetUp]()
-    var courses = [Course]()
+    
+    let store = DataStore.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fillMeetups()
-        fillCourses()
-        checkForNoFavs()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -52,6 +47,17 @@ class SavedContentViewController: BaseViewController, RemoveFavorite {
         navScrollGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleNavScrollGesture))
         navScrollGestureRecognizer.delegate = self
         tableView.addGestureRecognizer(navScrollGestureRecognizer)
+        
+        store.fillCoursesStore(query: "courses") { (success) in
+            
+            OperationQueue.main.addOperation {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    deinit {
+        self.navigationController?.navigationBar.removeGestureRecognizer(navScrollGestureRecognizer)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,167 +71,61 @@ class SavedContentViewController: BaseViewController, RemoveFavorite {
             kExpandedHeaderHeight = headerView.frame.height
         }
     }
-    
-    func fillMeetups() {
-        
-        let defaults = UserDefaults.standard
-        
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
-        
-        guard let unwrappedFavs = favs else {
-            HUD.hide()
-            return }
-        
-        if unwrappedFavs.count == 0 {
-            HUD.hide()
-        }
-        
-        
-        for each in unwrappedFavs {
-            
-            if let name = each["name"] as? String,
-                let summary = each["summary"] as? String,
-                let url = each["url"] as? String,
-                let imageUrl = each["imageURL"] as? String {
-                
-                let meetup = MeetUp(name: name, memberCount: 0, summary: summary, imageUrl: imageUrl, url: url)
-                meetups.append(meetup)
-                
-                OperationQueue.main.addOperation {
-                    self.tableView.reloadData()
-                }
-            }
-        }
-    }
-    
-    func fillCourses() {
-        
-        let defaults = UserDefaults.standard
-        
-        let favs = defaults.object(forKey: "favCourses") as? [[String : Any]]
-        
-        guard let unwrappedFavs = favs else {
-            HUD.hide()
-//            nothingSavedLabel.isHidden = false
-            return }
-        
-        if unwrappedFavs.count == 0 {
-            HUD.hide()
-//            nothingSavedLabel.isHidden = false
-        }
-        
-        
-        for each in unwrappedFavs {
+}
 
-                let course = Course(dictionary: each)
-                
-                courses.append(course)
-            
-            OperationQueue.main.addOperation {
-                self.tableView.reloadData()
-            }
-//            }
-        }
-       
+extension CoursesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingCoursesCell else { return }
+        
+        cell.isExpanded = !cell.isExpanded
+        cell.configureCell()
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
-    func checkForNoFavs(){
-        
-        if courses.count == 0 && meetups.count == 0{
-            nothingSavedLabel.isHidden = false
-        } else {
-            nothingSavedLabel.isHidden = true
-        }
-    }
-    
-    func checkIfFavorited(meetup: MeetUp) -> Bool {
-        
-        let defaults = UserDefaults.standard
-        
-        let favs = defaults.object(forKey: "favMeetups") as? [[String : Any]]
-        
-        guard let unwrappedFavs = favs else { return false }
-        
-        for each in unwrappedFavs {
-            
-            let name = each["name"] as! String
-            
-            if meetup.name == name {
-                
-                return true
-            }
-        }
-        
-        return false
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
     }
 }
 
-extension SavedContentViewController: UITableViewDataSource {
+extension CoursesViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! ExpandingCoursesCell
         
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "meetupCell", for: indexPath) as! ExpandingMeetUpCell
-            cell.delegate = self
-
-            let meetup = meetups[indexPath.row]
-            cell.meetup = meetup
-            meetup.delegate = self
-            cell.configureCell()
-            cell.delegateAlert = self
-            return cell
+        switch indexPath.section {
             
-        } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! ExpandingCoursesCell
-            
-            cell.delegate = self
-
-            let course = courses[indexPath.row]
+        case 0:
+            let course = store.courses[indexPath.row]
             cell.course = course
             course.delegate = self
             cell.configureCell()
             cell.delegateAlert = self
             
-            return cell
-        }
-        
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        switch section {
-        case 0:
-            return "Join a Community"
-            
         default:
-            return "Take a Free Course"
             
+            cell.title.text = "not a meetup"
         }
+        return cell
     }
-}
-
-extension SavedContentViewController: UITableViewDelegate {
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             
-            return meetups.count
-        } else if section == 1{
+            return store.courses.count
             
-            return courses.count
         }
-        return 0
+        return 1
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return "Take a Free Course"
+        
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -237,85 +137,26 @@ extension SavedContentViewController: UITableViewDelegate {
         header.tintColor = UIColor.white
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
-        
-        if indexPath.section == 0 {
-            guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingMeetUpCell else { return }
-            
-            cell.isExpanded = !cell.isExpanded
-            cell.configureCell()
-            
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            
-            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-
-        } else if indexPath.section == 1 {
-            
-            guard let cell = tableView.cellForRow(at: indexPath) as? ExpandingCoursesCell else { return }
-            
-            cell.isExpanded = !cell.isExpanded
-            cell.configureCell()
-            
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            
-            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-        }
+        return 1
     }
-    
-    func removeFavoriteMeetup(name: String) {
-        
-        let notEmpty = meetups.isEmpty == false
-        
-        if notEmpty {
-            
-            for (index, each) in meetups.enumerated() {
-                
-                if each.name == name {
-                    
-                    meetups.remove(at: index)
-                    tableView.reloadData()
-                }
-            }
-        }
-        checkForNoFavs()
-    }
-    
-    func removeFavoriteCourse(name: String) {
-        
-        let notEmpty = courses.isEmpty == false
-        
-        if notEmpty {
-            
-            for (index, each) in courses.enumerated() {
-                
-                if each.name == name {
-                    
-                    courses.remove(at: index)
-                    tableView.reloadData()
-                }
-            }
-        }
-        checkForNoFavs()
-    }
-
 }
 
-extension SavedContentViewController: UpdateTableView {
-    
+extension CoursesViewController : UpdateTableView {
     func updateTableView() {
         HUD.show(.progress)
         OperationQueue.main.addOperation {
+            
             self.tableView.reloadData()
             HUD.hide()
         }
     }
 }
 
-extension SavedContentViewController: CustomCellPresentAlert {
+extension CoursesViewController: CustomCellPresentAlert {
     func showAlert(urlString: String) {
+        
         let _ = showDecisionAlert(message:  "You're about to leave.", title: "See You Later", okButtonTitle: "Ok", cancelButtonTitle: "Cancel").then { (success) -> Bool in
             
             if success{
@@ -325,11 +166,11 @@ extension SavedContentViewController: CustomCellPresentAlert {
             }
             return true
         }
-
     }
 }
 
-extension SavedContentViewController : UIGestureRecognizerDelegate {
+
+extension CoursesViewController : UIGestureRecognizerDelegate {
     func handleNavScrollGesture() {
         
         if navScrollGestureRecognizer.state == .began {
