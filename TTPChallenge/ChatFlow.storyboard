@@ -9,88 +9,134 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Bold.otf">
+            <string>CircularStd-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Channel List View Controller-->
-        <scene sceneID="M2t-rG-24y">
+        <scene sceneID="Hdu-gA-Yoc">
             <objects>
-                <tableViewController id="1Yj-MR-nAU" customClass="ChannelListViewController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yyP-SU-wKA">
+                <viewController id="gd3-qq-Lfx" customClass="ChannelListViewController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZHr-IL-r30"/>
+                        <viewControllerLayoutGuide type="bottom" id="jVr-fa-B9n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MoC-Fd-8Yf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="czF-Ua-bDl" customClass="CreateChannelCell" customModule="TTPChallenge" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czF-Ua-bDl" id="ADA-iV-LT7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a New Channel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ohM-uh-OuH">
-                                            <rect key="frame" x="16" y="7" width="297" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                        </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Aq-Rg-xtj">
-                                            <rect key="frame" x="321" y="7" width="46" height="30"/>
-                                            <state key="normal" title="Create"/>
-                                            <connections>
-                                                <action selector="createChannel:" destination="1Yj-MR-nAU" eventType="touchUpInside" id="FRN-Q6-GH5"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="leading" secondItem="ohM-uh-OuH" secondAttribute="trailing" constant="8" id="GU0-R3-ZeF"/>
-                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="leading" secondItem="ohM-uh-OuH" secondAttribute="trailing" constant="8" id="Lal-sI-mmG"/>
-                                        <constraint firstItem="ohM-uh-OuH" firstAttribute="centerY" secondItem="ADA-iV-LT7" secondAttribute="centerY" id="MMU-RU-oao"/>
-                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="centerY" secondItem="ADA-iV-LT7" secondAttribute="centerY" id="Wap-za-H4i"/>
-                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="leading" secondItem="ohM-uh-OuH" secondAttribute="trailing" constant="8" id="uUa-bV-DbS"/>
-                                        <constraint firstItem="1Aq-Rg-xtj" firstAttribute="trailing" secondItem="ADA-iV-LT7" secondAttribute="trailingMargin" id="vek-Eh-eLv"/>
-                                        <constraint firstItem="ohM-uh-OuH" firstAttribute="leading" secondItem="ADA-iV-LT7" secondAttribute="leadingMargin" constant="8" id="wQM-aH-ro3"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="GU0-R3-ZeF"/>
-                                            <exclude reference="Lal-sI-mmG"/>
-                                        </mask>
-                                    </variation>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="createChannelButton" destination="1Aq-Rg-xtj" id="BQP-5N-pCb"/>
-                                    <outlet property="newChannelNameField" destination="ohM-uh-OuH" id="zKY-Cl-4UH"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingChannel" textLabel="dos-BF-13N" style="IBUITableViewCellStyleDefault" id="Cdq-fv-ofK">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cdq-fv-ofK" id="AuH-Oz-vPN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dos-BF-13N">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="1Yj-MR-nAU" id="AAS-lK-Ucy"/>
-                            <outlet property="delegate" destination="1Yj-MR-nAU" id="vXn-WW-7X0"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="W0S-9g-tpz"/>
+                        <subviews>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banner" translatesAutoresizingMaskIntoConstraints="NO" id="Wy8-AP-RSx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="8It-yh-LQs"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tech Talk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIz-0q-1bL">
+                                <rect key="frame" x="109" y="77" width="158" height="46"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yyP-SU-wKA">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" rowHeight="50" id="czF-Ua-bDl" customClass="CreateChannelCell" customModule="TTPChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czF-Ua-bDl" id="ADA-iV-LT7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a New Channel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ohM-uh-OuH" customClass="CustomTextfield" customModule="TTPChallenge" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="10" width="301" height="30"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingRight">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Aq-Rg-xtj">
+                                                    <rect key="frame" x="325" y="10.5" width="42" height="29"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <state key="normal" title="Create">
+                                                        <color key="titleColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ohM-uh-OuH" firstAttribute="centerY" secondItem="ADA-iV-LT7" secondAttribute="centerY" id="MMU-RU-oao"/>
+                                                <constraint firstItem="1Aq-Rg-xtj" firstAttribute="centerY" secondItem="ADA-iV-LT7" secondAttribute="centerY" id="Wap-za-H4i"/>
+                                                <constraint firstItem="1Aq-Rg-xtj" firstAttribute="leading" secondItem="ohM-uh-OuH" secondAttribute="trailing" constant="8" id="uUa-bV-DbS"/>
+                                                <constraint firstItem="1Aq-Rg-xtj" firstAttribute="trailing" secondItem="ADA-iV-LT7" secondAttribute="trailingMargin" id="vek-Eh-eLv"/>
+                                                <constraint firstItem="ohM-uh-OuH" firstAttribute="leading" secondItem="ADA-iV-LT7" secondAttribute="leadingMargin" constant="8" id="wQM-aH-ro3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="createChannelButton" destination="1Aq-Rg-xtj" id="BQP-5N-pCb"/>
+                                            <outlet property="newChannelNameField" destination="ohM-uh-OuH" id="zKY-Cl-4UH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingChannel" textLabel="dos-BF-13N" rowHeight="45" style="IBUITableViewCellStyleDefault" id="Cdq-fv-ofK">
+                                        <rect key="frame" x="0.0" y="78" width="375" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cdq-fv-ofK" id="AuH-Oz-vPN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dos-BF-13N">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LIz-0q-1bL" firstAttribute="centerX" secondItem="Wy8-AP-RSx" secondAttribute="centerX" id="0i4-lH-0jl"/>
+                            <constraint firstAttribute="trailing" secondItem="yyP-SU-wKA" secondAttribute="trailing" id="6mT-e6-H03"/>
+                            <constraint firstAttribute="bottom" secondItem="yyP-SU-wKA" secondAttribute="bottom" id="DC4-kI-TKt"/>
+                            <constraint firstAttribute="trailing" secondItem="Wy8-AP-RSx" secondAttribute="trailing" id="Fjb-Gf-d0S"/>
+                            <constraint firstItem="Wy8-AP-RSx" firstAttribute="top" secondItem="MoC-Fd-8Yf" secondAttribute="topMargin" id="GhL-Cq-kRl"/>
+                            <constraint firstItem="yyP-SU-wKA" firstAttribute="top" secondItem="Wy8-AP-RSx" secondAttribute="bottom" id="MaK-UB-JAc"/>
+                            <constraint firstItem="Wy8-AP-RSx" firstAttribute="leading" secondItem="MoC-Fd-8Yf" secondAttribute="leading" id="V3R-it-qps"/>
+                            <constraint firstItem="yyP-SU-wKA" firstAttribute="leading" secondItem="MoC-Fd-8Yf" secondAttribute="leading" id="fcY-QY-RFK"/>
+                            <constraint firstItem="LIz-0q-1bL" firstAttribute="centerY" secondItem="Wy8-AP-RSx" secondAttribute="centerY" id="h7g-rq-9KE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SUh-CF-ZaR"/>
                     <connections>
-                        <segue destination="UQY-lR-2GG" kind="show" identifier="ShowChannel" id="ne2-qJ-GE4"/>
+                        <outlet property="headerView" destination="Wy8-AP-RSx" id="XTc-RI-POq"/>
+                        <outlet property="headerViewHeightConstraint" destination="8It-yh-LQs" id="Za7-Oa-qM1"/>
+                        <outlet property="labelView" destination="LIz-0q-1bL" id="4FJ-qA-Hj8"/>
+                        <outlet property="navScrollGestureRecognizer" destination="3Ek-al-dI1" id="q6j-2Z-Pff"/>
+                        <outlet property="tableView" destination="yyP-SU-wKA" id="daI-wZ-Gwj"/>
+                        <segue destination="UQY-lR-2GG" kind="show" identifier="ShowChannel" id="Kqk-nT-1uN"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vKT-bt-ORv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mm9-td-4Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="3Ek-al-dI1"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="389"/>
+            <point key="canvasLocation" x="1804" y="387"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="ivl-gA-9zW">
@@ -116,23 +162,25 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ShX-6E-Rej" customClass="BaseNavigationController" customModule="TTPChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lAf-kH-z0D">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lAf-kH-z0D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.0" green="0.32156862749999998" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1Yj-MR-nAU" kind="relationship" relationship="rootViewController" id="CKM-WX-lN2"/>
+                        <segue destination="gd3-qq-Lfx" kind="relationship" relationship="rootViewController" id="XaI-ny-7S0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJb-fU-Yke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321" y="389"/>
+            <point key="canvasLocation" x="1063" y="388"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Banner" width="375" height="200"/>
+    </resources>
 </document>
