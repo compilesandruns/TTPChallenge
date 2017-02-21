@@ -56,10 +56,11 @@ final class ChatViewController: JSQMessagesViewController {
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
-        navigationController?.navigationBar.tintColor = Colors.ttpPink
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 18)!,  NSForegroundColorAttributeName: UIColor.black]
         
-        inputToolbar.contentView.tintColor = Colors.ttpPink
-        inputToolbar.contentView.leftBarButtonItem.tintColor = Colors.ttpPink
+        inputToolbar.contentView.tintColor = .black
+        inputToolbar.contentView.leftBarButtonItem.tintColor = .black
         
         observeMessages()
         
