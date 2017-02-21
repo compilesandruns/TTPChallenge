@@ -17,6 +17,8 @@ class BaseInjector {
     var cridentialsValidationInteractor: CridentialsValidationInteracting! = nil
     var createUserInteractor: CreateUserInteracting! = nil
     
+    var memoryCacheDataStore: MemoryCacheDataStoring! = nil
+    
     func signInScreenPresenter(view: SignInScreenViewable) -> SignInScreenPresenter {
         return SignInScreenPresenter(view: view, signInInteractor: signInInteractor)
     }

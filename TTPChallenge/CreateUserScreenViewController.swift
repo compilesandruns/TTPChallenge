@@ -12,6 +12,10 @@ class CreateUserScreenViewController: BaseViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var usernameField
+    : UITextField!
+    
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
@@ -50,6 +54,19 @@ extension CreateUserScreenViewController: CreateUserScreenViewable {
         get {
             return passwordField.text ?? ""
         }
+    }
+    
+    var username: String {
+        set {
+            usernameField.text = newValue
+        }
+        get {
+            return usernameField.text ?? ""
+        }
+    }
+    
+    func showHomeScreen() {
+        self.performSegue(withIdentifier: "showHomeScreen", sender: self)
     }
     
     func dismissView() {

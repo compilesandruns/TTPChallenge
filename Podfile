@@ -13,8 +13,11 @@ target 'TTPChallenge' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'JSQMessagesViewController'
   pod 'PKHUD'
-  
+  pod 'SwiftGifOrigin', '~> 1.6.1'
+
 end
 
 target 'UnitTests' do

@@ -18,10 +18,12 @@ struct Environment {
     }
     
     struct Firebase {
+        static let ref = FIRDatabase.database().reference()
         static let loginToList = "LoginToList"
     }
     
     struct Validation {
+        static let usernamePattern = "^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$"
         static let namePattern = "^[\\w][\\w\\s.-]*$"
         static let emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]+$"
         static let passwordPattern = "^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z[0-9]]{8,}$"
