@@ -10,7 +10,7 @@
 		1706510F1E5277A600802807 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706510E1E5277A600802807 /* PresentMenuAnimator.swift */; };
 		1719F1F91E56C14A004E06A0 /* MenuSectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719F1F81E56C14A004E06A0 /* MenuSectionHeaderCell.swift */; };
 		1719F1FB1E56C344004E06A0 /* MenuSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719F1FA1E56C344004E06A0 /* MenuSectionType.swift */; };
-		174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979971E50DCE400B901DC /* CreateUserScreenTableViewController.swift */; };
+		174979981E50DCE400B901DC /* CreateUserScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979971E50DCE400B901DC /* CreateUserScreenViewController.swift */; };
 		1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979991E50DD0300B901DC /* CreateUserScreenPresenter.swift */; };
 		1749799C1E50DD1300B901DC /* CreateUserScreenPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749799B1E50DD1300B901DC /* CreateUserScreenPresenting.swift */; };
 		1749799E1E50DD2800B901DC /* CreateUserScreenViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749799D1E50DD2800B901DC /* CreateUserScreenViewable.swift */; };
@@ -27,6 +27,15 @@
 		1751ABC61E4D3E4B00E2AE75 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751ABC51E4D3E4B00E2AE75 /* UITests.swift */; };
 		1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751ABCD1E4D469D00E2AE75 /* Environment.swift */; };
 		1751ABD01E4D512200E2AE75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1751ABCF1E4D512200E2AE75 /* GoogleService-Info.plist */; };
+		1778D95E1E5A46EE0023C569 /* DisplayableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D95C1E5A46EE0023C569 /* DisplayableError.swift */; };
+		1778D95F1E5A46EE0023C569 /* ErrorDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D95D1E5A46EE0023C569 /* ErrorDisplaying.swift */; };
+		1778D9681E5A47530023C569 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D9611E5A47530023C569 /* Channel.swift */; };
+		1778D9691E5A47530023C569 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D9621E5A47530023C569 /* ChannelListViewController.swift */; };
+		1778D96A1E5A47530023C569 /* ChatFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1778D9631E5A47530023C569 /* ChatFlow.storyboard */; };
+		1778D96B1E5A47530023C569 /* ChatScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D9641E5A47530023C569 /* ChatScreenViewController.swift */; };
+		1778D96C1E5A47530023C569 /* CoursesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D9651E5A47530023C569 /* CoursesJSON.swift */; };
+		1778D96D1E5A47530023C569 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D9661E5A47530023C569 /* CreateChannelCell.swift */; };
+		1778D96E1E5A47530023C569 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778D9671E5A47530023C569 /* ValidationError.swift */; };
 		17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB263E1E5128740005D787 /* FirstResponderView.swift */; };
 		17BB26411E516E340005D787 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB26401E516E340005D787 /* HomeScreenViewController.swift */; };
 		17BB26431E516E3C0005D787 /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB26421E516E3C0005D787 /* HomeScreenPresenter.swift */; };
@@ -62,6 +71,9 @@
 		17CFD06C1E50216D0007ADEC /* SignInInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06B1E50216D0007ADEC /* SignInInteracting.swift */; };
 		17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */; };
 		17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD0741E50C2E60007ADEC /* BaseInjector.swift */; };
+		17D57DE61E5BC90300465E1C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D57DE51E5BC90300465E1C /* User.swift */; };
+		17D57DE81E5BCC6400465E1C /* MemoryCacheDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D57DE71E5BCC6400465E1C /* MemoryCacheDataStore.swift */; };
+		17D57DEA1E5BCCDF00465E1C /* MemoryCacheDataStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D57DE91E5BCCDF00465E1C /* MemoryCacheDataStoring.swift */; };
 		17DC3E6F1E589FBB00E4A9F4 /* FullyReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170651101E52796D00802807 /* FullyReplaceSegue.swift */; };
 		3D14B4B21E575962005E2DBF /* SavedContentScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D14B4B11E575962005E2DBF /* SavedContentScreen.storyboard */; };
 		3D14B4B41E575979005E2DBF /* SavedContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D14B4B31E575979005E2DBF /* SavedContentViewController.swift */; };
@@ -123,7 +135,7 @@
 		170651101E52796D00802807 /* FullyReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullyReplaceSegue.swift; sourceTree = "<group>"; };
 		1719F1F81E56C14A004E06A0 /* MenuSectionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionHeaderCell.swift; sourceTree = "<group>"; };
 		1719F1FA1E56C344004E06A0 /* MenuSectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionType.swift; sourceTree = "<group>"; };
-		174979971E50DCE400B901DC /* CreateUserScreenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenTableViewController.swift; sourceTree = "<group>"; };
+		174979971E50DCE400B901DC /* CreateUserScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenViewController.swift; sourceTree = "<group>"; };
 		174979991E50DD0300B901DC /* CreateUserScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenPresenter.swift; sourceTree = "<group>"; };
 		1749799B1E50DD1300B901DC /* CreateUserScreenPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenPresenting.swift; sourceTree = "<group>"; };
 		1749799D1E50DD2800B901DC /* CreateUserScreenViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserScreenViewable.swift; sourceTree = "<group>"; };
@@ -146,6 +158,15 @@
 		1751ABC71E4D3E4B00E2AE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1751ABCD1E4D469D00E2AE75 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		1751ABCF1E4D512200E2AE75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1778D95C1E5A46EE0023C569 /* DisplayableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayableError.swift; sourceTree = "<group>"; };
+		1778D95D1E5A46EE0023C569 /* ErrorDisplaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDisplaying.swift; sourceTree = "<group>"; };
+		1778D9611E5A47530023C569 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		1778D9621E5A47530023C569 /* ChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
+		1778D9631E5A47530023C569 /* ChatFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatFlow.storyboard; sourceTree = "<group>"; };
+		1778D9641E5A47530023C569 /* ChatScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenViewController.swift; sourceTree = "<group>"; };
+		1778D9651E5A47530023C569 /* CoursesJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesJSON.swift; sourceTree = "<group>"; };
+		1778D9661E5A47530023C569 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
+		1778D9671E5A47530023C569 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationError.swift; path = TTPChallenge/ValidationError.swift; sourceTree = "<group>"; };
 		17BB263E1E5128740005D787 /* FirstResponderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstResponderView.swift; sourceTree = "<group>"; };
 		17BB26401E516E340005D787 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		17BB26421E516E3C0005D787 /* HomeScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenter.swift; sourceTree = "<group>"; };
@@ -183,6 +204,9 @@
 		17CFD06B1E50216D0007ADEC /* SignInInteracting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInInteracting.swift; sourceTree = "<group>"; };
 		17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		17CFD0741E50C2E60007ADEC /* BaseInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInjector.swift; sourceTree = "<group>"; };
+		17D57DE51E5BC90300465E1C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		17D57DE71E5BCC6400465E1C /* MemoryCacheDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryCacheDataStore.swift; sourceTree = "<group>"; };
+		17D57DE91E5BCCDF00465E1C /* MemoryCacheDataStoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryCacheDataStoring.swift; sourceTree = "<group>"; };
 		22E9E845749509C721CA9BA3 /* Pods_TTPChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTPChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3CAFD65E74FF57B2B4E1D2 /* Pods_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D809B8C9CFEADB0D6C0EC8 /* Pods-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +324,7 @@
 				1751ABD11E4D513600E2AE75 /* Screens */,
 				1751ABD21E4D514500E2AE75 /* Environment */,
 				DDDF2E1E1E52328000EAD0ED /* QuizFlow.storyboard */,
+				1778D9631E5A47530023C569 /* ChatFlow.storyboard */,
 				1751ABA31E4D33AB00E2AE75 /* SignInFlow.storyboard */,
 				17BB26611E517A5F0005D787 /* MenuFlow.storyboard */,
 				17CFD04F1E4F73110007ADEC /* HomeScreenFlow.storyboard */,
@@ -343,6 +368,7 @@
 		1751ABD11E4D513600E2AE75 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1778D96F1E5A47630023C569 /* Chat Screen */,
 				17DC3E711E594F2C00E4A9F4 /* Saved Content Screen */,
 				17DC3E701E594F1C00E4A9F4 /* Suggestions Screen */,
 				DDDF2E201E52334D00EAD0ED /* Quiz Sreen */,
@@ -356,12 +382,34 @@
 		1751ABD21E4D514500E2AE75 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				1778D9651E5A47530023C569 /* CoursesJSON.swift */,
 				17CFD0741E50C2E60007ADEC /* BaseInjector.swift */,
 				1751ABCD1E4D469D00E2AE75 /* Environment.swift */,
 				17CFD0521E4F76D40007ADEC /* Injector.swift */,
 				3D36EB381E5260E800CB1432 /* Secrets.swift */,
 			);
 			name = Environment;
+			sourceTree = "<group>";
+		};
+		1778D9601E5A46F60023C569 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				1778D9671E5A47530023C569 /* ValidationError.swift */,
+				1778D95C1E5A46EE0023C569 /* DisplayableError.swift */,
+				1778D95D1E5A46EE0023C569 /* ErrorDisplaying.swift */,
+			);
+			name = Errors;
+			sourceTree = "<group>";
+		};
+		1778D96F1E5A47630023C569 /* Chat Screen */ = {
+			isa = PBXGroup;
+			children = (
+				1778D9641E5A47530023C569 /* ChatScreenViewController.swift */,
+				1778D9621E5A47530023C569 /* ChannelListViewController.swift */,
+				1778D9611E5A47530023C569 /* Channel.swift */,
+				17D57DE51E5BC90300465E1C /* User.swift */,
+			);
+			name = "Chat Screen";
 			sourceTree = "<group>";
 		};
 		17BB26481E516E6B0005D787 /* Side Menu Code */ = {
@@ -409,6 +457,8 @@
 				174979A71E5102DB00B901DC /* CreateUserInteractor.swift */,
 				17CFD0541E4F7B4D0007ADEC /* FirebaseInteractor.swift */,
 				17CFD0691E50215C0007ADEC /* SignInInteractor.swift */,
+				17D57DE71E5BCC6400465E1C /* MemoryCacheDataStore.swift */,
+				17D57DE91E5BCCDF00465E1C /* MemoryCacheDataStoring.swift */,
 			);
 			name = Interactors;
 			sourceTree = "<group>";
@@ -416,6 +466,7 @@
 		17CFD0591E4F7B880007ADEC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1778D9601E5A46F60023C569 /* Errors */,
 				1751AB9F1E4D33AB00E2AE75 /* AppDelegate.swift */,
 				17CFD0481E4F69FF0007ADEC /* TTPChallenge-Bridging-Header.h */,
 			);
@@ -446,7 +497,7 @@
 		17CFD06E1E502C570007ADEC /* Create User Screen */ = {
 			isa = PBXGroup;
 			children = (
-				174979971E50DCE400B901DC /* CreateUserScreenTableViewController.swift */,
+				174979971E50DCE400B901DC /* CreateUserScreenViewController.swift */,
 				174979991E50DD0300B901DC /* CreateUserScreenPresenter.swift */,
 				1749799B1E50DD1300B901DC /* CreateUserScreenPresenting.swift */,
 				1749799D1E50DD2800B901DC /* CreateUserScreenViewable.swift */,
@@ -457,7 +508,12 @@
 		17CFD0711E50BA3C0007ADEC /* UI Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1778D9661E5A47530023C569 /* CreateChannelCell.swift */,
 				DD0BDEE71E52A8F6006F550F /* Fonts */,
+				DD12A9E21E59135E0047417D /* CustomView.swift */,
+				DD8586B71E56789900065DDD /* CustomButton.swift */,
+				DD1610281E5A683300BA87DE /* CustomTextfield.swift */,
+				DD22CCAD1E5B6A9D00314E65 /* CustomLabel.swift */,
 				17CFD06F1E50BA0F0007ADEC /* BaseViewController.swift */,
 				1749799F1E50E69B00B901DC /* BaseTableViewController.swift */,
 				174979A11E50ED1D00B901DC /* BaseNavigationController.swift */,
@@ -546,21 +602,9 @@
 			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
-		DD8586B61E56774700065DDD /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				DD12A9E21E59135E0047417D /* CustomView.swift */,
-				DD8586B71E56789900065DDD /* CustomButton.swift */,
-				DD1610281E5A683300BA87DE /* CustomTextfield.swift */,
-				DD22CCAD1E5B6A9D00314E65 /* CustomLabel.swift */,
-			);
-			name = "Custom Views";
-			sourceTree = "<group>";
-		};
 		DDDF2E201E52334D00EAD0ED /* Quiz Sreen */ = {
 			isa = PBXGroup;
 			children = (
-				DD8586B61E56774700065DDD /* Custom Views */,
 				DD0BDF2E1E5534CE006F550F /* QuizModels */,
 				DD0BDF2D1E553480006F550F /* QuizVCs */,
 			);
@@ -708,6 +752,7 @@
 				3D9D554E1E5B90C5006FB5CE /* Courses.json in Resources */,
 				17CFD0501E4F73110007ADEC /* HomeScreenFlow.storyboard in Resources */,
 				3D14B4B21E575962005E2DBF /* SavedContentScreen.storyboard in Resources */,
+				1778D96A1E5A47530023C569 /* ChatFlow.storyboard in Resources */,
 				1751ABA71E4D33AB00E2AE75 /* Assets.xcassets in Resources */,
 				3D36EB311E5257B100CB1432 /* SuggestionScreen.storyboard in Resources */,
 				1751ABA51E4D33AB00E2AE75 /* SignInFlow.storyboard in Resources */,
@@ -882,6 +927,7 @@
 				174979AA1E5102E700B901DC /* CreateUserInteracting.swift in Sources */,
 				17CFD0681E5015F90007ADEC /* CridentialsValidationInteractor.swift in Sources */,
 				1749799A1E50DD0300B901DC /* CreateUserScreenPresenter.swift in Sources */,
+				1778D9691E5A47530023C569 /* ChannelListViewController.swift in Sources */,
 				17BB26601E51795A0005D787 /* MenuViewable.swift in Sources */,
 				17CFD0641E4F86270007ADEC /* FirebaseAuth.swift in Sources */,
 				3D4E89301E56455D00ED4080 /* DoFavoriteButton.swift in Sources */,
@@ -899,6 +945,7 @@
 				3D9D554C1E5B90B6006FB5CE /* CoursesViewController.swift in Sources */,
 				3D36EB3D1E53F91A00CB1432 /* ExpandingMeetUpCell.swift in Sources */,
 				17BB263F1E5128740005D787 /* FirstResponderView.swift in Sources */,
+				1778D95F1E5A46EE0023C569 /* ErrorDisplaying.swift in Sources */,
 				17CFD0661E5015ED0007ADEC /* CridentialsValidationInteracting.swift in Sources */,
 				174979A21E50ED1D00B901DC /* BaseNavigationController.swift in Sources */,
 				DD0BDF241E552754006F550F /* MobileDevVC.swift in Sources */,
@@ -907,6 +954,7 @@
 				17CFD0751E50C2E60007ADEC /* BaseInjector.swift in Sources */,
 				17BB26471E516E520005D787 /* HomeScreenViewable.swift in Sources */,
 				17BB26431E516E3C0005D787 /* HomeScreenPresenter.swift in Sources */,
+				1778D96C1E5A47530023C569 /* CoursesJSON.swift in Sources */,
 				17BB26521E5171A20005D787 /* MenuTableViewCell.swift in Sources */,
 				DD22CCAE1E5B6A9D00314E65 /* CustomLabel.swift in Sources */,
 				17CFD04C1E4F6F990007ADEC /* SignInScreenPresenting.swift in Sources */,
@@ -915,12 +963,19 @@
 				17BB265A1E5175FE0005D787 /* MoreInformationButtonType.swift in Sources */,
 				17BB26411E516E340005D787 /* HomeScreenViewController.swift in Sources */,
 				1719F1F91E56C14A004E06A0 /* MenuSectionHeaderCell.swift in Sources */,
+				17D57DE81E5BCC6400465E1C /* MemoryCacheDataStore.swift in Sources */,
+				17D57DE61E5BC90300465E1C /* User.swift in Sources */,
 				1749799C1E50DD1300B901DC /* CreateUserScreenPresenting.swift in Sources */,
 				17BB26501E516EAD0005D787 /* MenuPresenting.swift in Sources */,
 				174979A81E5102DB00B901DC /* CreateUserInteractor.swift in Sources */,
 				17BB264C1E516E930005D787 /* MenuHelper.swift in Sources */,
 				174979A01E50E69B00B901DC /* BaseTableViewController.swift in Sources */,
+
 				3D9D55501E5B90FF006FB5CE /* Course.swift in Sources */,
+
+				17D57DEA1E5BCCDF00465E1C /* MemoryCacheDataStoring.swift in Sources */,
+				1778D96E1E5A47530023C569 /* ValidationError.swift in Sources */,
+
 				17BB265C1E51769A0005D787 /* AuthInteractor.swift in Sources */,
 				17CFD0701E50BA0F0007ADEC /* BaseViewController.swift in Sources */,
 				3D9D55521E5B9552006FB5CE /* ExpandingCoursesCell.swift in Sources */,
@@ -929,12 +984,16 @@
 				17BB26451E516E460005D787 /* HomeScreenPresenting.swift in Sources */,
 				17CFD0601E4F7CE40007ADEC /* AlertView.swift in Sources */,
 				DD12A9E31E59135E0047417D /* CustomView.swift in Sources */,
+				1778D95E1E5A46EE0023C569 /* DisplayableError.swift in Sources */,
+				1778D9681E5A47530023C569 /* Channel.swift in Sources */,
 				DD0BDF321E55353B006F550F /* Question.swift in Sources */,
 				DD8586B81E56789900065DDD /* CustomButton.swift in Sources */,
 				17CFD04A1E4F6F900007ADEC /* SignInScreenPresenter.swift in Sources */,
 				DD0BDF391E5537F8006F550F /* PersonalityTestCell.swift in Sources */,
 				17BB26561E5172020005D787 /* SlideMenuInteractiveTransition.swift in Sources */,
 				17BB26541E5171BD0005D787 /* MenuViewController.swift in Sources */,
+				1778D96D1E5A47530023C569 /* CreateChannelCell.swift in Sources */,
+				1778D96B1E5A47530023C569 /* ChatScreenViewController.swift in Sources */,
 				17CFD06A1E50215C0007ADEC /* SignInInteractor.swift in Sources */,
 				17BB264E1E516EA20005D787 /* MenuPresenter.swift in Sources */,
 				1751ABA21E4D33AB00E2AE75 /* SignInScreenViewController.swift in Sources */,
@@ -942,7 +1001,7 @@
 				17CFD05E1E4F7C630007ADEC /* AlertViewable.swift in Sources */,
 				1751ABCE1E4D469D00E2AE75 /* Environment.swift in Sources */,
 				DD0BDEF31E52C84A006F550F /* QuizMainVC.swift in Sources */,
-				174979981E50DCE400B901DC /* CreateUserScreenTableViewController.swift in Sources */,
+				174979981E50DCE400B901DC /* CreateUserScreenViewController.swift in Sources */,
 				17CFD0531E4F76D40007ADEC /* Injector.swift in Sources */,
 				DD0BDF301E5534E2006F550F /* QuizGroup.swift in Sources */,
 				17BB264A1E516E7F0005D787 /* MenuDelegate.swift in Sources */,

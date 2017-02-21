@@ -25,24 +25,20 @@ class CreateUserScreenPresenter: CreateUserScreenPresenting {
         view.dismissKeyboard()
     }
     
-    
     func didTapGetStartedButton() {
-        createUserInteractor.createUser(email: view.email, password: view.password).then{ errorMessage -> Void in
-            if !errorMessage.isEmpty {
-                self.view.showAlert(message: errorMessage, title: Environment.Alert.errorTitle)
-            }
-        }.catch { error in
-            if let errCode = FIRAuthErrorCode(rawValue: error._code) {
-                
-                switch errCode {
-                case .errorCodeInvalidEmail:
-                    self.view.showAlert(message:Environment.Alert.invalidEmail, title: Environment.Alert.errorTitle)
-                case .errorCodeEmailAlreadyInUse:
-                    self.view.showAlert(message: Environment.Alert.emailInUse, title:Environment.Alert.errorTitle)
-                default:
-                    self.view.showAlert(message:Environment.Alert.defaultError , title: Environment.Alert.errorTitle)
-
-                }    
+        createUserInteractor.createUser(email: view.email, password: view.password, username: view.username).then {
+            _ -> Void in
+                self.view.showHomeScreen()
+            }.catch { error in
+                if let errCode = FIRAuthErrorCode(rawValue: error._code) {
+                    switch errCode {
+                    case .errorCodeInvalidEmail:
+                        self.view.showAlert(message:Environment.Alert.invalidEmail, title: Environment.Alert.errorTitle)
+                    case .errorCodeEmailAlreadyInUse:
+                        self.view.showAlert(message: Environment.Alert.emailInUse, title:Environment.Alert.errorTitle)
+                    default:
+                        self.view.showAlert(message: (error as! ValidationError).displayMessage, title:Environment.Alert.errorTitle)
+                }
             }
         }
     }

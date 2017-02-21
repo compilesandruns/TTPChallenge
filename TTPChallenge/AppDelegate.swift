@@ -15,17 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        self.window?.tintColor = .black
-        
-        let injector = Injector()
-        Injector.setInjector(injector: injector)
-        
+  
         //Firebase
         FIRApp.configure()
         
+        let injector = Injector()
+        Injector.setInjector(injector: injector)
+
         //Setup Default Loader
         PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
         PKHUD.sharedHUD.dimsBackground = true
+
+		//UI Defaults
+        self.window?.tintColor = .black
 
         return true
     }
